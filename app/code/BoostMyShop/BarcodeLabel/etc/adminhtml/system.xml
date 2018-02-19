@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+
+        <tab id="boostmyshop" translate="label" sortOrder="0">
+            <label>BoostMyShop</label>
+        </tab>
+
+        <section id="barcodelabel" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Barcode Label</label>
+            <tab>boostmyshop</tab>
+            <resource>BoostMyShop_BarcodeLabel::Config</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Barcode generation</label>
+
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled, a barcode will be automatically assigned to new products</comment>
+                </field>
+
+                <field id="barcode_attribute" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Barcode attribute</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\Attributes</source_model>
+                </field>
+
+                <field id="barcode_type" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Barcode type</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\BarcodeType</source_model>
+                </field>
+
+                <field id="init" translate="label" type="button" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Assign barcodes</label>
+                    <frontend_model>BoostMyShop\BarcodeLabel\Block\System\Config\System\Initialize</frontend_model>
+                    <comment>Assign a barcode for products without barcode. If it runs to timeout, you can use shell command php bin/magento bms_barcodelabel:assign_barcodes</comment>
+                </field>
+
+            </group>
+
+            <group id="attributes" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Label items</label>
+
+                <field id="location" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Location attribute</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\Attributes</source_model>
+                </field>
+
+                <field id="manufacturer" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Manufacturer attribute</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\Attributes</source_model>
+                </field>
+
+                <field id="custom1" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Custom1 attribute</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\Attributes</source_model>
+                </field>
+
+                <field id="custom2" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Custom2 attribute</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\Attributes</source_model>
+                </field>
+
+                <field id="custom3" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Custom3 attribute</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\Attributes</source_model>
+                </field>
+
+                <field id="custom4" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Custom4 attribute</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\Attributes</source_model>
+                </field>
+
+                <field id="custom5" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Custom5 attribute</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\Attributes</source_model>
+                </field>
+
+                <field id="custom6" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Custom6 attribute</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\Attributes</source_model>
+                </field>
+
+                <field id="freetext" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Free text</label>
+                </field>
+
+                <field id="logo" translate="label comment" type="image" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Company logo</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image\Pdf</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">barcodelabel/logo</upload_dir>
+                    <base_url type="media" scope_info="1">barcodelabel/logo</base_url>
+                </field>
+
+
+            </group>
+
+
+            <group id="label_layout" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Label layout</label>
+
+                <field id="unit" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Measurement unit</label>
+                    <source_model>BoostMyShop\BarcodeLabel\Model\Config\Source\Unit</source_model>
+                </field>
+
+                <field id="paper_height" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Label height</label>
+                </field>
+
+                <field id="paper_width" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Label width</label>
+                </field>
+
+                <field id="content" translate="label" type="button" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Content</label>
+                    <frontend_model>BoostMyShop\BarcodeLabel\Block\System\Config\System\Content</frontend_model>
+                </field>
+
+                <field id="preview" translate="label" type="button" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Preview</label>
+                    <frontend_model>BoostMyShop\BarcodeLabel\Block\System\Config\System\Preview</frontend_model>
+                </field>
+            </group>
+
+
+        </section>
+    </system>
+</config>

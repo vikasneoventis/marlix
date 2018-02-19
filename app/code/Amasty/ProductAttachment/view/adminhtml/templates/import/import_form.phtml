@@ -1,0 +1,154 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+?>
+
+<?php
+/**
+ * @var Amasty\ProductAttachment\Block\Adminhtml\Import\Tab\AbstractImport $block
+ */
+?>
+
+<div class="container" id="<?php echo $block->getImportId();?>">
+    <h2><span><?php echo $block->getImportLabel(); ?></span></h2>
+
+    <?php if ($block->getImportType() == 'import_csv'): ?>
+        <div class="tooltip">
+            <ol class="import-fields">
+                <li>Upload your files to folder <?php echo $block->getAbsolutePathToFtpFolder();?><br/></li>
+                <li>Prepare csv file with columns (<a href="<?php echo $block->getCsvExampleUrl();?>" target="_blank">Download File Example</a>):
+                    <ul class="import-fields">
+                        <?php foreach($block->getFields() as $code => $field):?>
+                            <li><?php printf('%s (%s)', $field['name'], $field['required']);?>
+                                <?php if($code == 'customer_group'):?>
+                                    <?php printf('should be separated "-"');?>
+                                <?php endif;?>
+                            </li>
+                        <?php endforeach;?>
+                    </ul>
+                </li>
+                <li>Upload CSV file in a tab "Import CSV"</li>
+            </ol>
+        </div>
+    <?php elseif ($block->getImportType() == 'import_file'): ?>
+        <div class="tooltip">
+            <p><?php echo __('File Name can contain only numbers, latin letters and all of the following characters -._, ');?></p>
+        </div>
+    <?php endif;?>
+    <form action="<?php echo $block->getImportUrl()?>" enctype="multipart/form-data" method="post">
+        <fieldset class="admin__fieldset downloadable-form">
+            <input name="form_key" type="hidden" value="<?php echo $block->getFormKey() ?>" />
+            <input type="hidden" value="<?php echo $block->getImportType();?>" name="type" />
+
+            <div class="progressbar-container">
+                <div class="error"></div>
+                <div class="success"></div>
+            </div>
+            <label class="file-info"></label>
+            <div class="drop drop-zone"><span><?php echo __("Click or drop file here");?></span>
+                <input id="<?php echo $block->getImportType(); ?>" type="file"
+                       name="<?php echo $block->getImportType(); ?>"
+                       maxFileSize="<?php echo $block->getMaxFileSize();?>"
+                />
+            </div>
+            <div class="upload-button"></div>
+        </fieldset>
+    </form>
+    <div class="upload-button" id="upload-button-<?php echo $block->getImportId();?>"></div>
+</div>
+
+<script>
+    'use strict';
+    require([
+        'jquery',
+        'Magento_Ui/js/modal/alert',
+        'Amasty_ProductAttachment/js/byte-convert',
+        'jquery/file-uploader',
+        'mage/backend/tabs',
+    ], function($, alert, byteConvert) {
+
+        $('#<?php echo $block->getImportType(); ?>').fileupload({
+            dataType: 'json',
+            maxFileSize: 2000000,
+            dropZone: $('#<?php echo $block->getImportType(); ?>').closest('.drop-zone'),
+            add: function (e, data) {
+
+                data.fileId = $(e.target).closest('.container')[0].id;
+                var file = data.files[0];
+                $('#' + data.fileId + " .file-info").text(file.name);
+
+                var fileSize, maxFileSize;
+                var element = e.target;
+                var errorMessage = null;
+                $.each(data.files, function (index, file) {
+                    fileSize = file.size;
+                    if (typeof fileSize == "undefined") {
+                        errorMessage = 'We could not detect a size.';
+                    }
+
+                    maxFileSize = $(element).attr('maxFileSize');
+                    if (fileSize >= maxFileSize) {
+                        errorMessage = 'Can not upload File ' + file.name + '. Max allowed size is ' + byteConvert(maxFileSize) + '.';
+                    }
+                });
+                if (errorMessage === null) {
+                    data.context = $('<button/>').addClass('amfile-upload-button').text('Upload')
+                        .click(function () {
+                            data.context.text('Uploading...').prop('disabled', true);
+                            data.submit();
+                        });
+                    var uploadButtonId = 'upload-button-' + data.fileId;
+                    $('<div/>').addClass('upload-button').attr('id', uploadButtonId)
+                        .append(data.context)
+                        .replaceAll($('#' + uploadButtonId));
+                } else {
+                    alert({content: errorMessage});
+                }
+            },
+            done: function (e, data) {
+                data.context.text('Done');
+                var progressSuccessSelector = '#' + data.fileId + ' .progressbar-container .success';
+                var progressErrorSelector = '#' + data.fileId + ' .progressbar-container .error';
+
+                if (data.result) {
+                    var successMessage = data.result.hasOwnProperty('success')
+                        ? data.result.success : '';
+                    var divSuccess = $('<div/>').addClass('success');
+                    if (successMessage) {
+                        divSuccess.append($('<label/>').addClass('amfile-upload-success').text(successMessage));
+                    }
+                    divSuccess.replaceAll($(progressSuccessSelector));
+
+                    if ($('#Uploaded_Files').length > 0 && successMessage) {
+                        $('#Uploaded_Files').prepend(
+                            $('<div/>').addClass('progressbar').append(
+                                $('<label/>').addClass('amfile-upload-success')
+                                    .text('New files were uploaded. Please refresh the page to see actual Uploaded Files list.')
+                            ));
+                    }
+                    var errorMessage = data.result.hasOwnProperty('errorcode')
+                        ? data.result.errors.join('\r\n') : '';
+                    var divError = $('<div/>').addClass('error');
+                    if (errorMessage) {
+                        divError.append(
+                            $('<label/>').addClass('mage-error').text(errorMessage)
+                        );
+                    }
+                    divError.replaceAll($(progressErrorSelector));
+                }
+            },
+            fail: function (e, data) {
+                var progressSelector = '#' + data.fileId + ' .progressbar-container .progressbar';
+                if (data.result && data.result.hasOwnProperty('errorcode')) {
+                    $('<div/>').addClass('error').append(
+                        $('<label/>').addClass('mage-error')
+                            .text(data.result.errors.join())
+                    ).replaceAll($(progressErrorSelector));
+                }
+            }
+        });
+    });
+</script>

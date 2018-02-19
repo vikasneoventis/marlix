@@ -1,0 +1,1004 @@
+
+Update from version 1.19.0 to 1.19.1
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/etc/config.xml 
+/app/code/local/Infortis/Ultimo/etc/system.xml 
+/app/code/local/Infortis/Ultimo/Helper/Labels.php
+
+
+Update from version 1.18.1 to 1.19.0
+
+Modified files and folders:
+/app/code/local/Infortis/Infortis/Model/System/Config/Source/Layout/Screen/Width/Widecustom.php 
+/app/code/local/Infortis/Ultimo/etc/config.xml 
+/app/code/local/Infortis/Ultimo/etc/system.xml 
+/app/code/local/Infortis/Ultimo/Helper/Grid.php 
+/app/code/local/Infortis/Ultimo/Helper/Labels.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Category/Grid/Size.php 
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/grid.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list_featured_slider.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/new.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view.phtml 
+/app/design/frontend/ultimo/default/template/infortis/ultraslideshow/slideshow.phtml 
+/skin/frontend/ultimo/default/css/styles-infortis.css 
+/skin/frontend/ultimo/default/css/styles.css 
+
+
+Update from version 1.18.0 to 1.18.1
+
+Removed files and folders:
+app\code\local\Infortis\Ultimo\data\ultimo_setup\data-upgrade-1.17.1-1.18.0.php 
+media\wysiwyg\infortis\slideshow\banners\01.png 
+media\wysiwyg\infortis\slideshow\banners\02.png 
+media\wysiwyg\infortis\slideshow\banners\03.png 
+media\wysiwyg\infortis\slideshow\01.jpg 
+media\wysiwyg\infortis\slideshow\02.jpg 
+media\wysiwyg\infortis\slideshow\03.jpg 
+media\wysiwyg\infortis\slideshow-test\S.jpg 
+media\wysiwyg\infortis\ultimo\custom\background\city1.jpg 
+media\wysiwyg\infortis\ultimo\custom\background\city2.jpg 
+media\wysiwyg\infortis\ultimo\custom\background\city3.jpg 
+media\wysiwyg\infortis\ultimo\custom\background\city4.jpg 
+
+New files and folders:
+app\code\local\Infortis\Ultimo\data\ultimo_setup\data-upgrade-1.18.0-1.18.1.php 
+media\wysiwyg\demo\infortis\ultimo\custom\pattern.jpg 
+media\wysiwyg\infortis\other\menu\01.jpg 
+media\wysiwyg\infortis\other\menu\02.jpg 
+media\wysiwyg\infortis\other\menu\product.png 
+media\wysiwyg\infortis\page-background\city1.jpg 
+media\wysiwyg\infortis\page-background\city2.jpg 
+media\wysiwyg\infortis\page-background\city3.jpg 
+media\wysiwyg\infortis\page-background\city4.jpg
+
+Modified files and folders:
+app\code\local\Infortis\Ultimo\etc\importexport\cms\blocks\demo1.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\blocks\demo2.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\blocks\demo3.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\blocks\demo4.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\blocks\demo5.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\blocks\demo6.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\blocks\demo7.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\blocks\demo8.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\pages\demo1.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\pages\demo2.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\pages\demo3.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\pages\demo4.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\pages\demo5.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\pages\demo6.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\pages\demo7.xml 
+app\code\local\Infortis\Ultimo\etc\importexport\cms\pages\demo8.xml 
+app\code\local\Infortis\Ultimo\etc\config.xml 
+app\code\local\Infortis\Ultimo\etc\system.xml 
+app\design\frontend\base\default\template\infortis\ultimo\css\design.phtml 
+app\design\frontend\base\default\template\infortis\ultimo\css\layout.phtml 
+skin\frontend\ultimo\default\css\infortis\_shared\generic-cck.css
+
+
+Update from version 1.17.1 to 1.18.0
+
+Removed files and folders:
+app/code/local/Infortis/Ultimo/data/ultimo_setup/data-upgrade-1.17.0-1.17.1.php 
+app/code/local/Infortis/Ultimo/etc/import/blocks.xml 
+app/code/local/Infortis/Ultimo/etc/import/pages.xml 
+app/code/local/Infortis/UltraSlideshow/Block/Config.php 
+media/wysiwyg/infortis/ultimo/icons/info.png 
+media/wysiwyg/infortis/ultimo/menu/banner/01.jpg 
+media/wysiwyg/infortis/ultimo/menu/banner/02.jpg 
+media/wysiwyg/infortis/ultimo/menu/banner/small.png 
+media/wysiwyg/infortis/ultimo/slideshow/banner/01.png 
+media/wysiwyg/infortis/ultimo/slideshow/banner/02.png 
+media/wysiwyg/infortis/ultimo/slideshow/banner/03.png 
+media/wysiwyg/infortis/ultimo/slideshow/01.jpg 
+media/wysiwyg/infortis/ultimo/slideshow/02.jpg 
+media/wysiwyg/infortis/ultimo/slideshow/03.jpg 
+media/wysiwyg/infortis/ultimo/slideshow/wide01.jpg 
+media/wysiwyg/infortis/ultimo/slideshow/wide02.png 
+
+New files and folders:
+app/code/local/Infortis/Ultimo/data/ultimo_setup/data-upgrade-1.17.1-1.18.0.php 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/blocks/demo1.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/blocks/demo2.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/blocks/demo3.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/blocks/demo4.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/blocks/demo5.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/blocks/demo6.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/blocks/demo7.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/blocks/demo8.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/pages/demo1.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/pages/demo2.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/pages/demo3.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/pages/demo4.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/pages/demo5.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/pages/demo6.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/pages/demo7.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/cms/pages/demo8.xml 
+app/code/local/Infortis/Ultimo/Model/System/Config/Source/Import/Demo.php 
+media/wysiwyg/infortis/banners/sample.jpg 
+media/wysiwyg/infortis/banners/sample01-b.jpg 
+media/wysiwyg/infortis/banners/sample01-c.jpg 
+media/wysiwyg/infortis/banners/sample01.jpg 
+media/wysiwyg/infortis/banners/sample02-sq.jpg 
+media/wysiwyg/infortis/banners/sample02.jpg 
+media/wysiwyg/infortis/banners/sample03.jpg 
+media/wysiwyg/infortis/banners/thumbnail01.jpg 
+media/wysiwyg/infortis/banners/thumbnail02.jpg 
+media/wysiwyg/infortis/banners/wide01.jpg 
+media/wysiwyg/infortis/banners/wide02.jpg 
+media/wysiwyg/infortis/other/image-icons/example.png 
+media/wysiwyg/infortis/slideshow/banners/01.png 
+media/wysiwyg/infortis/slideshow/banners/02.png 
+media/wysiwyg/infortis/slideshow/banners/03.png 
+media/wysiwyg/infortis/slideshow/banners/a01.jpg 
+media/wysiwyg/infortis/slideshow/banners/a02.jpg 
+media/wysiwyg/infortis/slideshow/banners/a03.jpg 
+media/wysiwyg/infortis/slideshow/01.jpg 
+media/wysiwyg/infortis/slideshow/02.jpg 
+media/wysiwyg/infortis/slideshow/03.jpg 
+media/wysiwyg/infortis/slideshow/a01.jpg 
+media/wysiwyg/infortis/slideshow/a02.jpg 
+media/wysiwyg/infortis/slideshow/a03.jpg 
+media/wysiwyg/infortis/slideshow/a04.png 
+media/wysiwyg/infortis/slideshow/b01.jpg 
+media/wysiwyg/infortis/slideshow/b02.jpg 
+media/wysiwyg/infortis/slideshow/b03.jpg 
+media/wysiwyg/infortis/slideshow/c01.jpg 
+media/wysiwyg/infortis/slideshow/c02.png 
+media/wysiwyg/infortis/slideshow/d01.jpg 
+media/wysiwyg/infortis/slideshow/d02.jpg 
+media/wysiwyg/infortis/slideshow/d03.jpg 
+media/wysiwyg/infortis/slideshow/e01.jpg 
+media/wysiwyg/infortis/slideshow/e02.png 
+media/wysiwyg/infortis/slideshow/e03.png 
+media/wysiwyg/infortis/slideshow/f01.jpg 
+media/wysiwyg/infortis/slideshow/f02.png 
+media/wysiwyg/infortis/slideshow/g01.jpg 
+media/wysiwyg/infortis/slideshow/g02.png 
+media/wysiwyg/infortis/slideshow/h01.jpg 
+media/wysiwyg/infortis/slideshow/h02.jpg 
+media/wysiwyg/infortis/slideshow/h03.jpg 
+media/wysiwyg/infortis/slideshow/wide01.jpg 
+media/wysiwyg/infortis/slideshow/wide02.png 
+media/wysiwyg/infortis/slideshow-test/banners/ban-a.jpg 
+media/wysiwyg/infortis/slideshow-test/banners/ban-a2.jpg 
+media/wysiwyg/infortis/slideshow-test/banners/ban-b.jpg 
+media/wysiwyg/infortis/slideshow-test/banners/ban-c.jpg 
+media/wysiwyg/infortis/slideshow-test/0.jpg 
+media/wysiwyg/infortis/slideshow-test/A.jpg 
+media/wysiwyg/infortis/slideshow-test/B.jpg 
+media/wysiwyg/infortis/slideshow-test/C.jpg 
+media/wysiwyg/infortis/slideshow-test/full-width.jpg 
+media/wysiwyg/infortis/slideshow-test/S.jpg 
+media/wysiwyg/infortis/ultimo/custom/banners/sample1.jpg 
+skin/frontend/ultimo/default/css/components/animate/animate.css 
+skin/frontend/ultimo/default/css/font-awesome/css/font-awesome.css 
+skin/frontend/ultimo/default/css/font-awesome/fonts/fontawesome-webfont.eot 
+skin/frontend/ultimo/default/css/font-awesome/fonts/fontawesome-webfont.svg 
+skin/frontend/ultimo/default/css/font-awesome/fonts/fontawesome-webfont.ttf 
+skin/frontend/ultimo/default/css/font-awesome/fonts/fontawesome-webfont.woff 
+skin/frontend/ultimo/default/css/font-awesome/fonts/fontawesome-webfont.woff2 
+skin/frontend/ultimo/default/css/font-awesome/fonts/FontAwesome.otf 
+skin/frontend/ultimo/default/css/infortis/_shared/banners.css
+
+Modified files and folders:
+app/code/local/Infortis/Ultimo/Block/Adminhtml/Button/Import/Cms.php 
+app/code/local/Infortis/Ultimo/controllers/Adminhtml/CmsimportController.php 
+app/code/local/Infortis/Ultimo/data/ultimo_setup/data-upgrade-1.15.3-1.15.4.php 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo1 (color settings only).xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo1.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo2 (color settings only).xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo2.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo3 (color settings only).xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo3.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo4 (color settings only).xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo4.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo5 (color settings only).xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo5.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo6 (color settings only).xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo6.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo7 (color settings only).xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo7.xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo8 (color settings only).xml 
+app/code/local/Infortis/Ultimo/etc/importexport/config/Demo8.xml 
+app/code/local/Infortis/Ultimo/etc/config.xml 
+app/code/local/Infortis/Ultimo/etc/system.xml 
+app/code/local/Infortis/Ultimo/Model/Import/Cms.php 
+app/code/local/Infortis/UltraMegamenu/Block/Navigation.php 
+app/code/local/Infortis/UltraMegamenu/etc/system.xml 
+app/code/local/Infortis/UltraSlideshow/Block/Slideshow.php 
+app/code/local/Infortis/UltraSlideshow/etc/config.xml 
+app/code/local/Infortis/UltraSlideshow/etc/system.xml 
+app/code/local/Infortis/UltraSlideshow/Model/Source/Navigation/Pagination/Position.php 
+app/code/local/Infortis/UltraSlideshow/Model/Source/Navigation/Pagination.php 
+app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+app/design/frontend/ultimo/default/layout/infortis_ultramegamenu.xml 
+app/design/frontend/ultimo/default/layout/infortis_ultraslideshow.xml 
+app/design/frontend/ultimo/default/layout/local.xml 
+app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+app/design/frontend/ultimo/default/template/infortis/ultraslideshow/slideshow.phtml 
+skin/frontend/ultimo/default/css/_config/design_default.css 
+skin/frontend/ultimo/default/css/_config/grid_default.css 
+skin/frontend/ultimo/default/css/_config/layout_default.css 
+skin/frontend/ultimo/default/css/infortis/_shared/generic-cck.css 
+skin/frontend/ultimo/default/css/infortis/_shared/generic-nav.css 
+skin/frontend/ultimo/default/css/infortis/_shared/grid12.css 
+skin/frontend/ultimo/default/css/infortis/_shared/icons-font.css 
+skin/frontend/ultimo/default/css/infortis/_shared/icons.css 
+skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu.css 
+skin/frontend/ultimo/default/css/infortis/ultra-slideshow/ultra-slideshow.css 
+skin/frontend/ultimo/default/css/header.css 
+skin/frontend/ultimo/default/css/styles-infortis.css 
+skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.17.0 to 1.17.1
+
+New files and folders:
+/app/code/local/Infortis/Ultimo/data/ultimo_setup/data-upgrade-1.17.0-1.17.1.php
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/etc/system.xml 
+/app/code/local/Infortis/Ultimo/etc/config.xml 
+/app/code/local/Infortis/Ultimo/etc/import/pages.xml 
+/app/design/frontend/ultimo/default/layout/local.xml 
+/skin/frontend/ultimo/default/css/infortis/_shared/grid12.css 
+/skin/frontend/ultimo/default/css/styles-infortis.css 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+/app/code/local/Infortis/UltraMegamenu/etc/config.xml 
+/app/code/local/Infortis/UltraMegamenu/etc/system.xml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml
+
+
+Update from version 1.16.2 to 1.17.0
+
+Removed files and folders:
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/additional.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-accordion.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-dropdown.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-sidebar.css 
+/skin/frontend/ultimo/default/css/override-components.css 
+/skin/frontend/ultimo/default/images/img/bg-separator1.gif 
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener-active-w.png 
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener-active.png 
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener-small-active.png 
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener-small.png 
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener-w.png 
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener.png 
+/skin/frontend/ultimo/default/images/infortis/_shared/dropdown/arrow-dropdown.png 
+/skin/frontend/ultimo/default/images/infortis/super-slideshow/slideshow-arrows.png 
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/arrow-dropdown-w.png 
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/arrow-dropdown.png 
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/bullet-mini.png 
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/bullet.png
+
+New files and folders:
+/app/code/local/Infortis/Ultimo/data/ultimo_setup/data-upgrade-1.16.2-1.17.0.php 
+/skin/frontend/ultimo/default/css/bootstrap/bootstrap-grid.css 
+/skin/frontend/ultimo/default/js/configurableswatches/configurable-swatch-prices.js 
+
+Modified files and folders:
+/app/code/local/Infortis/Brands/Block/Abstract.php 
+/app/code/local/Infortis/Brands/Block/List.php 
+/app/code/local/Infortis/Ultimo/data/ultimo_setup/data-install-1.0.0.php 
+/app/code/local/Infortis/Ultimo/data/ultimo_setup/data-upgrade-1.12.1-1.13.0.php 
+/app/code/local/Infortis/Ultimo/data/ultimo_setup/data-upgrade-1.15.3-1.15.4.php 
+/app/code/local/Infortis/Ultimo/data/ultimo_setup/data-upgrade-1.15.4-1.16.0.php 
+/app/code/local/Infortis/Ultimo/etc/import/pages.xml 
+/app/code/local/Infortis/Ultimo/etc/config.xml 
+/app/code/local/Infortis/Ultimo/etc/system.xml 
+/app/code/local/Infortis/Ultimo/Model/Import/Cms.php 
+/app/code/local/Infortis/UltraMegamenu/etc/config.xml 
+/app/code/local/Infortis/UltraMegamenu/etc/system.xml 
+/app/code/local/Infortis/UltraMegamenu/Helper/Data.php 
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/layout/configurableswatches.xml 
+/app/design/frontend/ultimo/default/layout/infortis_ultramegamenu.xml 
+/app/design/frontend/ultimo/default/layout/local.xml 
+/app/design/frontend/ultimo/default/template/configurableswatches/catalog/layer/state/swatch.phtml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+/app/design/frontend/ultimo/default/template/page/html/footer_theme_scripts.phtml 
+/skin/frontend/ultimo/default/css/infortis/_shared/grid12.css 
+/skin/frontend/ultimo/default/css/infortis/_shared/itemgrid.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu.css 
+/skin/frontend/ultimo/default/css/header.css 
+/skin/frontend/ultimo/default/css/override-theme.css 
+/skin/frontend/ultimo/default/css/styles-infortis.css 
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.16.1 to 1.16.2
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/etc/import/blocks.xml 
+/app/code/local/Infortis/Ultimo/etc/config.xml 
+/app/code/local/Infortis/Ultimo/etc/system.xml 
+/app/code/local/Infortis/UltraSlideshow/Block/Slideshow.php 
+/app/design/frontend/ultimo/default/template/catalog/product/view.phtml 
+
+
+Update from version 1.16.0 to 1.16.1
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/etc/config.xml 
+/app/code/local/Infortis/Ultimo/etc/system.xml 
+/app/code/local/Infortis/UltraMegamenu/Block/Navigation.php 
+/app/code/local/Infortis/UltraMegamenu/Helper/Data.php 
+/app/design/frontend/ultimo/default/template/catalog/product/compare/mini.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view.phtml 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu.css
+
+
+Update from version 1.15.4 to 1.16.0
+
+Removed files and folders:
+/js/infortis/jquery/jquery-1.7.2.min.js 
+/app/code/local/Infortis/Ultimo/Helper/Header.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primarymenu.php 
+/app/design/frontend/ultimo/default/template/page/html/itemslider_scripts.phtml 
+/skin/frontend/ultimo/default/css/icons-social.css 
+/skin/frontend/ultimo/default/css/icons-theme.css 
+
+New files and folders:
+/app/code/local/Infortis/Infortis/Helper/Connector/Infortis/Ultimo.php 
+/app/code/local/Infortis/Infortis/Helper/Connector/Infortis/Ultramegamenu.php 
+/app/code/local/Infortis/Ultimo/data/ultimo_setup/data-upgrade-1.15.4-1.16.0.php 
+/app/code/local/Infortis/UltraMegamenu/Model/System/Config/Source/Mainmenu/Aligndropdown.php 
+/app/design/frontend/ultimo/default/template/catalog/product/view/attributes.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/description.phtml 
+/app/design/frontend/ultimo/default/template/page/html/account_links.phtml 
+/app/design/frontend/ultimo/default/template/page/html/logo_sticky.phtml 
+/app/design/frontend/ultimo/default/template/review/form.phtml 
+/app/design/frontend/ultimo/default/template/tag/list.phtml 
+/js/infortis/jquery/jquery-ui.min.js 
+/js/infortis/jquery/jquery.min.js 
+/skin/frontend/ultimo/default/css/header.css 
+/skin/frontend/ultimo/default/images/logo-1_sticky.png 
+/skin/frontend/ultimo/default/js/smartheader.js 
+/skin/frontend/ultimo/default/js/stickyheader.js 
+/skin/frontend/ultimo/default/js/ultramegamenu.js
+
+Modified files and folders:
+/app/code/local/Infortis/Infortis/Helper/Responsive.php 
+/app/code/local/Infortis/Infortis/Model/System/Config/Source/Layout/Screen/Width/Widecustom.php 
+/app/code/local/Infortis/Ultimo/etc/config.xml 
+/app/code/local/Infortis/Ultimo/etc/system.xml 
+/app/code/local/Infortis/Ultimo/Helper/Template/Page/Html/Header.php 
+/app/code/local/Infortis/Ultimo/Helper/Data.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primarymenucontainer.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primarytop.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primarytopusermenu.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primarytopusermenuinsidemenu.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primaryusermenu.php 
+/app/code/local/Infortis/UltraMegamenu/Block/Navigation.php 
+/app/code/local/Infortis/UltraMegamenu/etc/config.xml 
+/app/code/local/Infortis/UltraMegamenu/etc/system.xml 
+/app/code/local/Infortis/UltraMegamenu/Helper/Data.php 
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/grid.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/layout/infortis_brands.xml 
+/app/design/frontend/ultimo/default/layout/infortis_cloudzoom.xml 
+/app/design/frontend/ultimo/default/layout/infortis_ultramegamenu.xml 
+/app/design/frontend/ultimo/default/layout/infortis_ultraslideshow.xml 
+/app/design/frontend/ultimo/default/layout/local.xml 
+/app/design/frontend/ultimo/default/template/catalog/product/compare/mini.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list/related_multi.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list/related_tabbed.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list/upsell.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/addtocart.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/collateral.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/tabs.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list_featured_slider.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/new.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view.phtml 
+/app/design/frontend/ultimo/default/template/checkout/cart/mini.phtml 
+/app/design/frontend/ultimo/default/template/directory/currency.phtml 
+/app/design/frontend/ultimo/default/template/infortis/brands/brand_slider.phtml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/categories.phtml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+/app/design/frontend/ultimo/default/template/page/html/head.phtml 
+/app/design/frontend/ultimo/default/template/page/html/header.phtml 
+/app/design/frontend/ultimo/default/template/page/html/search_wrapper.phtml 
+/app/design/frontend/ultimo/default/template/page/html/user_menu.phtml 
+/app/design/frontend/ultimo/default/template/page/switch/languages.phtml 
+/app/design/frontend/ultimo/default/template/page/1column-full-width.phtml 
+/app/design/frontend/ultimo/default/template/page/1column.phtml 
+/app/design/frontend/ultimo/default/template/page/2columns-left.phtml 
+/app/design/frontend/ultimo/default/template/page/2columns-right.phtml 
+/app/design/frontend/ultimo/default/template/page/3columns.phtml 
+/app/design/frontend/ultimo/default/template/persistent/customer/form/login.phtml 
+/app/design/frontend/ultimo/default/template/review/product/view/list.phtml 
+/js/infortis/jquery/plugins/jquery.cloudzoom.min.js 
+/js/infortis/jquery/plugins/jquery.colorbox.min.js 
+/skin/frontend/ultimo/default/css/infortis/_shared/accordion.css 
+/skin/frontend/ultimo/default/css/infortis/_shared/dropdown.css 
+/skin/frontend/ultimo/default/css/infortis/_shared/generic-cck.css 
+/skin/frontend/ultimo/default/css/infortis/_shared/grid12.css 
+/skin/frontend/ultimo/default/css/infortis/_shared/itemslider.css 
+/skin/frontend/ultimo/default/css/infortis/_shared/tabs.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu.css 
+/skin/frontend/ultimo/default/css/common.css 
+/skin/frontend/ultimo/default/css/override-theme.css 
+/skin/frontend/ultimo/default/css/styles-infortis.css 
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.15.3 to 1.15.4
+
+Removed files and folders:
+/app/code/local/Infortis/Ultimo/controllers/Adminhtml/ImportController.php
+
+New files and folders:
+/app/code/local/Infortis/Ultimo/controllers/Adminhtml/CmsimportController.php 
+/app/code/local/Infortis/Ultimo/data/ultimo_setup/data-upgrade-1.15.3-1.15.4.php
+
+Modified files and folders:
+/app/code/local/Infortis/Dataporter/Block/System/Config/Form/Field/Configimpex.php 
+/app/code/local/Infortis/Dataporter/etc/config.xml 
+/app/code/local/Infortis/Ultimo/Block/Adminhtml/Button/Import/Cms.php 
+/app/code/local/Infortis/Ultimo/etc/config.xml 
+/app/code/local/Infortis/Ultimo/etc/system.xml
+
+
+Update from version 1.15.2 to 1.15.3
+
+New files and folders:
+/app/code/local/Infortis/UltraMegamenu/Block/Mainmenu.php 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/navigation.phtml 
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/etc/config.xml 
+/app/code/local/Infortis/Ultimo/etc/system.xml 
+/app/code/local/Infortis/Ultimo/etc/import/pages.xml
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/layout/infortis_ultramegamenu.xml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+/app/design/frontend/ultimo/default/template/page/html/header.phtml 
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.15.1 to 1.15.2
+
+Modified files and folders:
+/app/design/frontend/ultimo/default/template/persistent/customer/form/login.phtml 
+/app/code/local/Infortis/Ultimo/etc/config.xml
+/app/code/local/Infortis/Ultimo/etc/system.xml
+
+
+Update from version 1.15.0 to 1.15.1
+
+Removed files and folders:
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo2--design-header.xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo3--design-header.xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo4--design-header.xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo5--design-header.xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo6--design-header.xml 
+/skin/frontend/ultimo/default/images/logo-w.png 
+/skin/frontend/ultimo/default/images/logo.png 
+/skin/frontend/ultimo/default/images/logo_email.gif 
+/skin/frontend/ultimo/default/images/logo_print.gif
+
+New files and folders:
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo7 (color settings only).xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo7.xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo8 (color settings only).xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo8.xml
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/ (to upgrade: upload entire folder)
+/app/code/local/Infortis/Dataporter/ (to upgrade: upload entire folder)
+/app/code/local/Infortis/UltraSlideshow/Block/Slideshow.php 
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/layout/local.xml 
+/app/design/frontend/ultimo/default/template/catalog/product/compare/mini.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list/related_multi.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list/related_tabbed.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list/toolbar.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/type/grouped.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/addtocart.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list_featured_slider.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/new.phtml 
+/app/design/frontend/ultimo/default/template/cataloginventory/stockqty/composite.phtml 
+/app/design/frontend/ultimo/default/template/checkout/cart/item/configure/updatecart.phtml 
+/app/design/frontend/ultimo/default/template/checkout/cart/item/default.phtml 
+/app/design/frontend/ultimo/default/template/checkout/cart/crosssell.phtml 
+/app/design/frontend/ultimo/default/template/checkout/cart/mini.phtml 
+/app/design/frontend/ultimo/default/template/checkout/cart.phtml 
+/app/design/frontend/ultimo/default/template/customer/form/login.phtml 
+/app/design/frontend/ultimo/default/template/infortis/cloudzoom/product/view/media.phtml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+/app/design/frontend/ultimo/default/template/newsletter/subscribe.phtml 
+/app/design/frontend/ultimo/default/template/page/html/header.phtml 
+/app/design/frontend/ultimo/default/template/page/html/pager.phtml 
+/app/design/frontend/ultimo/default/template/persistent/customer/form/login.phtml 
+/app/design/frontend/ultimo/default/template/wishlist/sidebar.phtml 
+/skin/frontend/ultimo/default/css/infortis/_shared/dropdown.css 
+/skin/frontend/ultimo/default/css/infortis/_shared/generic-nav.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu.css 
+/skin/frontend/ultimo/default/css/override-theme.css 
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.14.1 to 1.15.0
+
+New files and folders:
+/app/code/local/Infortis/Infortis/Model/System/Config/Source/Design/Section/Sidepadding.php 
+/app/code/local/Infortis/Infortis/Model/System/Config/Source/Design/Section/Sidepaddingvalue.php 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo2--design-header.xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo3--design-header.xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo4--design-header.xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo5--design-header.xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo6--design-header.xml 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primarymenucontainer.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primarytopusermenuinsidemenu.php 
+/app/design/frontend/ultimo/default/template/page/1column-full-width.phtml
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/ (to upgrade: upload entire folder)
+/app/code/local/Infortis/Infortis/Model/System/Config/Source/Design/Font/Size/Basic.php 
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/layout/local.xml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+/app/design/frontend/ultimo/default/template/page/html/footer.phtml 
+/app/design/frontend/ultimo/default/template/page/html/footer_theme_scripts.phtml 
+/app/design/frontend/ultimo/default/template/page/html/head_theme_css.phtml 
+/app/design/frontend/ultimo/default/template/page/html/header.phtml 
+/app/design/frontend/ultimo/default/template/page/1column.phtml 
+/app/design/frontend/ultimo/default/template/page/2columns-left.phtml 
+/app/design/frontend/ultimo/default/template/page/2columns-right.phtml 
+/app/design/frontend/ultimo/default/template/page/3columns.phtml 
+/skin/frontend/ultimo/default/css/infortis/_shared/dropdown.css 
+/skin/frontend/ultimo/default/css/infortis/_shared/generic-cck.css 
+/skin/frontend/ultimo/default/css/infortis/_shared/grid12.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu.css 
+/skin/frontend/ultimo/default/css/common.css 
+/skin/frontend/ultimo/default/css/override-theme.css 
+/skin/frontend/ultimo/default/css/styles.css
+
+Removed files and folders:
+/app/design/frontend/ultimo/default/template/page/html/head_theme_scripts.phtml
+
+
+Update from version 1.14.0 to 1.14.1
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/ (to upgrade: upload entire folder)
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.13.0 to 1.14.0
+
+New files and folders:
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primarymenu.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primarytop.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primarytopusermenu.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primaryusermenu.php
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/ (to upgrade: upload entire folder)
+/app/code/local/Infortis/UltraMegamenu/etc/system.xml 
+/app/code/local/Infortis/UltraSlideshow/etc/config.xml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/layout/local.xml 
+/app/design/frontend/ultimo/default/template/catalog/product/compare/mini.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list_featured_slider.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/new.phtml 
+/app/design/frontend/ultimo/default/template/checkout/cart/mini.phtml 
+/app/design/frontend/ultimo/default/template/infortis/cloudzoom/product/view/lightbox_config.phtml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+/app/design/frontend/ultimo/default/template/page/html/breadcrumbs.phtml 
+/app/design/frontend/ultimo/default/template/page/html/header.phtml 
+/app/design/frontend/ultimo/default/template/page/html/search_wrapper.phtml 
+/app/design/frontend/ultimo/default/template/page/html/user_menu.phtml 
+/skin/frontend/ultimo/default/css/infortis/_shared/dropdown.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-dropdown.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu.css 
+/skin/frontend/ultimo/default/css/common.css 
+/skin/frontend/ultimo/default/css/override-theme.css 
+/skin/frontend/ultimo/default/css/styles-infortis.css 
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.12.1 to 1.13.0
+
+New files and folders:
+/app/code/local/Infortis/Ultimo/Helper/Template/Page/Html/Header.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Backend/Header/Centralcolunits.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Backend/Header/Leftcolunits.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Backend/Header/Rightcolunits.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/All.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Position/Primary.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Usermenu/Break/Position.php 
+/app/code/local/Infortis/Ultimo/Model/System/Config/Source/Header/Usermenu/Position.php 
+/app/design/frontend/ultimo/default/template/page/html/logo.phtml 
+/app/design/frontend/ultimo/default/template/page/html/search_wrapper.phtml 
+/app/design/frontend/ultimo/default/template/page/html/user_menu.phtml
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/ (to upgrade: upload entire folder)
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/layout/local.xml 
+/app/design/frontend/ultimo/default/template/catalog/product/compare/mini.phtml 
+/app/design/frontend/ultimo/default/template/directory/currency.phtml 
+/app/design/frontend/ultimo/default/template/page/html/breadcrumbs.phtml 
+/app/design/frontend/ultimo/default/template/page/html/header.phtml 
+/skin/frontend/ultimo/default/css/override-theme.css 
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.12.0 to 1.12.1
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/ (to upgrade: upload entire folder)
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/layout/local.xml 
+/skin/frontend/ultimo/default/css/styles.css 
+/skin/frontend/ultimo/default/js/app.js
+
+
+Update from version 1.11.2 to 1.12.0
+
+New files and folders:
+/app/design/frontend/ultimo/default/template/catalog/layer/filter.phtml 
+/app/design/frontend/ultimo/default/template/catalog/layer/view.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/cms_block1.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/cms_block2.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/collateral.phtml 
+/app/design/frontend/ultimo/default/template/payment/catalog/product/view/profile/schedule.phtml
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/ (to upgrade: upload entire folder)
+/app/code/local/Infortis/UltraMegamenu/ (to upgrade: upload entire folder)
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/layout/configurableswatches.xml 
+/app/design/frontend/ultimo/default/layout/local.xml 
+/app/design/frontend/ultimo/default/locale/en_US/translate.csv 
+/app/design/frontend/ultimo/default/template/catalog/product/list/related_tabbed.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list/upsell.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/tabs.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view.phtml 
+/app/design/frontend/ultimo/default/template/infortis/brands/brand.phtml 
+/app/design/frontend/ultimo/default/template/infortis/cloudzoom/product/view/lightbox_config.phtml 
+/app/design/frontend/ultimo/default/template/page/html/footer_theme_scripts.phtml 
+/app/design/frontend/ultimo/default/template/review/helper/summary_nolinks.phtml 
+/app/design/frontend/ultimo/default/template/review/product/view/list.phtml 
+/skin/frontend/ultimo/default/css/infortis/_shared/accordion.css 
+/skin/frontend/ultimo/default/css/infortis/_shared/tabs.css 
+/skin/frontend/ultimo/default/css/infortis/cloud-zoom/cloud-zoom.css 
+/skin/frontend/ultimo/default/css/common.css 
+/skin/frontend/ultimo/default/css/override-components.css 
+/skin/frontend/ultimo/default/css/override-theme.css 
+/skin/frontend/ultimo/default/css/styles.css 
+/skin/frontend/ultimo/default/js/app.js
+
+
+Update from version 1.11.1 to 1.11.2
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/etc/config.xml
+/app/code/local/Infortis/Ultimo/etc/system.xml
+/js/infortis/jquery/plugins/jquery.cloudzoom.min.js 
+
+
+Update from version 1.11.0 to 1.11.1
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/ (to upgrade: upload entire folder)
+/app/design/frontend/ultimo/default/template/catalog/product/list.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/list_featured_slider.phtml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-dropdown.css 
+/skin/frontend/ultimo/default/css/common.css 
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.10.4 to 1.11.0
+
+New files and folders:
+/app/design/frontend/ultimo/default/layout/configurableswatches.xml 
+/app/design/frontend/ultimo/default/template/configurableswatches/catalog/layer/filter/swatches.phtml 
+/app/design/frontend/ultimo/default/template/configurableswatches/catalog/layer/state/swatch.phtml 
+/app/design/frontend/ultimo/default/template/configurableswatches/catalog/media/js.phtml 
+/app/design/frontend/ultimo/default/template/configurableswatches/catalog/product/list/swatches.phtml 
+/app/design/frontend/ultimo/default/template/configurableswatches/catalog/product/view/type/configurable/swatch-js.phtml 
+/app/design/frontend/ultimo/default/template/configurableswatches/catalog/product/view/type/options/configurable/swatches.phtml 
+/js/infortis/jquery/plugins/imagesloaded.js 
+/js/infortis/jquery/plugins/modernizr.custom.min.js 
+/skin/frontend/ultimo/default/images/bg_x.png 
+/skin/frontend/ultimo/default/js/configurableswatches/product-media.js 
+/skin/frontend/ultimo/default/js/configurableswatches/swatches-list.js 
+/skin/frontend/ultimo/default/js/configurableswatches/swatches-product.js 
+/skin/frontend/ultimo/default/js/app.js
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/
+/app/code/local/Infortis/CloudZoom/
+/app/design/frontend/ultimo/default/layout/local.xml 
+/app/design/frontend/ultimo/default/template/catalog/product/list.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view.phtml 
+/app/design/frontend/ultimo/default/template/infortis/cloudzoom/product/view/media.phtml 
+/app/design/frontend/ultimo/default/template/page/html/footer_theme_scripts.phtml 
+/js/infortis/jquery/plugins/jquery.cloudzoom.min.js 
+/js/infortis/jquery/jquery-noconflict.js 
+/skin/frontend/ultimo/default/css/common.css 
+/skin/frontend/ultimo/default/css/styles.css 
+
+
+Update from version 1.10.3 to 1.10.4
+
+Removed files and folders:
+/app/design/frontend/ultimo/default/template/catalog/product/price.phtml
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/
+/app/design/frontend/ultimo/default/template/catalog/product/view/type/grouped.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view.phtml 
+/app/design/frontend/ultimo/default/template/checkout/cart/item/configure/updatecart.phtml 
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.10.2 to 1.10.3
+
+Modified files and folders:
+
+/app/code/local/Infortis/Ultimo/
+/app/code/local/Infortis/Ultimo/Helper/Grid.php
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml
+/skin/frontend/ultimo/default/css/infortis/_shared/itemgrid.css
+
+
+Update from version 1.10.1 to 1.10.2
+
+New files and folders:
+app/design/frontend/ultimo/default/template/catalog/product/price.phtml
+
+Modified files and folders:
+/app/code/local/Infortis/
+/app/design/frontend/ultimo/default/template/bundle/catalog/product/view/type/bundle.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/type/default.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view/type/grouped.phtml 
+/app/design/frontend/ultimo/default/template/catalog/product/view.phtml
+/app/design/frontend/ultimo/default/template/infortis/brands/brand.phtml
+/app/design/frontend/ultimo/default/template/infortis/cloudzoom/product/view/media.phtml 
+/app/design/frontend/ultimo/default/template/page/html/breadcrumbs.phtml 
+/app/design/frontend/ultimo/default/template/review/helper/summary_nolinks.phtml
+/skin/frontend/ultimo/default/css/common.css 
+/skin/frontend/ultimo/default/css/override-theme.css 
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.10.0 to 1.10.1
+
+Removed files and folders:
+/skin/frontend/ultimo/default/images/img/arrow-menu.png
+/skin/frontend/ultimo/default/images/img/checkout-progress-done.png
+/skin/frontend/ultimo/default/images/img/checkout-progress.png
+/skin/frontend/ultimo/default/images/img/close.png
+/skin/frontend/ultimo/default/images/img/ic-phone.png
+/skin/frontend/ultimo/default/images/img/icons.png
+/skin/frontend/ultimo/default/images/img/main.png
+/skin/frontend/ultimo/default/images/img/main2.png
+/skin/frontend/ultimo/default/images/img/pix.png
+/skin/frontend/ultimo/default/images/bkg_pipe1.gif
+/skin/frontend/ultimo/default/images/bkg_pipe3.gif
+/skin/frontend/ultimo/default/images/fam_book_open.png
+
+Modified files and folders:
+/app/code/local/Infortis/
+/app/design/frontend/ultimo/default/template/page/html/head.phtml
+/app/design/frontend/ultimo/default/template/page/html/header.phtml
+/skin/frontend/ultimo/default/css/styles.css
+
+
+Update from version 1.9.4 to 1.10.0
+
+Removed files and folders:
+/app/design/frontend/ultimo/default/template/infortis/ultraslideshow/config.phtml
+/app/design/frontend/ultimo/default/template/page/template/links_top.phtml
+/js/infortis/jquery/plugins/jquery.ba-throttle-debounce.min.js
+/js/infortis/jquery/plugins/jquery.flexslider.min.js
+/skin/frontend/ultimo/default/css/infortis/_shared/itemslider-old.css
+/skin/frontend/ultimo/default/images/infortis/_shared/close-button.png
+/skin/frontend/ultimo/default/images/infortis/_shared/pager-small.png
+/skin/frontend/ultimo/default/images/infortis/_shared/pager.png
+/skin/frontend/ultimo/default/images/infortis/_shared/slider-arrows.png
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/opener-active-w.png
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/opener-active.png
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/opener-small-active.png
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/opener-small.png
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/opener-w.png
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/opener.png
+
+Modified files and folders:
+/app/code/local/Infortis/
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml
+/app/design/frontend/base/default/template/infortis/ultimo/css/grid.phtml
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml
+/app/design/frontend/ultimo/default/layout/local.xml
+/app/design/frontend/ultimo/default/template/catalog/product/compare/mini.phtml
+/app/design/frontend/ultimo/default/template/catalog/product/list/related_multi.phtml
+/app/design/frontend/ultimo/default/template/catalog/product/list/related_tabbed.phtml
+/app/design/frontend/ultimo/default/template/catalog/product/list/toolbar.phtml
+/app/design/frontend/ultimo/default/template/catalog/product/list/upsell.phtml
+/app/design/frontend/ultimo/default/template/catalog/product/view/addto.phtml
+/app/design/frontend/ultimo/default/template/catalog/product/view/addtocart.phtml
+/app/design/frontend/ultimo/default/template/catalog/product/list.phtml
+/app/design/frontend/ultimo/default/template/catalog/product/list_featured_slider.phtml
+/app/design/frontend/ultimo/default/template/catalog/product/new.phtml
+/app/design/frontend/ultimo/default/template/cataloginventory/stockqty/composite.phtml
+/app/design/frontend/ultimo/default/template/cataloginventory/stockqty/default.phtml
+/app/design/frontend/ultimo/default/template/checkout/cart/item/default.phtml
+/app/design/frontend/ultimo/default/template/checkout/cart/mini.phtml
+/app/design/frontend/ultimo/default/template/directory/currency.phtml
+/app/design/frontend/ultimo/default/template/infortis/brands/brand_slider.phtml
+/app/design/frontend/ultimo/default/template/infortis/cloudzoom/product/view/lightbox_config.phtml
+/app/design/frontend/ultimo/default/template/infortis/cloudzoom/product/view/media.phtml
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml
+/app/design/frontend/ultimo/default/template/infortis/ultraslideshow/slideshow.phtml
+/app/design/frontend/ultimo/default/template/page/html/breadcrumbs.phtml
+/app/design/frontend/ultimo/default/template/page/html/footer.phtml
+/app/design/frontend/ultimo/default/template/page/html/footer_theme_scripts.phtml
+/app/design/frontend/ultimo/default/template/page/html/header.phtml
+/app/design/frontend/ultimo/default/template/page/html/pager.phtml
+/app/design/frontend/ultimo/default/template/page/switch/languages.phtml
+/app/design/frontend/ultimo/default/template/page/1column.phtml
+/app/design/frontend/ultimo/default/template/page/2columns-left.phtml
+/app/design/frontend/ultimo/default/template/page/2columns-right.phtml
+/app/design/frontend/ultimo/default/template/page/3columns.phtml
+/skin/frontend/ultimo/default/css/infortis/_shared/accordion.css
+/skin/frontend/ultimo/default/css/infortis/_shared/colorbox.css
+/skin/frontend/ultimo/default/css/infortis/_shared/dropdown.css
+/skin/frontend/ultimo/default/css/infortis/_shared/generic-nav.css
+/skin/frontend/ultimo/default/css/infortis/_shared/grid12.css
+/skin/frontend/ultimo/default/css/infortis/_shared/icons.css
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-accordion.css
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu.css
+/skin/frontend/ultimo/default/css/common.css
+/skin/frontend/ultimo/default/css/override-components.css
+/skin/frontend/ultimo/default/css/override-modules.css
+/skin/frontend/ultimo/default/css/override-theme.css
+/skin/frontend/ultimo/default/css/SAMPLE.custom.css
+/skin/frontend/ultimo/default/css/styles-ie.css
+/skin/frontend/ultimo/default/css/styles-ie7.css
+/skin/frontend/ultimo/default/css/styles-ie8.css
+/skin/frontend/ultimo/default/css/styles.css
+
+New files and folders:
+/app/design/frontend/ultimo/default/template/productalert/product/view.phtml
+/js/infortis/jquery/plugins/enquire.js
+/js/infortis/jquery/plugins/matchMedia.addListener.js
+/js/infortis/jquery/plugins/matchMedia.js
+/skin/frontend/ultimo/default/css/infortis/_shared/icons-font.css
+/skin/frontend/ultimo/default/css/override-config.css
+/skin/frontend/ultimo/default/fonts/themeicons/ThemeIcons.eot
+/skin/frontend/ultimo/default/fonts/themeicons/ThemeIcons.svg
+/skin/frontend/ultimo/default/fonts/themeicons/ThemeIcons.ttf
+/skin/frontend/ultimo/default/fonts/themeicons/ThemeIcons.woff
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener-active-w.png
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener-active.png
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener-small-active.png
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener-small.png
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener-w.png
+/skin/frontend/ultimo/default/images/infortis/_shared/accordion/opener.png
+/skin/frontend/ultimo/default/images/infortis/_shared/colorbox/close-button.png
+/skin/frontend/ultimo/default/images/infortis/_shared/colorbox/slider-arrows.png
+/skin/frontend/ultimo/default/images/infortis/_shared/generic-nav/slider-arrows.png
+
+
+Update from version 1.9.3 to 1.9.4
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/
+/js/infortis/jquery/plugins/jquery.owlcarousel.min.js
+
+
+Update from version 1.9.2 to 1.9.3
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml
+
+
+Update from version 1.9.1 to 1.9.2
+
+Modified files and folders:
+/app/code/local/Infortis/Ultimo/
+/app/code/local/Infortis/Dataporter/
+
+New files and folders:
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo1 (color settings only).xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo2 (color settings only).xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo3 (color settings only).xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo4 (color settings only).xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo5 (color settings only).xml 
+/app/code/local/Infortis/Ultimo/etc/importexport/config/Demo6 (color settings only).xml
+
+
+Update from version 1.9.0 to 1.9.1
+
+Modified files and folders:
+/app/code/local/Infortis/
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-accordion.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-dropdown.css 
+/skin/frontend/ultimo/default/css/styles-infortis.css 
+/skin/frontend/ultimo/default/css/common.css
+
+
+Update from version 1.8.1 to 1.9.0
+
+Removed files and folders:
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/classic.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/ultra-megamenu.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/wide.css
+
+Modified files and folders:
+/app/code/local/Infortis/
+/app/design/frontend/base/default/template/infortis/ultimo/css/design.phtml 
+/app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml 
+/app/design/frontend/ultimo/default/layout/infortis_ultramegamenu.xml 
+/app/design/frontend/ultimo/default/layout/local.xml 
+/app/design/frontend/ultimo/default/template/catalog/product/view.phtml 
+/app/design/frontend/ultimo/default/template/checkout/cart/item/default.phtml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/categories.phtml 
+/app/design/frontend/ultimo/default/template/infortis/ultramegamenu/mainmenu.phtml 
+/app/design/frontend/ultimo/default/template/page/html/footer_theme_scripts.phtml 
+/js/infortis/jquery/plugins/jquery.accordion.min.js 
+/skin/frontend/ultimo/default/css/infortis/_shared/accordion.css 
+/skin/frontend/ultimo/default/css/infortis/cloud-zoom/cloud-zoom.css 
+/skin/frontend/ultimo/default/css/common.css 
+/skin/frontend/ultimo/default/css/override-theme.css 
+/skin/frontend/ultimo/default/css/SAMPLE.custom.css 
+/skin/frontend/ultimo/default/css/styles-infortis.css 
+/skin/frontend/ultimo/default/css/styles.css
+
+New files and folders:
+/js/infortis/jquery/jquery-for-admin.min.js 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/additional.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-accordion.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-dropdown.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu-sidebar.css 
+/skin/frontend/ultimo/default/css/infortis/ultra-megamenu/menu.css 
+/skin/frontend/ultimo/default/images/infortis/ultra-megamenu/bullet-mini.png
+
+
+Update from version 1.8.0 to 1.8.1
+
+Modified files and folders:
+app/code/local/Infortis/
+
+
+Update from version 1.7.1 to 1.8.0
+
+Modified files and folders:
+app/code/local/Infortis/
+
+New files:
+media/infortis/system/css/images/btn-go-to-page-icon.png
+media/wysiwyg/infortis/ultimo/slideshow/wide01.jpg
+media/wysiwyg/infortis/ultimo/slideshow/wide02.png
+media/wysiwyg/infortis/ultimo/_backgrounds/stores/5/city1_1.jpg
+
+
+Update from version 1.7.0 to 1.7.1
+
+Modified files and folders:
+app/design/frontend/ultimo/default/template/catalog/product/view/addtocart.phtml
+app/design/frontend/ultimo/default/template/bundle/catalog/product/view/type/bundle.phtml
+app/code/local/Infortis/Ultimo/

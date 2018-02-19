@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <potato_image_optimization>
+            <general>
+                <is_enabled>0</is_enabled>
+                <optimization_method>server</optimization_method>
+                <image_backup>1</image_backup>
+            </general>
+            <jpg>
+                <compression_level>-m100</compression_level>
+            </jpg>
+        </potato_image_optimization>
+    </default>
+</config>

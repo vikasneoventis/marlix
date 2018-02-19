@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="checkout_onepage_controller_success_action">
+        <observer name="place_order_event" instance="Yosto\TwilioSMSNotification\Observer\PlaceOrderObserver" />
+    </event>
+    <event name="sales_order_invoice_pay">
+        <observer name="invoice_event" instance="Yosto\TwilioSMSNotification\Observer\InvoiceCreatedObserver" />
+    </event>
+    <event name="sales_order_item_cancel">
+        <observer name="order_cancel_event" instance="Yosto\TwilioSMSNotification\Observer\OrderCancelObserver" />
+    </event>
+    <event name="customer_register_success">
+        <observer name="customer_register_event" instance="Yosto\TwilioSMSNotification\Observer\CustomerRegisterObserver" />
+    </event>
+    <event name="sales_order_creditmemo_refund">
+        <observer name="refund_event" instance="Yosto\TwilioSMSNotification\Observer\RefundObserver" />
+    </event>
+    <event name="order_shipment_success">
+        <observer name="shipping_event" instance="Yosto\TwilioSMSNotification\Observer\ShippingObserver" />
+    </event>
+</config>

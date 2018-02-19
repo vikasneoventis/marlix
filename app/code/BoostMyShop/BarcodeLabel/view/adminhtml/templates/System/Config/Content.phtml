@@ -1,0 +1,34 @@
+<p class="note"><span>
+Select here the details to display on the label :
+<br>Position contains X and Y coordinates, coma separated : ex : 25,50
+<br>Size contains font size for text, and width and height for images, coma separated
+</span></p>
+
+<p>&nbsp;</p>
+
+<table>
+    <thead>
+        <tr>
+            <th><?php echo __('Field'); ?></th>
+            <th><?php echo __('Print ?'); ?></th>
+            <th><?php echo __('Position'); ?></th>
+            <th><?php echo __('Size'); ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($this->getItems() as $k => $item): ?>
+            <tr>
+                <td><?php echo $item['label']; ?></td>
+                <td>
+                    <select name="<?php echo $this->getFieldName($k, 'print'); ?>">
+                        <option value="1" <?php echo ($item['print'] == 0 ? ' selected ' : ''); ?>><?php echo __('Yes'); ?></option>
+                        <option value="0" <?php echo ($item['print'] == 0 ? ' selected ' : ''); ?>><?php echo __('No'); ?></option>
+                    </select>
+                </td>
+                <td><input type="text" name="<?php echo $this->getFieldName($k, 'position'); ?>" size="2" value="<?php echo $item['position']; ?>"></td>
+                <td><input type="text" name="<?php echo $this->getFieldName($k, 'size'); ?>"  size="2" value="<?php echo $item['size']; ?>"></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+

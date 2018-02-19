@@ -1,0 +1,59 @@
+"Go to Home Page","Go to Home Page"
+SEO,SEO
+"SEO Markup","SEO Markup"
+"Enable In Rich Snippets","Enable In Rich Snippets"
+"Enable In Open Graph","Enable In Open Graph"
+"Enable In Twitter Cards","Enable In Twitter Cards"
+"Twitter Username","Twitter Username"
+"Best Rating","Best Rating"
+"Description Attribute Code","Description Attribute Code"
+"Add SKU","Add SKU"
+"SKU Attribute Code","SKU Attribute Code"
+"Add Category","Add Category"
+"Use Deepest Category","Use Deepest Category"
+"Set 'Yes', if products are assifned to multiple categories and sub-categories in the same chain.","Set 'Yes', if products are assifned to multiple categories and sub-categories in the same chain."
+"Add Color","Add Color"
+"Color Attribute Code","Color Attribute Code"
+"Add Manufacturer","Add Manufacturer"
+"Manufacturer Attribute Code","Manufacturer Attribute Code"
+"Add Brand","Add Brand"
+"Brand Attribute Code","Brand Attribute Code"
+"Add Model","Add Model"
+"Model Attribute Code","Model Attribute Code"
+"Add Gtin","Add Gtin"
+"Gtin Attribute Code","Gtin Attribute Code"
+"Add Weight","Add Weight"
+"Add Condition","Add Condition"
+"Condition Attribute Code","Condition Attribute Code"
+"Condition Value For New","Condition Value For New"
+"Condition Value For Used","Condition Value For Used"
+"Condition Value For Damaged","Condition Value For Damaged"
+"Default Value For Condition","Default Value For Condition"
+"Add Custom Properties","Add Custom Properties"
+"Custom Properties","Custom Properties"
+"A comma-delimited list of <a href=""http://schema.org/Product"">schema.org</a> property name and attribute codes.<br /><b>Example:</b><br />
+                                mpn,mpn_code <br />
+                                For JSON-LD will be converted to: <br> { ... ""mpn"":""12343"" ... }<br />
+
+                        ","A comma-delimited list of <a href=""http://schema.org/Product"">schema.org</a> property name and attribute codes.<br /><b>Example:</b><br />
+                                mpn,mpn_code <br />
+                                For JSON-LD will be converted to: <br> { ... ""mpn"":""12343"" ... }<br />
+
+                        "
+"Category (Product List)","Category (Product List)"
+"Show Product Offers","Show Product Offers"
+"Disable for NOINDEX Robots","Disable for NOINDEX Robots"
+"Website Name","Website Name"
+"Website About","Website About"
+"Merchant (Seller)","Merchant (Seller)"
+"Type (by Schema.org)","Type (by Schema.org)"
+"Social Links","Social Links"
+"The list of social media links <br /><b>Example:</b><br />https://twitter.com/mageworxteam<br />https://www.facebook.com/mageworx","The list of social media links <br /><b>Example:</b><br />https://twitter.com/mageworxteam<br />https://www.facebook.com/mageworx"
+Location,Location
+"<b>Example:</b> Seattle","<b>Example:</b> Seattle"
+Region,Region
+"<b>Example:</b> WA","<b>Example:</b> WA"
+"<b>Example:</b><br>20341 Whitworth Institute<br>405 N. Whitworth","<b>Example:</b><br>20341 Whitworth Institute<br>405 N. Whitworth"
+"ZIP Code","ZIP Code"
+Breadcrumbs,Breadcrumbs
+"To enable the feature, make sure you enter Twitter Username in the Common section.","To enable the feature, make sure you enter Twitter Username in the Common section."

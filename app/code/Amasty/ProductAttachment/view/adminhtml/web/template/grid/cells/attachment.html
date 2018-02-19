@@ -1,0 +1,18 @@
+<!--
+/**
+* @author Amasty Team
+* @copyright Copyright (c) 2016 Amasty (http://www.amasty.com)
+* @package Amasty_ProductAttachment
+*/
+-->
+
+<div data-bind="foreach: $col.getAttachmentList($row()), attr: { id: $col.getAttachmentListId($row())}">
+    <span data-bind="visible: increment < $col.getMaxAttachmentItems()">
+        <a data-bind="attr: {
+            href: url},
+            text: label
+        "></a>
+    </span>
+    <br data-bind="visible: increment < $col.getMaxAttachmentItems()"/>
+</div>
+<a href="#" data-bind="visible: $col.getAttachmentList($row()).length > $col.getMaxAttachmentItems()" >...</a>

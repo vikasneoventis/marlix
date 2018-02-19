@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="yosto_advancedreport_report_customer_group_grid"/>
+    <head>
+        <css src="Yosto_AdvancedReport::css/report.group.css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Yosto\AdvancedReport\Block\Adminhtml\Report\Customer\Group" template="Yosto_AdvancedReport::customer/group.phtml" before="-"/>
+            <block class="Yosto\AdvancedReport\Block\Adminhtml\Report\Customer\Totals" name="adminhtml.report.grid.container"/>
+        </referenceContainer>
+    </body>
+</page>

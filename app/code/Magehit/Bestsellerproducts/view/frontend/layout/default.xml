@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magehit_Bestsellerproducts::css/bestsellerproducts.css"/>
+        <css src="Magehit_Bestsellerproducts::css/owl.carousel.css"/>
+        <css src="Magehit_Bestsellerproducts::css/owl.theme.css"/>
+        <css src="Magehit_Bestsellerproducts::css/owl.transitions.css"/>
+    </head>
+    <body>
+        <referenceContainer name="columns">			
+			<referenceContainer name="div.sidebar.additional">			
+				<block class="Magehit\Bestsellerproducts\Block\BestsellerList" name="bestsellerproducts.left" as="Bestsellerproducts.left" after="-" template="bestseller_vertical.phtml" ifconfig="bestsellerproducts_settings/bestseller_products/enable"/>
+			</referenceContainer>
+        </referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,35 @@
+"Redirects for Deleted Products","Redirects for Deleted Products"
+"Please correct the sent data.","Please correct the sent data."
+"Something went wrong while saving the redirect.","Something went wrong while saving the redirect."
+Root,Root
+"Product Category","Product Category"
+"Priority Category","Priority Category"
+"Moved Permanently","Moved Permanently"
+Found,Found
+Disabled,Disabled
+Enabled,Enabled
+"UNKNOWN CATEGORY","UNKNOWN CATEGORY"
+"All Store Views","All Store Views"
+SEO,SEO
+"SEO Redirects","SEO Redirects"
+"For Deleted Products","For Deleted Products"
+"Enable ▾","Enable ▾"
+"Redirect Type","Redirect Type"
+"Default Redirect To","Default Redirect To"
+"Time period (in days) to keep redirects on the website","Time period (in days) to keep redirects on the website"
+"Can be set between 30 and 365 days","Can be set between 30 and 365 days"
+"Product Redirect Priority","Product Redirect Priority"
+"Store View","Store View"
+Delete,Delete
+"Delete items","Delete items"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+Disable,Disable
+Enable,Enable
+Edit,Edit
+ID,ID
+"Product ID","Product ID"
+"Product Name","Product Name"
+"Request Path","Request Path"
+"Product Category ID (Name)","Product Category ID (Name)"
+"Priority Category ID (Name)","Priority Category ID (Name)"
+Hits,Hits

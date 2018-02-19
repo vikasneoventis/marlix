@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * BssCommerce
+ * AdminPreview
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Bss_AdminPreview::login_log" title="Login As Customer Log" module="Bss_AdminPreview" parent="Magento_Customer::customer" sortOrder="40"  resource="Bss_AdminPreview::login_log" action="adminpreview/customer/" />
+
+        <add id="Bss_AdminPreview::main" title="Admin Preview" translate="title" module="Bss_AdminPreview" sortOrder="15" resource="Magento_Backend::content"
+            />
+        <!-- START: new node -->
+        <add id="Bss_AdminPreview::domain" title="Website" translate="title" module="Bss_AdminPreview" sortOrder="0" resource="Bss_AdminPreview::domain" parent="Bss_AdminPreview::main"/>
+        <add id="Bss_AdminPreview::website" title="Marlix" translate="title" module="Bss_AdminPreview" sortOrder="0" resource="Bss_AdminPreview::website" parent="Bss_AdminPreview::domain" action="adminpreview/preview/adminLogined"/>
+
+        <add id="Bss_AdminPreview::configuration" title="Configuration" translate="title" module="Bss_AdminPreview" sortOrder="10" resource="Bss_AdminPreview::action_log" parent="Bss_AdminPreview::main"/>
+        <add id="Bss_AdminPreview::config" title="Config System" translate="title" module="Bss_AdminPreview" sortOrder="0" resource="Bss_AdminPreview::config" parent="Bss_AdminPreview::configuration" action="adminhtml/system_config/edit/section/bss_adminpreview/"/>
+    </menu>
+</config>

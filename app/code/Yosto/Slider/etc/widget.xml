@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="yosto_slider_slide"
+            class="Yosto\Slider\Block\Slide"
+            is_email_compatible="false"
+            placeholder_image="Magento_Widget::placeholder.gif">
+        <label translate="true">Yosto - Slider generator</label>
+        <description translate="true">Can use in main content, sidebar or anywhere</description>
+        <parameters>
+            <parameter name="slide" xsi:type="select" source_model="Yosto\Slider\Model\Slide\Widget\SlideArray" visible="true" sort_order="10">
+                <label translate="true">Slider</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

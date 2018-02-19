@@ -1,0 +1,118 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+
+<?php if ($block->isEnabledAjaxscroll()): ?>
+
+<?php
+$loading_bar = $block->getLoadingIcon();
+?>
+
+<?php
+// Get the default setting for grid or list mode
+
+$productListMode = $block->getListMode();
+$grid_per_page = $block->getGridPerPage();
+$list_per_page = $block->getListPerpage();
+
+if ($productListMode == 'grid-list') {
+    $productListMode = 'grid';
+    $per_page = $grid_per_page;
+} elseif ($productListMode == 'list-grid') {
+    $productListMode = 'list';
+    $per_page = $list_per_page;
+}
+// Check if this setting is overwritten by the user
+if ($this->getRequest()->getParam('mode')) {
+    if ($this->getRequest()->getParam('mode') == 'grid') {
+        $productListMode = 'grid';
+        $per_page = $grid_per_page;
+    } else {
+        $productListMode = 'list';
+        $per_page = $list_per_page;
+    }
+}
+?>
+
+<?php
+$threshold = 10000;
+
+$loadMoreText = __('Load more items');
+$loadPreviousText = __('Load previous items');
+$loadMoreBackground = "whitesmock";
+$loadMoreTextColor = "black";
+$isEnabledLoadMore = $block->isEnabledLoadMore();
+
+if ($block->isEnabledLoadMore()) {
+    $threshold = $block->getThreshold();
+    $loadMoreText = $block->getLoadMoreText();
+    $loadMoreBackground = $block->getLoadMoreBackground();
+    $loadMoreTextColor = $block->getLoadMoreTextColor();
+    $loadPreviousText = $block->getLoadPreviousText();
+}
+
+$containerClass = $block->getContainerClass();
+$itemClass = $block->getItemClass();
+$paginationClass = $block->getPaginationClass();
+$nextClass = $block->getNextClass();
+
+?>
+
+
+<script type="text/javascript">
+    require(['jquery', 'ias', 'lazyload'], function ($) {
+        'use strict';
+        $(document).ready(function () {
+            var currentItem = parseInt($('.item.product<?php echo $itemClass?>').length);
+            $('.toolbar-products .toolbar-number').text(currentItem);
+            var ias = $.ias({
+                container: '<?php echo $containerClass ?>',
+                item: '<?php echo $itemClass ?>',
+                pagination: '<?php echo $paginationClass ?>',
+                next: '<?php echo $nextClass ?>'
+            });
+
+            <?php if($isEnabledLoadMore):?>
+            var style = 'background: <?php echo $loadMoreBackground; ?>;' + 'color: <?php echo  $loadMoreTextColor; ?>;';
+            ias.extension(new IASPagingExtension());
+            ias.extension(new IASHistoryExtension({prev: '.previous'}));
+            ias.extension(new IASTriggerExtension({
+                offset: '<?php echo $threshold ?>',
+                html: '<div class="ias-trigger ias-trigger-next" style="text-align: center; cursor: pointer;"><button style="' + style + '"><?php echo $loadMoreText ?></buttons></div>',
+                htmlPrev: '<div class="ias-trigger ias-trigger-prev" style="text-align: center; cursor: pointer;margin-bottom:35px"><button style="' + style + '"><?php echo $loadPreviousText ?></button></div>',
+            }));
+
+            ias.extension(new IASNoneLeftExtension({text: '<?php echo $block->getNoMoreItemsText(); ?>'}));
+            <?php endif;?>
+            ias.extension(new IASSpinnerExtension({
+                html: '<div class="ias-spinner" style="text-align: center;"><img style="padding: 10px;" width="220" height="20" class="scroll_loading" src="<?php echo $loading_bar; ?>" /><span style="display:block;"><?php echo $block->getLoadingText(); ?></span></div>',
+            }));
+
+
+            <?php if($block->isEnabledLazyLoad()): ?>
+            ias.on('rendered', function () {
+                $("img.lazy").lazyload();
+            });
+            <?php endif;?>
+
+            ias.on('loaded', function (data, items) {
+                var $items = $(items);
+                var currentItem = parseInt($('.item.product.product-item').length);
+                var loadedItem = parseInt($items.length);
+                $('.toolbar-products .toolbar-number').text(currentItem + loadedItem);
+            });
+
+        });
+
+    });
+
+
+</script>
+<?php endif; ?>
+

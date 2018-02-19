@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/productAttachment/:attachmentId" method="GET">
+        <service class="Amasty\ProductAttachment\Api\ProductAttachmentRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="Amasty_ProductAttachment::attachment"/>
+        </resources>
+    </route>
+    <route url="/V1/productAttachment/search" method="GET">
+        <service class="Amasty\ProductAttachment\Api\ProductAttachmentRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Amasty_ProductAttachment::attachment"/>
+        </resources>
+    </route>
+    <route url="/V1/productAttachment" method="POST">
+        <service class="Amasty\ProductAttachment\Api\ProductAttachmentRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Amasty_ProductAttachment::attachment"/>
+        </resources>
+    </route>
+    <route url="/V1/productAttachment/:id" method="PUT">
+        <service class="Amasty\ProductAttachment\Api\ProductAttachmentRepositoryInterface" method="saveExist"/>
+        <resources>
+            <resource ref="Amasty_ProductAttachment::attachment"/>
+        </resources>
+    </route>
+    <route url="/V1/productAttachment/:attachmentId" method="DELETE">
+        <service class="Amasty\ProductAttachment\Api\ProductAttachmentRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Amasty_ProductAttachment::attachment"/>
+        </resources>
+    </route>
+
+</routes>

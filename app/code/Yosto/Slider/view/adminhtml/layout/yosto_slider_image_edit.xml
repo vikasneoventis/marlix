@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="Yosto_Slider::js/jscolor.min.js" />
+    </head>
+    <body>
+        <referenceContainer name="left">
+            <block class="Yosto\Slider\Block\Adminhtml\Image\Edit\Tabs"
+                   name="yosto_slider_image.edit.tabs"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Yosto\Slider\Block\Adminhtml\Image\Edit"
+                   name="yosto_slider_image.edit"/>
+        </referenceContainer>
+       <!-- <referenceBlock name="page.actions.toolbar">
+            <block class="Magento\Framework\View\Element\Template" name="yosto.slider.image.effect.preview" template="Yosto_Slider::imageeffectpreview.phtml" />
+        </referenceBlock>-->
+    </body>
+</page>

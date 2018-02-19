@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.txt for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/system_file.xsd">
+    <system>
+        <section id="product_slide_image"  translate="label" type="text" sortOrder="150" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Product Image Slider</label>
+            <tab>catalog</tab>
+            <resource>Yosto_ImageProductSlide::system_config</resource>
+            <group id="product_slide" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Image Slide</label>
+                <field id="animation_speed" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Animation Speed</label>
+                    <comment>Set the speed of animations, in milliseconds</comment>
+                    <validate>validate-number required-entry</validate>
+                </field>
+                <field id="slideshow_speed" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Slideshow speed</label>
+                    <comment>Set the speed of the slideshow cycling, in milliseconds</comment>
+                    <validate>validate-number required-entry</validate>
+                </field>
+                <field id="direction" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Direction</label>
+                    <comment>Select the sliding direction, horizontal or vertical</comment>
+                    <source_model>Yosto\ImageProductSlide\Helper\Direction</source_model>
+                </field>
+                <field id="animation_type" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Animation Type</label>
+                    <comment>Select your animation type, Fade or Slide</comment>
+                    <source_model>Yosto\ImageProductSlide\Helper\Animation</source_model>
+                </field>
+                <field id="reverse" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Reverse</label>
+                    <comment>Reverse the animation direction</comment>
+                    <source_model>Yosto\ImageProductSlide\Helper\Truefalse</source_model>
+                </field>
+                <field id="pause_on_action" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Pause on action</label>
+                    <comment>Pause the slideshow when interacting with control elements, highly recommended.</comment>
+                    <source_model>Yosto\ImageProductSlide\Helper\Truefalse</source_model>
+                </field>
+                <field id="pause_on_hover" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Pause on hover</label>
+                    <comment>Pause the slideshow when hovering over slider, then resume when no longer hovering</comment>
+                    <source_model>Yosto\ImageProductSlide\Helper\Truefalse</source_model>
+                </field>
+                <field id="randomize" translate="label comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Randomize</label>
+                    <comment>Randomize slide order</comment>
+                    <source_model>Yosto\ImageProductSlide\Helper\Truefalse</source_model>
+                </field>
+                <field id="enable" translate="label comment" type="select" sortOrder="90" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable</label>
+                    <comment>Enable or disable module</comment>
+                    <source_model>Yosto\ImageProductSlide\Helper\Truefalse</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

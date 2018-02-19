@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="category_form"/>
+            <block class="Yosto\ProductLink\Block\Adminhtml\Category\Edit" name="category.edit" template="Yosto_ProductLink::catalog/category/edit.phtml" />
+        </referenceContainer>
+    </body>
+</page>

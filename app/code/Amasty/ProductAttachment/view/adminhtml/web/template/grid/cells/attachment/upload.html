@@ -1,0 +1,54 @@
+<!--
+/**
+* @author Amasty Team
+* @copyright Copyright (c) 2016 Amasty (http://www.amasty.com)
+* @package Amasty_ProductAttachment
+*/
+-->
+
+<div class="upload-attachment">
+    <div class="spinner">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <form data-bind="attr: {
+        action: $col.getUploadUrl($row()),
+        enctype: 'multipart/form-data',
+        method: 'post'
+    }"
+    >
+        <fieldset class="admin__fieldset downloadable-form">
+            <div class="progressbar-container">
+                <div class="progressbar"></div>
+            </div>
+            <input data-bind="attr: {
+            name: 'form_key',
+            type: 'hidden',
+            value: $col.getFormKey($row())
+        }"/>
+            <input data-bind="attr: {
+            name: 'type',
+            type: 'hidden',
+            value: $col.getFileType()
+        }"/>
+            <input data-bind="attr: {
+            name: 'store_id',
+            type: 'hidden',
+            value: $col.getStoreId($row())
+        }"/>
+            <input data-bind="attr: {
+            name: 'product_id',
+            type: 'hidden',
+            value: $col.getProductId($row())
+        }"/>
+            <label class="file-info"></label>
+            <div class="drop drop-zone"><span data-bind="text: $col.getDragAndDropText()"></span>
+                <input data-bind="attr: {
+            id: $col.getFileId($row()),
+            type: 'file',
+            name: $col.getFileType(),
+            maxFileSize: $col.getMaxFileSize($row())
+            }, fileUpload: {url: 'url', id: 'id'}" multiple/>
+            </div>
+        </fieldset>
+    </form>
+</div>

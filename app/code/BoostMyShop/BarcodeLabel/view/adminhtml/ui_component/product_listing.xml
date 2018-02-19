@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+    <columns name="product_columns">
+        <column name="barcodelabel" class="BoostMyShop\BarcodeLabel\Ui\Component\Listing\Columns\PrintLabel">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                    <item name="sortOrder" xsi:type="number">200</item>
+                    <item name="label" xsi:type="string">Barcode Label</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/actions</item>
+                </item>
+            </argument>
+
+        </column>
+    </columns>
+
+    <listingToolbar>
+        <massaction>
+            <action name="barcodelabel">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">barcodelabel</item>
+                        <item name="label" xsi:type="string" translate="true">Print Barcode Labels</item>
+                        <item name="url" xsi:type="url" path="barcodelabel/product/massprint"/>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+    </listingToolbar>
+
+</listing>

@@ -1,0 +1,29 @@
+/*amasty product attachment css styles*/
+.amfile-upload-button {
+    margin-top: 10px;
+}
+
+label.amfile-upload-success {
+    border: 1px solid #2A6002;
+    display: block;
+    margin: 2px 0 0;
+    padding: 6px 10px 10px;
+    background: rgba(80, 181, 84, 0.22);
+    color: #555;
+    font-size: 12px;
+    font-weight: 500;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+ul.import-fields {
+    margin-left: 10px;
+}
+
+ol.import-fields li {
+    margin-bottom: 10px;
+}
+
+.mage-error {
+    white-space: pre;
+}

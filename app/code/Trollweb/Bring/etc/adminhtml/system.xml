@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="bringpickup" translate="label" type="text" sortOrder="306" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Bring Pickup</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="active_methods" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Active methods</label>
+                    <frontend_model>Trollweb\Bring\Block\Adminhtml\Form\Field\PickupActiveMethods</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+                <field id="pickup_points_enabled" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enable pickuppoints</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="number_of_pickup_points" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Number of pickup points</label>
+                    <depends>
+                        <field id="pickup_points_enabled">1</field>
+                    </depends>
+                </field>
+                <!--
+                <field id="handling_type" translate="label" type="select" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Calculate Handling Fee</label>
+                    <source_model>Magento\Shipping\Model\Source\HandlingType</source_model>
+                </field>
+                <field id="handling_fee" translate="label" type="text" sortOrder="501" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Handling Fee</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                -->
+                <field id="carrier_title" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Carrier title</label>
+                    <comment>Carrier title that is shown in checkout.</comment>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="510" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Sort Order</label>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="520" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="521" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+
+            <group id="bringdelivered" translate="label" type="text" sortOrder="307" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Bring Delivered</label>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="active_methods" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Active methods</label>
+                    <frontend_model>Trollweb\Bring\Block\Adminhtml\Form\Field\DeliveredActiveMethods</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+                <!--
+                <field id="handling_type" translate="label" type="select" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Calculate Handling Fee</label>
+                    <source_model>Magento\Shipping\Model\Source\HandlingType</source_model>
+                </field>
+                <field id="handling_fee" translate="label" type="text" sortOrder="501" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Handling Fee</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                -->
+                <field id="carrier_title" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Carrier title</label>
+                    <comment>Carrier title that is shown in checkout.</comment>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="510" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Sort Order</label>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="520" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="521" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+            </group>
+        </section>
+
+        <tab id="trollweb" translate="label" sortOrder="10000000">
+            <label>Trollweb</label>
+        </tab>
+
+        <section id="trollweb_bring" translate="label" type="text" sortOrder="10000" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Bring</label>
+            <tab>trollweb</tab>
+            <resource>Trollweb_Bring::config_bring</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="posting_at_postoffice" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Parcel delivered at post office</label>
+                    <comment>Set to yes if the parcel is delivered at a post office when it is shipped.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="show_transit_time" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show expected transit time</label>
+                    <comment>Set to yes to show expected transit time in checkout.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="price_rounding_strategy" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Price rounding</label>
+                    <comment>Select a rounding strategy to use (only applies to prices from the api).</comment>
+                    <source_model>Trollweb\Bring\Model\Config\Source\PriceRoundingStrategy</source_model>
+                </field>
+            </group>
+            <group id="measurements" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Measurements</label>
+                <field id="weight_unit" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Weight unit</label>
+                    <source_model>Trollweb\Bring\Model\Config\Source\WeightUnit</source_model>
+                </field>
+                <!--
+                <field id="size_unit" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Size unit</label>
+                    <source_model>Trollweb\Bring\Model\Config\Source\SizeUnit</source_model>
+                </field>
+                -->
+                <field id="default_product_weight" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Default product weight</label>
+                    <comment>Default weight for products with missing weight.</comment>
+                </field>
+            </group>
+            <group id="logging" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Logging</label>
+                <field id="debug_enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable debug log</label>
+                    <comment>This will log debug information (including api request/response) to var/log/trollweb_bring_debug.log.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

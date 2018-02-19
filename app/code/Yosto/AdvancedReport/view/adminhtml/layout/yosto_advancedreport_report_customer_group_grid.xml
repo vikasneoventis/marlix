@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.main.actions">
+            <block class="Magento\Backend\Block\Store\Switcher" template="Magento_Backend::store/switcher.phtml" name="store.switcher">
+                <action method="setStoreVarName">
+                    <argument name="var_name" xsi:type="string">store_ids</argument>
+                </action>
+                <arguments>
+                    <argument name="switch_websites" xsi:type="string">1</argument>
+                    <argument name="switch_store_groups" xsi:type="string">1</argument>
+                    <argument name="switch_store_views" xsi:type="string">1</argument>
+                    <argument name="default_selection_name" xsi:type="string" translate="true">All Websites</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="adminhtml.report.grid.container">
+
+            <block class="Magento\Reports\Block\Adminhtml\Grid" name="adminhtml.report.grid" as="grid">
+                <arguments>
+                    <argument name="use_ajax" xsi:type="string">0</argument>
+                    <argument name="pager_visibility" xsi:type="string">0</argument>
+                    <argument name="id" xsi:type="string">gridTotalsCustomer</argument>
+                    <argument name="dataSource" xsi:type="object">Yosto\AdvancedReport\Model\ResourceModel\Customer\Group\Collection\Initial</argument>
+                </arguments>
+                <block class="Magento\Backend\Block\Widget\Grid\Export" name="adminhtml.report.grid.export" as="grid.export">
+                    <arguments>
+                        <argument name="exportTypes" xsi:type="array">
+                            <item name="csv" xsi:type="array">
+                                <item name="urlPath" xsi:type="string">*/report_customer/exportTotalsCsv</item>
+                                <item name="label" xsi:type="string" translate="true">CSV</item>
+                            </item>
+                            <item name="excel" xsi:type="array">
+                                <item name="urlPath" xsi:type="string">*/report_customer/exportTotalsExcel</item>
+                                <item name="label" xsi:type="string" translate="true">Excel XML</item>
+                            </item>
+                        </argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" as="grid.columnSet" name="adminhtml.report.grid.columnSet">
+                    <arguments>
+                        <argument name="filter_visibility" xsi:type="string">0</argument>
+                        <argument name="empty_text" xsi:type="string" translate="true">We can't find records for this period.</argument>
+                        <argument name="empty_cell_label" xsi:type="string" translate="true">We can't find records for this period.</argument>
+                        <argument name="count_totals" xsi:type="string">1</argument>
+                        <argument name="id" xsi:type="string">gridTotalsCustomerSet</argument>
+                    </arguments>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="customer_group_code">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Group</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                            <argument name="type" xsi:type="string">text</argument>
+                            <argument name="index" xsi:type="string">customer_group_code</argument>
+                            <argument name="id" xsi:type="string">customer_group_code</argument>
+                            <argument name="column_css_class" xsi:type="string">col-name</argument>
+                            <argument name="header_css_class" xsi:type="string">col-name</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="orders_count">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Orders</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                            <argument name="type" xsi:type="string">number</argument>
+                            <argument name="index" xsi:type="string">orders_count</argument>
+                            <argument name="total" xsi:type="string">sum</argument>
+                            <argument name="id" xsi:type="string">orders_count</argument>
+                            <argument name="column_css_class" xsi:type="string">col-qty</argument>
+                            <argument name="header_css_class" xsi:type="string">col-qty</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="orders_avg_amount">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Average</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                            <argument name="type" xsi:type="string">currency</argument>
+                            <argument name="total" xsi:type="string">orders_sum_amount/orders_count</argument>
+                            <argument name="index" xsi:type="string">orders_avg_amount</argument>
+                            <argument name="id" xsi:type="string">orders_avg_amount</argument>
+                            <argument name="column_css_class" xsi:type="string">col-average</argument>
+                            <argument name="header_css_class" xsi:type="string">col-average</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="shipping">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Shipping</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                            <argument name="type" xsi:type="string">currency</argument>
+                            <argument name="total" xsi:type="string">sum</argument>
+                            <argument name="index" xsi:type="string">shipping</argument>
+                            <argument name="id" xsi:type="string">shipping</argument>
+                            <argument name="column_css_class" xsi:type="string">col-total</argument>
+                            <argument name="header_css_class" xsi:type="string">col-total</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="tax">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Tax</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                            <argument name="type" xsi:type="string">currency</argument>
+                            <argument name="total" xsi:type="string">sum</argument>
+                            <argument name="index" xsi:type="string">tax</argument>
+                            <argument name="id" xsi:type="string">tax</argument>
+                            <argument name="column_css_class" xsi:type="string">col-total</argument>
+                            <argument name="header_css_class" xsi:type="string">col-total</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="orders_sum_amount">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Total</argument>
+                            <argument name="sortable" xsi:type="string">0</argument>
+                            <argument name="type" xsi:type="string">currency</argument>
+                            <argument name="total" xsi:type="string">sum</argument>
+                            <argument name="index" xsi:type="string">orders_sum_amount</argument>
+                            <argument name="id" xsi:type="string">orders_sum_amount</argument>
+                            <argument name="column_css_class" xsi:type="string">col-total</argument>
+                            <argument name="header_css_class" xsi:type="string">col-total</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

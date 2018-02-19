@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Klarna KCO module
+ *
+ * (c) Klarna Bank AB (publ)
+ *
+ * For the full copyright and license information, please view the NOTICE
+ * and LICENSE files that were distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_quote_save_before">
+        <observer name="klarna_check_if_quote_has_changed" instance="Klarna\Kco\Observer\CheckIfQuoteHasChanged" shared="false"/>
+    </event>
+    <event name="kco_prepare_merchant_urls">
+        <observer name="kco_set_shipping_in_iframe_url" instance="Klarna\Kco\Observer\SetShippingInIframeUrl" shared="false"/>
+    </event>
+</config>

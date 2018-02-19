@@ -1,0 +1,60 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+$sliderId = $block->getRequest()->getParam('slide_id');
+?>
+
+<button <?php echo $sliderId==null?'disabled':''?> class="action-default primary scalable" id="preview" type="button">
+<span class="ui-button-text">
+    <span>Preview</span>
+</span>
+</button>
+
+
+
+<div id="popup-mpdal" style="display: none">
+    <?php
+
+    echo $block->getLayout()->createBlock('Yosto\Slider\Block\Slide')->setData('slide', $sliderId )->toHtml();
+    ?>
+</div>
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            $('#preview').click(function(){
+                var options = {
+                    type: 'slide',
+                    responsive: true,
+                    innerScroll: true,
+                    title: $.mage.__('Preview'),
+                    buttons: [{
+                        text: $.mage.__(''),
+                        class: '',
+                        click: function () {
+                            this.closeModal();
+                        }
+                    }]
+                };
+
+                var popup = modal(options, $('#popup-mpdal'));
+
+                $('#popup-mpdal').modal('openModal');
+            })
+
+        }
+    );
+</script>

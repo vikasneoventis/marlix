@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="order_items">
+			<referenceBlock name="column_name">
+	            <action method="setTemplate" ifconfig="bss_adminpreview/general/enable">
+	                <argument name="template" xsi:type="string">Bss_AdminPreview::item_column_name.phtml</argument>
+	            </action>
+	        </referenceBlock>
+	        <referenceBlock name="column_name_grouped">
+	            <action method="setTemplate" ifconfig="bss_adminpreview/general/enable">
+	                <argument name="template" xsi:type="string">Bss_AdminPreview::item_column_name.phtml</argument>
+	            </action>
+	        </referenceBlock>
+			<!-- <referenceBlock name="column_name" template="Bss_AdminPreview::item_column_name.phtml" ifconfig="bss_adminpreview/general/enable"/> -->
+			<!-- <referenceBlock name="column_name_grouped" template="Bss_AdminPreview::item_column_name.phtml" ifconfig="bss_adminpreview/general/enable"/> -->
+		</referenceBlock>
+	</body>
+</page>

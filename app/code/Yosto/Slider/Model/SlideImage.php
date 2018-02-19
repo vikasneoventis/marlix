@@ -1,0 +1,19 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+namespace Yosto\Slider\Model;
+
+use Magento\Framework\Model\AbstractModel;
+use Yosto\Slider\Helper\Constant;
+/**
+ * Class SlideImage
+ * @package Yosto\Slider\Model
+ */
+class SlideImage extends AbstractModel
+{
+    public function _construct(){
+        $this->_init(Constant::SLIDE_IMAGE_RESOURCE_MODEL);
+    }
+}

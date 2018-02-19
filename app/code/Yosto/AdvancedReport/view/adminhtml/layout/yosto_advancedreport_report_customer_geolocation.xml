@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="formkey"/>
+    <update handle="yosto_advancedreport_report_customer_geolocation_grid"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Yosto\AdvancedReport\Block\Adminhtml\Report\Customer\Geolocation" template="Yosto_AdvancedReport::sales/geolocation.phtml" before="-"/>
+            <block class="Magento\Reports\Block\Adminhtml\Customer\Totals" name="adminhtml.report.grid.container"/>
+        </referenceContainer>
+    </body>
+</page>

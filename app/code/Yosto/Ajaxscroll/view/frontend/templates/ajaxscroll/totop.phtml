@@ -1,0 +1,54 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+
+<?php
+$urlImg = $block->getTopIcon();
+$isImageOrBackground = $block->isImageOrIcon();
+
+$arrowColor = $block->getIconArrowColor();
+$initBackground = $block->getInitBackground();
+$hoverBackground = $block->getHoverBackground();
+?>
+<?php if ($isImageOrBackground == 1): ?>
+    <style>
+        #toTop {
+            background: url(<?php echo $urlImg ?>) no-repeat left top;
+        }
+
+        #toTopHover {
+            background: url(<?php echo $urlImg ?>) no-repeat left -51px;
+        }
+    </style>
+<?php else: ?>
+    <style>
+        #toTop {
+            background-color: <?php echo $initBackground; ?>;
+            text-indent: 0 !important;
+            border-radius:10px ;
+            -webkit-border-radius: 10px;
+        }
+        #toTopHover {
+            background-color: <?php echo $hoverBackground; ?>;
+        }
+        #toTop:before {
+            color: <?php echo $arrowColor ?>;
+            content: 'TOP';
+            position: absolute;
+            top: 15px;
+            left: 12px;
+        }
+    </style>
+<?php endif; ?>
+<script type="text/javascript">
+    require(['jquery', 'totop', 'easing'], function ($) {
+        'use strict';
+        $().UItoTop({easingType: 'easeOutQuart', text: ''});
+    })
+</script>

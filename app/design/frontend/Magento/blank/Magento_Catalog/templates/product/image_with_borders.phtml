@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /** @var $block \Magento\Catalog\Block\Product\Image */ ?>
+<?php
+/*
+* If you want to use Lazy Load as a default feature, remove this line of code, then add css class "lazy" for image.
+*/
+$isEnabledLazyLoad = \Magento\Framework\App\ObjectManager::getInstance()->create("Yosto\Ajaxscroll\Helper\Data")->isEnabledLazyLoad();
+?>
+<span class="product-image-container"
+      style="width:<?php /* @escapeNotVerified */ echo $block->getWidth()?>px;">
+    <span class="product-image-wrapper"
+          style="padding-bottom: <?php /* @escapeNotVerified */ echo ($block->getRatio() * 100); ?>%;"
+        >
+        <img style="visibility: hidden" class="product-image-photo <?php echo $isEnabledLazyLoad == 1 ? 'lazy':''?> "
+             <?php /* @escapeNotVerified */ echo $block->getCustomAttributes(); ?>
+             <?php if($isEnabledLazyLoad == 1): ?>
+                 data-original="<?php /* @escapeNotVerified */ echo $block->getImageUrl(); ?>"
+                 src
+            <?php else: ?>
+                 src="<?php /* @escapeNotVerified */ echo $block->getImageUrl(); ?>"
+            <?php endif;?>
+             width="<?php /* @escapeNotVerified */ echo $block->getResizedImageWidth(); ?>"
+             height="<?php /* @escapeNotVerified */ echo $block->getResizedImageHeight(); ?>"
+             alt="<?php /* @escapeNotVerified */ echo $block->stripTags($block->getLabel(), null, true); ?>"/></span>
+</span>

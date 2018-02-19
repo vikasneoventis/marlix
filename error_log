@@ -1,0 +1,533 @@
+[14-Feb-2018 10:34:10 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:34:13 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:34:13 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:34:32 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:32 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:32 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:32 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:32 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:32 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:32 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:32 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:32 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:34:35 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:35 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:35 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:35 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:35 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:35 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:35 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:35 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:35 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:34:37 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:37 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:37 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:37 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:37 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:37 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:37 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:37 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:37 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:34:52 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:52 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:52 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:52 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:52 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:52 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:52 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:52 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:52 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:34:57 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:57 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:57 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:57 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:57 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:57 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:34:57 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:57 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:34:57 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:12 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:12 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:12 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:35:14 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:14 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:14 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:14 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:14 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:14 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:14 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:14 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:14 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:35:32 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:32 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:32 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:32 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:32 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:32 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:35:32 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:32 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:35:32 UTC] PHP Fatal error:  Uncaught UnexpectedValueException: The stream or file "/home/marlix/public_html//var/log/debug.log" could not be opened: failed to open stream: Permission denied in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php:107
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Logger/Handler/Base.php(87): Monolog\Handler\StreamHandler->write(Array)
+#1 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(37): Magento\Framework\Logger\Handler\Base->write(Array)
+#2 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(337): Monolog\Handler\AbstractProcessingHandler->handle(Array)
+#3 /home/marlix/public_html/vendor/magento/framework/Logger/Monolog.php(48): Monolog\Logger->addRecord(100, 'cache_invalidat...', Array)
+#4 /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Logger.php(532): Magento\Framework\Logger\Monolog->addRecord(100, 'cache_invalidat...', Array)
+#5 /home/marlix/public_html/vendor/magen in /home/marlix/public_html/vendor/monolog/monolog/src/Monolog/Handler/StreamHandler.php on line 107
+[14-Feb-2018 10:37:31 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:37:50 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:38:10 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:38:29 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:38:29 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:38:31 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:38:51 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:39:10 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:39:51 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:40:10 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:40:30 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:40:37 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:40:51 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:40:51 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:40:51 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:40:56 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:40:57 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:40:58 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:41:11 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:41:26 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:41:31 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:41:37 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:41:48 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:41:48 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:41:50 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:42:10 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:42:31 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:42:51 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:43:10 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:43:31 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:43:51 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:44:05 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/ResourceConnection/. in [Magento\Framework\App\ResourceConnection\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/Code/Reader/ClassReader.php(19): ReflectionClass->__construct('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Definition/Runtime.php(44): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php(48): Magento\Frame in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:44:17 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:44:17 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:44:17 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:44:17 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:45:53 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:45:53 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:45:53 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:45:53 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:45:53 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:45:53 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:45:53 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:45:53 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:45:56 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:45:56 UTC] PHP Warning:  file_put_contents(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 663
+[14-Feb-2018 10:45:56 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_CONFIG): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:45:56 UTC] PHP Warning:  fopen(/home/marlix/public_html/var/cache//mage-tags/mage---1c6_MAGE): failed to open stream: Permission denied in /home/marlix/public_html/vendor/colinmollenhour/cache-backend-file/File.php on line 646
+[14-Feb-2018 10:48:36 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/Config/ConfigSourceAggregated/. in [Magento\Framework\App\Config\ConfigSourceAggregated\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\I in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:48:55 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/Config/ConfigSourceAggregated/. in [Magento\Framework\App\Config\ConfigSourceAggregated\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\I in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:49:15 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/Config/ConfigSourceAggregated/. in [Magento\Framework\App\Config\ConfigSourceAggregated\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\I in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:49:36 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/Config/ConfigSourceAggregated/. in [Magento\Framework\App\Config\ConfigSourceAggregated\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\I in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:49:50 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/Config/ConfigSourceAggregated/. in [Magento\Framework\App\Config\ConfigSourceAggregated\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\I in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:49:55 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/Config/ConfigSourceAggregated/. in [Magento\Framework\App\Config\ConfigSourceAggregated\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\I in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:49:56 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/Config/ConfigSourceAggregated/. in [Magento\Framework\App\Config\ConfigSourceAggregated\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\I in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:50:15 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/Config/ConfigSourceAggregated/. in [Magento\Framework\App\Config\ConfigSourceAggregated\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\I in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[14-Feb-2018 10:50:35 UTC] PHP Fatal error:  Uncaught RuntimeException: Can't create directory /home/marlix/public_html/generated/code/Magento/Framework/App/Config/ConfigSourceAggregated/. in [Magento\Framework\App\Config\ConfigSourceAggregated\Proxy] in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php:115
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Code/Generator/Autoloader.php(35): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+#3 /home/marlix/public_html/vendor/magento/framework/ObjectManager/Relations/Runtime.php(38): class_exists('Magento\\Framewo...')
+#4 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(166): Magento\Framework\ObjectManager\Relations\Runtime->has('Magento\\Framewo...')
+#5 /home/marlix/public_html/vendor/magento/framework/Interception/Config/Config.php(160): Magento\Framework\I in /home/marlix/public_html/vendor/magento/framework/Code/Generator.php on line 115
+[17-Feb-2018 10:07:13 UTC] PHP Fatal error:  Uncaught Magento\Framework\Exception\FileSystemException: The directory "/home/marlix/public_html/var/cache/mage--4" cannot be deleted Warning!rmdir(/home/marlix/public_html/var/cache/mage--4): Permission denied in /home/marlix/public_html/vendor/magento/framework/Filesystem/Driver/File.php:410
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Filesystem/Driver/File.php(403): Magento\Framework\Filesystem\Driver\File->deleteDirectory('/home/marlix/pu...')
+#1 /home/marlix/public_html/vendor/magento/framework/Filesystem/Directory/Write.php(174): Magento\Framework\Filesystem\Driver\File->deleteDirectory('/home/marlix/pu...')
+#2 /home/marlix/public_html/vendor/magento/framework/Code/GeneratedFiles.php(97): Magento\Framework\Filesystem\Directory\Write->delete('var/cache')
+#3 /home/marlix/public_html/vendor/magento/framework/App/ObjectManagerFactory.php(110): Magento\Framework\Code\GeneratedFiles->cleanGeneratedFiles()
+#4 /home/marlix/public_html/vendor/magento/framework/App/Bootstrap.php(208): Magen in /home/marlix/public_html/vendor/magento/framework/Filesystem/Driver/File.php on line 410
+[17-Feb-2018 10:07:14 UTC] PHP Fatal error:  Uncaught Magento\Framework\Exception\FileSystemException: The directory "/home/marlix/public_html/var/cache/mage--4" cannot be deleted Warning!rmdir(/home/marlix/public_html/var/cache/mage--4): Permission denied in /home/marlix/public_html/vendor/magento/framework/Filesystem/Driver/File.php:410
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Filesystem/Driver/File.php(403): Magento\Framework\Filesystem\Driver\File->deleteDirectory('/home/marlix/pu...')
+#1 /home/marlix/public_html/vendor/magento/framework/Filesystem/Directory/Write.php(174): Magento\Framework\Filesystem\Driver\File->deleteDirectory('/home/marlix/pu...')
+#2 /home/marlix/public_html/vendor/magento/framework/Code/GeneratedFiles.php(97): Magento\Framework\Filesystem\Directory\Write->delete('var/cache')
+#3 /home/marlix/public_html/vendor/magento/framework/App/ObjectManagerFactory.php(110): Magento\Framework\Code\GeneratedFiles->cleanGeneratedFiles()
+#4 /home/marlix/public_html/vendor/magento/framework/App/Bootstrap.php(208): Magen in /home/marlix/public_html/vendor/magento/framework/Filesystem/Driver/File.php on line 410
+[17-Feb-2018 10:07:14 UTC] PHP Fatal error:  Uncaught Magento\Framework\Exception\FileSystemException: The directory "/home/marlix/public_html/var/cache/mage--4" cannot be deleted Warning!rmdir(/home/marlix/public_html/var/cache/mage--4): Permission denied in /home/marlix/public_html/vendor/magento/framework/Filesystem/Driver/File.php:410
+Stack trace:
+#0 /home/marlix/public_html/vendor/magento/framework/Filesystem/Driver/File.php(403): Magento\Framework\Filesystem\Driver\File->deleteDirectory('/home/marlix/pu...')
+#1 /home/marlix/public_html/vendor/magento/framework/Filesystem/Directory/Write.php(174): Magento\Framework\Filesystem\Driver\File->deleteDirectory('/home/marlix/pu...')
+#2 /home/marlix/public_html/vendor/magento/framework/Code/GeneratedFiles.php(97): Magento\Framework\Filesystem\Directory\Write->delete('var/cache')
+#3 /home/marlix/public_html/vendor/magento/framework/App/ObjectManagerFactory.php(110): Magento\Framework\Code\GeneratedFiles->cleanGeneratedFiles()
+#4 /home/marlix/public_html/vendor/magento/framework/App/Bootstrap.php(208): Magen in /home/marlix/public_html/vendor/magento/framework/Filesystem/Driver/File.php on line 410

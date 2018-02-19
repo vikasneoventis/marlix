@@ -1,0 +1,11 @@
+{
+  "name": "boostmyshop/module-barcodelabel",
+  "description": "Print barcode labels for products",
+  "type": "magento2-module",
+  "version": "1.0.17",
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "BoostMyShop\\BarcodeLabel\\": ""}
+  }
+}

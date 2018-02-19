@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright © 2016 SW-THEMES. All rights reserved.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Catalog\Block\Adminhtml\Product\Edit\Button\Save" type="Smartwave\Core\Block\Adminhtml\Product\Edit\Button\Save" />
+	<preference for="Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Button\Save" type="Smartwave\Core\Block\Adminhtml\Product\Edit\Button\Savecp" />
+	<preference for="Magento\Catalog\Controller\Adminhtml\Product\Save" type="Smartwave\Core\Controller\Adminhtml\Product\Saveproduct" />
+</config>

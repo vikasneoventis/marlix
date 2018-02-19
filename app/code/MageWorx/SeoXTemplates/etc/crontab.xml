@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="seoxtemplates">
+        <job name="mageworx_seoxtemplates_product_meta_title_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateProductTemplate" method="generateMetaTitle">
+            <schedule>0 1 * * *</schedule>
+        </job>
+        <job name="mageworx_seoxtemplates_product_meta_description_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateProductTemplate" method="generateMetaDescription">
+            <schedule>20 1 * * *</schedule>
+        </job>
+        <job name="mageworx_seoxtemplates_product_meta_keyword_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateProductTemplate" method="generateMetaKeywords">
+            <schedule>40 1 * * *</schedule>
+        </job>
+        <job name="mageworx_seoxtemplates_product_seo_name_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateProductTemplate" method="generateSeoName">
+            <schedule>0 2 * * *</schedule>
+        </job>
+        <job name="mageworx_seoxtemplates_product_url_key_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateProductTemplate" method="generateUrl">
+            <schedule>20 2 * * *</schedule>
+        </job>
+        <job name="mageworx_seoxtemplates_product_description_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateProductTemplate" method="generateDescription">
+            <schedule>40 2 * * *</schedule>
+        </job>
+        <job name="mageworx_seoxtemplates_product_short_description_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateProductTemplate" method="generateShortDescription">
+            <schedule>0 3 * * *</schedule>
+        </job>
+        <job name="mageworx_seoxtemplates_category_meta_title_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateCategoryTemplate" method="generateMetaTitle">
+            <schedule>20 3 * * *</schedule>
+        </job>
+        <job name="mageworx_seoxtemplates_category_meta_description_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateCategoryTemplate" method="generateMetaDescription">
+            <schedule>40 3 * * *</schedule>
+        </job>
+        <job name="mageworx_seoxtemplates_category_meta_keywords_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateCategoryTemplate" method="generateMetaKeywords">
+            <schedule>0 4 * * *</schedule>
+        </job>
+        <job name="mageworx_seoxtemplates_category_description_generate" instance="MageWorx\SeoXTemplates\Cron\GenerateCategoryTemplate" method="generateDescription">
+            <schedule>20 4 * * *</schedule>
+        </job>
+    </group>
+</config>

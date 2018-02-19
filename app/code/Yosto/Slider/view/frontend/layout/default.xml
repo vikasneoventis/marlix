@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <container name="yosto.slider.header.bottom" htmlTag="div" label="Yosto Slider Header Bottom" after="header.container"/>
+        </referenceContainer>
+        <referenceContainer name="page.top">
+                <container name="yosto.slider.page.top" htmlTag="div" label="Yosto Slider Page Top" before="-"/>
+        </referenceContainer>
+    </body>
+</page>

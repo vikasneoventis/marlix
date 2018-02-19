@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <bringpickup>
+                <model>Trollweb\Bring\Model\Carrier\Pickup</model>
+                <active>0</active>
+                <pickup_points_enabled>1</pickup_points_enabled>
+                <number_of_pickup_points>3</number_of_pickup_points>
+                <carrier_title>Hent varene selv (Bring)</carrier_title>
+                <sort_order>1</sort_order>
+                <sallowspecific>1</sallowspecific>
+                <specificcountry>NO,SE,DK,FI</specificcountry>
+            </bringpickup>
+            <bringdelivered>
+                <model>Trollweb\Bring\Model\Carrier\Delivered</model>
+                <active>0</active>
+                <carrier_title>Få varene levert (Bring)</carrier_title>
+                <sort_order>2</sort_order>
+                <sallowspecific>1</sallowspecific>
+                <specificcountry>NO,SE,DK,FI</specificcountry>
+            </bringdelivered>
+        </carriers>
+        <trollweb_bring>
+            <general>
+                <posting_at_postoffice>0</posting_at_postoffice>
+                <show_transit_time>1</show_transit_time>
+                <price_rounding_strategy>none</price_rounding_strategy>
+            </general>
+            <measurements>
+                <weight_unit>gram</weight_unit>
+                <size_unit>centimeter</size_unit>
+                <default_product_weight>250</default_product_weight>
+            </measurements>
+        </trollweb_bring>
+    </default>
+</config>

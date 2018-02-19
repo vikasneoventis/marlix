@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Klarna DACH module
+ *
+ * (c) Klarna Bank AB (publ)
+ *
+ * For the full copyright and license information, please view the NOTICE
+ * and LICENSE files that were distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="controller_action_predispatch_checkout_klarna_index">
+        <observer name="kco_dach_prefill_notice_check" instance="Klarna\Dach\Observer\PreFillNoticeCheckAccept"/>
+    </event>
+    <event name="kco_confirmation_create_order_before">
+        <observer name="kco_dach_order_confirmation_packstation_save" instance="Klarna\Dach\Observer\OrderConfirmationPackstationSave"/>
+    </event>
+</config>

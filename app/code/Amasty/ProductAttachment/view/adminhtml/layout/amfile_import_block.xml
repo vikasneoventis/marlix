@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="amfile.import.ftpfiles.container">
+            <block class="Magento\Backend\Block\Widget\Grid" name="amfile.import.ftpfiles.grid" as="grid">
+                <arguments>
+                    <argument name="use_ajax" xsi:type="boolean">true</argument>
+                    <argument name="save_parameters_in_session" xsi:type="boolean">true</argument>
+                    <argument name="grid_url" xsi:type="url" path="amfile/import/grid">
+                        <param name="_current">1</param>
+                    </argument>
+                    <argument name="id" xsi:type="string">ftpFilesGrid</argument>
+                    <argument name="dataSource" xsi:type="object">Amasty\ProductAttachment\Model\FtpFile\Collection</argument>
+                    <argument name="default_sort" xsi:type="string">name</argument>
+                    <argument name="default_dir" xsi:type="string">desc</argument>
+                </arguments>
+                <block class="Magento\Backend\Block\Widget\Grid\Massaction" name="amfile.import.ftpfiles.grid.massaction" as="grid.massaction">
+                    <arguments>
+                        <argument name="massaction_id_field" xsi:type="string">name</argument>
+                        <argument name="form_field_name" xsi:type="string">ids</argument>
+                        <argument name="use_select_all" xsi:type="string">1</argument>
+
+                        <argument name="options" xsi:type="array">
+                            <item name="delete" xsi:type="array">
+                                <item name="label" xsi:type="string" translate="true">Delete</item>
+                                <item name="url" xsi:type="string">amfile/import/massDelete</item>
+                                <item name="confirm" xsi:type="string" translate="true">Are you sure you want to delete the selected file(s)?</item>
+                            </item>
+                        </argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Backend\Block\Widget\Grid\ColumnSet" name="adminhtml.catalog.product.set.grid.columnSet" as="grid.columnSet">
+                    <arguments>
+                        <argument name="id" xsi:type="string">ftpFilesGrid</argument>
+                    </arguments>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="name">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Name</argument>
+                            <argument name="index" xsi:type="string">name</argument>
+                            <argument name="sortable" xsi:type="string">1</argument>
+                            <argument name="column_css_class" xsi:type="string">col-name</argument>
+                            <argument name="header_css_class" xsi:type="string">col-name</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Backend\Block\Widget\Grid\Column" as="size">
+                        <arguments>
+                            <argument name="header" xsi:type="string" translate="true">Size</argument>
+                            <argument name="index" xsi:type="string">full_size</argument>
+                            <argument name="type" xsi:type="string">string</argument>
+                            <argument name="filter" xsi:type="string">0</argument>
+                            <argument name="sortable" xsi:type="string">1</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

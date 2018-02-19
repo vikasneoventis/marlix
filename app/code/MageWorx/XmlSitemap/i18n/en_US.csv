@@ -1,0 +1,7 @@
+SEO,SEO
+Homepage Optimization,Homepage Optimization
+Enable Additional Links,Enable Additional Links
+Additional Links,Additional Links
+List of links to append to the XML Sitemap<br /><b>&nbsp;&nbsp;&nbsp;&nbsp;Example:</b><br />Link without 'http[s]://' as <b>customer/account/</b><br />will be converted to<br />http[s]://(<i>store_URL_here</i>)/customer/account/<br />Link with 'http[s]://' will be added as is.,List of links to append to the XML Sitemap<br /><b>&nbsp;&nbsp;&nbsp;&nbsp;Example:</b><br />Link without 'http[s]://' as <b>customer/account/</b><br />will be converted to<br />http[s]://(<i>store_URL_here</i>)/customer/account/<br />Link with 'http[s]://' will be added as is.
+Common Settings For Sitemaps,Common Settings For Sitemaps
+Trailing Slash For URLs,Trailing Slash For URLs

@@ -1,0 +1,44 @@
+Method,Metode
+"Custom price","Egendefinert pris"
+"Allow free shipping","Tillat gratis frakt"
+"Add method","Legg til fraktmetode"
+" | Expected transit time: same day"," | Forventet transporttid: samme dag"
+" | Expected transit time: %1 day"," | Forventet transporttid: %1 dag"
+" | Expected transit time: %1 days"," | Forventet transporttid: %1 dager"
+"No rounding","Ingen avrunding"
+"Round to closest integer","Rund til nærmeste heltall"
+"Round up to closest integer","Rund opp til nærmeste heltall"
+"Round down to closest integer","Rund ned til nærmeste heltall"
+"Round to closest integer divisible by ten","Rund til nærmeste heltall som er delelig på ti"
+"Round up to closest integer divisible by ten","Rund opp til nærmeste heltall som er delelig på ti"
+"Round down to closest integer divisible by ten","Rund ned til nærmeste heltall som er delelig på ti"
+Millimeter,Millimeter
+Centimeter,Centimeter
+Decimeter,Decimeter
+Meter,Meter
+Gram,Gram
+Kilogram,Kilogram
+"Field ","Felt "
+" is required."," er påkrevd."
+"Bring Settings","Bring Instillinger"
+"Bring Pickup","Bring Pickup"
+Enabled,Aktivert
+"Active methods","Aktive fraktmetoder"
+"Enable pickuppoints","Aktiver valgfritt utleveringssted"
+"Number of pickup points","Antall utleveringssted"
+"Carrier title","Tittel på transportør"
+"Sort Order","Sorteringsrekkefølge"
+"Ship to Applicable Countries","Ship to Applicable Countries"
+"Ship to Specific Countries","Ship to Specific Countries"
+"Bring Delivered","Bring Delivered"
+Trollweb,Trollweb
+Bring,Bring
+General,Generelt
+"Parcel delivered at post office","Parcel delivered at post office"
+"Show expected transit time","Vis forventet transporttid"
+"Price rounding","Pris avrunding"
+Measurements,Mål
+"Weight unit","Vektenhet"
+"Default product weight","Standard produktvekt"
+Logging,Logging
+"Enable debug log","Aktiver debug-logging"

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Klarna KCO module
+ *
+ * (c) Klarna Bank AB (publ)
+ *
+ * For the full copyright and license information, please view the NOTICE
+ * and LICENSE files that were distributed with this source code.
+ */
+-->
+<klarna xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Klarna_Core:etc/klarna.xsd">
+    <external_payment_method id="paypal_express" translate="label description" ifconfig="payment/paypal_express/active">
+        <label>PayPal Express</label>
+        <name>PayPal</name>
+        <redirect_url><![CDATA[{{secure_base_url}}paypal/express/start]]></redirect_url>
+        <image_url><![CDATA[https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png]]></image_url>
+        <description>Checkout using PayPal.</description>
+        <fee>0</fee>
+    </external_payment_method>
+    <api_type id="kasper">
+        <class>\Klarna\Kco\Model\Api\Kasper</class>
+        <ordermanagement>\Klarna\Ordermanagement\Model\Api\Ordermanagement</ordermanagement>
+        <options>
+            <option id="payment_review">1</option>
+            <option id="shipping_in_iframe">1</option>
+            <option id="shipping_callback_support">1</option>
+            <option id="merchant_checkbox_support">1</option>
+            <option id="delayed_push_notification">1</option>
+        </options>
+    </api_type>
+    <api_version id="na" translate="label">
+        <label>v3.1 North America</label>
+        <type>kasper</type>
+        <production_url><![CDATA[https://api-na.klarna.com]]></production_url>
+        <testdrive_url><![CDATA[https://api-na.playground.klarna.com]]></testdrive_url>
+        <options>
+            <option id="separate_tax_line">1</option>
+            <option id="cart_totals_in_iframe">1</option>
+        </options>
+    </api_version>
+    <api_version id="uk" translate="label">
+        <label>v3 UK</label>
+        <type>kasper</type>
+        <production_url><![CDATA[https://api.klarna.com]]></production_url>
+        <testdrive_url><![CDATA[https://api.playground.klarna.com]]></testdrive_url>
+        <options>
+            <option id="title_mandatory_support">1</option>
+            <option id="date_of_birth_mandatory_support">1</option>
+            <option id="phone_mandatory_support">1</option>
+        </options>
+    </api_version>
+    <api_version id="nl" translate="label">
+        <label>v3 NL</label>
+        <type>kasper</type>
+        <production_url><![CDATA[https://api.klarna.com]]></production_url>
+        <testdrive_url><![CDATA[https://api.playground.klarna.com]]></testdrive_url>
+        <options>
+            <option id="shipping_in_iframe">0</option>
+            <option id="title_mandatory_support">1</option>
+            <option id="date_of_birth_mandatory_support">1</option>
+            <option id="phone_mandatory_support">1</option>
+        </options>
+    </api_version>
+    <merchant_checkbox id="newsletter_signup" translate="label text">
+        <label>Newsletter Signup</label>
+        <text>Signup to our newsletter</text>
+        <validation_event>merchant_checkbox_newsletter_signup_validation</validation_event>
+        <save_event>merchant_checkbox_newsletter_signup_save</save_event>
+    </merchant_checkbox>
+    <merchant_checkbox id="create_account" translate="label text">
+        <label>Create Account</label>
+        <text>Create account for faster checkout next time</text>
+        <validation_event>merchant_checkbox_create_account_validation</validation_event>
+        <save_event>merchant_checkbox_create_account_save</save_event>
+    </merchant_checkbox>
+    <order_lines id="kasper">
+        <line id="items" class="\Klarna\Kco\Model\Checkout\Orderline\Items"/>
+        <line id="discount" class="\Klarna\Core\Model\Checkout\Orderline\Discount"/>
+        <line id="shipping" class="\Klarna\Core\Model\Checkout\Orderline\Shipping"/>
+        <line id="tax" class="\Klarna\Core\Model\Checkout\Orderline\Tax"/>
+        <line id="giftcard" class="Klarna\Core\Model\Checkout\Orderline\Giftcard"/>
+        <line id="customer_balance" class="Klarna\Core\Model\Checkout\Orderline\Customerbalance"/>
+        <line id="reward" class="Klarna\Core\Model\Checkout\Orderline\Reward"/>
+    </order_lines>
+</klarna>

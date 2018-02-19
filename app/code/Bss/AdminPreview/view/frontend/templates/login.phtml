@@ -1,0 +1,20 @@
+<?php
+/**
+ * Bss Commerce
+ * AdminPreview
+ */
+?>
+<p><?php /* @escapeNotVerified */ echo __('You have logged in and will go to customer account in 5 seconds.') ?></p>
+<form id="loginascustomer" method="post" action="<?php echo $block->getUrl('*/*/post') ?>">
+    <button style="display: none;" id="loginascustomer-button" type="submit" class="action save primary" title=""><span> >> </span></button>
+</form>
+<script>
+require([
+	"jquery",
+	"domReady!"
+], function($){
+	setTimeout(function(){
+		$('#loginascustomer-button').click();
+	}, 5000);
+});
+</script>

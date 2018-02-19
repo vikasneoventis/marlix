@@ -1,0 +1,37 @@
+{
+    "name": "klarna/module-om",
+    "description": "Klarna Order Management Magento 2 Extension",
+    "type": "magento2-module",
+    "license": "Apache-2.0",
+    "version": "2.3.3",
+    "authors": [
+        {
+            "name": "Joe Constant",
+            "email": "joe.constant@klarna.com"
+        },
+        {
+            "name": "Jason Grim",
+            "email": "jason.grim@klarna.com"
+        }
+    ],
+    "require": {
+        "klarna/module-core": "^2.5",
+        "klarna/payment-virtual": "1.0"
+    },
+    "suggest": {
+        "klarna/module-kco": "Klarna KCO Checkout module for Magento 2",
+        "klarna/module-kp": "Klarna Payments module for Magento 2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Klarna\\Ordermanagement\\": "."
+        },
+        "files": [ "registration.php" ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Klarna\\Ordermanagement\\Tests\\": "Tests/"
+        }
+    },
+    "minimum-stability": "dev"
+}

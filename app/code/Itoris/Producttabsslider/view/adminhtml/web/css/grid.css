@@ -1,0 +1,26 @@
+.sort-arrow-down{
+    text-decoration: none;
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/sort-arrow-down.png);
+    float: right;
+}
+.sort-arrow-down a.number_order{
+    text-decoration: none;
+}
+.number_order{
+    text-decoration: none;
+}
+.sort-arrow-up{
+    text-decoration: none;
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/sort-arrow-up.png);
+    float: right;
+}
+.sort-arrow-up a.number_order{
+    text-decoration: none;
+}
+#itoris_grid_tabs .sort-arrow-up {margin-right: 16px;}
+#itoris_grid_tabs .sort-arrow-down + .sort-arrow-up {margin-right:0px;}
+.admin__fieldset .admin__field-complex .admin__field-complex-content {max-width:100%}

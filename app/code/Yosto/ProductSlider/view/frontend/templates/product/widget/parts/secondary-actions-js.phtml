@@ -1,0 +1,14 @@
+<?php
+/**
+ * Copyright © 2017 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+// @codingStandardsIgnoreFile
+?>
+<script type="text/javascript">
+    require(['jquery'],function ($) {
+        $('.yosto-custom-widget.<?php echo $currentClass;?>.modal-theme .fa.fa-ellipsis-v').on('click', function () {
+            var as = $(this).parent().find('.actions-secondary').toggle('slow');
+        })
+    })
+</script>

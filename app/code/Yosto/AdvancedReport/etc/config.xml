@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <reports>
+            <advanced_report>
+                <revenue>
+                    <days>15</days>
+                    <weeks>8</weeks>
+                </revenue>
+            </advanced_report>
+        </reports>
+    </default>
+</config>

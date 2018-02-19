@@ -1,0 +1,44 @@
+{
+    "name": "klarna/module-kred",
+    "description": "Klarna Checkout (v2) Magento 2 Extension",
+    "type": "magento2-module",
+    "license": "Apache-2.0",
+    "version": "3.0.2",
+    "authors": [
+        {
+            "name": "Joe Constant",
+            "email": "joe.constant@klarna.com"
+        },
+        {
+            "name": "Jason Grim",
+            "email": "jason.grim@klarna.com"
+        }
+    ],
+    "require": {
+        "klarna/php-xmlrpc": "5.0",
+        "klarna/checkout": "^4.0",
+        "klarna/module-om": "^2.3",
+        "klarna/module-kco": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.0",
+        "squizlabs/php_codesniffer": "2.3.*",
+        "phpmd/phpmd": "@stable",
+        "pdepend/pdepend": "2.2.2",
+        "friendsofphp/php-cs-fixer": "~1.2",
+        "sebastian/phpcpd": "2.0.0",
+        "magento-ecg/coding-standard": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Klarna\\Kred\\": "."
+        },
+        "files": [ "registration.php" ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Klarna\\Kred\\Tests\\": "Tests/"
+        }
+    },
+    "minimum-stability": "dev"
+}

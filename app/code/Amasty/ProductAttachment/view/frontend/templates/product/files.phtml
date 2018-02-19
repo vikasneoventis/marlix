@@ -1,0 +1,48 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+?>
+
+<?php
+/**
+ * @var \Amasty\ProductAttachment\Block\Catalog\Product\Attachment $this
+ */
+
+/**
+ * @var \Amasty\ProductAttachment\Model\ResourceModel\File\Collection $customerFiles
+ */
+$attachmentCollection = $this->getAttachmentCollection();
+?>
+
+<div class="amasty-product-attachment-block">
+    <?php if ($block->displayHead()) : ?>
+        <h3 class="label"><?php echo $this->getBlockLabel()?></h3>
+    <?php endif;?>
+        <ul class="list-unstyled">
+            <?php foreach ($attachmentCollection as $file) : ?>
+                <?php
+                /**
+                 * @var \Amasty\ProductAttachment\Model\File $file
+                 */
+                ?>
+                <li>
+                    <a class='file' href="<?php echo $this->getDownloadUrl($file)?>" target="_blank">
+                        <?php if ($icon = $file->getIconUrl()) : ?>
+                            <img
+                                    src="<?php echo $this->escapeHtml($icon) ?>"
+                                    alt="<?php echo $this->escapeHtml($file->getFileExtension()) ?>"
+                            />
+                        <?php endif?>
+                        <span><?php echo $file->getLabel()?>
+                            <?php if ($size = $file->getFileSize() > 0) : ?>
+                                (<?php echo $file->getFullFileSize();?>)
+                            <?php endif;?>
+                        </span>
+                    </a>
+                </li>
+            <?php endforeach ?>
+        </ul>
+</div>

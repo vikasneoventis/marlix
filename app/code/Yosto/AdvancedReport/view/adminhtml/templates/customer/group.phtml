@@ -1,0 +1,46 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $this \Yosto\AdvancedReport\Block\Adminhtml\Report\Customer\Group */ ?>
+<?php
+    $collection = $block->getCollection();
+?>
+<div id="revenue-donut-chart" style="width: 50%; height: 500px; float: left"></div>
+<div id="order-donut-chart" style="width: 50%; height: 500px; float: left"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var revenueData = google.visualization.arrayToDataTable([
+            ['Total', 'Total'],
+            <?php foreach($collection as $item): ?>
+                ['<?php /* @escapeNotVerified */ echo $item['customer_group_code'] ?>', <?php /* @escapeNotVerified */ echo $item['revenue']; ?> ],
+            <?php endforeach;?>
+        ]);
+        var orderData = google.visualization.arrayToDataTable([
+            ['Orders Count', 'Orders Count'],
+            <?php foreach($collection as $item): ?>
+            ['<?php /* @escapeNotVerified */ echo $item['customer_group_code'] ?>', <?php /* @escapeNotVerified */ echo $item['orders_count']; ?> ],
+            <?php endforeach;?>
+        ]);
+        var revenueChartOptions = {
+            title: 'Total',
+            pieHole: 0.4,
+        };
+        var orderChartOptions = {
+            title: 'Orders Count',
+            pieHole: 0.4,
+        };
+        var revenueChart = new google.visualization.PieChart(document.getElementById('revenue-donut-chart'));
+        var orderChart = new google.visualization.PieChart(document.getElementById('order-donut-chart'));
+        revenueChart.draw(revenueData, revenueChartOptions);
+        orderChart.draw(orderData, orderChartOptions);
+    }
+</script>

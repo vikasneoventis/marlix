@@ -1,0 +1,13 @@
+product preview in grid : ok
+login as customer : ok
+product preview in sales order gird : ok
+customer preview to admin in sales order grid, order view : ok
+
+cms edit preview : ok
+product edit preview : ok
+category preview : ok
+
+admin logged in frontend
+http://magento.stackexchange.com/questions/106631/magento-2-how-to-check-if-admin-logged-on-frontend
+
+sua helper getProductUrl -> sua block ordereditems.php, sua templale item_column_name.phtml

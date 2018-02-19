@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/menu.xsd">
+    <menu>
+        <add id="Yosto_AdvancedReport::main_menu" title="Advanced Reports"
+             translate="title"
+             module="Yosto_AdvancedReport"
+             resource="Yosto_AdvancedReport::advanced_report"
+             parent="Yosto_Core::xmagemenu"
+             sortOrder="1"/>
+        <add id="Yosto_AdvancedReport::revenue" title="Revenue"
+             translate="title"
+             module="Yosto_AdvancedReport"
+             resource="Yosto_AdvancedReport::revenue"
+             parent="Yosto_AdvancedReport::main_menu"
+             action="yosto_advancedreport/report/revenue"
+             sortOrder="2"/>
+        <add id="Yosto_AdvancedReport::customer_group" title="Customer Group"
+             translate="title"
+             module="Yosto_AdvancedReport"
+             resource="Yosto_AdvancedReport::customer_group"
+             parent="Yosto_AdvancedReport::main_menu"
+             action="yosto_advancedreport/report_customer/group"
+             sortOrder="3"/>
+        <add id="Yosto_AdvancedReport::geolocation" title="Geolocation"
+             translate="title"
+             module="Yosto_AdvancedReport"
+             resource="Yosto_AdvancedReport::geolocation"
+             parent="Yosto_AdvancedReport::main_menu"
+             action="yosto_advancedreport/report_customer/geolocation"
+             sortOrder="4"/>
+        <add id="Yosto_AdvancedReport::sales_reports" title="Sales"
+             translate="title"
+             module="Yosto_AdvancedReport"
+             resource="Yosto_AdvancedReport::sales_reports"
+             parent="Yosto_AdvancedReport::main_menu"
+             action="yosto_advancedreport/report_sales/sales"
+             sortOrder="5"/>
+        <add id="Yosto_AdvancedReport::bestsellers" title="Best Sellers"
+             module="Yosto_AdvancedReport"
+             translate="title"
+             resource="Yosto_AdvancedReport::bestsellers"
+             parent="Yosto_AdvancedReport::main_menu"
+             action="yosto_advancedreport/report_sales/bestsellers"
+             sortOrder="6"/>
+        <add id="Yosto_AdvancedReport::system_config" title="Configuration"
+             translate="title"
+             resource="Magento_Reports::reports"
+             module="Yosto_AdvancedReport"
+             parent="Yosto_AdvancedReport::main_menu"
+             action="adminhtml/system_config/edit/section/reports"
+             sortOrder="7"/>
+
+    </menu>
+</config>

@@ -1,0 +1,227 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $this \Yosto\AdvancedReport\Block\Adminhtml\Report\Revenue */ ?>
+<?php
+    $todayRevenue = $block->getTodayRevenue();
+    $revenue =  $todayRevenue['revenue'];
+    $revenueRate = $todayRevenue['revenue_rate'];
+    $ordersRate = $todayRevenue['orders_rate'];
+    $averageRevenue = $todayRevenue['average_revenue'];
+    $orderCount = $todayRevenue['order_count'];
+    $averageRevenueRate = $todayRevenue['average_revenue_rate'];
+    $todayShipping = $todayRevenue['sum_shipping_amount'];
+    $shippingRate = $todayRevenue['shipping_rate'];
+    $todayRefunded = $todayRevenue['sum_refunded_amount'];
+    $refundedRate = $todayRevenue['refunded_rate'];
+
+    $revenueLastDays = $block->getRevenueLastDays();
+    $sevenDays = $revenueLastDays['sevenDays'];
+    $thirtyDays = $revenueLastDays['thirtyDays'];
+    $sevenFourteenRate = $revenueLastDays['seven_fourteen_rate'];
+    $thirtySixtyRate = $revenueLastDays['thirty_sixty_rate'];
+    $revenueByDays = $revenueLastDays['revenue_by_days'];
+    $revenueByLastFourWeeks = $block->getRevenueByLastFourWeeks();
+    $selectedDay = $block->getRequest()->getParam('day');
+    $todayText = "Today";
+    if($selectedDay!=null && (date('Y-m-d') != date('Y-m-d',strtotime($selectedDay))))
+    $todayText = "[".date('M d',strtotime($selectedDay))."]";
+?>
+<div class="dashboard-container row">
+    <div class="dashboard-main col-m-9 col-m-push-3">
+        <div id="revenue-by-day-chart">
+            <svg style="height: 400px"></svg>
+        </div>
+        <div id="revenue-by-week-chart">
+            <svg style="height: 400px"></svg>
+        </div>
+
+    </div>
+    <div class="dashboard-secondary col-m-3 col-m-pull-9">
+        <div class="dashboard-item dashboard-item-primary">
+            <div class="dashboard-item-title"><?php echo $todayText; ?> Revenue</div>
+            <div class="dashboard-item-content">
+                <strong class="dashboard-sales-value">
+                    <span class="price"><?php /* @escapeNotVerified */ echo $revenue ?></span>
+                    <span class="dashboard-sales-decimals"></span>
+                </strong>
+                <?php if($revenueRate !=0): ?>
+                <strong class="percent">
+                    <i class="fa <?php if($revenueRate < 0) { echo 'fa-sort-desc';} else { echo 'fa-sort-asc';} ?>" aria-hidden="true"></i>
+                    <span><?php /* @escapeNotVerified */ echo $revenueRate ?>%</span>
+                </strong>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <div class="dashboard-item dashboard-item-primary">
+            <div class="dashboard-item-title"><?php echo $todayText; ?> Orders</div>
+            <div class="dashboard-item-content">
+                <strong class="dashboard-sales-value">
+                    <span class="price"><?php /* @escapeNotVerified */ echo $orderCount ?></span>
+                </strong>
+                <?php if($ordersRate !=0): ?>
+                <strong class="percent">
+                    <i class="fa <?php if($ordersRate < 0) { echo 'fa-sort-desc';} else { echo 'fa-sort-asc';} ?>" aria-hidden="true"></i>
+                    <span><?php /* @escapeNotVerified */ echo $ordersRate ?>%</span>
+                </strong>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <div class="dashboard-item dashboard-item-primary">
+            <div class="dashboard-item-title"><?php echo $todayText; ?> Average Revenue</div>
+            <div class="dashboard-item-content">
+                <strong class="dashboard-sales-value">
+                    <span class="price"><?php /* @escapeNotVerified */ echo $averageRevenue ?></span>
+                    <span class="dashboard-sales-decimals"></span>
+                </strong>
+                <?php if($averageRevenueRate !=0): ?>
+                <strong class="percent">
+                    <i class="fa <?php if($averageRevenueRate < 0) { echo 'fa-sort-desc';} else { echo 'fa-sort-asc';} ?>" aria-hidden="true"></i>
+                    <span><?php /* @escapeNotVerified */ echo $averageRevenueRate ?>%</span>
+                </strong>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <div class="dashboard-item dashboard-item-primary">
+            <div class="dashboard-item-title"><?php echo $todayText; ?> Shipping</div>
+            <div class="dashboard-item-content">
+                <strong class="dashboard-sales-value">
+                    <span class="price"><?php /* @escapeNotVerified */ echo $todayShipping ?></span>
+                    <span class="dashboard-sales-decimals"></span>
+                </strong>
+                <?php if($shippingRate !=0): ?>
+                <strong class="percent">
+                    <i class="fa <?php if($shippingRate < 0) { echo 'fa-sort-desc';} else { echo 'fa-sort-asc';} ?>" aria-hidden="true"></i>
+                    <span><?php /* @escapeNotVerified */ echo $shippingRate ?>%</span>
+                </strong>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <div class="dashboard-item dashboard-item-primary">
+            <div class="dashboard-item-title"><?php echo $todayText; ?> Refunded</div>
+            <div class="dashboard-item-content">
+                <strong class="dashboard-sales-value">
+                    <span class="price"><?php /* @escapeNotVerified */ echo $todayRefunded ?></span>
+                    <span class="dashboard-sales-decimals"></span>
+                </strong>
+                <?php if($refundedRate !=0): ?>
+                <strong class="percent">
+                    <i class="fa <?php if($refundedRate < 0) { echo 'fa-sort-desc';} else { echo 'fa-sort-asc';} ?>" aria-hidden="true"></i>
+                    <span><?php /* @escapeNotVerified */ echo $refundedRate ?>%</span>
+                </strong>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <div class="dashboard-item dashboard-item-primary">
+            <div class="dashboard-item-title">Last 7 Days Revenue</div>
+            <div class="dashboard-item-content">
+                <strong class="dashboard-sales-value">
+                    <span class="price"><?php /* @escapeNotVerified */ echo $sevenDays ?></span>
+                    <span class="dashboard-sales-decimals"></span>
+                </strong>
+                <?php if($sevenFourteenRate !=0): ?>
+                <strong class="percent">
+                    <i class="fa <?php if($sevenFourteenRate < 0) { echo 'fa-sort-desc';} else { echo 'fa-sort-asc';} ?>" aria-hidden="true"></i>
+                    <span><?php /* @escapeNotVerified */ echo $sevenFourteenRate ?>%</span>
+                </strong>
+                <?php endif;?>
+            </div>
+        </div>
+        <div class="dashboard-item dashboard-item-primary">
+            <div class="dashboard-item-title">Last 30 Days Revenue</div>
+            <div class="dashboard-item-content">
+                <strong class="dashboard-sales-value">
+                    <span class="price"><?php /* @escapeNotVerified */ echo $thirtyDays ?></span>
+                    <span class="dashboard-sales-decimals"></span>
+                </strong>
+                <?php if($thirtySixtyRate !=0): ?>
+                <strong class="percent">
+                    <i class="fa <?php if($thirtySixtyRate < 0) { echo 'fa-sort-desc';} else { echo 'fa-sort-asc';} ?>" aria-hidden="true"></i>
+                    <span><?php /* @escapeNotVerified */ echo $thirtySixtyRate ?>%</span>
+                </strong>
+                <?php endif; ?>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script language="javaScript">
+    require(['Yosto_AdvancedReport/js/d3.min'],function(){
+
+        require(['Yosto_AdvancedReport/js/nv.d3.min'],function(){
+            revenueByWeekChart = [
+                {
+                    key: "Cumulative Return",
+                    values: [
+                        <?php foreach($revenueByLastFourWeeks as $key=>$item): ?>
+                        {
+                            "label" :  "<?php /* @escapeNotVerified */ echo $key ?>",
+                            "value" : <?php /* @escapeNotVerified */ echo $item ?>
+                        } ,
+                        <?php endforeach; ?>
+                    ]
+                }
+            ];
+
+            revenueByDayChart = [
+                {
+                    key: "Cumulative Return",
+                    values: [
+                        <?php foreach($revenueByDays as $key=>$value): ?>
+                        {
+                            "label" :  "<?php /* @escapeNotVerified */ echo $key ?>",
+                            "value" : <?php /* @escapeNotVerified */ echo $value ?>
+                        } ,
+                        <?php endforeach; ?>
+                    ]
+                }
+            ]
+
+            nv.addGraph(function() {
+                var chart = nv.models.discreteBarChart()
+                        .x(function(d) { return d.label })
+                        .y(function(d) { return d.value })
+                        .staggerLabels(true)
+                        //.staggerLabels(historicalBarChart[0].values.length > 8)
+                        .showValues(true)
+                        .rotateLabels(45)
+                        .duration(250)
+                    ;
+                chart.xAxis.tickFormat(
+                    function(d) { return d3.time.format('%b %d')(new Date(d)); }
+                )
+
+                chart.xAxis.axisLabel("First day of week").axisLabelDistance(-5).staggerLabels(true);
+                chart.yAxis.axisLabel("Revenue").staggerLabels(true);
+
+                d3.select('#revenue-by-week-chart svg')
+                    .datum(revenueByWeekChart)
+                    .call(chart);
+
+                chart.xAxis.axisLabel("Day").axisLabelDistance(-5).staggerLabels(true);
+                chart.yAxis.axisLabel("Revenue").staggerLabels(true);
+
+                d3.select('#revenue-by-day-chart svg')
+                    .datum(revenueByDayChart)
+                    .call(chart);
+                nv.utils.windowResize(chart.update);
+                return chart;
+            });
+        })
+
+    })
+</script>

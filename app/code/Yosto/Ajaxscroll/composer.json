@@ -1,0 +1,19 @@
+{
+    "name": "yosto/module-ajaxscroll",
+    "description": "ajax-scroll",
+    "require": {
+    },
+    "type": "magento2-module",
+    "version": "1.0.1",
+    "license": [
+        "Proprietary"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Yosto\\Ajaxscroll\\": ""
+        }
+    }
+}

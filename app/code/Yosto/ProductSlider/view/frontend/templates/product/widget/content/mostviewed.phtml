@@ -1,0 +1,87 @@
+<?php
+/**
+ * Copyright © 2017 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Template for displaying new products widget
+ *
+ * @var $block \Yosto\ProductSlider\Block\Product\Widget\NewWidget
+ */
+$currentClass = "block-mostviewed-products";
+if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())) : ?>
+    <?php include($this->getTemplateFile('Yosto_ProductSlider::product/widget/parts/general-config.phtml')); ?>
+    <?php $itemsNumber = $block->getProductCollection()->getSize(); ?>
+    <div class="block widget yosto-custom-widget <?php echo $modalThemeClass ?> block-mostviewed-products">
+        <?php if ($title):?>
+            <div class="yosto-product-slider-heading">
+                <h2><span><?php echo  $title; ?></span></h2>
+            </div>
+        <?php endif ?>
+        <div class="block-content">
+            <?php /* @escapeNotVerified */
+            echo '<!-- ' . $image . '-->' ?>
+            <div class="yosto-product-slider">
+                <ol class=" owl-carousel owl-theme product-items mostviewed-products-<?php echo $randomId; ?> <?php /* @escapeNotVerified */
+                echo $type; ?>">
+                    <?php include($this->getTemplateFile('Yosto_ProductSlider::product/widget/parts/slider-item.phtml')); ?>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/x-magento-init">
+    {
+       ".yosto-product-slider .mostviewed-products-<?php echo $randomId; ?>": {
+            "Yosto_Core/js/components/yosto-slider" : {
+                "options" : {
+                    "navText": "",
+                    "margin": 0,
+                    "autoplay": true,
+                    "loop": false,
+                    "animateIn": "<?php echo $animationClass ?>",
+                    "responsive": {
+                        "0" : {
+                            "items" : <?php echo $mobile; ?>
+                        },
+                        "480" : {
+                            "items" : <?php echo $tablet; ?>
+                        },
+                        "640" : {
+                            "items" : <?php echo $largeTablet; ?>
+
+                        },
+                        "768" : {
+                            "items" : <?php echo $smallDesktop; ?>,
+                            "nav": true
+                        },
+                        "1024" : {
+                            "items" : <?php echo $desktop; ?>,
+                            "nav": true
+                        }
+
+
+                    }
+                },
+                "elementClass" : ".yosto-product-slider .mostviewed-products-<?php echo $randomId; ?>"
+            }
+        }
+    }
+
+    </script>
+    <?php if (!$block->isRedirectToCartEnabled()) : ?>
+        <script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {}
+            }
+        }
+        </script>
+    <?php endif; ?>
+    <?php include($this->getTemplateFile('Yosto_ProductSlider::product/widget/parts/secondary-actions-js.phtml')); ?>
+<?php endif; ?>

@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="ajaxscroll" translate="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Ajaxscroll and Lazy loading</label>
+            <tab>xmage2</tab>
+            <resource>Yosto_Ajaxscroll::ajaxscroll_configuration</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Ajaxscroll</label>
+                <field id="enabled" sortOrder="10" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use Ajax Scroll Products List </label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="loading_icon" translate="label comment" sortOrder="20" type="image" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loading Bar</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">yosto/lazyloading</upload_dir>
+                    <base_url type="media" scope_info="1">yosto/lazyloading</base_url>
+                    <comment>Show this image when loading. Select a .gif file</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="loading_text" translate="label" sortOrder="50" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text below loading bar</label>
+                    <comment>Default value is "Loading", blank if you don't want show this text.</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="enabled_index" translate="label" sortOrder="55" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Apply to homepage</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="enabled_category" translate="label" sortOrder="60" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Apply to category page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="enabled_search" translate="label" sortOrder="70" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Apply to search result page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="enabled_tag" translate="label" sortOrder="80" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Apply to product tag page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="container_class" translate="label comment" sortOrder="90" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Container css classes</label>
+                    <comment>Css class for container where contains item, default value is .column</comment>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="item_class" translate="label" sortOrder="100" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Item css classes</label>
+                    <comment>Css class for item, default value is .product-item</comment>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="pagination_class" translate="label" sortOrder="100" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pagination css classes</label>
+                    <comment>Css class for pagination item, default value is .pages .item</comment>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="next_button_class" translate="label" sortOrder="100" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Next button css classes</label>
+                    <comment>Css class for next button, default value is .next</comment>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+            </group>
+            <group id="load_more" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Load more items</label>
+                <field id="enabled_load_more" translate="label" sortOrder="10" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable "load more" button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>This feature will apply for all products.</comment>
+                </field>
+                <field id="threshold" translate="label comment" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Limited number of pages</label>
+                    <comment>Number of pages is loaded automatically, then customer need to click on button to load more item</comment>
+                    <validate>validate-number</validate>
+                    <depends>
+                        <field id="enabled_load_more">1</field>
+                    </depends>
+                </field>
+                <field id="load_more_text" translate="label comment" sortOrder="30" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>"Load more" button label</label>
+                    <depends>
+                        <field id="enabled_load_more">1</field>
+                    </depends>
+                </field>
+                <field id="load_more_background" translate="label comment" sortOrder="40" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>"Load more" button background</label>
+                    <frontend_model>Yosto\Ajaxscroll\Model\System\Config\Color</frontend_model>
+                    <depends>
+                        <field id="enabled_load_more">1</field>
+                    </depends>
+                </field>
+                <field id="load_more_text_color" translate="label comment" sortOrder="50" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>"Load more" button text color</label>
+                    <frontend_model>Yosto\Ajaxscroll\Model\System\Config\Color</frontend_model>
+                    <depends>
+                        <field id="enabled_load_more">1</field>
+                    </depends>
+                </field>
+
+                <field id="load_previous_text" translate="label comment" sortOrder="60" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>"Load previous" button label</label>
+                    <depends>
+                        <field id="enabled_load_more">1</field>
+                    </depends>
+                </field>
+                <field id="no_more_items" translate="label comment" sortOrder="70" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>"No more Items" text</label>
+                    <depends>
+                        <field id="enabled_load_more">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="lazy_loading" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Lazy load</label>
+                <field id="enabled_lazy_load" translate="label" sortOrder="10" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use lazy load</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="loading_img" translate="label comment" sortOrder="30" type="image" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loading Image</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">yosto/lazyloading</upload_dir>
+                    <base_url type="media" scope_info="1">yosto/lazyloading</base_url>
+                    <depends>
+                        <field id="enabled_lazy_load">1</field>
+                    </depends>
+                </field>
+                <field id="loading_class" translate="label comment" sortOrder="40" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Css class for lazy loading</label>
+                    <comment>Default value is "img.lazy" and for product image only, if you use a custom theme, and want to use lazy loading with all image, please request support from theme author.</comment>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+            <group id="back_to_top" translate="label" sortOrder="40" showInDefault="1" showInStore="1" showInWebsite="1">
+                <label>Back To Top</label>
+                <field id="enabled_top" translate="label" sortOrder="1" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="use_image_or_icon" translate="label comment" sortOrder="2" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Use image or Text</label>
+                    <comment>Choose "yes" to use image, "no" to use text</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enable_top">1</field>
+                    </depends>
+                </field>
+
+                <field id="to_top_icon" translate="label comment" sortOrder="3" type="image" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Icon</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">yosto/lazyloading</upload_dir>
+                    <base_url type="media" scope_info="1">yosto/lazyloading</base_url>
+                    <depends>
+                        <field id="use_image_or_icon">1</field>
+                    </depends>
+                </field>
+                <field id="arrow_color" translate="label comment" sortOrder="4" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text color</label>
+                    <frontend_model>Yosto\Ajaxscroll\Model\System\Config\Color</frontend_model>
+                    <depends>
+                        <field id="use_image_or_icon">0</field>
+                    </depends>
+                </field>
+
+                <field id="init_background" translate="label comment" sortOrder="5" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background color</label>
+                    <frontend_model>Yosto\Ajaxscroll\Model\System\Config\Color</frontend_model>
+                    <depends>
+                        <field id="use_image_or_icon">0</field>
+                    </depends>
+                </field>
+
+                <field id="hover_background" translate="label comment" sortOrder="6" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background color when mouse hover</label>
+                    <frontend_model>Yosto\Ajaxscroll\Model\System\Config\Color</frontend_model>
+                    <depends>
+                        <field id="use_image_or_icon">0</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

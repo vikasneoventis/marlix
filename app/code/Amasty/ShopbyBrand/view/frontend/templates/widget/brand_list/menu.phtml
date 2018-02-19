@@ -1,0 +1,43 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_Shopby
+ */
+?>
+<?php
+/** @var \Amasty\ShopbyBrand\Block\Widget\BrandList $this */
+$items = $this->getIndex();
+$brandLetters   = $this->getAllLetters();
+$isShowCount = $this->getData('show_count');
+$isShowImages = $this->getData('show_images');
+$imgWidth = abs($this->getData('image_width'));
+$imgHeight =  abs($this->getData('image_height'));
+$isShowSearch =$this->getData('show_search');
+$isShowFilter = $this->getData('show_filter');
+$filterDisplayAll = $this->getData('filter_display_all');
+$display_zero = $this->getData('display_zero');
+?>
+
+<div class="brands_menu">
+<?php if ($items): ?>
+    
+<?php $width = floor(100/count($items)) ?>
+<?php foreach ($items as $letters): ?>
+    
+    <?php foreach ($letters as $letter => $options): ?>
+            <?php foreach ($options as $o): ?>
+                <?php if ($o['cnt']): ?>
+                    <a href="<?php echo $o['url'] ?>">
+                        <img src="<?php echo $o['img'] ?>" alt="<?php echo $this->escapeHtml($o['label']) ?>" />
+                        <?php //echo $this->escapeHtml($o['label']) ?>
+                    </a>
+                <?php endif ?>
+            <?php endforeach ?>
+    <?php endforeach ?>
+<?php endforeach ?>
+    <div style="clear:both;"></div>
+<?php else: ?>
+    Please select brand attribute in Stores -> Configuration -> Amasty Extensions -> Improved Layered Navigation: Brands.
+</div>
+<?php endif ?>

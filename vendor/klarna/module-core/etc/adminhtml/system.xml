@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Klarna Core module
+ *
+ * (c) Klarna Bank AB (publ)
+ *
+ * For the full copyright and license information, please view the NOTICE
+ * and LICENSE files that were distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="klarna_core" translate="label" sortOrder="200">
+            <label><![CDATA[<img src="https://cdn.klarna.com/1.0/shared/image/generic/logo/en_us/basic/blue-black.png?width=68">]]></label>
+        </tab>
+        <section id="klarna" translate="label" showInDefault="1" showInWebsite="1" showInStore="1"  type="text" sortOrder="10">
+            <tab>klarna_core</tab>
+            <label>General</label>
+            <resource>Klarna_Core::klarna</resource>
+            <group id="api" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1"
+                   translate="label">
+                <label><![CDATA[<img src="https://cdn.klarna.com/1.0/shared/image/generic/logo/en_us/basic/blue-black.png?width=68"> API]]></label>
+                <field id="api_version" sortOrder="10" translate="label" type="select" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>API Version</label>
+                    <source_model>Klarna\Core\Model\System\Config\Source\Version</source_model>
+                </field>
+                <field id="merchant_id" sortOrder="20" translate="label" type="text" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Merchant ID/EID</label>
+                </field>
+                <field id="shared_secret" sortOrder="30" translate="label" type="obscure" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Password/Shared secret</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <field id="test_mode" sortOrder="40" translate="label" type="select" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Test Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="debug" sortOrder="50" translate="label comment" type="select" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Debug Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Should not be enabled in production. Sensitive information is logged.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,35 @@
+<?php
+/**
+ * Copyright © 2017 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+$type = 'widget-product-grid';
+$mode = 'grid';
+$image = 'new_products_content_widget_grid';
+$title = $block->getTitle() ? __($block->getTitle()) : '';
+$enableCustomCss = $this->getData('use_custom_css');
+$animationClass = $this->getData('animation');
+$modalThemeClass = $enableCustomCss ? 'modal-theme': '';
+$items = $block->getProductCollection()->getItems();
+$showSwatches = $this->isShowSwatches();
+$showWishlist = true;
+$showCompare = true;
+$showCart = true;
+$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::DEFAULT_VIEW;
+$description = false;
+$randomId = rand(1, 1000);
+/**
+ * Items for each screen size
+ */
+
+$mobile = $this->getData('mobile') ? : 1;
+$tablet = $this->getData('tablet') ? : 2;
+$largeTablet = $this->getData('large_tablet') ? : 3;
+$smallDesktop = $this->getData('small_desktop') ? : 4;
+$desktop = $this->getData('desktop') ? : 5;
+?>

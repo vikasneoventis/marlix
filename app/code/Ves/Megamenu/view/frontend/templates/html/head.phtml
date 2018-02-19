@@ -1,0 +1,12 @@
+<?php
+$data = $this->helper("Ves\Megamenu\Helper\Data");
+$customCss = $data->getConfig('general_settings/custom_css');
+?>
+
+<?php if ($customCss) { ?>
+<!-- MEGAMENU CUSTOM CSS -->
+<style type="text/css">
+	<?php echo $customCss; ?>
+</style>
+<!-- MEGAMENU CUSTOM CSS -->
+<?php } ?>

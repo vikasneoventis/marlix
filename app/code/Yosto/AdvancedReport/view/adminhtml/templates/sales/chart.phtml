@@ -1,0 +1,64 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $this \Yosto\AdvancedReport\Block\Adminhtml\Report\Sales\Chart */ ?>
+<?php
+    $collection = $block->getChartCollection();
+?>
+<?php if(count($collection)>0):?>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="chart_div"></div>
+<script language="javascript">
+// Google charts
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var columnsList = [
+            '<?php /* @escapeNotVerified */ echo __('Date') ?>',
+            '<?php /* @escapeNotVerified */ echo __('Sales Total') ?>',
+            '<?php /* @escapeNotVerified */ echo __('Invoiced') ?>',
+            '<?php /* @escapeNotVerified */ echo __('Sales Shipping') ?>',
+            '<?php /* @escapeNotVerified */ echo __('Refunded') ?>',
+            '<?php /* @escapeNotVerified */ echo __('Sales Tax') ?>',
+            '<?php /* @escapeNotVerified */ echo __('Sales Discount') ?>',
+            '<?php /* @escapeNotVerified */ echo __('Canceled') ?>',
+        ];
+        var data = google.visualization.arrayToDataTable([
+            columnsList,
+            <?php foreach($collection as $item) if($item['total_income_amount']): ?>
+            [
+                '<?php /* @escapeNotVerified */ echo date_format(date_create($item['period']), 'F j, Y') ?>',
+                <?php /* @escapeNotVerified */ echo $item['total_income_amount']; ?>,
+                <?php /* @escapeNotVerified */ echo $item['total_invoiced_amount']; ?>,
+                <?php /* @escapeNotVerified */ echo $item['total_shipping_amount']; ?>,
+                <?php /* @escapeNotVerified */ echo $item['total_refunded_amount']; ?>,
+                <?php /* @escapeNotVerified */ echo $item['total_tax_amount']; ?>,
+                <?php /* @escapeNotVerified */ echo $item['total_discount_amount']; ?>,
+                <?php /* @escapeNotVerified */ echo $item['total_canceled_amount']; ?>
+
+            ],
+            <?php endif;?>
+        ]);
+
+        var options = {
+            chart: {
+            },
+            bars: 'vertical', // Required for Material Bar Charts.
+            hAxis: {format: 'short'},
+            height: 500,
+        };
+        var chart = new google.charts.Bar(document.getElementById('chart_div'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+    };
+
+</script>
+<?php else: ?>
+    <h3><p align="center"><?php echo __('No Data Available') ?></p></h3>
+<?php endif;?>

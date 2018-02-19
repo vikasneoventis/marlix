@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="review_product_form_component"/>
+    <body>
+            <block class="Itoris\Producttabsslider\Block\Frontend\Review" name="itoris.reviews.tab" as="itoris.reviews" template="Itoris_Producttabsslider::product/review.phtml" group="detailed_info">
+                <block class="Magento\Review\Block\Form" name="itoris.product.review.form" as="itoris.review_form">
+                    <container name="product.review.form.fields.before" as="form_fields_before" label="Review Form Fields Before"/>
+                </block>
+            </block>
+        <referenceBlock name="itoris.product.review.form">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="review-form" xsi:type="array">
+                            <item name="component" xsi:type="string">Magento_Review/js/view/review</item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/menu.xsd">
+    <menu>
+        <add id="Yosto_Ajaxscroll::main_menu" title="Performance"
+             module="Yosto_Ajaxscroll" sortOrder="2"
+             resource="Yosto_Ajaxscroll::main_menu" parent="Yosto_Core::xmagemenu"/>
+        <add id="Yosto_Ajaxcroll::ajaxscroll_configuration" title="Ajaxscroll"
+             module="Yosto_Ajaxscroll" sortOrder="2" parent="Yosto_Ajaxscroll::main_menu"
+             action="adminhtml/system_config/edit/section/ajaxscroll" resource="Yosto_Ajaxscroll::ajaxscroll_configuration" />
+    </menu>
+</config>

@@ -1,0 +1,173 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+?>
+<?php
+$allTimeData = $block->getAllTimeReport();
+$countAllMessage = $block->countAllMessage();
+$todayReport = $block->getTodayReport();
+$countTodayMessage = $block->countTodayMessage();
+$lastMonthReport = $block->getLastMonthReport();
+$countLastMonthMessage = $block->countLastMonthMessage();
+$lastTwelveMonthReport = $block->getLastTwelveMonthReport();
+$countTwelveMonthMessage = $block->countTwelveMonthMessage();
+$eachMonthInLastTwelveReport = $block->getEachMonthInLastTwelveReport();
+
+?>
+<div class="yosto-twilio-sms">
+    <div class="dashboard-container row">
+        <div class="dashboard-secondary col-m-6">
+            <p class="dashboard-item-title">All time report - Total Messages: <span class="sms-number">
+                <?php echo $countAllMessage != null ? $countAllMessage->getData('total_count') : 0; ?>
+            </span></p>
+
+            <div id="all-time-report-chart"></div>
+        </div>
+        <div class="dashboard-main col-m-6">
+            <p class="dashboard-item-title">Today report - Total Messages:
+        <span class="sms-number">
+                <?php echo $countTodayMessage != null ? $countTodayMessage->getData('total_count') : 0; ?>
+            </span></p>
+            </p>
+
+            <div id="today-report-chart"></div>
+        </div>
+    </div>
+    <div class="dashboard-container row">
+        <div class="dashboard-secondary col-m-6">
+            <p class="dashboard-item-title">Last month report - Total Messages:
+         <span class="sms-number">
+                <?php echo $countLastMonthMessage != null ? $countLastMonthMessage->getData('total_count') : 0; ?>
+            </span>
+            </p>
+
+            <div id="last-month-report-chart"></div>
+        </div>
+        <div class="dashboard-main col-m-6">
+            <p class="dashboard-item-title">Last twelve months report - Total Messages:
+         <span class="sms-number">
+                <?php echo $countTwelveMonthMessage != null ? $countTwelveMonthMessage->getData('total_count') : 0; ?>
+            </span>
+            </p>
+
+            <div id="last-twelve-month-report-chart"></div>
+        </div>
+    </div>
+    <div class="dashboard-container row">
+        <p class="dashboard-item-title text-center">All time report - Each Month</p>
+
+        <div id="each-month-report-chart"></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", {packages: ["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        /**
+         * Percentage of each SMS category for all time report
+         */
+        var allTimeData = google.visualization.arrayToDataTable([
+            ['Total', 'Total'],
+
+            <?php foreach($allTimeData as $sms): ?>
+            ['<?php echo $sms->getData('category') ?>', <?php echo $sms->getData('total_count') ?>],
+            <?php endforeach; ?>
+
+        ]);
+
+        var allTimeReportChartOptions = {
+            title: '',
+            pieHole: 0.1,
+            is3D: true
+        };
+
+        var allTimeReportChart = new google.visualization.PieChart(document.getElementById('all-time-report-chart'));
+        allTimeReportChart.draw(allTimeData, allTimeReportChartOptions);
+        /**
+         * Percentage of each SMS category for today report
+         */
+        var todayData = google.visualization.arrayToDataTable([
+            ['Total', 'Total'],
+
+            <?php foreach($todayReport as $sms): ?>
+            ['<?php echo $sms->getData('category') ?>', <?php echo $sms->getData('total_count') ?>],
+            <?php endforeach; ?>
+
+        ]);
+
+        var todayReportChartOptions = {
+            title: '',
+            pieHole: 0.1,
+            is3D: true
+        };
+
+        var todayReportChart = new google.visualization.PieChart(document.getElementById('today-report-chart'));
+        todayReportChart.draw(todayData, todayReportChartOptions);
+        /**
+         * Percentage of each SMS category for last month report
+         */
+        var lastMonthData = google.visualization.arrayToDataTable([
+            ['Total', 'Total'],
+
+            <?php foreach($lastMonthReport as $sms): ?>
+            ['<?php echo $sms->getData('category') ?>', <?php echo $sms->getData('total_count') ?>],
+            <?php endforeach; ?>
+
+        ]);
+
+        var lastMonthReportChartOptions = {
+            title: '',
+            pieHole: 0.1,
+            is3D: true
+        };
+
+        var lastMonthReportChart = new google.visualization.PieChart(document.getElementById('last-month-report-chart'));
+        lastMonthReportChart.draw(lastMonthData, lastMonthReportChartOptions);
+        /**
+         * Percentage of each SMS category for last 12 month report
+         */
+        var last12MonthData = google.visualization.arrayToDataTable([
+            ['Total', 'Total'],
+
+            <?php foreach($lastTwelveMonthReport as $sms): ?>
+            ['<?php echo $sms->getData('category') ?>', <?php echo $sms->getData('total_count') ?>],
+            <?php endforeach; ?>
+
+        ]);
+
+        var last12ReportChartOptions = {
+            title: '',
+            pieHole: 0.1,
+            is3D: true
+        };
+
+        var last12MonthReportChart = new google.visualization.PieChart(document.getElementById('last-twelve-month-report-chart'));
+        last12MonthReportChart.draw(last12MonthData, last12ReportChartOptions);
+        /**
+         * Each month report
+         */
+        var eachMonthData = google.visualization.arrayToDataTable([
+            ['Month', 'Number of SMS'],
+            <?php foreach($eachMonthInLastTwelveReport as $item): ?>
+            ['<?php echo $item->getData('month') ?>', <?php echo $item->getData('total_count')?>],
+            <?php endforeach ?>
+
+        ]);
+
+        var eachMonthChartOptions = {
+            title: '',
+            curveType: 'function',
+            legend: {position: 'bottom'},
+            chartArea: {
+                width: "95%",
+            }
+        };
+
+        var eachMonthChart = new google.visualization.LineChart(document.getElementById('each-month-report-chart'));
+
+        eachMonthChart.draw(eachMonthData, eachMonthChartOptions);
+    }
+</script>

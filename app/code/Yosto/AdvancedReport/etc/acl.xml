@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Yosto_Core::xmagemenu">
+                    <resource id="Yosto_AdvancedReport::advanced_report" sortOrder="1" title="Advanced Report">
+                        <resource id="Yosto_AdvancedReport::revenue" sortOrder="1" title="Revenue"/>
+                        <resource id="Yosto_AdvancedReport::customer_group" sortOrder="2" title="Customer Group"/>
+                        <resource id="Yosto_AdvancedReport::geolocation" sortOrder="3" title="Geolocation"/>
+                        <resource id="Yosto_AdvancedReport::sales_reports" sortOrder="4" title="Sales"/>
+                        <resource id="Yosto_AdvancedReport::bestsellers" sortOrder="5" title="Best Seller"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Data -->
+    <type name="MageWorx\OptionBase\Model\Product\Option\Attributes">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="option_title_id" xsi:type="object">MageWorx\OptionDependency\Model\Attribute\Option\TitleId</item>
+                <item name="dependency" xsi:type="object">MageWorx\OptionDependency\Model\Attribute\Option\Dependency</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Model\Product\Option\Value\Attributes">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="option_type_title_id" xsi:type="object">MageWorx\OptionDependency\Model\Attribute\OptionValue\TitleId</item>
+                <item name="dependency" xsi:type="object">MageWorx\OptionDependency\Model\Attribute\OptionValue\Dependency</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Model\CollectionUpdate\Option\Updaters">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="dependency" xsi:type="object">MageWorx\OptionDependency\Model\CollectionUpdater\Option\Dependency</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Model\CollectionUpdate\Option\Value\Updaters">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="dependency" xsi:type="object">MageWorx\OptionDependency\Model\CollectionUpdater\Option\Value\Dependency</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Catalog\Block\Product\View\Options">
+        <plugin name="aroundOptionsHtml" type="MageWorx\OptionDependency\Plugin\AroundOptionsHtml" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Block\Product\View\Options\Type\Select">
+        <plugin name="aroundOptionValuesHtml" type="MageWorx\OptionDependency\Plugin\AroundOptionValuesHtml" sortOrder="1" disabled="false"/>
+    </type>
+
+    <!-- validate dependencies -->
+    <type name="Magento\Catalog\Model\Product\Option\Type\DefaultType">
+        <plugin name="validateDependenciesBeforeAddToCart" type="MageWorx\OptionDependency\Plugin\ValidateDependenciesAddToCart" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Model\Product\Type\AbstractType">
+        <plugin name="validateDependencies" type="MageWorx\OptionDependency\Plugin\ValidateDependenciesCartCheckout" sortOrder="1" disabled="false"/>
+    </type>
+
+    <!-- Installation -->
+    <type name="MageWorx\OptionBase\Model\Installer">
+        <arguments>
+            <argument name="installSchema" xsi:type="array">
+                <item name="optiondependency_install_schema_data" xsi:type="object">MageWorx\OptionDependency\Model\InstallSchema</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

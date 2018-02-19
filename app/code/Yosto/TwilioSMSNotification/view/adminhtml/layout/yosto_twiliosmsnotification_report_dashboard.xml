@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Yosto_Core::css/animate.css"/>
+        <css src="Yosto_Core::css/font-awesome.min.css"/>
+        <css src="Yosto_TwilioSMSNotification::css/module.css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block name="yosto.twiliosms.report.dashboard"
+                   class="Yosto\TwilioSMSNotification\Block\Adminhtml\Report\Dashboard"
+                   template="Yosto_TwilioSMSNotification::report/dashboard.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

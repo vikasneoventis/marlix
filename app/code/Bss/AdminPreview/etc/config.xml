@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+    <default>
+        <bss_adminpreview>
+            <general>
+                <enable>1</enable>
+                <product_grid_preview_column>actions</product_grid_preview_column>
+                <customer_grid_login_column>actions</customer_grid_login_column>
+                <disable_page_cache>1</disable_page_cache>
+            </general>
+        </bss_adminpreview>
+    </default>
+</config>

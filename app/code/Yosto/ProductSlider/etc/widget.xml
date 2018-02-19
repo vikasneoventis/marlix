@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2017 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="yosto_new_products_slider"
+            class="Yosto\ProductSlider\Block\Product\Widget\NewWidget"
+            is_email_compatible="false"
+            placeholder_image="Magento_Widget::placeholder.gif">
+        <label translate="true">Yosto - Catalog New Products Slider</label>
+        <description translate="true">List of Products that are set as New</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="show_swatches" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display Product Swatches</label>
+            </parameter>
+            <parameter name="use_custom_css" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Use custom css for product</label>
+            </parameter>
+            <parameter name="animation" xsi:type="select" visible="true"
+                       source_model="Yosto\ProductSlider\Model\Slide\Effect">
+                <label translate="true">Animation Class</label>
+            </parameter>
+            <parameter name="display_type" xsi:type="select" required="true" visible="true">
+                <label translate="true">Display Type</label>
+                <description translate="true">All products - recently added products, New products - products marked as new</description>
+                <options>
+                    <option name="default" value="all_products" selected="true">
+                        <label translate="true">All products</label>
+                    </option>
+                    <option name="item" value="new_products">
+                        <label translate="true">New products</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="products_count" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products to Display</label>
+                <value>10</value>
+            </parameter>
+
+            <parameter name="slider_items" xsi:type="select" required="false" visible="true">
+                <label translate="true">Items for screen sizes</label>
+                <description translate="true">Number of products will be displayed per row based on screen sizes</description>
+                <options>
+                    <option name="default" value="default" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                    <option name="custom" value="custom">
+                        <label translate="true">Custom</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="mobile" xsi:type="text" required="false" visible="true">
+                <label translate="true">Mobile (0-480px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>1</value>
+            </parameter>
+
+            <parameter name="tablet" xsi:type="text" required="false" visible="true">
+                <label translate="true">Tablet (480-640px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>2</value>
+            </parameter>
+            <parameter name="large_tablet" xsi:type="text" required="false" visible="true">
+                <label translate="true">Tablet (640-768px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>3</value>
+            </parameter>
+
+            <parameter name="small_desktop" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desktop (768-1024px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>4</value>
+            </parameter>
+
+            <parameter name="desktop" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desktop (greater than 1024px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>5</value>
+            </parameter>
+
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="Yosto_ProductSlider::product/widget/content/new-products.phtml" selected="true">
+                        <label translate="true">New Products Slider Template</label>
+                    </option>
+                    <option name="grid" value="Yosto_ProductSlider::product/widget/content/grid-product-list.phtml">
+                        <label translate="true">Products Grid Template</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="cache_lifetime" xsi:type="text" visible="true">
+                <label translate="true">Cache Lifetime (Seconds)</label>
+                <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="yosto_bestsellers_products_slider"
+            class="Yosto\ProductSlider\Block\Product\Widget\Bestseller"
+            is_email_compatible="false"
+            placeholder_image="Magento_Widget::placeholder.gif">
+        <label translate="true">Yosto - Catalog Bestseller Products Slider</label>
+        <description translate="true">List of Bestseller products</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="show_swatches" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display Product Swatches</label>
+            </parameter>
+            <parameter name="use_custom_css" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Use custom css for product</label>
+            </parameter>
+            <parameter name="animation" xsi:type="select" visible="true"
+                       source_model="Yosto\ProductSlider\Model\Slide\Effect">
+                <label translate="true">Animation Class</label>
+            </parameter>
+            <parameter name="mode" xsi:type="select" required="true" visible="true">
+                <label translate="true">Get products by</label>
+                <description translate="true">All time - get bestseller products all time, Period - get top bestseller products based on Day, Month, Year</description>
+                <options>
+                    <option name="default" value="all" selected="true">
+                        <label translate="true">All time</label>
+                    </option>
+                    <option name="period_type" value="period_type">
+                        <label translate="true">Period</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="period" xsi:type="select" required="false" visible="true">
+                <label translate="true">Period Type</label>
+                <depends>
+                    <parameter name="mode" value="period_type" />
+                </depends>
+                <options>
+                    <option name="daily" value="day">
+                        <label translate="true">Daily</label>
+                    </option>
+                    <option name="monthly" value="month">
+                        <label translate="true">Monthly</label>
+                    </option>
+                    <option name="yearly" value="year">
+                        <label translate="true">Yearly</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="rating_limit" xsi:type="text" required="true" visible="true">
+                <label translate="true">Rating Limit</label>
+                <description translate="true">Limited number of bestseller products will be fetched (based on Day, Month, Year)</description>
+                <depends>
+                    <parameter name="mode" value="period_type" />
+                </depends>
+                <value>2</value>
+            </parameter>
+
+
+            <parameter name="from" xsi:type="text" required="false" visible="true">
+                <label translate="true">From Date(YYYY-MM-DD)</label>
+            </parameter>
+            <parameter name="to" xsi:type="text" required="false" visible="true">
+                <label translate="true">To Date(YYYY-MM-DD)</label>
+            </parameter>
+
+            <parameter name="products_count" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products to Display</label>
+                <value>10</value>
+            </parameter>
+            <parameter name="slider_items" xsi:type="select" required="false" visible="true">
+                <label translate="true">Items for screen sizes</label>
+                <description translate="true">Number of products will be displayed per row based on screen sizes</description>
+                <options>
+                    <option name="default" value="default" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                    <option name="custom" value="custom">
+                        <label translate="true">Custom</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="mobile" xsi:type="text" required="false" visible="true">
+                <label translate="true">Mobile (0-480px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>1</value>
+            </parameter>
+
+            <parameter name="tablet" xsi:type="text" required="false" visible="true">
+                <label translate="true">Tablet (480-640px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>2</value>
+            </parameter>
+            <parameter name="large_tablet" xsi:type="text" required="false" visible="true">
+                <label translate="true">Tablet (640-768px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>3</value>
+            </parameter>
+
+            <parameter name="small_desktop" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desktop (768-1024px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>4</value>
+            </parameter>
+
+            <parameter name="desktop" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desktop (greater than 1024px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>5</value>
+            </parameter>
+
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="Yosto_ProductSlider::product/widget/content/bestsellers.phtml" selected="true">
+                        <label translate="true">Bestseller Products Slider Template</label>
+                    </option>
+                    <option name="grid" value="Yosto_ProductSlider::product/widget/content/grid-product-list.phtml">
+                        <label translate="true">Products Grid Template</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="cache_lifetime" xsi:type="text" visible="true">
+                <label translate="true">Cache Lifetime (Seconds)</label>
+                <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="yosto_mostviewed_products_slider"
+            class="Yosto\ProductSlider\Block\Product\Widget\MostViewed"
+            is_email_compatible="false"
+            placeholder_image="Magento_Widget::placeholder.gif">
+        <label translate="true">Yosto - Catalog Most Viewed Products Slider</label>
+        <description translate="true">List of Most Viewed Products</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="show_swatches" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display Product Swatches</label>
+            </parameter>
+            <parameter name="use_custom_css" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Use custom css for product</label>
+            </parameter>
+            <parameter name="animation" xsi:type="select" visible="true"
+                       source_model="Yosto\ProductSlider\Model\Slide\Effect">
+                <label translate="true">Animation Class</label>
+            </parameter>
+            <parameter name="mode" xsi:type="select" required="true" visible="true">
+                <label translate="true">Get products by</label>
+                <description translate="true">All time - get most viewed products all time, Period - get most viewed products based on Day, Month, Year</description>
+                <options>
+                    <option name="default" value="all" selected="true">
+                        <label translate="true">All time</label>
+                    </option>
+                    <option name="period_type" value="period_type">
+                        <label translate="true">Period</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="period" xsi:type="select" required="false" visible="true">
+                <label translate="true">Period Type</label>
+                <depends>
+                    <parameter name="mode" value="period_type" />
+                </depends>
+                <options>
+                    <option name="daily" value="day" selected="true">
+                        <label translate="true">Daily</label>
+                    </option>
+                    <option name="monthy" value="month">
+                        <label translate="true">Monthly</label>
+                    </option>
+                    <option name="yearly" value="year">
+                        <label translate="true">Yearly</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="rating_limit" xsi:type="text" required="true" visible="true">
+                <label translate="true">Rating Limit</label>
+                <description translate="true">Limited number of most viewed products will be fetched (based on Day, Month, Year)</description>
+                <depends>
+                    <parameter name="mode" value="period_type" />
+                </depends>
+                <value>2</value>
+            </parameter>
+
+
+            <parameter name="from" xsi:type="text" required="false" visible="true">
+                <label translate="true">From Date(YYYY-MM-DD)</label>
+            </parameter>
+            <parameter name="to" xsi:type="text" required="false" visible="true">
+                <label translate="true">To Date(YYYY-MM-DD)</label>
+            </parameter>
+
+            <parameter name="products_count" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products to Display</label>
+                <value>10</value>
+            </parameter>
+
+            <parameter name="slider_items" xsi:type="select" required="false" visible="true">
+                <label translate="true">Items for screen sizes</label>
+                <description translate="true">Number of products will be displayed per row based on screen sizes</description>
+                <options>
+                    <option name="default" value="default" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                    <option name="custom" value="custom">
+                        <label translate="true">Custom</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="mobile" xsi:type="text" required="false" visible="true">
+                <label translate="true">Mobile (0-480px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>1</value>
+            </parameter>
+
+            <parameter name="tablet" xsi:type="text" required="false" visible="true">
+                <label translate="true">Tablet (480-640px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>2</value>
+            </parameter>
+            <parameter name="large_tablet" xsi:type="text" required="false" visible="true">
+                <label translate="true">Tablet (640-768px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>3</value>
+            </parameter>
+
+            <parameter name="small_desktop" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desktop (768-1024px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>4</value>
+            </parameter>
+
+            <parameter name="desktop" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desktop (greater than 1024px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>5</value>
+            </parameter>
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="Yosto_ProductSlider::product/widget/content/mostviewed.phtml" selected="true">
+                        <label translate="true">Most Viewed Products Slider Template</label>
+                    </option>
+                    <option name="grid" value="Yosto_ProductSlider::product/widget/content/grid-product-list.phtml">
+                        <label translate="true">Products Grid Template</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="cache_lifetime" xsi:type="text" visible="true">
+                <label translate="true">Cache Lifetime (Seconds)</label>
+                <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="yosto_featured_products_slider"
+            class="Yosto\ProductSlider\Block\Product\Widget\FeaturedProduct"
+            is_email_compatible="false"
+            placeholder_image="Magento_Widget::placeholder.gif">
+        <label translate="true">Yosto - Catalog Featured Products Slider</label>
+        <description translate="true">List of Products that are set as Featured</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="show_swatches" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display Product Swatches</label>
+            </parameter>
+            <parameter name="use_custom_css" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Use custom css for product</label>
+            </parameter>
+            <parameter name="animation" xsi:type="select" visible="true"
+                       source_model="Yosto\ProductSlider\Model\Slide\Effect">
+                <label translate="true">Animation Class</label>
+            </parameter>
+            <parameter name="products_count" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products to Display</label>
+                <value>10</value>
+            </parameter>
+
+            <parameter name="slider_items" xsi:type="select" required="false" visible="true">
+                <label translate="true">Items for screen sizes</label>
+                <description translate="true">Number of products will be displayed per row based on screen sizes</description>
+                <options>
+                    <option name="default" value="default" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                    <option name="custom" value="custom">
+                        <label translate="true">Custom</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="mobile" xsi:type="text" required="false" visible="true">
+                <label translate="true">Mobile (0-480px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>1</value>
+            </parameter>
+
+            <parameter name="tablet" xsi:type="text" required="false" visible="true">
+                <label translate="true">Tablet (480-640px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>2</value>
+            </parameter>
+            <parameter name="large_tablet" xsi:type="text" required="false" visible="true">
+                <label translate="true">Tablet (640-768px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>3</value>
+            </parameter>
+
+            <parameter name="small_desktop" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desktop (768-1024px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>4</value>
+            </parameter>
+
+            <parameter name="desktop" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desktop (greater than 1024px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>5</value>
+            </parameter>
+
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="Yosto_ProductSlider::product/widget/content/featured-products.phtml" selected="true">
+                        <label translate="true">Featured Products Slider Template</label>
+                    </option>
+                    <option name="grid" value="Yosto_ProductSlider::product/widget/content/grid-product-list.phtml">
+                        <label translate="true">Products Grid Template</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="cache_lifetime" xsi:type="text" visible="true">
+                <label translate="true">Cache Lifetime (Seconds)</label>
+                <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="yosto_products_list"
+            class="Yosto\ProductSlider\Block\Product\Widget\ProductList"
+            is_email_compatible="true"
+            placeholder_image="Magento_Widget::placeholder.gif">
+        <label translate="true">Yosto - Catalog Products List Slider</label>
+        <description translate="true">List of Products</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="show_swatches" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display Product Swatches</label>
+            </parameter>
+            <parameter name="use_custom_css" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Use custom css for product</label>
+            </parameter>
+            <parameter name="animation" xsi:type="select" visible="true"
+                       source_model="Yosto\ProductSlider\Model\Slide\Effect">
+                <label translate="true">Animation Class</label>
+            </parameter>
+            <parameter name="show_pager" xsi:type="select" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Display Page Control</label>
+                <description translate="true">If you choose "yes" and use "product grid template" for this widget, Page Control will be shown</description>
+            </parameter>
+            <parameter name="products_per_page" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products per Page</label>
+                <depends>
+                    <parameter name="show_pager" value="1" />
+                </depends>
+                <value>5</value>
+            </parameter>
+            <parameter name="products_count" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products to Display</label>
+                <value>10</value>
+            </parameter>
+
+
+            <parameter name="slider_items" xsi:type="select" required="false" visible="true">
+                <label translate="true">Items for screen sizes</label>
+                <description translate="true">Number of products will be displayed per row based on screen sizes</description>
+                <options>
+                    <option name="default" value="default" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                    <option name="custom" value="custom">
+                        <label translate="true">Custom</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="mobile" xsi:type="text" required="false" visible="true">
+                <label translate="true">Mobile (0-480px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>1</value>
+            </parameter>
+
+            <parameter name="tablet" xsi:type="text" required="false" visible="true">
+                <label translate="true">Tablet (480-640px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>2</value>
+            </parameter>
+            <parameter name="large_tablet" xsi:type="text" required="false" visible="true">
+                <label translate="true">Tablet (640-768px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>3</value>
+            </parameter>
+
+            <parameter name="small_desktop" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desktop (768-1024px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>4</value>
+            </parameter>
+
+            <parameter name="desktop" xsi:type="text" required="false" visible="true">
+                <label translate="true">Desktop (greater than 1024px)</label>
+                <depends>
+                    <parameter name="slider_items" value="custom"/>
+                </depends>
+                <value>5</value>
+            </parameter>
+
+
+
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="Yosto_ProductSlider::product/widget/content/product-list.phtml" selected="true">
+                        <label translate="true">Products Slider Template</label>
+                    </option>
+                    <option name="grid" value="Yosto_ProductSlider::product/widget/content/grid-product-list.phtml">
+                        <label translate="true">Products Grid Template</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="cache_lifetime" xsi:type="text" visible="true">
+                <label translate="true">Cache Lifetime (Seconds)</label>
+                <description translate="true">86400 by default, if not set. To refresh instantly, clear the Blocks HTML Output cache.</description>
+            </parameter>
+            <parameter name="condition" xsi:type="conditions" visible="true" required="true" sort_order="10"
+                       class="Magento\CatalogWidget\Block\Product\Widget\Conditions">
+                <label translate="true">Conditions</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

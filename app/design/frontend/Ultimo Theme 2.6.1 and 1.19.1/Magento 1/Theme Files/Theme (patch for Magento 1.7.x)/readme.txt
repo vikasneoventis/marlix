@@ -1,0 +1,1 @@
+IMPORTANT: this folder is empty because patch for Magento 1.7.x is not needed. More information about theme installation can be found in the user guide, chapter: 3. Installation

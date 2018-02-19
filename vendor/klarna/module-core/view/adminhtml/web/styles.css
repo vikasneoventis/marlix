@@ -1,0 +1,8 @@
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+.klarna-section .heading {background: url("https://cdn.klarna.com/1.0/shared/image/generic/logo/en_us/basic/blue-black.png?width=965") no-repeat 0 50% / 18rem auto; padding-left: 20rem;}
+.klarna-section .button-container {float: right;}
+.klarna-section .config-alt {background: url("https://cdn.klarna.com/1.0/shared/image/generic/badge/en_us/checkout/long-blue.png?width=300") no-repeat scroll 0 0 / 100% auto; height: 55px; margin: 0.5rem 0 0; width: 300px;}

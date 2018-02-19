@@ -1,0 +1,294 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+use Magento\Framework\App\Action\Action;
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @var $block \Magento\Catalog\Block\Product\ListProduct
+ */
+?>
+<?php
+$_productCollection = $block->getLoadedProductCollection();
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+?>
+<input type="hidden" id="animationSpeed" value="<?php echo $block->getAnimationSpeed() ?>"/>
+<input type="hidden" id="slideshowSpeed" value="<?php echo $block->getSlideShowSpeed() ?>"/>
+<input type="hidden" id="direction" value="<?php echo $block->getDirection() ?>"/>
+<input type="hidden" id="reverse" value="<?php echo $block->getReverse() ?>"/>
+<input type="hidden" id="pauseOnAction" value="<?php echo $block->getPauseOnAction() ?>"/>
+<input type="hidden" id="pauseOnHover" value="<?php echo $block->getPauseOnHover() ?>"/>
+<input type="hidden" id="randomize" value="<?php echo $block->getRandomize() ?>"/>
+<input type="hidden" id="animationType" value="<?php echo $block->getAnimationType()?>"/>
+<input type="hidden" id="moduleEnable" value="<?php echo $block->getEnable()?>"/>
+<?php if (!$_productCollection->count()): ?>
+    <div class="message info empty">
+        <div><?php /* @escapeNotVerified */
+            echo __('We can\'t find products matching the selection.') ?></div>
+    </div>
+<?php else: ?>
+    <?php echo $block->getToolbarHtml() ?>
+    <?php echo $block->getAdditionalHtml() ?>
+    <?php
+    if ($block->getMode() == 'grid') {
+        $viewMode = 'grid';
+        $image = 'category_page_grid';
+        $showDescription = false;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+    } else {
+        $viewMode = 'list';
+        $image = 'category_page_list';
+        $showDescription = true;
+        $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
+    }
+    /**
+     * Position for actions regarding image size changing in vde if needed
+     */
+    $pos = $block->getPositioned();
+    ?>
+    <div class="products wrapper <?php /* @escapeNotVerified */
+    echo $viewMode; ?> products-<?php /* @escapeNotVerified */
+    echo $viewMode; ?>">
+        <?php $iterator = 1; ?>
+        <ol class="products list items product-items">
+            <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
+            <?php foreach ($_productCollection as $_product): ?>
+                <?php /* @escapeNotVerified */
+                echo ($iterator++ == 1) ? '<li class="item product product-item">' : '</li><li class="item product product-item">' ?>
+                <div class="product-item-info" data-container="product-grid">
+                    <?php
+                    $productImage = $block->getImage($_product, $image);
+                    $galleries = $block->getGalleryImages($_product->getEntityId());
+
+                    if ($pos != null) {
+                        $position = ' style="left:' . $productImage->getWidth() . 'px;'
+                            . 'top:' . $productImage->getHeight() . 'px;"';
+                    }
+                    if ($block->getEnable() == '1') {
+                        ?>
+
+                        <section class="slider">
+                            <div class="flexslider">
+                                <a href="<?php echo $_product->getProductUrl() ?>"
+                                   class="product photo product-item-photo"
+                                   tabindex="-1">
+                                    <ul class="slides">
+                                        <?php
+                                        $baseImage = "";
+                                        $imgUrl = "";
+                                        foreach ($galleries as $gallery) {
+                                            if (strpos($productImage->getImageUrl(), $gallery->getValue()) !== false) {
+                                                $baseImage = $productImage->getImageUrl();
+                                                $imgUrl = $gallery->getValue();
+                                                break;
+                                            }
+                                        }
+                                        foreach ($galleries as $gallery) {
+                                            $file = str_replace($imgUrl, $gallery->getValue(), $baseImage);
+                                            $file_headers = @get_headers($file);
+                                            if (!strpos($file_headers[0], '404')) {
+                                                echo "<li>";
+                                                echo "<a href='" . $_product->getProductUrl() . "' class='product photo product-item-photo' tabindex='-1'>";
+                                                echo "<img src='" . str_replace($imgUrl, $gallery->getValue(), $baseImage) . "'/>";
+                                                echo "</a>";
+                                                echo "</li>";
+                                            }
+                                        }
+                                        ?>
+                                    </ul>
+                                </a>
+                            </div>
+                        </section>
+                        <?php
+                    } else {
+                    ?>
+                        <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                            <?php echo $productImage->toHtml(); ?>
+                        </a>
+                    <?php
+                    }
+                    ?>
+                    <div class="product details product-item-details">
+                        <?php
+                        $_productNameStripped = $block->stripTags($_product->getName(), null, true);
+                        ?>
+                        <strong class="product name product-item-name">
+                            <a class="product-item-link"
+                               href="<?php /* @escapeNotVerified */
+                               echo $_product->getProductUrl() ?>">
+                                <?php /* @escapeNotVerified */
+                                echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                            </a>
+                        </strong>
+                        <?php echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
+                        <?php /* @escapeNotVerified */
+                        echo $block->getProductPrice($_product) ?>
+                        <?php echo $block->getProductDetailsHtml($_product); ?>
+
+                        <div class="product-item-inner">
+                            <div
+                                class="product actions product-item-actions"<?php echo strpos($pos, $viewMode . '-actions') ? $position : ''; ?>>
+                                <div
+                                    class="actions-primary"<?php echo strpos($pos, $viewMode . '-primary') ? $position : ''; ?>>
+                                    <?php if ($_product->isSaleable()): ?>
+                                        <?php $postParams = $block->getAddToCartPostParams($_product); ?>
+                                        <form data-role="tocart-form" action="<?php /* @escapeNotVerified */
+                                        echo $postParams['action']; ?>" method="post">
+                                            <input type="hidden" name="product" value="<?php /* @escapeNotVerified */
+                                            echo $postParams['data']['product']; ?>">
+                                            <input type="hidden" name="<?php /* @escapeNotVerified */
+                                            echo Action::PARAM_NAME_URL_ENCODED; ?>"
+                                                   value="<?php /* @escapeNotVerified */
+                                                   echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
+                                            <?php echo $block->getBlockHtml('formkey') ?>
+                                            <button type="submit"
+                                                    title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                                    class="action tocart primary">
+                                                <span><?php /* @escapeNotVerified */
+                                                    echo __('Add to Cart') ?></span>
+                                            </button>
+                                        </form>
+                                    <?php else: ?>
+                                        <?php if ($_product->getIsSalable()): ?>
+                                            <div class="stock available"><span><?php /* @escapeNotVerified */
+                                                    echo __('In stock') ?></span></div>
+                                        <?php else: ?>
+                                            <div class="stock unavailable"><span><?php /* @escapeNotVerified */
+                                                    echo __('Out of stock') ?></span></div>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                </div>
+                                <div data-role="add-to-links"
+                                     class="actions-secondary"<?php echo strpos($pos, $viewMode . '-secondary') ? $position : ''; ?>>
+                                    <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow()): ?>
+                                        <a href="#"
+                                           class="action towishlist"
+                                           title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                           aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+                                           data-post='<?php /* @escapeNotVerified */
+                                           echo $block->getAddToWishlistParams($_product); ?>'
+                                           data-action="add-to-wishlist"
+                                           role="button">
+                                            <span><?php /* @escapeNotVerified */
+                                                echo __('Add to Wish List') ?></span>
+                                        </a>
+                                    <?php endif; ?>
+                                    <?php
+                                    $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');
+                                    ?>
+                                    <a href="#"
+                                       class="action tocompare"
+                                       title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                       aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+                                       data-post='<?php /* @escapeNotVerified */
+                                       echo $compareHelper->getPostDataParams($_product); ?>'
+                                       role="button">
+                                        <span><?php /* @escapeNotVerified */
+                                            echo __('Add to Compare') ?></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <?php if ($showDescription): ?>
+                                <div class="product description product-item-description">
+                                    <?php /* @escapeNotVerified */
+                                    echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                                    <a href="<?php /* @escapeNotVerified */
+                                    echo $_product->getProductUrl() ?>" title="<?php /* @escapeNotVerified */
+                                    echo $_productNameStripped ?>"
+                                       class="action more"><?php /* @escapeNotVerified */
+                                        echo __('Learn More') ?></a>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+                <?php echo ($iterator == count($_productCollection) + 1) ? '</li>' : '' ?>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+    <?php echo $block->getToolbarHtml() ?>
+    <?php if (!$block->isRedirectToCartEnabled()) : ?>
+        <script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {}
+            }
+        }
+
+        </script>
+    <?php endif; ?>
+<?php endif; ?>
+<script type="text/javascript">
+    var animationSpeed = '600';
+    var slideshowSpeed = '6000';
+    var direction = 'horizontal';
+    var reverse = '0';
+    var pauseOnAction = '1';
+    var pauseOnHover = '1';
+    var randomize = '0';
+    var animation = 'slide';
+    if (document.getElementById('animationSpeed') != null) {
+        animationSpeed = document.getElementById('animationSpeed').value;
+    }
+    if (document.getElementById('slideshowSpeed') != null) {
+        slideshowSpeed = document.getElementById('slideshowSpeed').value;
+    }
+    if (document.getElementById('direction') != null) {
+        direction = document.getElementById('direction').value;
+    }
+    if (document.getElementById('reverse') != null) {
+        reverse = document.getElementById('reverse').value;
+    }
+    if (document.getElementById('pauseOnAction') != null) {
+        pauseOnAction = document.getElementById('pauseOnAction').value;
+    }
+    if (document.getElementById('pauseOnHover') != null) {
+        pauseOnHover = document.getElementById('pauseOnHover').value;
+    }
+    if (document.getElementById('randomize') != null) {
+        randomize = document.getElementById('randomize').value;
+    }
+    if (document.getElementById('animationType') != null) {
+        animation = document.getElementById('animationType').value;
+    }
+    var reverseValue = true;
+    var pauseOnActionValue = true;
+    var pauseOnHoverValue = true;
+    var randomizeValue = true;
+
+    if (reverse == "0"){
+        reverseValue = false;
+    }
+    if (pauseOnAction == "0"){
+        pauseOnActionValue = false;
+    }
+    if (randomize == "0"){
+        randomizeValue = false;
+    }
+    if (pauseOnHover == "0"){
+        pauseOnHoverValue = false;
+    }
+    require(['jquery', 'Yosto_ImageProductSlide/js/jquery.flexslider'], function ($, flexslider) {
+        $('.flexslider').flexslider({
+            animation: animation,
+            slideshowSpeed : slideshowSpeed,
+            animationSpeed : animationSpeed,
+            direction : direction,
+            reverse : reverse,
+            pauseOnAction : pauseOnAction,
+            pauseOnHover : pauseOnHover,
+            randomize : randomize,
+            start: function (slider) {
+                $('body').removeClass('loading');
+            },
+
+        });
+    });
+</script>

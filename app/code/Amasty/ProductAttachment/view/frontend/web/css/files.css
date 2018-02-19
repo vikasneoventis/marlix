@@ -1,0 +1,10 @@
+/*amasty product attachment css styles*/
+.amasty-product-attachment-block {
+    clear: both;
+    float: none;
+    text-align: left;
+}
+
+.amasty-product-attachment-block ul {
+    list-style-type: none;
+}

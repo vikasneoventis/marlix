@@ -1,0 +1,33 @@
+Dear customers,
+
+Thank you very much for purchasing our theme.
+
+
+DOCUMENTATION
+-------------
+
+In case of any problems related to this theme, please refer to "Ultimo User Guide.pdf". All theme features and options are described in documentation, we highly recommend reading it first (if you use search function in your PDF reader it will only take you a few seconds to find anything you need).
+
+
+SUPPORT POLICY
+--------------
+
+If you didn't find the answer to your questions, refer to chapter "2. Help & Support" for more information about support policy. Our support includes theme bug fixes and any theme feature related issues which may arise. Please make sure you take a look at the available resources before submitting a support request.
+
+Unfortunately we do not offer support for custom modifications, custom HTML/CSS implementation, third-party extensions or general Magento/programming inquiries.
+
+Support requests can be send through our new support system:
+https://support.infortis-themes.com
+
+
+
+MAGENTO SUPPORT
+---------------
+
+If you have questions about Magento itself, please refer to the following websites, almost every detail of Magento configuration was discussed there so you
+will find answers for most of your questions:
+
+• Magento user guide: http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html
+• Magento Stack Exchange: http://magento.stackexchange.com/questions?sort=newest
+• Magento forum: http://community.magento.com/
+• Stack Overflow: http://stackoverflow.com/questions/tagged/magento/

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <update handle="formkey"/>
+    <update handle="yosto_slider_slide_grid_block"/>
+    <container name="root">
+        <block class="Magento\Backend\Block\Widget\Grid\Container"
+               name="yosto_slider_slide.grid.container"
+               template="Magento_Backend::widget/grid/container/empty.phtml"/>
+    </container>
+</layout>

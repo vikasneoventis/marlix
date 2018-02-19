@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="selectProvider" xsi:type="string">product_listing.product_listing.product_columns.ids</item>
+                    <item name="component" xsi:type="string">Amasty_ProductAttachment/js/grid/tree-massactions</item>
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+            <action name="delete_attachments">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Remove All Attachments</item>
+                            <item name="message" xsi:type="string" translate="true">Remove All Attachments for selected items?</item>
+                        </item>
+                        <item name="type" xsi:type="string">delete_attachment</item>
+                        <item name="label" xsi:type="string" translate="true">Remove All Attachments</item>
+                        <item name="url" xsi:type="url" path="amfile/product/massDelete"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="copy_attachment">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">copy_attachment</item>
+                        <item name="amasty_actions" xsi:type="string">1</item>
+                        <item name="label" xsi:type="string" translate="true">Copy Attachments</item>
+                        <item name="url" xsi:type="url" path="amfile/product/massCopy"></item>
+                    </item>
+                </argument>
+                <argument name="actions" xsi:type="array">
+                    <item name="0" xsi:type="array">
+                        <item name="amasty_actions" xsi:type="string">1</item>
+                        <item name="typefield" xsi:type="string">textbox</item>
+                        <item name="fieldLabel" xsi:type="string" translate="true">Source: </item>
+                        <item name="label" xsi:type="string" translate="true">Copy Attachments</item>
+                        <item name="type" xsi:type="string" translate="true">copy_attachment</item>
+                        <item name="placeholder" xsi:type="string" translate="true">Product Id</item>
+                        <item name="url" xsi:type="url" path="amfile/product/massCopy"></item>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+    </listingToolbar>
+    <columns name="product_columns" class="Magento\Catalog\Ui\Component\Listing\Columns">
+        <column name="attachment" class="Amasty\ProductAttachment\Ui\Component\Listing\Column\Attachment">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="has_preview" xsi:type="string">1</item>
+                    <item name="add_field" xsi:type="boolean">true</item>
+                    <item name="component" xsi:type="string">Amasty_ProductAttachment/js/grid/columns/attachment</item>
+                    <item name="label" xsi:type="string" translate="true">Attachment List</item>
+                    <item name="sortOrder" xsi:type="number">75</item>
+                </item>
+            </argument>
+        </column>
+        <column name="upload_attachment" class="Amasty\ProductAttachment\Ui\Component\Listing\Column\Attachment\Upload">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="add_field" xsi:type="boolean">true</item>
+                    <item name="component" xsi:type="string">Amasty_ProductAttachment/js/grid/columns/attachment/upload</item>
+                    <item name="label" xsi:type="string" translate="true">Upload Attachment</item>
+                    <item name="sortOrder" xsi:type="number">75</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

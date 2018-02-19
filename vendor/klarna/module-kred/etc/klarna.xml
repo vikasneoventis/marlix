@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Klarna Kred module
+ *
+ * (c) Klarna Bank AB (publ)
+ *
+ * For the full copyright and license information, please view the NOTICE
+ * and LICENSE files that were distributed with this source code.
+ */
+-->
+<klarna xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Klarna_Core:etc/klarna.xsd">
+    <api_type id="kred">
+        <class>Klarna\Kred\Model\Api\Kred</class>
+        <ordermanagement>\Klarna\Kred\Model\Api\Ordermanagement</ordermanagement>
+        <options>
+            <option id="payment_review">1</option>
+            <option id="merchant_checkbox_support">1</option>
+        </options>
+    </api_type>
+    <api_version id="nortic" translate="label">
+        <label><![CDATA[v2 Nordics]]></label>
+        <type>kred</type>
+        <production_url><![CDATA[https://checkout.klarna.com]]></production_url>
+        <testdrive_url><![CDATA[https://checkout.testdrive.klarna.com]]></testdrive_url>
+        <options>
+            <option id="date_of_birth_mandatory_support">1</option>
+            <option id="phone_mandatory_support">1</option>
+        </options>
+    </api_version>
+    <order_lines id="kred">
+        <line id="items" class="Klarna\Kred\Model\Checkout\Orderline\Items"/>
+        <line id="discount" class="Klarna\Kred\Model\Checkout\Orderline\Discount"/>
+        <line id="shipping" class="Klarna\Kred\Model\Checkout\Orderline\Shipping"/>
+        <line id="giftcard" class="Klarna\Kred\Model\Checkout\Orderline\Giftcard"/>
+        <line id="customer_balance" class="Klarna\Kred\Model\Checkout\Orderline\Customerbalance"/>
+        <line id="reward" class="Klarna\Kred\Model\Checkout\Orderline\Reward"/>
+    </order_lines>
+</klarna>

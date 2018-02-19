@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.txt for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/menu.xsd">
+    <menu>
+        <add id="Yosto_TwilioSMSNotification::menu" title ="Twilio SMS Notification"
+             sortOrder="2"
+             module="Yosto_TwilioSMSNotification"
+             parent="Magento_Reports::report"
+             resource="Yosto_TwilioSMSNotification::menu"/>
+        <add id="Yosto_TwilioSMSNotification::commonlogs"
+             title="Twilio SMS Logs"
+             module="Yosto_TwilioSMSNotification"
+             sortOrder="2"
+             parent="Yosto_TwilioSMSNotification::menu"
+             action="yosto_twiliosmsnotification/twiliosms/index"
+             resource="Yosto_TwilioSMSNotification::commonlogs" />
+        <add id="Yosto_TwilioSMSNotification::report_dashboard"
+             title="General Reports"
+             module="Yosto_TwilioSMSNotification"
+             sortOrder="2"
+             parent="Yosto_TwilioSMSNotification::menu"
+             action="yosto_twiliosmsnotification/report/dashboard"
+             resource="Yosto_TwilioSMSNotification::report_dashboard" />
+        <add id="Yosto_TwilioSMSNotification::config"
+             title="Configuration"
+             module="Yosto_TwilioSMSNotification"
+             sortOrder="200"
+             parent="Yosto_TwilioSMSNotification::menu"
+             action="adminhtml/system_config/edit/section/twiliosmsnotification"
+             resource="Yosto_TwilioSMSNotification::config_twiliosms" />
+    </menu>
+</config>

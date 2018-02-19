@@ -1,0 +1,114 @@
+Back,Back
+"Delete Icon","Delete Icon"
+"Save and Continue Edit","Save and Continue Edit"
+"Save Icon","Save Icon"
+"Upload Csv File","Upload Csv File"
+"Import Csv","Import Csv"
+"Upload File","Upload File"
+"Upload Files","Upload Files"
+"Uploaded Files","Uploaded Files"
+Import,Import
+"Something went wrong while getting the requested content.","Something went wrong while getting the requested content."
+"List Attachments","List Attachments"
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"Something went wrong while export feed data. Please review the error log.","Something went wrong while export feed data. Please review the error log."
+"You deleted the Icon.","You deleted the Icon."
+"We can't delete item right now. Please review the log and try again.","We can't delete item right now. Please review the log and try again."
+"We can't find a item to delete.","We can't find a item to delete."
+"This icon no longer exists.","This icon no longer exists."
+"Product Attachment Icon","Product Attachment Icon"
+"Edit' 'New","Edit' 'New"
+Icon,Icon
+"Icon Management","Icon Management"
+"The wrong icon is specified.","The wrong icon is specified."
+"You saved the Icon.","You saved the Icon."
+"Something went wrong while saving the Icon.","Something went wrong while saving the Icon."
+"Field ""Type"" is required","Field ""Type"" is required"
+"Product Attachment","Product Attachment"
+"Mass File Import","Mass File Import"
+failed,failed
+successful,successful
+"You deleted the selected files(s).","You deleted the selected files(s)."
+"Attachments for %1 selected record(s) have been copied.","Attachments for %1 selected record(s) have been copied."
+"Please provide the value for the action","Please provide the value for the action"
+"Please provide the correct value for the action","Please provide the correct value for the action"
+"Product with ID:%1 doesn't exist","Product with ID:%1 doesn't exist"
+"Product with ID:%1 has no attachments","Product with ID:%1 has no attachments"
+"Attachments for %1 selected record(s) have been deleted.","Attachments for %1 selected record(s) have been deleted."
+"Downloads report has been cleared.","Downloads report has been cleared."
+"Product Attachment Report","Product Attachment Report"
+Downloads,Downloads
+"Product Attachment Report Downloads","Product Attachment Report Downloads"
+"Invalid method %1::%2(%3)","Invalid method %1::%2(%3)"
+"The file does not exist.","The file does not exist."
+"File can not be moved from temporary folder to the destination folder.","File can not be moved from temporary folder to the destination folder."
+"NOT LOGGED IN","NOT LOGGED IN"
+No,No
+Yes,Yes
+"Can't import the file. Please Check required fields (%1)","Can't import the file. Please Check required fields (%1)"
+"Imported %1 attachment(s)","Imported %1 attachment(s)"
+"Error On line %1","Error On line %1"
+"Column count doesn't match value count.","Column count doesn't match value count."
+"Product attachment with id ""%1"" does not exist.","Product attachment with id ""%1"" does not exist."
+Download,Download
+Edit,Edit
+"Alphanumeric, dash and underscore characters are recommended for filenames. Improper characters are replaced with '_'.","Alphanumeric, dash and underscore characters are recommended for filenames. Improper characters are replaced with '_'."
+"Add New File","Add New File"
+Label,Label
+"File Name","File Name"
+"Attach File or Enter Link","Attach File or Enter Link"
+"Customer Group","Customer Group"
+"Show only if a Product has been Ordered","Show only if a Product has been Ordered"
+Visible,Visible
+"Use Default Value","Use Default Value"
+"File Name can contain only numbers, latin letters and all of the following characters -._, ","File Name can contain only numbers, latin letters and all of the following characters -._, "
+"Click or drop file here","Click or drop file here"
+Apply,Apply
+"Click or drop files here","Click or drop files here"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+"Product Attachments","Product Attachments"
+"Attachments Block","Attachments Block"
+"Display Attachments Block On Product Page","Display Attachments Block On Product Page"
+"Customer Group to Show Attachments Block","Customer Group to Show Attachments Block"
+"Keep empty for all customer groups.","Keep empty for all customer groups."
+"Display Attachments Block if a Product Has Been Ordered","Display Attachments Block if a Product Has Been Ordered"
+"Block Title On Product Page","Block Title On Product Page"
+"Parent Block Name In Layout","Parent Block Name In Layout"
+"Sibling Name","Sibling Name"
+Position,Position
+"Import Settings","Import Settings"
+"Directory for Upload by FTP","Directory for Upload by FTP"
+"Additional Settings","Additional Settings"
+"Autodetect File Mime Type on Download","Autodetect File Mime Type on Download"
+Delete,Delete
+"Are you sure you want to delete the selected file(s)?","Are you sure you want to delete the selected file(s)?"
+Name,Name
+Size,Size
+"Clear File Downloads","Clear File Downloads"
+"All Store Views","All Store Views"
+"Store View","Store View"
+"File ID","File ID"
+Customer,Customer
+Product,Product
+"Downloaded At","Downloaded At"
+"Delete items","Delete items"
+"Delete selected items?","Delete selected items?"
+ID,ID
+"Product Id","Product Id"
+"Product SKU","Product SKU"
+"File Size","File Size"
+"Edit Icon","Edit Icon"
+Image,Image
+Type,Type
+Enabled,Enabled
+Disabled,Disabled
+Status,Status
+"Add New Icon","Add New Icon"
+Thumbnail,Thumbnail
+"Remove All Attachments","Remove All Attachments"
+"Remove All Attachments for selected items?","Remove All Attachments for selected items?"
+"Copy Attachments","Copy Attachments"
+"Source: ","Source: "
+copy_attachment,copy_attachment
+"Attachment List","Attachment List"
+"Upload Attachment","Upload Attachment"

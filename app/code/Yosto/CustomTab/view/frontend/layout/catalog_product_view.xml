@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Yosto\CustomTab\Block\Adminhtml\CustomTab" name="customtab" as="customtab" after="supportinfo.tab" template="Yosto_CustomTab::custom_tab.phtml" group="detailed_info" ></block>
+            <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.attributes" as="additional" template="Yosto_CustomTab::product/view/attributes.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">More Information</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

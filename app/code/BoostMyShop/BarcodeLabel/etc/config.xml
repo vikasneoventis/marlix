@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <barcodelabel>
+            <general>
+                <barcode_type>Code128</barcode_type>
+            </general>
+            <label_layout>
+                <paper_height>4</paper_height>
+                <paper_width>7</paper_width>
+                <content_name_print>1</content_name_print>
+                <content_name_position>0.2,0.2</content_name_position>
+                <content_name_size>20</content_name_size>
+                <content_sku_print>1</content_sku_print>
+                <content_sku_position>0.2,1</content_sku_position>
+                <content_sku_size>20</content_sku_size>
+                <content_price_print>1</content_price_print>
+                <content_price_position>5.5,1</content_price_position>
+                <content_price_size>20</content_price_size>
+                <content_image_print>1</content_image_print>
+                <content_image_position>0.2,2</content_image_position>
+                <content_image_size>1.5,1.5</content_image_size>
+                <content_barcode_print>1</content_barcode_print>
+                <content_barcode_position>2.5,2</content_barcode_position>
+                <content_barcode_size>4,1.5</content_barcode_size>
+                <unit>cm</unit>
+            </label_layout>
+        </barcodelabel>
+    </default>
+</config>

@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+
+<?php
+$loadingClass = $block->getLoadingClass();
+$loadingImage = $block->getLoadingImage();
+?>
+<style>
+    .product-image-container .product-image-wrapper{
+        background: #fff url('<?php echo $loadingImage?>') no-repeat 50% 50%
+    }
+
+</style>
+
+
+<script>
+    require(['jquery', 'lazyload'], function ($) {
+        $(document).ready(function () {
+            $("<?php echo $loadingClass?>").lazyload();
+        });
+    });
+
+</script>

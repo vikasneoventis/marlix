@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <amfile>
+            <block>
+                <display_block>1</display_block>
+                <block_location>product.info.details</block_location>
+                <customer_group>0,1</customer_group>
+                <show_ordered>0</show_ordered>
+                <sibling_tab>product.attributes</sibling_tab>
+                <position>before</position>
+                <block_label>Product Attachments</block_label>
+            </block>
+            <import>
+                <ftp_dir>amasty/amfile/import/ftp</ftp_dir>
+            </import>
+            <additional>
+                <detect_mime>1</detect_mime>
+            </additional>
+        </amfile>
+    </default>
+</config>

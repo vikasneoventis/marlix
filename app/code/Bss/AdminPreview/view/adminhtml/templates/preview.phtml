@@ -1,0 +1,29 @@
+<style>
+	td[class^="bss-show-hide-preview-"]{display:none;}
+	tbody.parent-preview-clickable{border:1px solid #e3e3e3;}
+	tbody.parent-preview-clickable .showhide:hover{cursor: pointer;}
+	tbody.parent-preview-clickable .showhide {display: block;position: relative;z-index: 9;color:#fff;font-weight: bold;border:1px solid #5F564F;width:12px;height:13px;line-height: 11px;background-color: #5F564F}
+	.parent-show-hide-preview.active td{display: table-cell;}
+	tbody.parent-preview-clickable > tr{border-bottom: 1px solid #e3e3e3}
+	tbody.parent-show-hide-preview > tr > td {background-color: #ddd!important;}
+</style>
+<script>
+	require(['jquery'
+		], function ($) {
+			$(document).ready(function () {
+				$('body').on('click','.parent-preview-clickable .showhide',function(){
+					$parent = $(this).parent();
+					var id = $parent.attr('item-id');
+					if($parent.hasClass('active')){
+						$parent.removeClass('active');
+						$parent.nextUntil('.parent-preview-clickable').removeClass('active');
+						$(this).text('+');
+					}else{
+						$parent.addClass('active');
+						$parent.nextUntil('.parent-preview-clickable').addClass('active');
+						$(this).text('-');
+					}
+				});
+			});
+		});
+</script>

@@ -1,0 +1,50 @@
+<?php
+/**
+ * Created by IntelliJ IDEA.
+ * User: vjcspy
+ * Date: 4/5/17
+ * Time: 2:24 PM
+ */
+
+namespace SM\Performance\Observer\BatchData;
+
+
+use Magento\Framework\Event\Observer;
+
+class ProcessBatch implements \Magento\Framework\Event\ObserverInterface {
+
+    /**
+     * @var \SM\Performance\Helper\RealtimeManager
+     */
+    private $realtimeManager;
+    /**
+     * @var \SM\XRetail\Model\Shell\Process
+     */
+    private $process;
+
+    public function __construct(
+        \SM\Performance\Helper\RealtimeManager $realtimeManager,
+        \SM\XRetail\Model\Shell\Process $process
+    ) {
+        $this->realtimeManager = $realtimeManager;
+        $this->process         = $process;
+    }
+
+    /**
+     * @param Observer $observer
+     *
+     * @return void
+     */
+    public function execute(\Magento\Framework\Event\Observer $observer) {
+        if (count($this->realtimeManager->getBatchData()) > 0) {
+            if (!\SM\Performance\Helper\RealtimeManager::$USE_ASYNC) {
+                $this->realtimeManager->processBatchData();
+            }
+            else {
+                $this->process
+                    ->setCommand("bin/magento retail:sendrealtime " . "'" . json_encode($this->realtimeManager->getBatchData()) . "'")
+                    ->start();
+            }
+        }
+    }
+}

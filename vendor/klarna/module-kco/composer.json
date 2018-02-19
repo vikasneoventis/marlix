@@ -1,0 +1,41 @@
+{
+    "name": "klarna/module-kco",
+    "description": "Klarna Checkout Magento 2 Extension",
+    "type": "magento2-module",
+    "license": "Apache-2.0",
+    "version": "3.0.0",
+    "authors": [
+        {
+            "name": "Joe Constant",
+            "email": "joe.constant@klarna.com"
+        },
+        {
+            "name": "Jason Grim",
+            "email": "jason.grim@klarna.com"
+        }
+    ],
+    "require": {
+        "klarna/module-core": "^2.7"
+    },
+    "conflicts": {
+        "klarna/module-enterprise": "<1.0"
+    },
+    "suggest": {
+        "klarna/module-om": "Provides order management funtionality"
+    },
+    "provide": {
+        "klarna/payment-virtual": "1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Klarna\\Kco\\": "."
+        },
+        "files": [ "registration.php" ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Klarna\\Kco\\Tests\\": "Tests/"
+        }
+    },
+    "minimum-stability": "dev"
+}

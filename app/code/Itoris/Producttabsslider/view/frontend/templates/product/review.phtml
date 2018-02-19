@@ -1,0 +1,57 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+$block = $block->getLayout()->getBlock('itoris.reviews.tab');
+$size = $block->getCollectionSize();
+?>
+<script>
+    var size=<?php echo $size; ?>;
+</script>
+<div id="product-review-container" data-role="product-review"></div>
+<?php echo $block->getChildHtml('',false); ?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Review/js/process-reviews": {
+                "productReviewUrl": "<?php /* @escapeNotVerified */ echo $block->getProductReviewUrl();?>"
+            }
+        }
+    }
+</script>
+<script>
+    requirejs([
+        'jquery',
+    ], function ($) {
+        $(function(){
+            if($('div').is('#product-review-container')){
+                var elem =$('#product-review-container').closest('.item').prev().children('a');
+                var text=elem.text();
+                text = text + '('+size+')';
+                elem.text(text);
+                $('.reviews-actions').on('click','.action',function(){
+                    var elem =$('#product-review-container').closest('.item').prev().children('a');
+                    var href = $(this).attr('href');
+                    var hrefArr = href.split('#');
+                    hrefArr = hrefArr[1];
+                    if(hrefArr=='reviews'){
+                        elem.click();
+                        var id = elem.attr('id');
+                        window.location.hash='';
+                        window.location.hash='product-review-container';
+                    }else if(hrefArr=='review-form'){
+                        elem.click();
+                        window.location.hash='';
+                        window.location.hash='review-form';
+                    }
+
+                });
+            }
+
+        })
+
+    });
+</script>
+

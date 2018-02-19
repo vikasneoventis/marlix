@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Plugins -->
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Option\Collection">
+        <plugin name="mageworx_optionbase_collect_product_option_conditions"
+                type="MageWorx\OptionBase\Plugin\CollectProductOptionConditions"
+                sortOrder="1"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Option\Collection">
+        <plugin name="mageworx_optionbase_extend_option_collection"
+                type="MageWorx\OptionBase\Plugin\ExtendOptionCollection"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Option\Value\Collection">
+        <plugin name="mageworx_optionbase_extend_option_value_collection"
+                type="MageWorx\OptionBase\Plugin\ExtendOptionValueCollection"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+</config>

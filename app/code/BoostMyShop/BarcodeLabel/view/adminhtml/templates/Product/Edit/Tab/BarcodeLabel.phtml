@@ -1,0 +1,35 @@
+<fieldset class="fieldset admin__fieldset user-defined" id="group-fields-barcodelabel">
+
+    <div class="admin__field">
+        <label class="admin__field-label" >
+            <span>Preview</span>
+        </label>
+        <div class="admin__field-control">
+                <img src="<?php echo $this->getLabelUrl(); ?>">
+        </div>
+    </div>
+
+    <div class="admin__field">
+        <label class="admin__field-label">
+            <span>Print</span>
+        </label>
+        <div class="admin__field-control">
+            <script>
+                var printBarcodeUrl = '<?php echo $this->getPrintUrl(); ?>';
+                function printBarcode()
+                {
+                    var url = printBarcodeUrl;
+                    url = url.replace('param_qty', document.getElementById('barcodelabel_qty').value);
+                    setLocation(url);
+                }
+            </script>
+            <p><?php echo __('Number of labels'); ?> : <input type="text" id="barcodelabel_qty">
+
+            <button type="button" class="action-secondary" onclick="printBarcode();">
+                <span data-bind="text: title"><?php echo __('Print'); ?></span>
+            </button>
+        </div>
+    </div>
+
+
+</fieldset>

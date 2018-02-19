@@ -1,0 +1,10 @@
+.admin__fieldset > .admin__field
+{
+    width: 50%;
+    float: right;
+    margin-bottom: 1rem;
+}
+.admin__field + .admin__field
+{
+    margin-top: 0;
+}

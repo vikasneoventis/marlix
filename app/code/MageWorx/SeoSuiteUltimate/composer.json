@@ -1,0 +1,18 @@
+{
+    "name": "mageworx/module-seosuiteultimate",
+    "version": "2.12.4",
+    "type": "metapackage",
+    "require": {
+        "mageworx/module-htmlsitemap": "2.1.8",
+        "mageworx/module-seoall": "2.1.2",
+        "mageworx/module-seobase": "2.4.3",
+        "mageworx/module-seobreadcrumbs" : "2.0.2",
+        "mageworx/module-seocrosslinks": "2.2.2",
+        "mageworx/module-seoextended": "2.3.2",
+        "mageworx/module-seomarkup": "2.2.2",
+        "mageworx/module-seoredirects": "2.0.6",
+        "mageworx/module-seourls": "2.2.1",
+        "mageworx/module-seoxtemplates": "2.4.3",
+        "mageworx/module-xmlsitemap": "2.1.5"
+    }
+}

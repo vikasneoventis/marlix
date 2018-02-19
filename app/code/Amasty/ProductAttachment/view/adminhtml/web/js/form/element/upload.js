@@ -1,0 +1,69 @@
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2016 Amasty (http://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+define([
+    'mageUtils',
+    'Magento_Ui/js/form/element/abstract'
+], function (utils, Abstract) {
+    'use strict';
+
+    return Abstract.extend({
+        defaults: {
+            links: {
+                value: ''
+            }
+        },
+
+        /**
+         * Initializes file component.
+         *
+         * @returns {Media} Chainable.
+         */
+        initialize: function () {
+            this._super()
+                .initFormId();
+
+            return this;
+        },
+
+        initConfig: function () {
+
+            var uid = utils.uniqueid(),
+                name,
+                scope;
+
+            this._super();
+
+            scope   = this.dataScope,
+                name    = scope.split('.').slice(1);
+
+            _.extend(this, {
+                uid: uid,
+                noticeId: 'notice-' + uid,
+                inputName: name[1]
+            });
+
+            return this;
+        },
+
+        /**
+         * Defines form ID with which file input will be associated.
+         *
+         * @returns {Media} Chainable.
+         */
+        initFormId: function () {
+            var namespace;
+
+            if (this.formId) {
+                return this;
+            }
+
+            namespace   = this.name.split('.');
+            this.formId = namespace[0];
+
+            return this;
+        }
+    });
+});

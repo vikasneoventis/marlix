@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="MageWorx\SeoXTemplates\Model\DataProviderProductFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="1" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Product\Eav</item>
+                <item name="2" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Product\Eav</item>
+                <item name="3" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Product\Eav</item>
+                <item name="4" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Product\Eav</item>
+                <item name="5" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Product\Eav</item>
+                <item name="6" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Product\Eav</item>
+                <item name="7" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Product\Eav</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\SeoXTemplates\Model\DbWriterProductFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="1" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Product\Eav</item>
+                <item name="2" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Product\Eav\Url</item>
+                <item name="3" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Product\Eav</item>
+                <item name="4" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Product\Eav</item>
+                <item name="5" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Product\Eav</item>
+                <item name="6" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Product\Eav</item>
+                <item name="7" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Product\Eav</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\SeoXTemplates\Model\CsvWriterProductFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="1" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Product\Eav</item>
+                <item name="2" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Product\Eav</item>
+                <item name="3" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Product\Eav</item>
+                <item name="4" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Product\Eav</item>
+                <item name="5" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Product\Eav</item>
+                <item name="6" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Product\Eav</item>
+                <item name="7" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Product\Eav</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\SeoXTemplates\Model\ConverterProductFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="product_seo_name" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Product\SeoName</item>
+                <item name="url_key" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Product\Url</item>
+                <item name="short_description" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Product\ShortDescription</item>
+                <item name="description" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Product\Description</item>
+                <item name="meta_title" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Product\MetaTitle</item>
+                <item name="meta_description" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Product\MetaDescription</item>
+                <item name="meta_keyword" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Product\MetaKeywords</item>
+            </argument>
+        </arguments>
+    </type>    
+    <type name="MageWorx\SeoXTemplates\Model\DataProviderCategoryFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="1" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Category\Eav</item>
+                <item name="2" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Category\Eav</item>
+                <item name="3" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Category\Eav</item>
+                <item name="4" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Category\Eav</item>
+                <item name="5" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\Category\Eav</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\SeoXTemplates\Model\DbWriterCategoryFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="1" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Category\Eav</item>
+                <item name="2" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Category\Eav</item>
+                <item name="3" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Category\Eav</item>
+                <item name="4" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Category\Eav</item>
+                <item name="5" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\Category\Eav</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\SeoXTemplates\Model\CsvWriterCategoryFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="1" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Category\Eav</item>
+                <item name="2" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Category\Eav</item>
+                <item name="3" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Category\Eav</item>
+                <item name="4" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Category\Eav</item>
+                <item name="5" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\Category\Eav</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\SeoXTemplates\Model\ConverterCategoryFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="category_seo_name" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Category\SeoName</item>
+                <item name="description" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Category\Description</item>
+                <item name="meta_title" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Category\MetaTitle</item>
+                <item name="meta_description" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Category\MetaDescription</item>
+                <item name="meta_keywords" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Category\MetaKeywords</item>
+            </argument>
+        </arguments>
+    </type>
+    <!--Category Filter-->
+    <type name="MageWorx\SeoXTemplates\Model\DataProviderCategoryFilterFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="1" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\CategoryFilter</item>
+                <item name="2" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\CategoryFilter</item>
+                <item name="3" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\CategoryFilter</item>
+                <item name="4" xsi:type="string">MageWorx\SeoXTemplates\Model\DataProvider\CategoryFilter</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\SeoXTemplates\Model\DbWriterCategoryFilterFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="1" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\CategoryFilter</item>
+                <item name="2" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\CategoryFilter</item>
+                <item name="3" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\CategoryFilter</item>
+                <item name="4" xsi:type="string">MageWorx\SeoXTemplates\Model\DbWriter\CategoryFilter</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\SeoXTemplates\Model\CsvWriterCategoryFilterFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="1" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\CategoryFilter</item>
+                <item name="2" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\CategoryFilter</item>
+                <item name="3" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\CategoryFilter</item>
+                <item name="4" xsi:type="string">MageWorx\SeoXTemplates\Model\CsvWriter\CategoryFilter</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\SeoXTemplates\Model\ConverterCategoryFilterFactory">
+        <arguments>
+            <argument name="map" xsi:type="array">
+                <item name="1" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Category\MetaTitle</item>
+                <item name="2" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Category\MetaDescription</item>
+                <item name="3" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Category\MetaKeywords</item>
+                <item name="4" xsi:type="string">MageWorx\SeoXTemplates\Model\Converter\Category\Description</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

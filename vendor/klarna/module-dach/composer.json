@@ -1,0 +1,32 @@
+{
+    "name": "klarna/module-dach",
+    "description": "Klarna Dach Magento 2 Extension",
+    "type": "magento2-module",
+    "license": "Apache-2.0",
+    "version": "2.0.0",
+    "authors": [
+        {
+            "name": "Joe Constant",
+            "email": "joe.constant@klarna.com"
+        },
+        {
+            "name": "Jason Grim",
+            "email": "jason.grim@klarna.com"
+        }
+    ],
+    "require": {
+        "klarna/module-kred": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Klarna\\Dach\\": "."
+        },
+        "files": [ "registration.php" ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Klarna\\Dach\\Tests\\": "Tests/"
+        }
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.txt for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/system_file.xsd">
+    <system>
+        <section id="twiliosmsnotification" translate="label" type="text" sortOrder="1100" showInDefault="1">
+            <label>Twilio SMS Notification</label>
+            <tab>general</tab>
+            <resource>Yosto_TwilioSMSNotification::config_twiliosms</resource>
+            <group id="twilioconfig" translate="twilioconfig" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Configuration</label>
+                <field id="enable" translate="enable" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable</label>
+                    <comment>Enable or disable sending sms</comment>
+                    <source_model>Yosto\TwilioSMSNotification\Helper\Yesno</source_model>
+                </field>
+                <field id="account_sid" translate="account_sid" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account Sid</label>
+                    <comment>Account Sid from Twilio account</comment>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="account_token" translate="account_token" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account Token</label>
+                    <comment>Account Token from Twilio account</comment>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="phone" translate="phone" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Twilio phone number</label>
+                    <comment>Phone number that you registered from twilio</comment>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="admin_phone" translate="admin_phone" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Store owner phone number</label>
+                    <comment>Admin's phone number, you can enter multiple number, each number separated by comma (eg: +1230000, +1240000). Note that your phone numbers must be contain country code</comment>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+            <group id="storeownersms" translate="storeownersms" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Store owner SMS message</label>
+                <field id="neworder_sms" translate="neworder_sms" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message for New order</label>
+                    <comment>Message to store owner when customer places order. {order_id} is variable. Clear the textbox if you want to disable sending message</comment>
+                </field>
+                <field id="customer_registration" translate="customer_registration" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message for Customer registration</label>
+                    <comment>Message to store owner when customer register. {name} and {email} are variables. Clear the textbox if you want to disable sending message</comment>
+                </field>
+            </group>
+            <group id="smstocustomer" translate="smstocustomer" type="text" sortOrder="30" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Customer SMS message</label>
+                <field id="customer_placeorder" translate="placeorder" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message for Customer's Order confirmation</label>
+                    <comment>Message to customer when customer places order. {order_id}, {products} and {grand_total} are variables. Clear the textbox if you want to disable sending message</comment>
+                </field>
+                <field id="order_cancelled" translate="ordercancel" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message for Order cancelled</label>
+                    <comment>Message to customer when store owner cancel the order. {order_id} is variable. Clear the textbox if you want to disable sending message</comment>
+                </field>
+                <field id="invoice_created" translate="invoice_created" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message for Invoice created</label>
+                    <comment>Message to customer when store owner create invoice. {order_id} and {grand_total} are variables. Clear the textbox if you want to disable sending message</comment>
+                </field>
+                <field id="refund_order" translate="refund_order" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message for Credit memo refund</label>
+                    <comment>Message to customer for credit memo refund. {order_id} and {grand_total} are variables. Clear the textbox if you want to disable sending message</comment>
+                </field>
+                <field id="shipment_created" translate="shipment_created" type="textarea" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message for Shipment</label>
+                    <comment>Message to customer when shipment created. {order_id} and {grand_total} are variables. Clear the textbox if you want to disable sending message</comment>
+                </field>
+            </group>
+            <group id="testsms" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Test Twilio SMS</label>
+                <field id="your_phone" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Your phone number</label>
+                    <comment>Your phone number to test message, note that your phone number must be contained country code</comment>
+                </field>
+                <field id="button" translate="label comment" type="button" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <frontend_model>Yosto\TwilioSMSNotification\Block\Adminhtml\System\TwilioSMS\Config\TwilioSMSTestButton</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

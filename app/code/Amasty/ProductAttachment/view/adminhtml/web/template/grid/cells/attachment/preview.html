@@ -1,0 +1,16 @@
+<!--
+/**
+* @author Amasty Team
+* @copyright Copyright (c) 2016 Amasty (http://www.amasty.com)
+* @package Amasty_ProductAttachment
+*/
+-->
+
+<div class="amfile-attachment-preview-<%- productId %>" class="attachment-preview" style="margin-bottom: 20px;">
+    <% _.each(attachmentList, function(value, index) { %>
+        <span>
+            <a target="_blank" href = "<%- value.url %>"><%- value.label %></a>
+        </span>
+        <br/>
+    <% }) %>
+</div>

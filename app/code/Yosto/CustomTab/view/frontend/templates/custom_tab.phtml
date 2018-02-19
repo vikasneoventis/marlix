@@ -1,0 +1,47 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+?>
+<?php $currentProduct = $block->getCurrentProduct();
+$collection = $block->getAttribute();
+$status = $block->getStatus();
+$html = '';
+
+if($status == 1)
+{
+    foreach($collection as $item){
+        $content = $currentProduct->getData($item->getData('attribute_code'));
+        if(trim($content) != '' || $content != null)
+        {
+            $html = $html .'<div class="data item title" '
+                .'aria-labeledby="tab-label-'. $item->getData('attribute_code').'-title" '
+                .'data-role="collapsible" id="tab-label-'. $item->getData('attribute_code').'">'
+                .'<a class="data switch" '
+                .'tabindex="-1" '
+                .'data-toggle="switch" '
+                .'href="#'. $item->getData('attribute_code').'" '
+                .'id="tab-label-'. $item->getData('attribute_code').'-title">'
+                .$item->getData('frontend_label')
+                .'</a></div><div class="data item content" id="'
+                . $item->getData('attribute_code')
+                .'" data-role="content">'
+                .  trim(preg_replace('/\s+/', ' ', $content))
+                .'</div>';
+        }
+    }
+}
+?>
+
+<script>
+    require(['jquery'], function (jQuery) {
+        jQuery('#tab-label-customtab-title').hide();
+        var element = document.getElementsByClassName('product data items')[0].innerHTML + '<?php echo preg_replace("/'/", "\&#39;", $html) ?>';
+        document.getElementsByClassName('product data items')[0].innerHTML = element;
+    });
+</script>
+
+
+

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+  <update handle="ajaxscroll_head"/>
+  <body>
+    <referenceContainer name="before.body.end">
+
+      <block class="Yosto\Ajaxscroll\Block\Ajaxscroll" ifconfig="ajaxscroll/back_to_top/enabled_top" template="Yosto_Ajaxscroll::ajaxscroll/totop.phtml" name="totop_js"/>
+    </referenceContainer>
+    <referenceContainer name="after.body.start">
+      <block class="Yosto\Ajaxscroll\Block\Ajaxscroll" ifconfig="ajaxscroll/lazy_loading/enabled_lazy_load" template="Yosto_Ajaxscroll::ajaxscroll/lazyload.phtml" name="lazyload_js"/>
+    </referenceContainer>
+  </body>
+</page>

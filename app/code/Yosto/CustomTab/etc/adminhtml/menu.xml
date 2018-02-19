@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/menu.xsd">
+    <menu>
+        <add id="Yosto_Customtab::system_config" title="Product Custom Tabs Configuration"
+             module="Yosto_CustomTab" sortOrder="100" parent="Magento_Backend::stores_attributes"
+             action="adminhtml/system_config/edit/section/yosto_custom_tab_configuration" resource="Yosto_Customtab::system_config"/>
+    </menu>
+</config>

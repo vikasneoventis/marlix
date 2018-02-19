@@ -1,0 +1,25 @@
+<?php
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+<script>
+    require([
+        'jquery',
+        'optionInventory',
+        'uiRegistry'
+    ], function ($, optionInventory, registry) {
+        var optionBase = registry.get('mageworxOptionBase');
+        if (optionBase) {
+            optionBase.addUpdater('optionInventory', optionInventory());
+        } else {
+            var updaters = registry.get('mageworxOptionUpdaters');
+            if (!updaters) {
+                updaters = {};
+            }
+            updaters.optionInventory = optionInventory();
+            registry.set('mageworxOptionUpdaters', updaters);
+        }
+    });
+</script>

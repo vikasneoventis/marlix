@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.txt for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <twiliosmsnotification>
+            <twilioconfig>
+                <enable>1</enable>
+            </twilioconfig>
+            <storeownersms>
+                <neworder_sms>New order created, order id: {order_id}</neworder_sms>
+                <customer_registration>Customer registration name: {name}, email: {email}</customer_registration>
+            </storeownersms>
+            <smstocustomer>
+                <customer_placeorder>Order {order_id} has been created. Your products: {products}. Total prices:{grand_total}</customer_placeorder>
+                <order_cancelled>Order {order_id} has been canceled</order_cancelled>
+                <invoice_created>Your Invoice created with order : {order_id}, total price is {grand_total}</invoice_created>
+                <refund_order>Your order : {order_id} has been refunded with amount: {grand_total}</refund_order>
+                <shipment_created>Your Shipment created with order : {order_id}, total price is {grand_total}</shipment_created>
+            </smstocustomer>
+        </twiliosmsnotification>
+    </default>
+</config>

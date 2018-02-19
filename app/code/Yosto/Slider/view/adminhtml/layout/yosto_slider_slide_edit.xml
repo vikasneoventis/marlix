@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <head>
+       <css src="Yosto_Core::css/owl.carousel.min.css"/>
+       <css src="Yosto_Slider::css/owl.theme.default.min.css"/>
+       <css src="Yosto_Core::css/animate.css"/>
+       <css src="Yosto_Core::css/font-awesome.min.css"/>
+   </head>
+    <body>
+        <referenceContainer name="left">
+            <block class="Yosto\Slider\Block\Adminhtml\Slide\Edit\Tabs"
+                   name="yosto_slider_slide.edit.tabs"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Yosto\Slider\Block\Adminhtml\Slide\Edit"
+                   name="yosto_slider_slide.edit"/>
+        </referenceContainer>
+        <referenceBlock name="page.actions.toolbar">
+            <block class="Magento\Framework\View\Element\Template" name="yosto.slider.slide.preview" template="Yosto_Slider::slidepreview.phtml" />
+        </referenceBlock>
+    </body>
+</page>

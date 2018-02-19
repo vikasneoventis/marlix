@@ -1,0 +1,20 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+?>
+
+<div id="amfile_import_div"></div>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'Amasty_ProductAttachment/js/init-drop-zone'
+    ], function($, initDropZone) {
+        $(document).bind('dragover', function (e) {
+            e.preventDefault();
+            initDropZone(e);
+        });
+    });
+</script>

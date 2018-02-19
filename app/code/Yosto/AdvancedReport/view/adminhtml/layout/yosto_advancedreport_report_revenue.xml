@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="formkey"/>
+    <update handle="yosto_advancedreport_report_head"/>
+    <head>
+        <css src="Yosto_AdvancedReport::css/report.revenue.css"/>
+        <css src="Yosto_AdvancedReport::css/font-awesome.min.css"/>
+    </head>
+    <body>
+        <referenceBlock  name="messages">
+            <action method="addNotice">
+                <argument translate="true" name="message" xsi:type="string">For accurate reporting, be sure to refresh lifetime statistics whenever you change the time zone.</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="page.main.actions">
+            <block class="Magento\Backend\Block\Store\Switcher" template="Magento_Backend::store/switcher.phtml" name="store.switcher">
+                <action method="setStoreVarName">
+                    <argument name="var_name" xsi:type="string">store_ids</argument>
+                </action>
+                <arguments>
+                    <argument name="switch_websites" xsi:type="string">1</argument>
+                    <argument name="switch_store_groups" xsi:type="string">1</argument>
+                    <argument name="switch_store_views" xsi:type="string">1</argument>
+                    <argument name="default_selection_name" xsi:type="string" translate="true">All Websites</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" template="Yosto_AdvancedReport::report/toolbars/compare.phtml" />
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Yosto\AdvancedReport\Block\Adminhtml\Report\Revenue" template="Yosto_AdvancedReport::revenue.phtml"
+                   name="yosto.advanced.report.revenue"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+  <default>
+    <ajaxscroll>
+      <general>
+        <enabled>1</enabled>
+        <loading_icon>default/loading_bar.gif</loading_icon>
+        <loading_text>Loading</loading_text>
+        <enabled_index>1</enabled_index>
+        <enabled_category>1</enabled_category>
+        <enabled_tag>1</enabled_tag>
+        <enabled_search>1</enabled_search>
+        <container_class>.column</container_class>
+        <item_class>.product-item</item_class>
+        <pagination_class>.pages .item</pagination_class>
+        <next_button_class>.next</next_button_class>
+      </general>
+      <load_more>
+        <enabled_load_more>0</enabled_load_more>
+        <threshold>3</threshold>
+        <load_more_text>Load more items</load_more_text>
+        <load_more_background>#d6d7d9</load_more_background>
+        <load_more_text_color>#323a45</load_more_text_color>
+        <load_previous_text>Load previous items</load_previous_text>
+        <no_more_items>No more pages left</no_more_items>
+      </load_more>
+
+      <lazy_loading>
+        <enabled_lazy_load>1</enabled_lazy_load>
+        <loading_img>default/loading_circle.gif</loading_img>
+        <loading_class>img.lazy</loading_class>
+      </lazy_loading>
+      <back_to_top>
+        <enabled_top>1</enabled_top>
+        <use_image_or_icon>1</use_image_or_icon>
+        <arrow_color>#ffffff</arrow_color>
+        <init_background>#000000</init_background>
+        <hover_background>#333</hover_background>
+        <to_top_icon>default/backtotop.png</to_top_icon>
+      </back_to_top>
+    </ajaxscroll>
+  </default>
+</config>

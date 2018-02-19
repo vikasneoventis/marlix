@@ -1,0 +1,51 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<button class="action-default primary scalable" id="preview" type="button">
+<span class="ui-button-text">
+    <span>Preview</span>
+</span>
+</button>
+
+<div id="popup-mpdal" style="display: none">
+
+</div>
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            $('#preview').click(function(){
+                var options = {
+                    type: 'popup',
+                    responsive: true,
+                    innerScroll: true,
+                    title: 'popup mpdal title',
+                    buttons: [{
+                        text: $.mage.__('Continue'),
+                        class: '',
+                        click: function () {
+                            this.closeModal();
+                        }
+                    }]
+                };
+
+                var popup = modal(options, $('#popup-mpdal'));
+
+                $('#popup-mpdal').modal('openModal');
+            })
+
+        }
+    );
+</script>

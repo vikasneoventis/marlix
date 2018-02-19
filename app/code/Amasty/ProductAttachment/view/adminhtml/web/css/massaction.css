@@ -1,0 +1,48 @@
+/*amasty product attachment css styles*/
+.amasty-file-form{
+    padding: 8px;
+}
+
+.amasty-file-form table{
+    width: 100%;
+}
+
+.amasty-file-form label{
+    display: inline-block;
+    margin-right: 8px;
+    max-width: 84px;
+    vertical-align: middle;
+}
+
+.amasty-file-form input{
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.amasty-file-form select{
+    vertical-align: middle;
+    max-width: 170px;
+    margin-right: 8px;
+}
+
+.amasty-file-form button{
+    vertical-align: middle;
+}
+
+.amasty-file-form td:nth-child(3) {
+    text-align: right;
+}
+
+.amasty-file-form td:nth-child(2) {
+    text-align: center;
+}
+
+.action-select-wrap ul.action-menu{
+    max-height: none;
+}
+
+@-moz-document url-prefix() {
+    .action-select-wrap ul.action-menu{
+        max-height: 45rem;
+    }
+}

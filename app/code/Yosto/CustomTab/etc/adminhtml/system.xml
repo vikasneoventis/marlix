@@ -1,0 +1,26 @@
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<system>
+    <section id="yosto_custom_tab_configuration" translate="label" type="text" sortOrder="140" showInDefault="1"
+             showInWebsite="1" showInStore="1">
+        <label>Product Custom Tabs</label>
+        <tab>catalog</tab>
+        <resource>Yosto_Customtab::system_config</resource>
+        <group id="group" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1"
+               showInStore="1">
+            <label>Configuration</label>
+            <field id="status" translate="label comment" type="select" sortOrder="12" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Is Enable</label>
+                <source_model>Yosto\CustomTab\Model\Select\Status</source_model>
+            </field>
+        </group>
+    </section>
+</system>
+</config>

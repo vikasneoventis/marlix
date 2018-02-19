@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.txt for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <product_slide_image>
+            <product_slide>
+                <animation_speed>600</animation_speed>
+                <slideshow_speed>6000</slideshow_speed>
+                <direction>horizontal</direction>
+                <animation_type>slide</animation_type>
+                <reverse>0</reverse>
+                <pause_on_action>1</pause_on_action>
+                <pause_on_hover>0</pause_on_hover>
+                <randomize>1</randomize>
+                <enable>1</enable>
+            </product_slide>
+        </product_slide_image>
+    </default>
+</config>

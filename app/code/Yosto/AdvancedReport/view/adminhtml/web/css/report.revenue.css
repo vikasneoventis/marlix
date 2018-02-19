@@ -1,0 +1,13 @@
+.dashboard-item {
+    background-color: #ECF0F1;
+    padding: 5px;
+}
+
+.dashboard-item-content{
+    padding: 10px;
+}
+
+.percent {
+    color: #E74C3C;
+
+}

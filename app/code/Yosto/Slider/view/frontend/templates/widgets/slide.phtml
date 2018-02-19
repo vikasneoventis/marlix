@@ -1,0 +1,234 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+$slideId = $this->getData('slide');
+$slideClass = 'slide-'.$slideId;
+?>
+<?php if ($slideId != null): ?>
+    <?php
+    $images = $block->getImages($slideId);
+    $slide = $block->getSlide($slideId);
+
+    $height = $slide->getData('height');
+
+    ?>
+
+<div class="yosto-product-slider-heading">
+                <h2><span>Merker og Godt Design</span></h2>
+            </div>
+    <div class="owl-carousel yosto-slider <?php echo $slideClass?>"
+         style="<?php echo $height > 0 ? 'height:' . $height . 'px' : ''; ?>">
+        <?php foreach ($images as $image): ?>
+            <?php
+            $titleColor = $image->getData('title_color');
+            $titleFontSize = $image->getData('title_font_size');
+            $subtitleColor = $image->getData('subtitle_color');
+            $subtitleFontSize = $image->getData('subtitle_font_size');
+            $href = $image->getData('href');
+            $buttonColor = $image->getData('button_color');
+            $buttonBackgroundColor = $image->getData('button_background_color');
+            $buttonFontSize = $image->getData('button_font_size');
+            $contentWidth = $image->getData('content_width');
+            $contentPosition = $image->getData('content_position');
+            ?>
+
+            <div class="item">
+                <a target="_blank" href="<?php echo $href != null ? $href : 'javascript: void(0);' ?>">
+                    <div class="item-image">
+                        <?php echo $block->getContent($image->getData('image_html')); ?>
+                    </div>
+                </a>
+
+                <div class="slider-content <?php echo $contentPosition ?>"
+                     style="<?php echo $contentWidth != null ? 'width:' . $contentWidth . ';' : '' ?>">
+
+                    <?php if ($image->getTitle() != null): ?>
+
+                        <div class="title"
+                             data-effect="<?php echo $image->getData('title_effect'); ?>"
+                             style="<?php
+                             echo $titleColor != null ? 'color:' . $titleColor . ";" : '';
+                             echo $titleFontSize != null ? 'font-size:' . $titleFontSize . ";" : '';
+                             ?>">
+                            <?php echo $image->getTitle() ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($image->getSubtitle() != null): ?>
+                        <div class="subtitle"
+                             data-effect="<?php echo $image->getData('subtitle_effect'); ?>"
+                             style="<?php
+                             echo $subtitleColor != null ? 'color:' . $subtitleColor . ";" : '';
+                             echo $subtitleFontSize != null ? 'font-size:' . $subtitleFontSize . ";" : '';
+                             ?>  ">
+                            <?php echo $image->getSubtitle() ?>
+
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($image->getData('button_title') != null): ?>
+                        <a target="_blank" href="<?php echo $href != null ? $href : 'javascript: void(0);' ?>">
+                            <div class="action"
+                                 data-effect="<?php echo $image->getData('button_effect'); ?>"
+                                 style="<?php
+                                 echo $buttonColor != null ? 'color:' . $buttonColor . ";" : '';
+                                 echo $buttonFontSize != null ? 'font-size:' . $buttonFontSize . ";" : '';
+                                 echo $buttonBackgroundColor != null ? 'background-color:' . $buttonBackgroundColor . ";" : '';
+                                 ?>  ">
+                                <?php echo $image->getData('button_title') ?>
+                            </div>
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <script type="text/javascript">
+        require(['jquery', 'yostocoreowlcarousel'], function ($) {
+            var owl = $('.yosto-slider.owl-carousel.<?php echo $slideClass?>');
+            owl.owlCarousel({
+                navText: '',
+                items: <?php echo $slide->getData('items_number'); ?>,
+                margin: <?php echo $slide->getData('margin'); ?>,
+                loop: <?php echo $slide->getData('loop')==1?'true':'false'; ?>,
+                center: <?php echo $slide->getData('center')==1?'true':'false'; ?>,
+                mouseDrag: <?php echo $slide->getData('mouse_drag')==1?'true':'false'; ?>,
+                touchDrag: <?php echo $slide->getData('touch_drag')==1?'true':'false'; ?>,
+                freeDrag: <?php echo $slide->getData('free_drag')==1?'true':'false'; ?>,
+                stagePadding: <?php echo $slide->getData('stage_padding'); ?>,
+                merge: <?php echo $slide->getData('merge')==1?'true':'false'; ?>,
+                mergeFit: <?php echo $slide->getData('merge_fit')==1?'true':'false'; ?>,
+                autoWidth: <?php echo $slide->getData('auto_width')==1?'true':'false'; ?>,
+                startPosition: <?php echo $slide->getData('start_position'); ?>,
+                nav: <?php echo $slide->getData('nav')==1 ? 'true':'false'; ?>,
+                rewind: <?php echo $slide->getData('rewind') == 1? 'true' : 'false'; ?>,
+                slideBy: <?php echo $slide->getData('slide_by')?>,
+                dotData: <?php echo $slide->getData('dot_data')==1?'true':'false'?>,
+                dots: <?php echo $slide->getData('dots')==1 ? 'true': 'false';?>,
+                dotsEach: <?php echo $slide->getData('dots_each');?>,
+                lazyLoad: <?php echo $slide->getData('lazy_load')==1?'true':'false';?>,
+                autoplay: <?php echo $slide->getData('autoplay')==1?'true':'false'; ?>,
+                autoplayTimeout: <?php echo $slide->getData('autoplay_timeout')?>,
+                autoplayHoverPause: <?php echo $slide->getData('autoplay_hover_pause') == 1? 'true': 'false' ?>,
+                smartSpeed: <?php echo $slide->getData('smart_speed')?>,
+                fluidSpeed: <?php echo $slide->getData('fluid_speed')==1?'true':'false';?>,
+                autoplaySpeed: <?php echo $slide->getData('autoplay_speed')==1?'true':'false';?>,
+                navSpeed: <?php echo $slide->getData('nav_speed')==1?'true':'false';?>,
+                dotsSpeed: <?php echo $slide->getData('dots_speed')==1?'true':'false';?>,
+                dragEndSpeed: <?php echo $slide->getData('drag_end_speed')==1?'true':'false';?>,
+                callbacks: <?php echo $slide->getData('callbacks')==1?'true':'false';?>,
+                responsiveRefreshRate: <?php echo $slide->getData('responsive_refresh_rate')?>,
+                responsiveBaseElement: <?php echo $slide->getData('responsive_base_element')?>,
+                video: <?php echo $slide->getData('video')==1?'true':'false'?>,
+                videoHeight: <?php echo $slide->getData('video_height')==1?'true':'false'?>,
+                videoWidth: <?php echo $slide->getData('video_width')==1?'true':'false'?>,
+                <?php if ($slide->getData('animate_out') != 'none'): ?>
+                animateOut: '<?php echo $slide->getData('animate_out') ?>',
+                <?php endif?>
+                <?php if ($slide->getData('animate_in') != 'none'): ?>
+                animateIn: '<?php echo $slide->getData('animate_in');?>',
+                <?php endif;?>
+                fallbackEasing: '<?php echo $slide->getData('fallback_easing');?>',
+                onTranslate: onTranslate,
+                onTranslated: onTranslated,
+                responsive: {
+                    0 : {
+                        items : 1
+                    },
+                    480 : {
+                        items : <?php if($slide->getData('items_number') > 2) {echo 2; } else { echo $slide->getData('items_number');} ?>
+                    },
+                    640 : {
+                        items : <?php if($slide->getData('items_number') > 3) {echo 3; } else { echo $slide->getData('items_number');} ?>
+
+                    },
+                    768 : {
+                        items : <?php if($slide->getData('items_number') > 4) {echo 4; } else { echo $slide->getData('items_number');} ?>
+                    },
+                    1024 : {
+                        items : <?php if($slide->getData('items_number') > 5) {echo 5; } else { echo $slide->getData('items_number');} ?>
+                    }
+
+
+                }
+            });
+
+            $.fn.extend({
+                animateCss: function (animationName) {
+                    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                    $(this).addClass('animated ' + animationName).one(animationEnd, function () {
+                        $(this).removeClass('animated ' + animationName);
+                    });
+                }
+            });
+
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            var titleActive = $('.yosto-slider.<?php echo $slideClass?>  .owl-item.active .title');
+            if (titleActive) {
+                var titleEffect = titleActive.data('effect');
+                if(titleEffect != 'none')
+                    titleActive.animateCss(titleEffect);
+            }
+            var subtitleActive = $(' .yosto-slider.<?php echo $slideClass?>  .owl-item.active .subtitle');
+            if (subtitleActive) {
+                var subtitleEffect = subtitleActive.data('effect');
+                if(subtitleEffect != 'none')
+                    subtitleActive.animateCss(subtitleEffect);
+            }
+
+            var actionActive = $('.yosto-slider.<?php echo $slideClass?> .owl-item.active .action');
+            if (actionActive) {
+                var actionEffect = actionActive.data('effect');
+                if(actionEffect != 'none')
+                    actionActive.animateCss(actionEffect);
+            }
+
+
+            function onTranslate(event) {
+                var indexOfTranslateItem = event.item.index;
+                var currentItemActive = $('.yosto-slider.<?php echo $slideClass?> .owl-item').get(indexOfTranslateItem);
+                currentItemActive = $(currentItemActive);
+
+
+                var currentTitleActive = currentItemActive.find('.title');
+                if (currentItemActive) {
+                    var currentTitleEffect = currentTitleActive.data('effect');
+                    if(currentTitleEffect != 'none')
+                        currentTitleActive.animateCss(currentTitleEffect);
+                }
+
+                var currentSubtitleActive = currentItemActive.find('.subtitle');
+
+                if (currentSubtitleActive) {
+                    var currentSubtitleEffect = currentSubtitleActive.data('effect');
+                    if(currentSubtitleEffect != 'none')
+                        currentSubtitleActive.animateCss(currentSubtitleEffect);
+                }
+
+
+                var currentActionActive = currentItemActive.find('.action');
+                if (currentActionActive) {
+                    var currentActionEffect = currentActionActive.data('effect');
+                    if(currentActionEffect != 'none')
+                        currentActionActive.animateCss(currentActionEffect);
+                }
+            }
+
+            function onTranslated(event) {
+                $('.yosto-slider.<?php echo $slideClass?> .owl-item:not(.active)').attr('class', 'owl-item');
+                $('.yosto-slider.<?php echo $slideClass?> .owl-item').css('left', '0');
+            }
+        })
+    </script>
+
+<?php endif; ?>
+
+<style>
+    .green .yosto-product-slider-heading,.black .yosto-product-slider-heading{display:none;}
+</style>

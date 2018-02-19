@@ -1,0 +1,952 @@
+
+NOTICE:
+- To upgrade the theme in your store, please follow the procedure which is described in the "Update Guide.pdf".
+- In case of any questions about Ultimo theme: support requests can be send through our new support system:
+https://support.infortis-themes.com
+
+-----------------------------------
+
+
+Version 1.19.1 - September 04, 2017
+
+New:
+- choose the number of digits after decimal point for the product label which displays saved amount of money. Useful when you want to show rounded value instead of precise percentage.
+
+
+Version 1.19.0 - August 24, 2017
+
+New:
+- product labels:
+	- label with saved amount – if a product has a special price, the label can be displayed over the product to show the percentage which reflects the saved amount of money, for example: -10%
+	- labels have simple rectangular shape and they fade out on mouse hover over the product to show the product image
+- featured products slider:
+	- display products as thumbnails (small image with name and price displayed at the side of the image)
+	- products can be displayed vertically in multiple rows (one below another), you can specify the number of rows
+	- new values for the "size" parameter which can change the size of the elements of the slider, such as product name, price
+- category view:
+	- set number of columns (products in a row) individually for each breakpoint
+	- new parameters for the shortcode which can display a block of products similar to the products displayed in category view (in grid or list mode)
+
+
+Version 1.18.1 - May 14, 2017
+
+Changed:
+- updated Quick Start package (copy of the demo site)
+- font size in banner captions gets smaller in mobile view 
+- added sample static block "sample_mobile_header_top" which can be used inside container "Page Mobile Header, Top"
+
+Fixed:
+- class "hidden-sm" added to captions in sample static block "sample_slideshow_additional_banners_2"
+- a slideshow shortcode inside the content of the sample home page from demo 8 (page ID: "ultimo-home-page-08") has correct ID of a static block with slides
+
+
+Version 1.18.0 - May 04, 2017
+
+New:
+- in Slideshow module:
+	- refactored code
+	- reorganized admin panel
+	- now all slides of the slideshow are kept in a single static block
+	- ability to enable/disable gutter between slides and additional side banners
+	- ability to enable/disable navigation buttons
+	- new parameters to configure slideshow added via shortcode (configure: slide transition effect, timeout, loop, navigation buttons, pagination, position of side banners, gutter between slides and additional side banners)
+	- to create slides you can use built-in system of banners which offers lots of useful features
+	- banners inside slides can be extended with eye-catching animations
+	- ability to import sample static blocks which contain ready-to-use examples of slides
+	- there were some changes in the default sizes of images for slideshow
+	- documentation of the slideshow was rewritten and improved
+- new system of banners:
+	- create image banners using simple markup
+	- add image hover effects
+	- add color overlay with fade in/out effect
+	- create captions with headings, text paragraphs, icons etc.
+	- position captions using helper classes
+	- add hover effects to captions
+	- ability to import a sample CMS page which contains dozens of ready-to-use code examples with banners
+- in icons:
+	- integration with Font Awesome
+	- new hover effects for iconbox element (an icon inside a box with background color)
+	- there were some changes in the default sizes of the iconbox element, but you can easily adjust the size of every iconbox with helper classes
+	- ability to import a sample CMS page which contains dozens of ready-to-use code examples with icons
+- other:
+	- new container in category view ("Left Sidebar, Top, Above Layered Navigation"), blocks added to that container are displayed at the very top of the left sidebar - above layered navigation and above sidebar menu
+	- library of CSS animations
+	- a few additional utility classes for grid system
+
+Changed:
+- if a category in the main menu was set as not clickable, it will not be displayed in the sidebar menu. A category is not clickable if the "Custom URL" field in the category configuration contains the hash character (#).
+- minor changes of helper class names
+
+Fixed:
+- if a category in the main menu was set as not clickable, the page will not jump to the top after clicking such a category
+- "Add to cart" button is correctly aligned to the center in product sliders if slider was configured to align elements to the center (parameter "centered" was used in the slider's shortcode)
+
+
+Version 1.17.1 - December 26, 2016
+
+New:
+- option to hide top menu on home page
+- option to expand/collapse vertical menu dropdown on home page
+- option to remove shadow of vertical menu dropdown
+
+
+Version 1.17.0 - November 30, 2016
+
+New:
+- CSS classes to show/hide content depending on the viewport width
+- feature-rich grid system from Bootstrap
+- mega menu: option to show/hide bullets for subcategories on lower levels
+- mobile menu: option to show/hide top-level categories which have no subcategories but have category blocks
+
+Changed:
+- on product page the dropdowns with product options (attributes for which swatches are not enabled) work better and are refreshed every time user selects new option
+- refreshed CSS styles of the menu dropdowns (e.g. normalized spaces between items)
+- mobile menu: option to hide category blocks when viewport is narrower than 320px now applies when viewport is narrower than 480px
+- dropdowns of mini cart, mini compare, curency switcher and language switcher can be closed on mobile by tapping the dropdown header
+- ability to set colors for "add to" icons on product page 
+
+Fixed:
+- removed flickering of the mini cart when loading page on mobile
+- if maximum page width is set to "Full width", page has unlimited width
+- support for price change on swatch selection added in Magento 1.9.3.x
+
+
+Version 1.16.2 - September 14, 2016
+
+Fixed:
+- grouped products can be correctly added to the cart
+- slideshow module doesn't cause warning message in logs if no slides were set in the "Slides" field under System > Configuration > Slideshow > Main Slideshow on Home Page. In previous versions it could result in warning message: "implode(): Invalid arguments passed in /app/code/local/Infortis/UltraSlideshow/Block/Slideshow.php".
+
+
+Version 1.16.1 - July 20, 2016
+
+Changed:
+- blocks "Reviews" and "Tags" can be added to the Collateral Data container on product page no matter on which position the Collateral Data is displayed
+
+Fixed:
+- fixed bug which caused the following error: "Fatal error: Call to undefined method Infortis_UltraMegamenu_Helper_Data::getIsOnHome()".
+  Because of this bug page couldn't be displayed when cache was enabled.
+- product ("simple product" type) can be added to the cart when browsing product page (button didn't work because of missing form element)
+- mini compare block in the header is not visible when it's disabled
+- sticky logo is correctly aligned left when option "centered" is enabled for menu items
+- sticky logo is correctly hidden when option "centered" is enabled for menu items and when sticky header is not visible
+
+
+Version 1.16.0 - July 07, 2016
+
+New:
+- Layout:
+	- more control over maximum page width
+	- ability to set full-width page globally for entire site
+	- fluid page width below 768px breakpoint
+	- slightly modified breakpoints to match with Bootstraps breakpoints
+	- improved layout of page columns for pages with sidebars
+	- in 3-columns layout on narrow screens the sidebars are merged into one sidebar (i.e. secondary sidebar is displayed below primary sidebar)
+- Menu:
+	- rewritten menu scripts
+	- reorganized and simplified menu configuration options in admin panel
+	- top menu can be displayed in two modes: vertical menu or horizontal menu:
+		- in vertical layout the categories are stacked vertically and the menu is placed inside a dropdown box which will be shown when user clicks a special button inside the menu bar
+		- menu can be initially collapsed or expanded depending on admin settings
+	- sidebar menu can be displayed in two modes: mega menu or simple accordion menu:
+		- in sidebar mega menu the dropdowns can be styled the same way as in the top menu
+		- new design settings for sidebar menu
+	- new options for dropdowns:
+		- a dropdown box can be automatically aligned with selected container if the right edge of the dropdown box sticks out further to the right than the selected container
+		- full-width dropdown box can be as wide as the selected container, so the width of the dropdown does not depend on the width of the menu bar and gives you more flexibility in configuration
+- Header:
+	- rewritten header scripts
+	- applied mobile-first approach
+	- show logo in sticky header
+	- select positions of account links, currency switcher, language switcher
+	- new color settings for mobile header
+- Product view:
+	- plus/minus buttons for product quantity on product page
+	- modified order of sections in mobile view - now the tabs are displayed immediately below the main product info
+	- removed <h2> and <h3> tags from headings of several elements (e.g. headings of product sliders) to improve SEO
+- Other changes:
+	- added jQuery UI JavaScript library
+	- updated jQuery to version 1.12.4
+	- doctype changed to HTML5
+	- number of minor CSS improvements
+
+Fixed:
+- Menu:
+	- if full-width sticky header is enabled, width of the menu dropdowns is now the same as in non-sticky header
+	- if search box is inside main menu bar, mini cart is now placed correctly inside sticky header 
+- Header
+	- removed flickering of the header elements when loading page in mobile view
+
+
+Version 1.15.4 (November 1, 2015)
+
+New:
+compatibility with the latest Magento 1.9.2.2 and patch SUPEE-6788
+
+
+Version 1.15.3 (August 13, 2015)
+
+Fixed:
+- if "Blocks HTML output" cache is enabled and if mini cart (or mini compare) block is displayed inside the main menu, the cart is not updated when product is added to the cart
+- incorrect display of calendar in products with options
+- incorrect left margin of right sidebar on mobile view
+
+
+Version 1.15.2 (July 20, 2015)
+
+Fixed:
+- bug in the login form template file (/app/design/frontend/ultimo/default/template/persistent/customer/form/login.phtml) that results in message like "Parse error: syntax error, unexpected 'echo'...".
+
+
+Version 1.15.1 (July 20, 2015)
+
+New:
+- 2 new designs in the live demo (you can import each design using Ultimo's configuration import tool)
+- updated of the Quick Start Package
+
+Changed:
+- security improvements related to changes in Magento 1.9.2.0
+- improved mobile layout of the site header
+
+Fixed:
+- Magento 1.9.2.0 bug: if static blocks are added to the frontend via Widgets, incorrect blocks can be displayed if 'Blocks HTML output' cache is enabled
+
+
+Version 1.15.0 (July 5, 2015)
+
+New:
+- full width page content (select "1 column, full width" in the "Layout" field of page configuration)
+- better control over side padding of content area in all page sections
+- selected page sections can be stretched to full width
+- search box, cart drop-down and compare drop-down can be displayed inside main menu bar
+- change the height of the top header
+- add footer background image
+
+Changed:
+- cookie restriction notice is now displayed at the bottom of the screen
+- some static blocks were replaced by generic containers
+- refactored code of the footer and header templates
+- documentation improvements
+
+Fixed:
+- incorrect position of truncated product options (if product options list is very long) displayed as drop-down on the cart page
+
+
+Version 1.14.1 (June 15, 2015)
+
+Fixed:
+- on Firefox and IE if the site logo image is large it expands containing block
+
+
+Version 1.14.0 (May 10, 2015)
+
+New:
+- site header:
+	- new containers for custom blocks in the header
+	- more control over header layout (e.g. move elements to the top header)
+	- mini cart and mini compare blocks displayed in the sticky header
+	- sticky header can be full-width (elements are stretched in the container)
+	- main menu items can be centered within the menu bar
+
+Fixed:
+- on product page the list with icons (list with .ic-ul class) have both icon and ">" bullet mark
+
+
+Version 1.13.0 (March 16, 2015)
+
+New:
+- site header:
+	- full control over the width of header sections (left column, central column, right column)
+	- assign header elements (logo, search box, links, cart drop-down) to selected sections
+
+Changed:
+- language and currency switchers can be optionally moved (in mobile header) next to the logo to make the header smaller.
+  This was default behaviour, now it can be disabled in admin panel in order to let the logo be centered on small mobile devices.
+
+Fixed:
+- the last element of the breadcrumbs has incorrect tags for rich snippets
+- product-specific swatches (product images marked with "-swatch" suffix added to the image label) are visible in the thumbnails gallery, but they should not be visible
+
+
+Version 1.12.1 (February 23, 2015)
+
+New:
+- updated Quick Start Package
+
+Fixed:
+- some responsive features work even when responsive layout is disabled:
+  if browser viewport is narrow then sidebar blocks are collapsed and layered navigation is displayed above the products
+
+
+Version 1.12.0 (February 18, 2015)
+
+New:
+- layered navigation is displayed above the products in mobile view and the filters are collapsed
+- sidebar blocks are collapsed in mobile view
+- control order and sorting direction of products in Featured Products slider
+- product page:
+	- new containers for custom blocks on product page
+	- full control over the width of product page sections
+	- display product collateral data container (description, attributes, reviews etc.) as:
+	  tabs, accordion, tabs turning into accordion on small screens, or simple stacked blocks
+	- specify screen size below which the tabs are turning into accordion
+	- display small tabs (accordion) or large tabs (accordion)
+	- select position of collateral data container
+	- select position of related products and up-sell products
+	- control breakpoint of related products and up-sell products sliders
+	- display these blocks in tabs or outside the tabs:
+	  related products, up-sell products, product reviews, product tags
+	- if reviews displayed inside tabs, scroll animation is fired after user clicks the link to product reviews
+
+Changed:
+- collapsible blocks are now opened/collapsed by clicking the title bar of the block. Opener icons (small squares with "+" icon) were removed.
+- price color in bundle products is the same as price color in other product types
+- shaded stars are displayed on product page for products which don't have any ratings yet
+- product image on product page is now aligned correctly with the left edge of the page
+
+Fixed:
+- configurable swatches not displayed in search results
+- on product page if product image was loaded after user clicked one of the configurable swatches, that image was not displayed in the lightbox
+
+
+
+Version 1.11.2 (January 29, 2015)
+
+Fixed:
+- possible flickering when switching product images in gallery on product page
+
+
+Version 1.11.1 (January 26, 2015)
+
+New:
+- updated Quick Start Package
+
+Changed:
+- menu drop-downs are now displayed with shorter delay
+
+Fixed:
+- Magento 1.9.1.0 bug: product names are not displayed in the "Only X Left" table on configurable product page
+- only one product grid can be displayed via shortcode on a CMS page, multiple grids cause error
+- when switching options on product page the price of the product is not updated correctly if the same product is also displayed inside the Featured Products slider on the same page (e.g. if slider is inside the menu drop-down)
+- too small bottom margin for message "This is a required field" in product options on product page if required option was not selected
+
+
+Version 1.11.0 (January 04, 2015)
+
+New:
+- compatibility with Magento 1.9.1.0. If you are not using Magento 1.9.1.0, you can ignore this update.
+- support for configurable product swatches (a module which was added in Magento 1.9.1.0)
+- specify product image width for category view through theme admin panel (System > Configuration > Theme Settings > Category View)
+
+Changed:
+- on product page, product image gallery was switched to the first image when web browser's window was resized. This doesn't happen any more and gallery always shows current image.
+
+
+Version 1.10.4 (November 15, 2014)
+
+New:
+- rich snippets:
+	- support for bundle products and different price types: price range, "As low as", fixed price
+	- display prices including/excluding tax
+Important: this file (which was added in version 1.10.2) needs to be removed: /app/design/frontend/ultimo/default/template/catalog/product/price.phtml
+
+Fixed:
+- incorrect position of quantity box on product page when user clicks a link to update product details
+
+
+Version 1.10.3 (September 30, 2014)
+
+Fixed:
+- product grid in category view is sometimes displayed incorrectly (each row should have the same number of products, but sometimes products drop to another row) in Safari on iPad and iPhone with iOS8. This is caused by a bug in Safari (description of the bug: https://bugs.webkit.org/show_bug.cgi?id=137032). The workaround for this bug: replace CSS pseudo-class ":nth-child" with ":nth-of-type" in CSS styles of the product grid.
+
+
+Version 1.10.2 (September 20, 2014)
+
+New:
+- rich snippets
+
+Fixed:
+- incorrect clearing of floats on product page (downloadable products)
+
+
+Version 1.10.1 (September 11, 2014)
+
+New:
+- updated Quick Start Package
+
+Changed:
+- decreased the value (from 15 to 12) of System > Configuration > Theme Design > Page > Inner Container > Side Padding
+- if top links are disabled, the main tab "Account" in mobile header is not displayed
+
+Fixed:
+- in mobile header labels of the main tabs ("Menu", "Search" etc.) are not translatable
+- "back to top" button on HiDPI screens has incorrect icon
+
+
+Version 1.10.0 (September 08, 2014)
+
+New:
+- mobile header: improved layout of the header for mobile devices
+- sticky menu
+- font icons
+- additional color and design settings
+
+Fixed:
+- "Add to cart" button on product page incorrectly aligned in IE and old versions of Safari
+- price and ratings don't disappear when disabled in grid mode in the category view
+
+
+Version 1.9.4 (August 08, 2014)
+
+Fixed:
+- slideshow transition effects (from OwlCarousel plugin) don't work in Chrome 36.x because of changes which were made in that version of Chrome (support for both CSS properties: "-webkit-transform" and "transform").
+
+
+Version 1.9.3 (July 20, 2014)
+
+Fixed:
+- JavaScript error if option: System > Configuration > Menu > General > "Main Menu Mode"
+  was set to "Drop-down" (so when the mobile version of the menu was not enabled)
+
+
+Version 1.9.2 (July 04, 2014)
+
+Changed:
+- in configuration import section, "Default Config" is the default value of the scope switcher. The scope switcher is displayed 
+  even when there's only one store view in Magento.
+- updated XML files with configuration settings to import
+- added new XML files with configuration settings, which allow to import only color settings, e.g. "Demo1 (color settings only)"
+- added new static blocks to import: block_slide_wide1, block_slide_wide2.
+  These blocks may be set as default sample slides in the home page slideshow after configuration import
+
+
+Version 1.9.1 (July 03, 2014)
+
+New:
+- additional options to control font size in mobile menu (section: Theme Design > Main Menu)
+
+Changed:
+- added classes to the "block_header_nav_dropdown" block's wrapper in the menu so that this block behaves the same as all category blocks with custom content
+- removed menu highlight color (flickering) shown when the user taps the [+] icon in the mobile menu (on devices with touch screens)
+- minor CSS polishing
+
+
+Version 1.9.0 (June 26, 2014)
+
+In this version there were big improvements in the main menu. Structure of the menu was significantly simplified and the CSS styles are now much more consistent and cleaner.
+
+New:
+- menu bar:
+	- editable height of the menu bar
+	- ability to add multiple custom links to the menu
+	- ability to add multiple custom drop-down boxes to the menu
+	- ability to make a category link not clickable (so that it only serves to show/hide a drop-down box)
+- menu drop-down boxes
+	- ability to enable mega drop-downs and classic drop-downs in the same menu
+	- multi-level mega drop-downs
+	- editable width of the drop-downs
+	- editable number of columns with subcategories in mega drop-down
+	- much better control over proportions between sections in mega drop-down (between category blocks and subcategories)
+	- ability to enable/disable shadow of the drop-downs
+- mobile menu:
+	- category blocks with custom content can be displayed in the mobile menu
+	- additional category block displayed at the left side of the subcategories in the mega drop-down
+	- mobile menu can be collapsed/opened on page load
+
+Fixed:
+- size of the product image in cart view ignores "Keep Image Aspect Ratio" option
+- disappearing mini cart in Safari if products with options are visible in the mini cart
+- newsletter sign up form validation message (pop-up) is not responsive on mobile devices
+
+
+Version 1.8.1 (June 05, 2014)
+
+Changed:
+- scope switcher is now displayed in configuration import section in admin panel, even when there's only one store view in Magento
+
+
+Version 1.8.0 (May 29, 2014)
+
+New:
+- ability to import color presets and other settings from demo
+
+
+Version 1.7.1 (May 20, 2014)
+
+New:
+- compatibility with Magento 1.9.0.1. If you are not using Magento 1.9.0.1, you can ignore this update.
+
+
+Version 1.7.0 (April 03, 2014)
+
+New:
+- static block on product page below image gallery
+- display number of products in category in sidebar menu
+- brands:
+	- support for language specific symbols and characters (e.g. letters with diacritical marks) in brand names. These symbols will be properly replaced with letters from latin alphabet to create correct path to a brand image file.
+	- select a character (e.g., hyphen) which will be used as a word separator in the names of brand image files and in links to custom brand pages
+	- module will check if brand image exists. If file doesn't exist, there will be no info about brand.
+	- optionally, if brand image doesn't exist, it can be replaced with brand name (simple text). This option is useful for stores which can't display logos of all brands, e.g., because of copyright restrictions.
+	- brand logo can be a link to advanced search results, to quick search results or to custom page.
+- brand sliders:
+	- display all brands or only selected subset
+	- display multiple brand sliders with different subset of brands in each slider
+	- select subset of brands directly in the admin panel or via parameter in the slider shortcode
+	- optionally, display in the slider only those brands, that are currently assigned to any products (or to products which are not out of stock)
+
+Fixed:
+- main menu: no support for touchscreens if "classic" style of the menu is enabled
+- incorrect display of product labels if product slider is inside main menu drop-down
+
+
+Version 1.6.1 (January 23, 2014)
+
+New:
+- Quick Start Package based on Magento 1.8.1.0
+- slideshow: set automatic scrolling speed
+- slideshow: set bottom and top margin
+
+Changed:
+- main menu: increased value of z-index property of the hovered item to cover the shadow of the drop-down box
+- shadow for the main menu bar can be enabled/disabled individually (in System > Configuration > Theme Design > Effects, if "Content Area Shadow" is enabled)
+- decreased font size in large custom icons which display characters as icons (e.g.: <span class="icon large i-char">-10%</span>)
+
+Fixed:
+- support for IE10/IE11 slideshow transition effects
+- incorrect position of slideshow captions in IE9 (or earlier)
+- sidebar menu: category ID entered in the "parent" parameter is ignored
+- in Firefox main menu drop-down (wide menu mode) is 1-2 pixels narrower than the menu bar (depends on width of the browser window)
+
+
+Version 1.6.0 (January 09, 2014)
+
+Summary: better support for touch-screen devices and improved cross-browser compatibility
+
+New:
+- slideshow:
+	- display multiple custom slideshows on any page with simple block code (shortcode)
+	- full width slideshow on home page
+	- new effects for transition between slides
+	- configure color and position of slideshow navigation elements (pagination and arrows)
+- product sliders:
+	- configure size of product images in sliders
+	- control speed of scrolling animation (different speed applied for automatic scrolling and for scrolling with arrows)
+	- display pagination
+- brand slider:
+	- control speed of scrolling animation (different speed applied for automatic scrolling and for scrolling with arrows)
+	- properties of the brand slider can be controlled with parameters in block code
+	- display pagination
+- lazy loading in sliders (product sliders, brand slider, thumbnail slider) - if enabled, images outside of viewport will not be loaded before user scrolls to them
+- set automatic scrolling for Related Products and Up-Sell Products sliders
+- additional settings for thumbnail slider on product page (product images gallery)
+
+Changed:
+- jQuery plugin Flexslider was replaced with Owl Carousel plugin
+- better support for touch-screen devices: sliders behave more like in native apps
+- changes in block code of Featured Products Slider, New Products Slider and Brand Slider
+- slideshow: better support for "smooth height" (if slides do not have the same height, the height of the slideshow will be animated smoothly)
+
+Fixed:
+- images in home page slideshow and elements of product sliders (e.g. product name) may disappear in Chrome after scrolling outside of viewport
+- arrows in sliders do not work instantly on touch-screen devices (but on second "click") because of CSS hover styles
+- product images gallery on product page doesn't work correctly if no product image was selected as "main" image
+
+
+Version 1.5.10 (December 23, 2013)
+
+New:
+- compatibility with Magento 1.8.1.0. If you are not using Magento 1.8.1.0, you can ignore this update.
+
+
+Version 1.5.9 (December 02, 2013)
+
+Changed:
+- no flickering/highlighting in Safari browser when user taps a product grid item in category view or a top-level category in main menu
+
+Fixed:
+- form fields too big on old webkit browsers (e.g. Android Browser)
+- search form not aligned in the center on some webkit browsers (e.g. Android Browser) if browser viewport is below 768px.
+- not all browsers fully support CSS transitions so there was a conflict (product images in product sliders may not be visible on first page load on mobile devices with iOS) between Flexslider plugin and transitions if Flexslider's "useCSS" property was not disabled. The "useCSS" property is now completely disabled by default so the conflict was resolved.
+
+
+Version 1.5.8 (November 13, 2013)
+
+New:
+- parameter "breakpoints" for product sliders: number of items in a row can be assigned to specific width of the screen. Add any number of breakpoints.
+- enable/disable animation (during web browser window resizing) of the main structural elements of the page layout. Disabled animation improves page layout while resizing web browser viewport.
+- additional CSS classes to control grid units layout
+- control size of the elements of the product grid items in category view: product labels, product name, button. By default size of the elements is automatically decreased when browser viewport is narrow.
+
+Changed:
+- improved main menu display: no flickering while loading mobile menu on mobile devices
+- improved hover effect of product grid/list items in category view:
+	- buttons don't overlap other elements if Equal Height is enabled
+	- alternative image immediately disappears on mouse out
+
+Fixed:
+- alternative image doesn't work in list mode in category view
+- button "Submit" in reviews tab on product page not aligned to the left side
+- related products title on product page not aligned with tabs (if displayed in the same line)
+- incorrect date range calculation for product labels
+
+
+Version 1.5.7 (November 02, 2013)
+
+New:
+- improved display of main menu drop-down boxes on touch screens
+- additional font options for the main menu for 1st-level and 2nd-level items (font size, uppercase/lowercase)
+- add vertical space between main sections of the page (header, main menu, footer etc.)
+- select additional character sets for integrated Google Fonts via admin panel
+- hide "Add to..." links in category view if browser viewport width is below selected value
+- change background color of the product grid/list items in category view
+- new individual color options for page sections: top of the header, secondary footer
+- additional design options for main menu: specify outer background color; configure line (width and color) at the bottom of the menu bar and at the top of the drop-down boxes;
+- "home" link in main menu can be displayed as a single icon or as a standard menu item
+- new icon: "location"
+- parameter "move" for product sliders: number of items that should move on animation
+
+Changed:
+- increased and unified width of the form buttons (Log In, Create Account etc.)
+- increased margin of main sidebars
+- improved page layout on mobile devices: increased page side margins, outer background color hidden (if exists)
+- improved layout of newsletter form on mobile devices
+
+Fixed:
+- incorrect layout of "Orders and Returns" page
+- "Recurring Profile" tab not displayed for products with recurring profile
+- double "Add to..." links on product page when updating wishlist item
+- possible "jumping" of product grid items if product have alternative image enabled
+- search bar too wide on narrow screens (below 480px)
+- IE8: collapsible blocks in the footer are collapsed by default
+- IE9, IE10: form fields not visible if browser viewport is below 768px
+  To fix, remove style: .opc form fieldset { display:table-column-group; }
+  from file: app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml
+
+
+Version 1.5.6 (October 15, 2013)
+
+New:
+- compatibility with Magento 1.8.0.0. See the "Update Guide.pdf" for details.
+
+
+Version 1.5.5 (September 23, 2013)
+
+New:
+- Sidebar Menu: enable sidebar menu (via admin panel) individually for: category view, home page, CMS pages, product pages (choose between left or right sidebar).
+- Sidebar Menu: ability to fallback to root category if current category doesn't exist. This option is useful if sidebar menu should be displayed on pages with no current category (on pages other than category view) such as home page.
+- Sidebar Menu: alternative block title will be used if current category doesn't exist.
+
+Fixed:
+- If sidebar menu not enabled in System > Configuration > Menu > Sidebar Menu > Enable, then all sidebar menus are disabled, even if added with block code {{block...}}
+
+	Files and folders changed in this update:
+	app/code/local/Infortis/Ultimo/
+	app/code/local/Infortis/UltraMegamenu/
+	app/design/frontend/ultimo/default/layout/infortis_ultramegamenu.xml
+	app/design/frontend/ultimo/default/template/infortis/ultramegamenu/categories.phtml
+
+	
+Version 1.5.4 (September 20, 2013)
+
+New:
+- Sidebar Menu: new option "Parent of current category (no siblings)" – show the current category. Other categories from the same level as the current category will be ignored.
+- Sidebar Menu: use variable (which will be replaced with the name of the current category) inside the block title to create dynamic titles of the block.
+
+Fixed:
+- double bullets in Customer Account menu.
+  To fix, replace old CSS below block "/* Block: Account" with new CSS in:
+  skin/frontend/ultimo/default/css/override-theme.css
+- Sidebar Menu: "Parent Category" options ignored if flat categories enabled in Magento.
+  To fix, replace the following directory with the new version:
+  app/code/local/Infortis/UltraMegamenu/
+- duplicated content on product review pages. Note that since reviews in this theme are displayed on product page (for SEO), review pages are not accessible for customers (there are no links to those pages) so this fix is only for those who use other custom solutions for product reviews.
+  To fix, replace the following file with the new version:
+  app/design/frontend/ultimo/default/layout/infortis_cloudzoom.xml
+- elements of the toolbar (pager, sorter etc.) in category view not aligned properly.
+  To fix, replace the following files with the new versions:
+  skin/frontend/ultimo/default/css/styles.css
+  app/design/frontend/base/default/template/infortis/ultimo/css/layout.phtml
+
+
+Version 1.5.3-c (September 10, 2013)
+
+Fixed:
+- price in bundle products is not automatically updated: missing semicolon in the CloudZoom plugin is causing JavaScript errors on product page.
+  To fix, add a single semicolon at the end of the file:
+  js/infortis/jquery/plugins/jquery.cloudzoom.min.js
+
+
+Version 1.5.3-b (September 05, 2013)
+
+Fixed:
+- some icons not displayed on high-resolution (retina) screen devices.
+  To fix, replace this file with the new version:
+  skin/frontend/ultimo/default/css/override-theme.css
+
+  Changes in override-theme.css:
+  - all strings "@x2.png" replaced with "@2x.png"
+  - added icon for skype: ".icon.i-skype"
+
+
+Version 1.5.3 (September 04, 2013)
+
+New:
+- select position of the search bar in the header and set additional line break to improve the layout of cart drop-down and other elements
+- limit sidebar menu to subcategories of current category
+- define depth of the subcategories in sidebar menu (independent from the main menu)
+
+    product grid:
+    - improved layout of the product grid in category view
+    - more options for displaying elements of the product grid on mouse hover
+    - hide long product names in category view
+    - align products to the center
+    - product labels and buttons are shrinked automatically if many products in a row (also in product sliders)
+    - control the number of columns displayed if browser viewport width is below: 640 px, 768 px, 480 px.
+
+    product sliders:
+    - align products to the center
+    - product labels and buttons are shrinked automatically if many products in a row (can be forced with parameter)
+
+- display SKU on product page
+- upload separate background image for the header
+- set double patterns (in two layers) for background of the header and the footer
+- color settings: header icons (cart, compare), search box
+- a few additional social icons and interface icons added to image sprites
+- select weight of the Google Fonts
+
+Changed:
+- color of the drop-down arrows in the header and main menu is now the same as text color so they are always visible on any background
+- image slideshow on home page: height animation is now optional. It can be enabled when slides have different height.
+- layout of the cookie restrictions info block
+
+Fixed:
+- too long address field in checkout (on mobile devices) if user logged in
+- category filter displayed even if disabled in categories which are not set to "Is Anchor"
+- product in the slider aligned to the center if only one product in the slider
+- parameters added to URLs (e.g. by AddThis widget: www.example.com/#.87x2W) break the JavaScript on the page
+- CloudZoom plugin: unnecessary requests to load non-existing resources (plugin was replaced with correct version: js/infortis/jquery/plugins)
+- improved layout of the image slideshow on home page (the default size of slides has changed a little bit, see the table in the user guide for details)
+- improved CSS transitions of the main menu drop-downs and slideshow
+
+
+Version 1.5.2-d (August 27, 2013)
+
+Fixed:
+- in Chrome drop-down boxes in the main menu (in wide and classic style) are sometimes displayed behind the slideshow on home page.
+  In addition to the fix from version 1.5.2-c, replace this file with the new version:
+  skin/frontend/ultimo/default/css/infortis/ultra-megamenu/ultra-megamenu.css
+
+  This line of code (line 126) was added to ultra-megamenu.css:
+  -webkit-transform: translateZ(0);
+
+
+Version 1.5.2-c (August 26, 2013)
+
+Fixed:
+- in Chrome drop-down boxes in the main menu (classic style) are displayed behind the slideshow on home page.
+  To fix, replace this file with the new version:
+  skin/frontend/ultimo/default/css/infortis/ultra-megamenu/classic.css
+
+  This line of code (line 24) was added to classic.css:
+  -webkit-transform: translateZ(0);
+
+
+Version 1.5.2-b (July 26, 2013)
+
+Fixed:
+- in previous release (1.5.2) we included incorrect version of theme admin files.
+  If you already installed version 1.5.2, please install again, but this time version 1.5.2-b
+  Re-upload all theme files to your server and overwrite the old files.
+  We're very sorry for the inconvenience.
+- updated template file of the mini cart in patch for Magento 1.5.x (inside folder: "Theme - Magento 1.5.x patch"):
+  app/design/frontend/ultimo/default/template/checkout/cart/mini.phtml
+  Previous version of that template file had broken cart icon.
+
+
+Version 1.5.2 (July 26, 2013)
+
+Fixed:
+- images inside category blocks in menu were not retrieved via https on secure pages.
+- removed default rounded borders in form fields on iOS.
+
+Reupload the following files and folders:
+app/code/local/Infortis/Ultimo/
+app/code/local/Infortis/UltraMegamenu/
+skin/frontend/ultimo/default/css/styles.css
+
+   Changes in styles.css (around line 132):
+   - added:    input.input-text, textarea { -webkit-appearance:none; }
+   - changed:  input.input-text, select, textarea {...}
+
+
+Version 1.5.1 (June 07, 2013)
+
+Fixed:
+- when responsive layout is disabled, zoom may not work correctly on mobile devices
+- when viewing the website on an iPad it doesn't scroll smoothly
+
+
+Version 1.5.0 (June 05, 2013)
+
+New:
+- enable/disable responsive layout
+- empty cart can be hidden on mobile devices (if browser viewport is narrower than 480 pixels) 
+- integration with all available Google Fonts
+- select font stacks (of standard fonts, such as Verdana, Arial etc.)
+- define custom font stack
+- select number of columns in products sliders and brand slider
+- display custom links in the main menu
+- set the value of the web browser viewport width below which the main menu turns into a mobile menu
+- additional color options, e.g. tabs and "Add to..." links on product page, interface icons.
+- retina-ready icons (more will be added soon)
+
+Changed:
+- improved/simplified theme admin panel: no need to manually refresh CSS any more
+- reorganized and improved CSS files
+- small layout and design improvements on product page
+- new additional layout of related products
+- alternative product image is displayed on mouse hover over the item, not over the image itself
+- brand logo: space in the link to search results (if there is a space in the brand name) was replaced by "+"
+- modified HTML markup of custom icons (including social icons)
+- minor changes in the header static blocks
+
+Fixed:
+- color of the header drop-down boxes can't be changed (and is the same as color of the menu drop-downs)
+- product image is cut off in product sliders if width of the slider is not full-page
+
+
+Version 1.4.0 (April 08, 2013)
+
+New:
+- Mega Menu with custom content blocks - add any content (images, text, HTML) inside category drop-down menu, for every 1st-level and 2nd-level category
+- eye-catching labels for categories in the menu
+- ability to disable main menu completely
+- main menu font size settings
+- "compare" block at the top of the page
+- search box color settings
+- additional footer color setings 
+- simplified footer - it is possible to disable all blocks to show minimalistic footer
+- footer columns displayed as accordions on mobile devices
+
+Changed:
+- reorganized and improved drop-down menus: language and currency switchers, mini cart, "compare" block
+- reorganized and improved user guide
+- minor CSS improvements
+
+Fixed:
+- width of the page calculation (IE8)
+- category view: incorrect display of grid with hover effect (IE8)
+- category view: incorrect display of "out of stock" with hover effect
+- can't display two product labels at a time
+- related products slider: product cut off when screen is narrow
+
+
+Version 1.3.2 (February 04, 2013)
+
+New:
+- alternative image on product hover in the grid view and in the home page product sliders
+- scroll to top button
+- on/off gallery mode in the lightbox on product page
+- fade-out on hover: brand logo in the brand slider and image in the home page slideshow (if the image is an anchor)
+
+Fixed:
+- main image in the lightbox on product page is displayed twice in the gallery mode
+- menu drop-down not displayed in some cases on Safari
+
+
+Version 1.3.1 (January 19, 2013)
+
+New:
+- ability to add top margin for the home page slideshow
+
+Changed:
+- sizes of the image in the cart for different screen resolutions
+
+Fixed:
+- for Chrome browser: size of the image in the cart
+- when trying to make a purchase you are sent back to basket when clicking from step 1. to step. 2 in the checkout (if logged in):
+This code (which is responsible for adding CSS class to BODY tag, using default Magento functionality) in app/design/frontend/ultimo/default/layout/local.xml was causing this error:
+    <customer_logged_in>
+        <reference name="root">
+            <action method="addBodyClass">
+                <classname>is-logged-in</classname>
+            </action>
+        </reference>
+    </customer_logged_in>
+Code was removed. 
+
+
+Version 1.3.0 (January 17, 2013)
+
+New:
+- brand slider
+- brand logo image on product page can be replaced with brand name (simple text)
+- more layout options for the home page: 2 columns (with left or right sidebar) and 3 columns
+- new CMS blocks for custom content on the home page
+- multiple Featured Products slider on single page
+- additional banners at the side of the image slideshow (on the home page) - you can make the slideshow narrower
+- ability to hide slideshow or slideshow banners on mobile devices
+- Google fonts: support for extended latin characters
+
+Changed:
+- documentation improvements
+- "Sign Up" link is added automatically (in Magento's Top Links) if customer is not logged in
+- size of the image in the wishlist
+- size of the image in the cart
+- slightly darker border color of fields in forms
+
+Fixed:
+- missing image for Magento's overlay (pop-up windows) for old versions of Internet Explorer
+- arrows in thumbnail slider on product page are not hidden in some screen resolutions
+- button bottom margin in Addres Book
+- possible issues with secure URLs (with page background image and patterns)
+
+
+Version 1.2.0 (December 03, 2012)
+
+New:
+- reorganized and improved documentation
+- improved main menu for mobile devices: menu displayed as an accordion
+- block with the list of categories at the top of the left sidebar
+- list of categories can be hidden on mobile devices
+- list of categories can be displayed on custom blocks and pages
+
+Fixed:
+- missing strings in app/design/frontend/ultimo/default/locale/en_US/translate.csv
+
+
+Version 1.1.0 (November 16, 2012)
+
+New:
+- compatibility with Magento 1.5.x
+- customize the display of categoty grid elements, e.g. hide/show/show-on-hover: "Add to cart" button, ratings (stars), "Add to wishlist" button etc.
+- enable/disable equal height of items in categoty grid
+- "New" and "Featured" products sliders: set number of items that should move on animation
+- "New" and "Featured" products sliders: ability to hide "Add to cart" buttons
+- caption for slides in home page slideshow (import static blocks to see examples)
+
+Change:
+- improved display of tables on narrow screens
+- minor changes in CSS styling
+
+Fixed:
+- Cloud Zoom: zoom area is hidden if position is different than "inside"
+- "New" and "Featured" products sliders: if automatic scrolling enabled, animation is not in a loop
+
+
+Version 1.0.1 (October 22, 2012)
+
+New:
+- responsive layout settings are individual for each store view
+- import home pages with examples of banners
+
+Change:
+- more sensitive home page sliders
+- increased size of buttons 
+
+Fixed:
+- width of the product image box when the page width is fluid
+- page background image settings
+- bullet position in layered navigation filters
+- wishlist image size
+- removed line if no brand logo on product page

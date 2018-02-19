@@ -1,0 +1,82 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_DuplicateCategories
+ */
+?>
+<form action="<?php echo $this->getSaveUrl() ?>" method="post" id="amcatcopy_category_duplicate_form">
+    <div class="admin__scope-old">
+        <div class="form-inline">
+            <div class="admin__fieldset-wrapper-title">
+                <span>Duplicate Options</span>
+            </div>
+
+            <fieldset class="fieldset">
+                <label class="label"><span><?php /* @escapeNotVerified */
+                        echo __('Select Parent Category') ?></span>
+                </label>
+
+                <div class="tree" style="clear: both; margin-left: 20%">
+                    <?php echo $this->getParentCategorySelectHtml(); ?>
+                </div>
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <label class="label"><span><?php /* @escapeNotVerified */
+                        echo __('Copy Product Relations') ?></span></label>
+
+                <div>
+                    <select  id="copy_products" name="copy_products" class="select">
+                        <option value="0"><?php echo __('No') ?></option>
+                        <option value="1"><?php echo __('Yes') ?></option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset class="fieldset">
+                <label class="label"><span>Include Subcategories</span></label>
+
+                <div>
+                    <select id="include_subcats" name="include_subcats" class="select">
+                        <option value="0"><?php echo __('No') ?></option>
+                        <option value="1"><?php echo __('Yes') ?></option>
+                    </select>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+
+    <?php echo $this->getBlockHtml('formkey') ?>
+
+    <section class="admin__page-section">
+        <div class="admin__fieldset-wrapper-title">
+            <span><?php /* @escapeNotVerified */
+                echo __('Search and Replace') ?></span>
+        </div>
+        <div class="fieldset">
+            <div class="message message-notice">
+                <?php echo __('Leave empty if you do not need to search and replace. '); ?>
+            </div>
+            <table class="admin__table-secondary" cellspacing="0"
+                   style="width: 30%; margin-left: 10%; margin-top: 10px ">
+                <tbody>
+                <tr>
+                    <td class="label"><?php echo __('Search For:'); ?></td>
+                    <td class="value"><?php echo __('Replace With:'); ?></td>
+                </tr>
+                <?php for ($i = 0; $i < $this->_helper->getSearchReplaceCnt(); $i++): ?>
+                    <tr>
+                        <td class="label"><input type="text" name="search[<?php echo $i; ?>]" value=""
+                                                 class="input-text" style="width: 100%;"/></td>
+                        <td class="value"><input type="text" name="replace[<?php echo $i; ?>]" value=""
+                                                 class="input-text" style="width: 100%;"/></td>
+                    </tr>
+                <?php endfor; ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</form>

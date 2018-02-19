@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/system_file.xsd">
+    <system>
+        <section id="reports">
+            <resource>Magento_Reports::reports</resource>
+            <group id="advanced_report" translate="label" type="text" sortOrder="200" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Advanced Report</label>
+                <group id="revenue" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="100">
+                    <label>Revenue Reports</label>
+                    <attribute type="expanded">1</attribute>
+                    <field id="days" translate="label comment" type="text" sortOrder="100"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Days</label>
+                        <comment>How many days which will be displayed on chart</comment>
+                        <validate>required-entry validate-number validate-greater-than-zero</validate>
+                    </field>
+                    <field id="weeks" translate="label comment" type="text" sortOrder="200"
+                           showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Weeks</label>
+                        <comment>How many weeks which will be displayed on chart</comment>
+                        <validate>required-entry validate-number validate-greater-than-zero</validate>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

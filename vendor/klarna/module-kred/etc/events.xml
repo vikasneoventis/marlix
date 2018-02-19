@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Klarna Kred module
+ *
+ * (c) Klarna Bank AB (publ)
+ *
+ * For the full copyright and license information, please view the NOTICE
+ * and LICENSE files that were distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="klarna_push_notification_order_not_found">
+        <observer name="klarna_kcokred_order_not_found_push_log" instance="Klarna\Kred\Observer\LogOrderPushNotification"/>
+    </event>
+    <event name="klarna_push_notification_before">
+            <observer name="klarna_kcokred_order_found_push_log" instance="Klarna\Kred\Observer\LogOrderPushNotification"/>
+    </event>
+    <event name="kco_payment_type_kred_can_capture_partial_per_invoice">
+        <observer name="klarna_kcokred_partial_payments" instance="Klarna\Kred\Observer\DisablePartialPaymentsForOrdersWithDiscounts"/>
+        <observer name="kco_enterprise_partial_payments_disable" instance="Klarna\Kred\Observer\DisablePartialPaymentsForOrdersWithEnterpriseItems" shared="false"/>
+    </event>
+    <event name="kco_payment_type_kred_can_refund_partial_per_invoice">
+        <observer name="klarna_kcokred_partial_payments" instance="Klarna\Kred\Observer\DisablePartialPaymentsForOrdersWithDiscounts"/>
+        <observer name="kco_enterprise_partial_payments_disable" instance="Klarna\Kred\Observer\DisablePartialPaymentsForOrdersWithEnterpriseItems" shared="false"/>
+    </event>
+    <event name="kco_builder_set_request_create">
+        <observer name="klarna_kcokred_remove_unused_design" instance="Klarna\Kred\Observer\RemoveUnusedDesign"/>
+    </event>
+    <event name="kco_kred_capture_items_before">
+        <observer name="klarna_kcoenterprise_capture_order_lines_before" instance="Klarna\Kred\Observer\KredCaptureBeforeEnterpriseOrderLines" shared="false"/>
+    </event>
+    <event name="kco_kred_refund_items_before">
+        <observer name="klarna_kcoenterprise_refund_order_lines_before" instance="Klarna\Kred\Observer\KredRefundBeforeEnterpriseOrderLines" shared="false"/>
+    </event>
+</config>

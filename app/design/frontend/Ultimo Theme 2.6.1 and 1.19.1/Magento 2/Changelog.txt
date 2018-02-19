@@ -1,0 +1,242 @@
+
+NOTICE:
+- To upgrade the theme in your store, please follow the procedure which is described in the User Guide.
+- In case of any questions about Ultimo theme: support requests can be send through our new support system:
+https://support.infortis-themes.com
+
+-----------------------------------
+
+
+Version 2.6.1 - September 04, 2017
+
+New:
+- choose the number of digits after decimal point for the product label which displays saved amount of money. Useful when you want to show rounded value instead of precise percentage.
+
+Fixed:
+- pages with layout "1 column full-width" correctly display the "Preface, Full Width" container
+- category page and product page is not empty any more when custom labels are enabled. This could happen if option 
+System > Configuration > Theme Settings > Product Labels > "Show Custom Label" was enabled and the custom attribute for labels didn't exist (which was default state in version 2.6.0).
+
+
+Version 2.6.0 - August 24, 2017
+
+New:
+- product labels:
+	- label with saved amount: if a product has a special price, the label can be displayed over the product to show the percentage which reflects the saved amount of money, for example: -10%
+	- you can create multiple custom labels based on a custom attribute
+	- labels have simple rectangular shape and they fade out on mouse hover over the product to show the product image
+- featured products slider:
+	- display products as thumbnails (small image with name and price displayed at the side of the image)
+	- products can be displayed vertically in multiple rows (one below another), you can specify the number of rows
+	- new values for the "size" parameter which can change the size of the elements of the slider, such as product name, price
+- product page:
+	- display related and up-sell products as thumbnails (small image with name and price displayed at the side of the image)
+	- thumbnails can be displayed vertically (one below another), you can specify number of rows
+	- plus/minus buttons for product quantity on product page
+- layered navigation:
+	- choose whether filters are collapsed/expanded on page load
+	- enable accordion mode (only one filter can be expanded at the same time). If it's disabled, multiple filters can be expanded at the same time.
+	- improved display on page load (no flickering) if accordion mode is enabled and all filters are collapsed
+- category view:
+	- set number of columns (products in a row) individually for each breakpoint
+	- product image size in category view can be configured separately for grid mode and for list mode
+	- new parameters for the shortcode which can display a block of products similar to the products displayed in category view (in grid or list mode)
+
+Changed:
+- when configurable product has special price (i.e. some of its associated simple products have special price), the current price on product page is not marked with red color and doesn't have the "Now Only" label any more.
+- product swatches don't have borders
+
+Fixed:
+- blocks assigned to "Product View, Primary Column, Container 1" container are displayed in the correct place
+- in category view, products with swatches are now correctly added to the cart without redirecting to product page
+
+
+
+Version 2.5.1 - May 14, 2017
+
+Changed:
+- font size in banner captions gets smaller in mobile view 
+- page background images which can be configured through admin panel (e.g. Theme Design > Page > Background Image) are now stored in this folder: pub/media/wysiwyg/infortis/_bg/. If your page had a background image, to restore it after the update you need to reupload the image through admin panel (and then clear the cache).
+
+Fixed:
+- restored missing image file (for demo 2): pub/media/wysiwyg/infortis/ultimo/custom/pattern.jpg
+- content of sample CMS page "magento-banner-slideshow" has correct slideshow shortcodes (previous version had shortcodes for Magento 1)
+- content of built-in static block "block_footer_primary_bottom_right" has correct shortcode
+- class "hidden-sm" added to captions in sample static block "sample_slideshow_additional_banners_2"
+
+
+Version 2.5.0 - May 04, 2017
+
+New:
+- in Slideshow module:
+	- refactored code
+	- reorganized admin panel
+	- now all slides of the slideshow are kept in a single static block
+	- ability to enable/disable gutter between slides and additional side banners
+	- ability to enable/disable navigation buttons
+	- new parameters to configure slideshow added via shortcode (configure: slide transition effect, timeout, loop, navigation buttons, pagination, position of side banners, gutter between slides and additional side banners)
+	- to create slides you can use built-in system of banners which offers lots of useful features
+	- banners inside slides can be extended with eye-catching animations
+	- ability to import sample static blocks which contain ready-to-use examples of slides
+	- there were some changes in the default sizes of images for slideshow
+	- documentation of the slideshow was rewritten and improved
+- new system of banners:
+	- create image banners using simple markup
+	- add image hover effects
+	- add color overlay with fade in/out effect
+	- create captions with headings, text paragraphs, icons etc.
+	- position captions using helper classes
+	- add hover effects to captions
+	- ability to import a sample CMS page which contains dozens of ready-to-use code examples with banners
+- in icons:
+	- integration with Font Awesome
+	- new hover effects for iconbox element (an icon inside a box with background color)
+	- there were some changes in the default sizes of the iconbox element, but you can easily adjust the size of every iconbox with helper classes
+	- ability to import a sample CMS page which contains dozens of ready-to-use code examples with icons
+- other:
+	- container in category view ("Main Sidebar, Top, Above Layered Navigation"), blocks added to that container are displayed at the very top of the left sidebar - above layered navigation and above sidebar menu
+	- library of CSS animations
+	- a few additional utility classes for grid system
+
+Changed:
+- if a category in the main menu was set as not clickable, it will not be displayed in the sidebar menu. A category is not clickable if the "Custom URL" field in the category configuration contains the hash character (#).
+- slideshow is displayed above sidebars (and above content area) on pages which have sidebars. In previous versions slideshow was displayed next to sidebars
+- improved color picker (under Thmem Design tab in admin panel), it allows to select colors with transparency
+- static blocks added via widgets don't have bottom margin (it was added automatically in previous  versions). Thanks to that you have full control over the margin: you can add it (or not) using inline CSS or utility class inside the static block.
+- minor changes of helper class names
+
+Fixed:
+- if style of tabs on product page was set to "Style1 - small", the tabs have correct size
+- if a category in the main menu was set as not clickable, the page will not jump to the top after clicking such a category
+- "Add to cart" button is correctly aligned to the center in product sliders if slider was configured to align elements to the center (parameter "centered" was used in the slider shortcode)
+- if option "Equal Height of Grid Items" (Stores > Configuration > Theme Settings > Category View (Grid Mode)) is disabled, it does not cause any JavaScript errors any more
+- custom static blocks added to the "Mini-cart promotion block" container are now correctly displayed inside the mini cart
+- if sidebar menu is enabled for product page (under Stores > Configuration > Menu > Sidebar Menu the "Product Page (Main Sidebar)" option is enabled and the "Product Page (Additional Sidebar)" option is disabled), the sidebar menu in the left sidebar on product page is not duplicated any more. In previous versions the sidebar menu was duplicated on product page.
+- color picker (under Theme Design tab in admin panel) is displayed correctly
+- in Firefox page doesn't exceed the viewport width. In previous versions it could happen if sliders were displayed on the page.
+- in IE11 main menu doesn't get additional border below the menu when menu items have dropdowns 
+- in IE11 main menu doesn't get additional padding below the menu when menu items have dropdowns
+- in IE10 and IE11 page content doesn't overlap the footer when page content is longer than the height of the viewport
+
+
+Version 2.4.0 - December 26, 2016
+
+New:
+- CSS classes to show/hide content depending on the viewport width
+- feature-rich grid system from Bootstrap
+- option to hide top menu on home page
+- option to expand/collapse vertical menu dropdown on home page
+- option to remove shadow of vertical menu dropdown
+
+Fixed:
+- mini cart displays scrollbar when there are many products in the cart
+
+
+Version 2.3.1 - November 30, 2016
+
+New:
+- mega menu: option to show/hide bullets for subcategories on lower levels
+- mobile menu: option to show/hide top-level categories which have no subcategories but have category blocks
+
+Changed:
+- refreshed CSS styles of the menu dropdowns (e.g. normalized spaces between items)
+- mobile menu: option to hide category blocks when viewport is narrower than 320px now applies when viewport is narrower than 480px
+
+Fixed:
+- mini cart dropdown doesn't collapse automatically when user clicks inside the dropdown (e.g. to update the product quantity)
+- if maximum page width is set to "1920 px" or "Full width", category view displays correct number of columns when viewport is very wide (1920 px or larger)
+- if maximum page width is set to "Full width", page has unlimited width, instead of 1920 px
+- removed flickering of the mini cart when loading page on mobile
+
+
+Version 2.3.0 - November 2, 2016
+
+New:
+- add custom static block inside the top header in mobile view (custom static block can be added through Magento widgets to the container named "Page Mobile Header, Top"). Content of the block can be aligned left, right or centered.
+- restored two built-in static blocks "block_header_top_left" and "block_header_top_right" (they were removed in earlier version). These blocks are automatically displayed in the top header.
+
+Changed:
+- design of toolbar and pager buttons in category view. Colors for these elements can be applied through admin panel.
+- display of products list in the "list" mode in category view. It's now similar to theme version for Magento 1: "Add to cart" button and price is displayed in a column at the right side.
+- display of "select all" button in the heading of the related products block on product page
+- position of "Sign Up" link on checkout page
+- removed "add to" links from bundle product configuration summary block on product page
+
+Fixed:
+- blocks in the footer and blocks in the sidebars are collapsed in mobile view 
+- correct product images are displayed (instead of Magento placeholder image) in Featured Products slider when enabling "Keep Image Aspect Ratio" option under Configuration > Theme Settings > Product Slider
+- dropdowns of currency switcher and store view switcher work correctly on iOS
+- when a static block is added through Magento widgets to one of the top header containers (e.g. "Page Header, Top, Left" container), it is displayed on correct position. In previous version, each block added through widgets was displayed in a separate line which could split the top header into a few lines.
+- top menu dropdowns are not overlapped by menu links
+- store view switcher (language switcher) switches the store view permanently, not only on the current page. Also, page URLs are correctly translated when switching the language.
+- in IE10 page content doesn't overlap the footer when page content is longer than the height of the viewport
+- product page:
+	- if product collateral data blocks on product page are displayed as vertically stacked blocks (i.e. tabs are disabled), the blocks are now displayed correctly and don't overlap each other
+	- product image magnifier doesn't overlap dropdowns of the top menu
+	- product ratings (stars) don't overlap product image magnifier
+	- number of existing product reviews in the product collateral data block is now displayed inside brackets, e.g. "Reviews (3)"
+	- when product listings are displayed inside primary column, the font size of product price inside product listings is not oversized 
+
+
+Version 2.2.0 - September 14, 2016
+
+New:
+- files with theme settings to import from all demos
+- files with sample content of home pages to import from all demos
+- alternative product image can be selected based on the sort order of images (see "Select Alternative Image By" under Stores > Configuration > Theme Settings > Category View)
+- added built-in static block "block_product_secondary_bottom"
+- added an option to assign product page elements below the new static block "block_product_secondary_bottom"
+- ability to set colors for "add to" icons on product page
+
+Changed:
+- removed side padding of filter options in layered navigation block to match padding of other sidebar blocks
+- slightly improved page import
+
+Fixed:
+- category view grid:
+	- colors of icons of "Add to wishlist" and "Add to compare" links on product page are correctly applied
+	- "Add to Cart" buttons in category view can be hidden
+	- "Add to Cart" buttons in category view can be centered correctly
+	- all elements in category view are positioned correctly
+	- all elements are aligned correctly to the center if grid in category view is set up as "Align Center"
+	- alternative product image in category view and in featured products slider is now a clickable link
+- other:
+	- layered navigation on 1-column pages is displayed on correct position above products
+	- colors settings are correctly applied to dropdown boxes in the header
+	- top menu is aligned correctly inside sticky header when top menu is assigned to one of the columns inside primary header
+	- logo inside sticky header can be disabled
+	- product image inside mini cart is not clipped
+	- option "Content Area Shadow" (under Stores > Configuration > Theme Design > Effects) correctly adds shadow to all page sections (e.g. primary footer) which have non-transparent "Inner Background Color"
+	- sidebar menu has correct bottom margin
+	- brand name is displayed correctly in the tooltip when mouse hover over brand logo (in brand slider and on product page). In previous version, tooltip displayed the following text: "Click to see more products from %s".
+	- page import: if option "Overwrite Existing Pages" is selected, message after import ("Items with the following identifiers were overwritten: ...") displays correct list of overwritten pages.
+
+
+Version 2.1.0 (August 13, 2016)
+
+Fixed:
+- mini cart icon in the sticky header is positioned correctly if the menu height was changed through admin settings
+- custom links and the custom block in the top menu can be aligned to the right side
+- home link icon is displayed with the same color as menu items
+- logo in the sticky header is displayed correctly
+- search box icon is positioned correctly
+- heading of featured product slider has correct font size
+- Slideshow:
+	- correct slides are displayed if different slides (static blocks) are enabled in multiple store views
+	- slideshow module doesn't cause error if no slides were set in the "Slides" field under Stores > Configuration > Slideshow > Main Slideshow on Home Page. In previous versions that could result in an exception: Invalid arguments passed in app\code\Infortis\UltraSlideshow\Block\Slideshow.php
+	- image banners inside slides are correctly aligned vertically (no additional space below image)
+
+
+Version 2.0.2 (July 30, 2016)
+
+New:
+- compatibility with Magento 2.1.0
+- file with settings to import from Demo 2 (files from other demos will be added in next update)
+- file with sample home page content to import from Demo 1 and Demo 2
+
+Changes:
+- minor CSS improvements
+- changes of default values of breakpoints in sliders
+
+Fixed:
+- all CSS assets are loaded correctly via secure URLs

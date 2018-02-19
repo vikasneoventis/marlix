@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+<?php $multiplier = rand(0, 256000); ?>
+<div class="custom-mw-js-<?php echo $multiplier; ?>" data-mage-init='
+        {
+            "MageWorx_OptionDependency/js/select": {
+            }
+        }
+'
+>
+</div>
+<script>
+    require([
+        'jquery',
+        'optionDependency',
+        'uiRegistry'
+    ], function ($, optionDependency, registry) {
+        var optionBase = registry.get('mageworxOptionBase');
+        if (optionBase) {
+            optionBase.addUpdater('optionDependency', optionDependency(<?php echo $block->getJsonData();?>));
+        } else {
+            var updaters = registry.get('mageworxOptionUpdaters');
+            if (!updaters) {
+                updaters = {};
+            }
+            updaters.optionDependency = optionDependency(<?php echo $block->getJsonData();?>);
+            registry.set('mageworxOptionUpdaters', updaters);
+        }
+    });
+</script>
+<script>
+    require([
+        "jquery"
+    ], function ($) {
+        var $element = $('.custom-mw-js-<?php echo $multiplier;?>');
+        $element.trigger('contentUpdated');
+    });
+</script>

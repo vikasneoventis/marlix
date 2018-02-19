@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /** @var $block \Magento\Swatches\Block\Product\Renderer\Configurable */ ?>
+<?php $randomNumber = rand(1, 1000); ?>
+<div class="swatch-opt-<?php /* @escapeNotVerified */ echo $randomNumber . $block->getProduct()->getId() ?>"></div>
+<script>
+    require(["jquery", "jquery/ui","priceBox", "Magento_Swatches/js/swatch-renderer"], function ($) {
+
+	/** Quick fix: priceBox not init */
+        var dataPriceBoxSelector = '[data-role=priceBox]',
+            dataProductIdSelector = '[data-product-id=<?php echo $block->getProduct()->getId()?>]',
+            priceBoxes = $(dataPriceBoxSelector + dataProductIdSelector);
+
+        priceBoxes = priceBoxes.filter(function(index, elem){
+            return !$(elem).find('.price-from').length;
+        });
+
+        priceBoxes.priceBox();
+        $('.swatch-opt-<?php /* @escapeNotVerified */ echo $randomNumber . $block->getProduct()->getId() ?>').SwatchRenderer({
+            selectorProduct: '.product-item-details',
+            onlySwatches: true,
+            enableControlLabel: false,
+            numberToShow: <?php /* @escapeNotVerified */ echo $block->getNumberSwatchesPerProduct(); ?>,
+            jsonConfig: <?php /* @escapeNotVerified */ echo $block->getJsonConfig(); ?>,
+            jsonSwatchConfig: <?php /* @escapeNotVerified */ echo $block->getJsonSwatchConfig(); ?>,
+            mediaCallback: '<?php /* @escapeNotVerified */ echo $block->getMediaCallback() ?>'
+        });
+    });
+</script>

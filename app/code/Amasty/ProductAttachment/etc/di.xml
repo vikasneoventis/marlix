@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="amfile_file_listing_data_source" xsi:type="string">Amasty\ProductAttachment\Model\ResourceModel\File\Grid\Collection</item>
+                <item name="amfile_icon_listing_data_source" xsi:type="string">Amasty\ProductAttachment\Model\ResourceModel\Icon\Grid\Collection</item>
+                <item name="amfile_downloads_listing_data_source" xsi:type="string">Amasty\ProductAttachment\Model\ResourceModel\Stat\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="AmfileFileGridDataProvider" type="Amasty\ProductAttachment\Ui\DataProvider\FileDataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Amasty\ProductAttachment\Model\ResourceModel\File\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">AmfileGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="AmfileIconGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Amasty\ProductAttachment\Model\ResourceModel\Icon\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">AmfileGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="AmfileDownloadsGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Amasty\ProductAttachment\Model\ResourceModel\Stat\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">AmfileGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="AmfileGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="store_id" xsi:type="object">Amasty\ProductAttachment\Ui\DataProvider\AddStoreFieldToCollection</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Amasty\ProductAttachment\Model\ResourceModel\File\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">amasty_file</argument>
+            <argument name="eventPrefix" xsi:type="string">amasty_amfile_file_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">amfile_file_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Amasty\ProductAttachment\Model\ResourceModel\File</argument>
+        </arguments>
+    </type>
+
+    <type name="Amasty\ProductAttachment\Model\ResourceModel\Icon\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">amasty_file_icon</argument>
+            <argument name="eventPrefix" xsi:type="string">amasty_amfile_icon_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">amfile_icon_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Amasty\ProductAttachment\Model\ResourceModel\Icon</argument>
+        </arguments>
+    </type>
+    <type name="Amasty\ProductAttachment\Model\ResourceModel\Stat\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">amasty_file_stat</argument>
+            <argument name="eventPrefix" xsi:type="string">amasty_amfile_downloads_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">amfile_downloads_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Amasty\ProductAttachment\Model\ResourceModel\Downloads</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Block\Product\View\Description">
+        <plugin name="Amasty_ProductAttachment::ProductViewTabPosition" type="Amasty\ProductAttachment\Plugin\TabPosition" />
+    </type>
+
+
+    <preference for="Amasty\ProductAttachment\Api\Data\ProductAttachmentSearchResultsInterface"
+                type="Magento\Framework\Api\SearchResults" />
+    <preference for="Amasty\ProductAttachment\Api\Data\ProductAttachmentInterface" type="Amasty\ProductAttachment\Model\ProductAttachment" />
+    <preference for="Amasty\ProductAttachment\Api\ProductAttachmentRepositoryInterface" type="Amasty\ProductAttachment\Model\ProductAttachmentRepository" />
+    <preference for="Amasty\ProductAttachment\Api\Data\ProductAttachmentCustomerGroupInterface"
+                type="Amasty\ProductAttachment\Model\ProductAttachmentCustomerGroup" />
+    <preference for="Amasty\ProductAttachment\Api\Data\ProductAttachmentStoreConfigInterface"
+                type="Amasty\ProductAttachment\Model\ProductAttachmentStoreConfig" />
+    <preference for="Amasty\ProductAttachment\Api\Data\FileContentInterface"
+                type="Amasty\ProductAttachment\Model\FileContent" />
+
+
+</config>

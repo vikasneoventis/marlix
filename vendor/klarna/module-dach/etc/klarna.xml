@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Klarna DACH module
+ *
+ * (c) Klarna Bank AB (publ)
+ *
+ * For the full copyright and license information, please view the NOTICE
+ * and LICENSE files that were distributed with this source code.
+ */
+-->
+<klarna xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Klarna_Core:etc/klarna.xsd">
+    <api_version id="dach" translate="label">
+        <label><![CDATA[v2 DACH]]></label>
+        <type>kred</type>
+        <production_url><![CDATA[https://checkout.klarna.com]]></production_url>
+        <testdrive_url><![CDATA[https://checkout.testdrive.klarna.com]]></testdrive_url>
+        <options>
+            <option id="date_of_birth_mandatory_support">1</option>
+            <option id="phone_mandatory_support">1</option>
+            <option id="packstation_support">1</option>
+        </options>
+    </api_version>
+    <api_version id="dach_v3" translate="label">
+        <label><![CDATA[v3 DACH]]></label>
+        <type>kasper</type>
+        <production_url><![CDATA[https://api.klarna.com]]></production_url>
+        <testdrive_url><![CDATA[https://api.playground.klarna.com]]></testdrive_url>
+        <options>
+            <option id="date_of_birth_mandatory_support">1</option>
+            <option id="phone_mandatory_support">1</option>
+            <option id="packstation_support">1</option>
+        </options>
+    </api_version>
+</klarna>

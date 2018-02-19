@@ -1,0 +1,9 @@
+#opc-shipping_method {
+    margin: 0;
+    padding: 0;
+    list-style: none none;
+}
+
+.opc-block-summary .mark .value {
+    display: none !important;
+}

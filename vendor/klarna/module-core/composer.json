@@ -1,0 +1,48 @@
+{
+    "name": "klarna/module-core",
+    "description": "Klarna Core Magento 2 Extension",
+    "type": "magento2-module",
+    "license": "Apache-2.0",
+    "version": "2.7.1",
+    "authors": [
+        {
+            "name": "Joe Constant",
+            "email": "joe.constant@klarna.com"
+        },
+        {
+            "name": "Jason Grim",
+            "email": "jason.grim@klarna.com"
+        }
+    ],
+    "require": {
+        "php" : "^5.5 || ^7.0.6",
+        "magento/module-payment": "100.0.0 - 100.0.12 || 100.1.0 - 100.1.7 || 100.2.0",
+        "guzzlehttp/guzzle": "^5.3",
+        "guzzlehttp/log-subscriber": "^1.0",
+        "psr/log": "^1.0"
+    },
+    "conflict": {
+        "magento/module-payment": "100.0.8 || 100.1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.0",
+        "squizlabs/php_codesniffer": "2.3.*",
+        "phpmd/phpmd": "@stable",
+        "pdepend/pdepend": "^2.2.2",
+        "friendsofphp/php-cs-fixer": "~1.2",
+        "sebastian/phpcpd": "2.0.0",
+        "magento-ecg/coding-standard": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Klarna\\Core\\": "."
+        },
+        "files": [ "registration.php" ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Klarna\\Core\\Tests\\": "Tests/"
+        }
+    },
+    "minimum-stability": "dev"
+}

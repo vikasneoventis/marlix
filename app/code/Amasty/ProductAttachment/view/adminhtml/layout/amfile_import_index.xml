@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="add_drop_styles"/>
+    <head>
+        <css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+        <css src="Amasty_ProductAttachment::css/import.css"/>
+    </head>
+    <body>
+        <referenceContainer name="left">
+            <block class="Amasty\ProductAttachment\Block\Adminhtml\Import\Tabs" name="amfile_import_tabs">
+                <block class="Amasty\ProductAttachment\Block\Adminhtml\Import\Tab\ImportCsv" name="amfile_import_tab_csv" template="import/import_form.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">import_section</argument>
+                    <argument name="block" xsi:type="string" >amfile_import_tab_csv</argument>
+                </action>
+
+                <block class="Magento\Backend\Block\Widget\Tab" name="amfile_import_tabs.ftp_files" as="amfile_import_tab_files">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Uploaded Files</argument>
+                        <argument name="url" xsi:type="url" path="amfile/import/grid">
+                            <param name="_current">1</param>
+                        </argument>
+                        <argument name="class" xsi:type="string">ajax</argument>
+                    </arguments>
+                </block>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">files_section</argument>
+                    <argument name="block" xsi:type="string" >amfile_import_tab_files</argument>
+                </action>
+
+                <block class="Amasty\ProductAttachment\Block\Adminhtml\Import\Tab\UploadFile" name="amfile_import_tab_file" template="import/import_form.phtml"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">upload_section</argument>
+                    <argument name="block" xsi:type="string">amfile_import_tab_file</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Amasty\ProductAttachment\Block\Adminhtml\Import\Import" name="amfile_import" template="import/import.phtml">
+                <arguments>
+                    <argument name="id" xsi:type="string">amfile_import_id</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

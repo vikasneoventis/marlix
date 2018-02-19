@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <!--<resource id="Magento_Backend::admin">-->
+                <!--<resource id="Yosto_Core::xmage">-->
+                    <!--<resource id="Yosto_Slider::slider" title="Yosto Slider"-->
+                              <!--sortOrder="100">-->
+                        <!--<resource id="Yosto_Slider::manage_slide" title="Manage Slide"-->
+                                  <!--sortOrder="2"/>-->
+                        <!--<resource id="Yosto_Slider::manage_image" title="Manage Image"-->
+                                  <!--sortOrder="5"/>-->
+                    <!--</resource>-->
+                <!--</resource>-->
+            <!--</resource>-->
+        </resources>
+    </acl>
+</config>

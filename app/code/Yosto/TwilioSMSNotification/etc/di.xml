@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.txt for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Shipping\Controller\Adminhtml\Order\Shipment\Save"
+                type="Yosto\TwilioSMSNotification\Controller\Adminhtml\Order\Shipment\Save"/>
+    <type name="Magento\Shipping\Controller\Adminhtml\Order\Shipment\Save">
+        <plugin name="before-execute" type="Yosto\TwilioSMSNotification\Controller\Adminhtml\Order\Shipment\Save"
+                sortOrder="10"/>
+    </type>
+</config>

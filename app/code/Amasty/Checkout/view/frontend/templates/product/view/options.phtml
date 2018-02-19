@@ -1,0 +1,8 @@
+<?php /* @var $block \Magento\Catalog\Block\Product\View\Options */ ?>
+
+<?php $_options = $block->decorateArray($block->getOptions()) ?>
+<?php if (count($_options)):?>
+    <?php foreach ($_options as $_option): ?>
+        <?php echo $block->getOptionHtml($_option) ?>
+    <?php endforeach; ?>
+<?php endif; ?>

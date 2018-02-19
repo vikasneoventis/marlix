@@ -1,0 +1,56 @@
+<?php
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $this \Yosto\AdvancedReport\Block\Adminhtml\Report\Sales\Bestsellers\Chart */ ?>
+<?php
+    $collection = $block->getChartCollection();
+?>
+<div id="bestseller-chart" style="height: 500px">
+    <svg></svg>
+</div>
+<script language="javaScript">
+    require(['Yosto_AdvancedReport/js/d3.min'],function(){
+
+        require(['Yosto_AdvancedReport/js/nv.d3.min'],function(){
+
+            historicalBarChart = [
+                {
+                    key: "Cumulative Return",
+                    values: [
+                        <?php foreach($collection as $item) : ?>
+                        {
+                            "label" : "<?php /* @escapeNotVerified */ echo $item['product_name'] ?>" ,
+                            "value" : <?php /* @escapeNotVerified */ echo $item['qty_ordered'] ?>
+                        } ,
+                        <?php endforeach;?>
+                    ]
+                }
+            ];
+            nv.addGraph(function() {
+                var chart = nv.models.discreteBarChart()
+                        .x(function(d) { return d.label })
+                        .y(function(d) { return d.value })
+                        .staggerLabels(true)
+                        //.staggerLabels(historicalBarChart[0].values.length > 8)
+                        .showValues(true)
+                        .rotateLabels(45)
+                        .duration(250)
+                    ;
+                d3.select('#bestseller-chart svg')
+                    .datum(historicalBarChart)
+                    .call(chart);
+                nv.utils.windowResize(chart.update);
+                return chart;
+            });
+
+
+        });
+    })
+</script>
+

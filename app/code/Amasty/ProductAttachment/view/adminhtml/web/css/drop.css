@@ -1,0 +1,58 @@
+/*amasty product attachment css styles*/
+.drop {
+    overflow: hidden;
+    position: relative;
+    background-color: #FFFFFF;
+    border: 2px dashed grey;
+    color: #808080;
+    font-size: 13px;
+    margin: 5px 0;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.drop input {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px;
+    direction: ltr;
+    cursor: pointer;
+}
+
+.drop.hover
+{
+    color: #090;
+    border-color: #090;
+    border-style: solid;
+}
+
+td .upload-attachment {
+    position: relative;
+}
+
+td .success-upload-image
+{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 39%;
+    top: 20%;
+    background:url(../images/success_upload.png);
+    background-size: 31px 31px;
+}
+
+td .upload-attachment .spinner {
+    display: none;
+    position: absolute;
+    left: 36%;
+    top: 11%;
+    background-size: 31px 31px;
+    z-index: 1000;
+}
+

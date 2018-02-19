@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2017 Amasty (https://www.amasty.com)
+ * @package Amasty_ProductAttachment
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="amfile" translate="label" type="text" sortOrder="161801" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Product Attachments</label>
+            <tab>amasty</tab>
+            <resource>Amasty_ProductAttachment::config</resource>
+            <group id="block" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Attachments Block</label>
+                <field id="display_block" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Display Attachments Block On Product Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="customer_group" translate="label comment" type="multiselect" sortOrder="20" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Customer Group to Show Attachments Block</label>
+                    <source_model>Amasty\ProductAttachment\Model\Config\Source\CustomerGroup</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <comment>Keep empty for all customer groups.</comment>
+                </field>
+                <field id="show_ordered" translate="label" type="select" sortOrder="30" showInDefault="1" advanced="true"
+                       showInWebsite="1" showInStore="1">
+                    <label>Display Attachments Block if a Product Has Been Ordered</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="block_label" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Block Title On Product Page</label>
+                </field>
+                <field id="block_location" translate="label" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Parent Block Name In Layout</label>
+                    <options>
+                        <option label="New Tab in product.info.details block">product.info.details</option>
+                        <option label="Insert into any layout block">any</option>
+                        <option label="No insert">no</option>
+                    </options>
+                </field>
+                <field id="parent_name" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Parent Block Name In Layout</label>
+                    <depends>
+                        <field id="display_block">1</field>
+                        <field id="block_location">any</field>
+                    </depends>
+                </field>
+                <field id="sibling_tab" translate="label" type="select" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Sibling Name</label>
+                    <comment>Leave empty to place block first or last</comment>
+                    <can_be_empty>1</can_be_empty>
+                        <options>
+                        <option label=" ">-</option>
+                        <option label="Details">product.info.description</option>
+                        <option label="More Infomation">product.attributes</option>
+                        <option label="Reviews">reviews.tab</option>
+                        <option label="Other">other</option>
+                    </options>
+                    <depends>
+                        <field id="display_block">1</field>
+                        <field id="block_location">product.info.details</field>
+                    </depends>
+                </field>
+                <field id="sibling_tab_custom" translate="label" type="text" sortOrder="75" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Sibling Name</label>
+                    <comment>Sibling Name is not from 'Sibling Name' dropdown</comment>
+                    <depends>
+                        <field id="block_location">product.info.details</field>
+                        <field id="sibling_tab">other</field>
+                    </depends>
+                </field>
+                <field id="sibling_name" translate="label" type="text" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Sibling Name</label>
+                    <can_be_empty>1</can_be_empty>
+                    <comment>Leave empty to place block first or last</comment>
+                    <depends>
+                        <field id="display_block">1</field>
+                        <field id="block_location">any</field>
+                    </depends>
+                </field>
+                <field id="position" translate="label" type="select" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <options>
+                        <option label="Before sibling">before</option>
+                        <option label="After sibling">after</option>
+                    </options>
+                    <depends>
+                        <field id="display_block">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="import" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Import Settings</label>
+                <field id="ftp_dir" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Directory for Upload by FTP</label>
+                </field>
+            </group>
+            <group id="additional" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Additional Settings</label>
+                <field id="detect_mime" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Autodetect File Mime Type on Download</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>'Fileinfo' extension or 'mime_content_type' function must be enabled by server configuration</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

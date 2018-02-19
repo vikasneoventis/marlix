@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.txt for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/menu.xsd">
+    <menu>
+        <add id="Yosto_ImageProductSlide::slide_config_menu"
+             title="Product Slide Image"
+             module="Yosto_ImageProductSlide"
+             sortOrder="200"
+             parent="Magento_Catalog::catalog"
+             resource="Yosto_ImageProductSlide::slide_config_menu" />
+        <add id="Yosto_ImageProductSlide::system_config"
+             title="Configuration"
+             module="Yosto_ImageProductSlide"
+             sortOrder="200"
+             parent="Yosto_ImageProductSlide::slide_config_menu"
+             action="adminhtml/system_config/edit/section/product_slide_image"
+             resource="Yosto_ImageProductSlide::system_config" />
+    </menu>
+</config>

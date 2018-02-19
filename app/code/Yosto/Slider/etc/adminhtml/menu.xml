@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Backend/etc/menu.xsd">
+    <menu>
+        <add id="Yosto_Slider::main_menu" title="Slider Generator"
+             module="Yosto_Slider" sortOrder="2"
+             resource="Yosto_Slider::slider" parent="Yosto_Core::xmagemenu"/>
+        <add id="Yosto_Slider::manage_slide" title="Manage Slider"
+             module="Yosto_Slider" sortOrder="2" parent="Yosto_Slider::main_menu"
+             action="yosto_slider/slide/index" resource="Yosto_Slider::manage_slide" />
+        <add id="Yosto_Slider::add_slide" title="Add Slider"
+             module="Yosto_Slider" sortOrder="1" parent="Yosto_Slider::main_menu"
+             action="yosto_slider/slide/new" resource="Yosto_Slider::manage_slide" />
+
+        <!-- Menu for Image Management -->
+        <add id="Yosto_Slider::manage_image" title="Manage Image"
+             module="Yosto_Slider" sortOrder="5" parent="Yosto_Slider::main_menu"
+             action="yosto_slider/image/index" resource="Yosto_Slider::manage_image"/>
+        <add id="Yosto_Slider::add_image" title="Add Image"
+             module="Yosto_Slider" sortOrder="4" parent="Yosto_Slider::main_menu"
+             action="yosto_slider/image/new" resource="Yosto_Slider::manage_image"/>
+
+    </menu>
+</config>
