@@ -22,7 +22,6 @@ use Magento\Customer\Model\AddressRegistry;
 use Magento\Customer\Model\CustomerRegistry;
 use Magento\Customer\Model\Group;
 use Magento\Customer\Model\Session as CustomerSession;
-use Magento\Directory\Model\ResourceModel\Country\Collection as CountryCollection;
 use Magento\Framework\DataObject;
 use Magento\Framework\Event\ManagerInterface as EventManager;
 use Magento\Framework\Exception\NoSuchEntityException;
@@ -48,11 +47,6 @@ class Kco
     const METHOD_GUEST    = 'guest';
     const METHOD_REGISTER = 'register';
     const METHOD_CUSTOMER = 'customer';
-
-    /**
-     * @var CountryCollection
-     */
-    protected $countryCollection;
 
     /**
      * @var MageQuoteRepository
@@ -148,7 +142,6 @@ class Kco
      * @param EventManager                      $eventManager
      * @param ShippingMethodManagementInterface $shippingMethodManagement
      * @param CartHelper                        $cartHelper
-     * @param CountryCollection                 $countryCollection
      * @param ConfigHelper                      $configHelper
      * @param ApiHelper                         $apiHelper
      * @param ObjectManager                     $objManager
@@ -164,7 +157,6 @@ class Kco
         EventManager $eventManager,
         ShippingMethodManagementInterface $shippingMethodManagement,
         CartHelper $cartHelper,
-        CountryCollection $countryCollection,
         ConfigHelper $configHelper,
         ApiHelper $apiHelper,
         ObjectManager $objManager
@@ -179,7 +171,6 @@ class Kco
         $this->eventManager = $eventManager;
         $this->shippingMethodManagement = $shippingMethodManagement;
         $this->cartHelper = $cartHelper;
-        $this->countryCollection = $countryCollection;
         $this->configHelper = $configHelper;
         $this->apiHelper = $apiHelper;
         $this->objManager = $objManager;
@@ -801,8 +792,7 @@ class Kco
         $klarnaAddressData,
         $type = Address::TYPE_BILLING
     ) {
-        $country = strtoupper($klarnaAddressData->getCountry());
-        $countryDirectory = $this->countryCollection->addCountryCodeFilter($country)->getFirstItem();
+        $country = $this->cartHelper->getCountry($klarnaAddressData->getCountry());
         $address1 = $klarnaAddressData->hasStreetName()
             ? $klarnaAddressData->getStreetName() . ' ' . $klarnaAddressData->getStreetNumber()
             : $klarnaAddressData->getStreetAddress();
@@ -825,7 +815,7 @@ class Kco
             'city'          => $klarnaAddressData->getCity(),
             'region'        => $klarnaAddressData->getRegion(),
             'telephone'     => $klarnaAddressData->getPhone(),
-            'country_id'    => $countryDirectory->getId(),
+            'country_id'    => $country,
             'same_as_other' => $klarnaAddressData->getSameAsOther() ? 1 : 0
         ];
 

@@ -32,6 +32,7 @@ define([], function () {
     var frontEndShipping = window.checkoutConfig.klarna.frontEndShipping;
     var shippingMethod = window.checkoutConfig.klarna.shippingMethod;
     var paymentMethod = window.checkoutConfig.klarna.paymentMethod;
+    var refreshAddressUrl = window.checkoutConfig.klarna.refreshAddressUrl;
     var enabled = false;
     return {
         enabled: enabled,
@@ -46,6 +47,7 @@ define([], function () {
         countryLookup: countryLookup,
         reloadUrl: reloadUrl,
         failureUrl: failureUrl,
+        refreshAddressUrl: refreshAddressUrl,
         saveUrl: saveUrl
     };
 });

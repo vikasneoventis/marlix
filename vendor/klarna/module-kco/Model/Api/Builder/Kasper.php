@@ -7,6 +7,7 @@
  * For the full copyright and license information, please view the NOTICE
  * and LICENSE files that were distributed with this source code.
  */
+
 namespace Klarna\Kco\Model\Api\Builder;
 
 use Klarna\Core\Helper\ConfigHelper;
@@ -33,7 +34,8 @@ class Kasper extends \Klarna\Core\Model\Api\Builder
         \Magento\Framework\Stdlib\DateTime $dateTime,
         ObjectManager $objManager,
         array $data = []
-    ) {
+    )
+    {
         parent::__construct(
             $eventManager,
             $collector,
@@ -135,7 +137,7 @@ class Kasper extends \Klarna\Core\Model\Api\Builder
          * Urls
          */
         $urlParams = [
-            '_nosid'         => true,
+            '_nosid' => true,
             '_forced_secure' => true
         ];
 
@@ -152,6 +154,10 @@ class Kasper extends \Klarna\Core\Model\Api\Builder
         $options['require_validate_callback_success'] = true;
         $options['title_mandatory'] = $this->getConfigFlag('title_mandatory', $store) &&
             $this->configHelper->getTitleMandatorySupport($store);
+        $options['shipping_in_iframe'] = $this->configHelper->getShippingInIframe($store);
+        if ($this->configHelper->isB2bEnabled($store)) {
+            $options['allowed_customer_types'] = ['person', 'organization'];
+        }
         return $options;
     }
 
@@ -199,9 +205,9 @@ class Kasper extends \Klarna\Core\Model\Api\Builder
     public function processMerchantUrls($store, $urlParams)
     {
         $merchant_urls = new DataObject([
-            'terms'          => $this->getTermsUrl($store),
-            'checkout'       => $this->url->getDirectUrl('checkout/klarna', $urlParams),
-            'confirmation'   => $this->url->getDirectUrl(
+            'terms' => $this->getTermsUrl($store),
+            'checkout' => $this->url->getDirectUrl('checkout/klarna', $urlParams),
+            'confirmation' => $this->url->getDirectUrl(
                 'checkout/klarna/confirmation/id/{checkout.order.id}',
                 $urlParams
             ),
@@ -229,4 +235,33 @@ class Kasper extends \Klarna\Core\Model\Api\Builder
 
         return $merchant_urls->toArray();
     }
+
+    /**
+     * Get customer details
+     *
+     * @param MageQuote $quote
+     * @return array
+     */
+    public function getCustomerData($quote)
+    {
+        $store = $quote->getStore();
+        $customerData = [];
+        if (!$quote->getCustomerIsGuest()) {
+            $customer = $quote->getCustomer();
+            if ($this->configHelper->isB2bCustomer($customer->getId(),$store)) {
+                $customerData['type'] = 'organization';
+                $organizationId = $this->configHelper->getBusinessIdAttributeValue($customer->getId(),$store);
+                if(!empty($organizationId)){
+                    $customerData['organization_registration_id'] = $organizationId;
+                }
+            }
+            if ($quote->getCustomerDob()) {
+                $customerData = [
+                    'date_of_birth' => $this->coreDate->date('Y-m-d', $quote->getCustomerDob())
+                ];
+            }
+        }
+        return $customerData;
+    }
 }
+

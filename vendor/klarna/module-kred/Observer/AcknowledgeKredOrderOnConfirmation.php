@@ -153,7 +153,8 @@ class AcknowledgeKredOrderOnConfirmation implements ObserverInterface
                 $this->om->updateMerchantReferences($checkoutId, $order->getIncrementId());
                 $response = $this->om->acknowledgeOrder($checkoutId);
                 if (!$response->getIsSuccessful()) {
-                    $this->log->error($response->getError(), $response->getPayload());
+                    $this->log->error($response->getError());
+                    $this->log->error($response->getPayload());
                     // TODO: Consider: Should we cancel order in Magento here?
                     return;
                 }

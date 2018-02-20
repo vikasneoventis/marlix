@@ -1,4 +1,58 @@
 
+3.2.4 / 2018-02-09
+==================
+
+  * Fix PHPDOC return value
+  * Fix XSS issue
+
+3.2.3 / 2018-01-31
+==================
+
+  * Update compoesr.lock file
+  * Change shipping line to no longer calculate total
+  * Update admin payment config display
+
+3.2.2 / 2018-01-24
+==================
+
+  * Exclude composer.lock from packages
+
+3.2.1 / 2018-01-24
+==================
+
+  * Fix for refactored ApiHelper in KCO
+  * Add B2B Support
+  * Move base admin config stuff to to core module
+  * Sort API versions before displaying as options
+  * Change display of payment method info in admin
+  * Remove abandoned package
+  * Add composer.lock file to repo
+  * Update composer.json for dev dependencies
+  * Remove extra phpunit.xml.dist file
+  * Add testing configs
+  * Add GrumPHP
+  * Remove errand use statement
+
+3.1.1 / 2017-12-19
+==================
+
+  * Allow Magento 2.1.1
+  * Allow Magento 2.2.2
+
+3.1.0 / 2017-11-13
+==================
+
+  * Add better error handling when invalid API version selected
+  * Fix mapping of modules for version info
+  * Fixes for logging after Guzzle 6 update
+  * Add support for disabling shipping in iframe in markets that support it
+
+3.0.0 / 2017-10-30
+==================
+
+  * Update Guzzle to 6.0
+  * Update to new logos
+
 2.7.1 / 2017-10-04
 ==================
 

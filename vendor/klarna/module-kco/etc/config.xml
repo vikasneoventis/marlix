@@ -48,6 +48,7 @@
                 <guest_checkout>1</guest_checkout>
                 <terms_url>terms</terms_url>
                 <separate_address>0</separate_address>
+                <shipping_in_iframe>1</shipping_in_iframe>
                 <force_phonenumber>0</force_phonenumber>
                 <auto_focus>1</auto_focus>
                 <merchant_prefill>1</merchant_prefill>

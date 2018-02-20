@@ -24,6 +24,7 @@ define([
     'Magento_Checkout/js/action/select-shipping-method',
     'Magento_Checkout/js/action/select-payment-method',
     'Magento_Checkout/js/action/select-shipping-address',
+    'Magento_Checkout/js/action/select-billing-address',
     'Magento_Checkout/js/action/set-shipping-information',
     'Magento_Checkout/js/model/new-customer-address',
     'Magento_Checkout/js/action/get-totals',
@@ -39,6 +40,7 @@ define([
     selectShippingMethodAction,
     selectPaymentMethodAction,
     selectShippingAddress,
+    selectBillingAddress,
     setShippingInformation,
     newAddress,
     getTotals,
@@ -61,34 +63,61 @@ define([
                         }
                     },
                     'shipping_option_change': function (data) {
-                        getTotals([]);
+                        var dataArray = data.id.split('_');
+                        var method = {
+                            carrier_code: dataArray[0],
+                            method_code: dataArray[1]
+                        };
+                        kcoShippingMethod(method);
                     },
                     'shipping_address_change': function (data) {
                         if (config.frontEndAddress) {
                             klarna.suspend();
                         }
-                        if (!config.frontEndShipping) {
-                            $.post(config.countryLookup, JSON.stringify(data), function (response) {
-                                var address = {
-                                    country_id: response.country_id,
-                                    region: response.region,
-                                    postcode: response.postal_code,
-                                    email: response.email
-                                };
-                                selectShippingAddress(newAddress(address));
-                                var method = config.shippingMethod;
-                                if (quote.shippingMethod()) {
-                                    method = quote.shippingMethod();
-                                }
-                                kcoShippingMethod(method);
-                                setShippingInformation();
-                                getTotals([]);
-                            })
-                                .fail(self.ajaxFailure);
-                        }
-                        $.post(config.addressUrl, JSON.stringify(data), function (response) {
-                            message.saveResponse(response);
-                            getTotals([]);
+                        $.post(config.refreshAddressUrl, JSON.stringify([]), function (response) {
+                            var shipping = response.shipping;
+                            var address = {
+                                email: shipping.email,
+                                prefix: shipping.prefix,
+                                company: shipping.company,
+                                firstname: shipping.firstname,
+                                lastname: shipping.lastname,
+                                street: shipping.street,
+                                city: shipping.city,
+                                region: shipping.region,
+                                regionId: shipping.region_id,
+                                regionCode: shipping.region_code,
+                                postcode: shipping.postcode,
+                                countryId: shipping.country_id,
+                                telephone: shipping.telephone
+                            };
+                            var shippingAddress = newAddress(address);
+                            selectShippingAddress(shippingAddress);
+
+                            var billing = response.billing;
+                            address = {
+                                email: billing.email,
+                                prefix: billing.prefix,
+                                company: billing.company,
+                                firstname: billing.firstname,
+                                lastname: billing.lastname,
+                                street: billing.street,
+                                city: billing.city,
+                                region: billing.region,
+                                regionId: billing.region_id,
+                                regionCode: billing.region_code,
+                                postcode: billing.postcode,
+                                countryId: billing.country_id,
+                                telephone: billing.telephone
+                            };
+                            var billingAddress = newAddress(address);
+                            selectBillingAddress(billingAddress);
+
+                            var method = config.shippingMethod;
+                            if (quote.shippingMethod()) {
+                                method = quote.shippingMethod();
+                            }
+                            kcoShippingMethod(method);
                         })
                             .fail(self.ajaxFailure);
                     }

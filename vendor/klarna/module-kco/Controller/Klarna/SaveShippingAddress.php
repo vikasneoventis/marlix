@@ -127,7 +127,7 @@ class SaveShippingAddress extends Action
             $this->updateCustomerOnQuote($quote, $addressData);
 
             // Update billing address
-            $this->_updateOrderAddress($addressData, Address::TYPE_BILLING);
+            $this->_updateOrderAddress($addressData, Address::TYPE_SHIPPING);
 
             $quote->collectTotals();
             $this->getKco()->updateKlarnaTotals();

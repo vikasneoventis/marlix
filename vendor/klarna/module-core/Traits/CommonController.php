@@ -11,7 +11,6 @@ namespace Klarna\Core\Traits;
 
 use Klarna\Core\Exception as KlarnaException;
 use Klarna\Core\Helper\ConfigHelper;
-use Klarna\Kco\Controller\Klarna\Confirmation;
 use Magento\Framework\DataObject;
 use Magento\Framework\Json\Helper\Data as JsonHelper;
 use Magento\Framework\Webapi\Exception as WebException;
@@ -106,7 +105,7 @@ trait CommonController
      */
     public function log($message, $level = LogLevel::INFO, $context = [])
     {
-        return $this->logger->log($level, $message, $context);
+        $this->logger->log($level, $message, $context);
     }
 
     /**
@@ -115,7 +114,7 @@ trait CommonController
      * @param DataObject    $checkout
      * @param CartInterface $quote
      *
-     * @return Confirmation
+     * @return $this
      *
      * @throws KlarnaException
      */

@@ -105,9 +105,7 @@
                                             </item>
                                         </item>
                                         <item name="shipping-information" xsi:type="array">
-                                            <item name="config" xsi:type="array">
-                                                <unset name="deps"/>
-                                            </item>
+                                            <item name="component" xsi:type="string">Klarna_Kco/js/view/shipping-information</item>
                                         </item>
                                     </item>
                                 </item>

@@ -45,10 +45,14 @@ define([
             shipping_method: shippingMethod.carrier_code + '_' + shippingMethod.method_code
         };
         klarna.suspend();
-        $.post(config.methodUrl, data)
-            .done(function () {
-                getTotals([]);
-            });
+        if (config.frontEndShipping) {
+            getTotals([]);
+        } else {
+            $.post(config.methodUrl, data)
+                .done(function () {
+                    getTotals([]);
+                });
+        }
         return true;
     }
 });

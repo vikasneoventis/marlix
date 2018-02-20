@@ -1,4 +1,51 @@
 
+4.3.1 / 2018-01-24
+==================
+
+  * Refactor ApiHelper class
+  * Add B2B Support
+  * Move base admin config stuff to to core module
+  * Change API version labels to specify Klarna Checkout
+
+4.2.0 / 2017-12-20
+==================
+
+  * Allow to disable giftcards, storecredit, and rewards
+  * Pass error message to validateFailed controller
+  * Remove 'Klarna Checkout' title from success page
+  * Update success page to show more of native Magento portion
+  * Fix XML validation issue due to use of 'unset'
+
+4.1.2 / 2017-11-15
+==================
+
+  * Add listener for any input changes in shipping additional block
+  * Revert "Fix XML validation issue"
+
+4.1.1 / 2017-11-14
+==================
+
+  * Fix XML validation issue
+
+4.1.0 / 2017-11-13
+==================
+
+  * Add RefreshAddresses controller to update billing and shipping addresses in checkout
+  * Fix issue with billing address saved as shipping address
+  * Fix issue with shipping country different than billing country
+  * Change labels for API versions
+  * Fix for shipping in iframe not updating correctly
+  * Add support for disabling shipping in iframe in markets that support it
+  * Move payment configuration section into 'Recommended' section
+  * Add additional shipping block to checkout sidebar below shipping methods
+
+4.0.0 / 2017-10-30
+==================
+
+  * Remove json wrapping as it is now handled in Service class
+  * Update to 3.0 of klarna/module-core
+  * Fix for if KCO is disabled not messing up regular checkout layout on EE
+
 3.0.0 / 2017-10-04
 ==================
 

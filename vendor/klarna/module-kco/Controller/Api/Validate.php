@@ -83,7 +83,7 @@ class Validate extends Action
                 $this->validateOrderTotal($checkout, $quote);
             } catch (KlarnaException $e) {
                 $this->messageManager->addErrorMessage(__('Order total does not match for order'));
-                return $this->_setValidateFailedResponse($checkoutId);
+                return $this->_setValidateFailedResponse($checkoutId, (string)__('Order total does not match for order'));
             }
 
             return $this->resultFactory->create(ResultFactory::TYPE_RAW)->setHttpResponseCode(200);

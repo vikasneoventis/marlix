@@ -26,7 +26,7 @@ class VersionInfo
         'klarna/module-kred'       => 'Klarna_Kred',
         'klarna/module-dach'       => 'Klarna_Dach',
         'klarna/module-kp'         => 'Klarna_Kp',
-        'klarna/module-om'         => 'Klarna_Om',
+        'klarna/module-om'         => 'Klarna_Ordermanagement',
         'klarna/module-enterprise' => 'Klarna_Enterprise',
     ];
     /**

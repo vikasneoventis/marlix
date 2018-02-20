@@ -25,13 +25,15 @@ define([
     'mage/utils/wrapper',
     'Klarna_Kco/js/model/klarna',
     'Klarna_Kco/js/model/message',
-    'Klarna_Kco/js/model/config'
-], function ($, ko, wrapper, klarna, message, config) {
+    'Klarna_Kco/js/model/config',
+    'Magento_Checkout/js/action/set-shipping-information'
+], function ($, ko, wrapper, klarna, message, config, setShippingInformationAction) {
     'use strict';
 
     return function (getTotals) {
         return wrapper.wrap(getTotals, function (originalAction) {
             klarna.suspend();
+            setShippingInformationAction();
             originalAction();
             $.post(config.reloadUrl, function (response) {
                 message.saveResponse(response);

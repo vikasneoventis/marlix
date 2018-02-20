@@ -58,9 +58,10 @@ class AddPaymentStatusButton
      * Intercept setLayout method to add custom button
      *
      * @param \Magento\Sales\Block\Adminhtml\Order\View $view
+     * @param \Magento\Framework\View\LayoutInterface   $layout
      * @return void
      */
-    public function beforeSetLayout(\Magento\Sales\Block\Adminhtml\Order\View $view)
+    public function beforeSetLayout(\Magento\Sales\Block\Adminhtml\Order\View $view, \Magento\Framework\View\LayoutInterface $layout)
     {
         if (!$this->authorization->isAllowed('Klarna_Ordermanagement::payment_status')) {
             return;

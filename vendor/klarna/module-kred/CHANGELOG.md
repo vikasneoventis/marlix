@@ -1,4 +1,15 @@
 
+3.1.1 / 2018-01-24
+==================
+
+  * Add B2B Support
+  * Change API version labels to specify Klarna Checkout
+
+3.0.3 / 2017-10-24
+==================
+
+  * Add support for base KCO and OM modules using newer version of Guzzle
+
 3.0.2 / 2017-10-18
 ==================
 
@@ -13,6 +24,11 @@
 ==================
 
   * Move some Enterprise functions into base modules in preparation for single Marketplace release
+
+2.3.4 / 2017-10-20
+==================
+
+  * Fix error in logging
 
 2.3.3 / 2017-10-04
 ==================

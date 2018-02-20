@@ -15,4 +15,17 @@ namespace Klarna\Core\Model\System\Config\Source;
 class Version extends Base
 {
     protected $optionName = 'api_versions';
+
+    /**
+     * Options getter
+     *
+     * @return array
+     */
+    public function toOptionArray()
+    {
+        $options = parent::toOptionArray();
+        sort($options);
+        return $options;
+    }
+
 }

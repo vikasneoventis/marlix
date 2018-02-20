@@ -12,7 +12,7 @@
 <klarna xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Klarna_Core:etc/klarna.xsd">
     <api_version id="dach" translate="label">
-        <label><![CDATA[v2 DACH]]></label>
+        <label><![CDATA[Klarna Checkout v2 (DACH)]]></label>
         <type>kred</type>
         <production_url><![CDATA[https://checkout.klarna.com]]></production_url>
         <testdrive_url><![CDATA[https://checkout.testdrive.klarna.com]]></testdrive_url>
@@ -23,7 +23,7 @@
         </options>
     </api_version>
     <api_version id="dach_v3" translate="label">
-        <label><![CDATA[v3 DACH]]></label>
+        <label><![CDATA[Klarna Checkout v3 (DACH)]]></label>
         <type>kasper</type>
         <production_url><![CDATA[https://api.klarna.com]]></production_url>
         <testdrive_url><![CDATA[https://api.playground.klarna.com]]></testdrive_url>

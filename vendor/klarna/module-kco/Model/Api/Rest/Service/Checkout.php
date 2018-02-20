@@ -87,7 +87,7 @@ class Checkout implements KasperInterface
     public function createOrder($data)
     {
         $url = "{$this->uri}/checkout/" . self::API_VERSION . "/orders";
-        return $this->service->makeRequest($url, json_encode($data));
+        return $this->service->makeRequest($url, $data);
     }
 
     /**
@@ -105,6 +105,6 @@ class Checkout implements KasperInterface
         }
 
         $url = "{$this->uri}/checkout/" . self::API_VERSION . "/orders/{$id}";
-        return $this->service->makeRequest($url, json_encode($data));
+        return $this->service->makeRequest($url, $data);
     }
 }

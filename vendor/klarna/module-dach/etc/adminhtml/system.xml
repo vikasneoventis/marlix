@@ -13,14 +13,17 @@
     <system>
         <section id="checkout">
             <group id="klarna_kco" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1" translate="label">
-                <field id="packstation_enabled" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="packstation_enabled" translate="label comment" type="select" sortOrder="83" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Packstation Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="prefill_notice" translate="label comment" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Customer pre-fill notice Enabled</label>
+                <field id="prefill_notice" translate="label comment" type="select" sortOrder="95" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Customer pre-fill notice</label>
                     <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
-                    <comment>Display a pre-fill notice to registered customer before submitting details to Klarna. The customer must accept the notice before continuing checkout.</comment>
+                    <comment>Display a pre-fill notice to registered customer before submitting details to Klarna. The customer must accept the notice to have their account details shared with Klarna.</comment>
+                    <depends>
+                        <field id="merchant_prefill">1</field>
+                    </depends>
                 </field>
             </group>
         </section>

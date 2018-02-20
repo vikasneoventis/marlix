@@ -24,8 +24,7 @@ class InfoPlugin
      */
     public function aroundGetAddressEditLink(\Magento\Sales\Block\Adminhtml\Order\View\Info $subject, $proceed, $address, $label = '')
     {
-        $klarnaMethods = ['klarna_kco', 'klarna_kp'];
-        if (in_array($address->getOrder()->getPayment()->getMethod(), $klarnaMethods, true)) {
+        if (strpos($address->getOrder()->getPayment()->getMethod(), 'klarna_') !== false) {
             return '';
         }
         return $proceed($address, $label);

@@ -14,7 +14,7 @@
 
 /** @var $this Klarna\Core\Block\Info\Klarna */
 ?>
-<p><img width="150" src="https://cdn.klarna.com/1.0/shared/image/generic/logo/en_us/basic/blue-black.png?width=300"
+<p><img width="150" src="https://cdn.klarna.com/1.0/shared/image/generic/logo/<?php echo strtolower($this->escapeHtml($this->getLocale())) ?>/basic/logo_black.png?width=300"
         alt="<?php echo $this->escapeHtml($this->getMethod()->getTitle()) ?>"/></p>
 
 <?php if ($_specificInfo = $this->getSpecificInformation()): ?>

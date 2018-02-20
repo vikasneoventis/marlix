@@ -7,19 +7,18 @@
  * For the full copyright and license information, please view the NOTICE
  * and LICENSE files that were distributed with this source code.
  */
+
 namespace Klarna\Kco\Block;
 
 use Klarna\Core\Exception as KlarnaException;
 use Klarna\Core\Model\OrderRepository;
 use Klarna\Kco\Helper\ApiHelper;
-use Klarna\Kco\Helper\Checkout as CheckoutHelper;
-use Magento\Checkout\Block\Onepage\Success as MageSuccess;
 use Magento\Checkout\Model\Session;
-use Magento\Sales\Model\Order\Config;
+use Magento\Framework\View\Element\Template\Context;
 
-class Success extends MageSuccess
+class Success extends \Magento\Framework\View\Element\Template
 {
-    /** @var CheckoutHelper */
+    /** @var ApiHelper */
     protected $helper;
 
     /**
@@ -35,27 +34,35 @@ class Success extends MageSuccess
     /**
      * Success constructor.
      *
-     * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param Session                                          $checkoutSession
-     * @param Config                                           $orderConfig
-     * @param \Magento\Framework\App\Http\Context              $httpContext
-     * @param ApiHelper                                        $apiHelper
-     * @param OrderRepository                                  $kcoOrderRepository
-     * @param array                                            $data
+     * @param Context         $context
+     * @param Session         $checkoutSession
+     * @param ApiHelper       $apiHelper
+     * @param OrderRepository $kcoOrderRepository
+     * @param array           $data
      */
     public function __construct(
-        \Magento\Framework\View\Element\Template\Context $context,
+        Context $context,
         Session $checkoutSession,
-        Config $orderConfig,
-        \Magento\Framework\App\Http\Context $httpContext,
         ApiHelper $apiHelper,
         OrderRepository $kcoOrderRepository,
         array $data
     ) {
-        parent::__construct($context, $checkoutSession, $orderConfig, $httpContext, $data);
+        parent::__construct($context, $data);
         $this->checkoutSession = $checkoutSession;
         $this->kcoOrderRepository = $kcoOrderRepository;
         $this->helper = $apiHelper;
+        $this->_isScopePrivate = true;
+    }
+
+    /**
+     * Initialize data and prepare it for output
+     *
+     * @return string
+     */
+    protected function _beforeToHtml()
+    {
+        $this->prepareBlockData();
+        return parent::_beforeToHtml();
     }
 
     /**
@@ -63,11 +70,7 @@ class Success extends MageSuccess
      */
     protected function prepareBlockData()
     {
-        parent::prepareBlockData();
-        $order = $this->_checkoutSession->getLastRealOrder();
-        $this->addData([
-            'order' => $order
-        ]);
+        $order = $this->checkoutSession->getLastRealOrder();
 
         $klarnaOrder = $this->kcoOrderRepository->getByOrder($order);
         if ($klarnaOrder->getId()) {

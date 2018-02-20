@@ -59,7 +59,7 @@ class Shipping extends AbstractLine
                 } else {
                     $taxRate = $this->_calculateShippingTax($object);
                     $taxAmount = $address->getShippingTaxAmount() + $address->getShippingHiddenTaxAmount();
-                    $unitPrice = $amount + $taxAmount;
+                    $unitPrice = $address->getShippingInclTax();
                 }
 
                 $checkout->addData(

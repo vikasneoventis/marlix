@@ -2,7 +2,7 @@
     "name": "magento/project-community-edition",
     "description": "eCommerce Platform for Growth (Community Edition)",
     "type": "project",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
@@ -11,7 +11,7 @@
         "magento/product-community-edition": "2.2.2",
         "composer/composer": "@alpha",
         "mobiledetect/mobiledetectlib": "^2.8",
-        "klarna/m2-checkout": "^3.0",
+        "klarna/m2-checkout": "4.1.0",
         "twilio/sdk": "4.10.0",
         "trollweb/bring-api": "^1.1",
         "magento/data-migration-tool": "2.2.2"

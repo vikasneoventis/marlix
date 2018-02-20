@@ -12,6 +12,7 @@ namespace Klarna\Core\Block\Info;
 use Klarna\Core\Model\OrderRepository;
 use Magento\Framework\DataObject;
 use Magento\Framework\Exception\NoSuchEntityException;
+use Magento\Framework\Locale\Resolver;
 use Magento\Framework\View\Element\Template\Context;
 
 class Klarna extends \Magento\Payment\Block\Info
@@ -24,17 +25,24 @@ class Klarna extends \Magento\Payment\Block\Info
     protected $orderRepository;
 
     /**
+     * @var Resolver
+     */
+    protected $locale;
+
+    /**
      * Klarna constructor.
      *
-     * @param Context         $context
-     * @param OrderRepository $orderRepository
-     * @param array           $data
+     * @param Context                            $context
+     * @param OrderRepository                    $orderRepository
+     * @param Resolver $locale
+     * @param array                              $data
      */
-    public function __construct(Context $context, OrderRepository $orderRepository, array $data = [])
+    public function __construct(Context $context, OrderRepository $orderRepository, Resolver $locale, array $data = [])
     {
         parent::__construct($context, $data);
         $this->orderRepository = $orderRepository;
         $this->_template = 'Klarna_Core::payment/info.phtml';
+        $this->locale = $locale;
     }
 
     /**
@@ -79,5 +87,10 @@ class Klarna extends \Magento\Payment\Block\Info
         }
 
         return $transport;
+    }
+
+    public function getLocale()
+    {
+        return $this->locale->getLocale();
     }
 }

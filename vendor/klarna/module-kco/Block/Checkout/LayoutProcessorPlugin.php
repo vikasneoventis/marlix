@@ -14,8 +14,11 @@ use Klarna\Core\Helper\VersionInfo;
 use Klarna\Kco\Model\Checkout\Type\Kco;
 use Magento\Checkout\Block\Checkout\LayoutProcessor;
 use Magento\Checkout\Model\Session;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\State;
 use Magento\Framework\Message\ManagerInterface;
+use Magento\Store\Model\ScopeInterface;
+use Magento\Store\Model\StoreManagerInterface;
 
 class LayoutProcessorPlugin
 {
@@ -50,20 +53,29 @@ class LayoutProcessorPlugin
     protected $info;
 
     /**
+     * @var ScopeConfigInterface
+     */
+    protected $config;
+
+    /**
      * LayoutProcessorPlugin constructor.
      *
-     * @param Session          $session
-     * @param ManagerInterface $manager
-     * @param Kco              $kco
-     * @param State            $appState
-     * @param VersionInfo      $info
+     * @param Session               $session
+     * @param ManagerInterface      $manager
+     * @param Kco                   $kco
+     * @param State                 $appState
+     * @param VersionInfo           $info
+     * @param StoreManagerInterface $storeManager
+     * @param ScopeConfigInterface  $config
      */
     public function __construct(
         Session $session,
         ManagerInterface $manager,
         Kco $kco,
         State $appState,
-        VersionInfo $info
+        VersionInfo $info,
+        StoreManagerInterface $storeManager,
+        ScopeConfigInterface $config
     ) {
         $this->quote = $session->getQuote();
         $this->customer = $this->quote->getCustomer();
@@ -71,6 +83,8 @@ class LayoutProcessorPlugin
         $this->kco = $kco;
         $this->appState = $appState;
         $this->info = $info;
+        $this->config = $config;
+        $this->store = $storeManager->getStore();
     }
 
     /**
@@ -85,8 +99,10 @@ class LayoutProcessorPlugin
         if (isset($result['components']['checkout']['children']['steps']['children']["klarna_kco"])) {
             $iframe = $this->generateKlarnaIframe();
             $result['components']['checkout']['children']['steps']['children']['klarna_kco']['klarna_iframe'] = $iframe;
+            $result = $this->moveShippingAdditional($result);
+            return $this->checkForEnterprise($result);
         }
-        return $this->checkForEnterprise($result);
+        return $result;
     }
 
     /**
@@ -111,33 +127,55 @@ class LayoutProcessorPlugin
         return $this->kco->getApiInstance($this->quote->getStore())->getKlarnaCheckoutGui();
     }
 
+    protected function moveShippingAdditional($result)
+    {
+        if (!isset($result['components']['checkout']['children']['steps']['children']['shipping-step']['children']['shippingAddress']['children']['shippingAdditional'])) {
+            return $result;
+        }
+        $additional = $result['components']['checkout']['children']['steps']['children']['shipping-step']['children']['shippingAddress']['children']['shippingAdditional'];
+        $result['components']['checkout']['children']['sidebar']['children']['klarna_shipping']['children']['shippingAdditional'] = $additional;
+        unset($result['components']['checkout']['children']['steps']['children']['shipping-step']['children']['shippingAddress']['children']['shippingAdditional']);
+        return $result;
+    }
+
     protected function checkForEnterprise($result)
     {
         if ($this->info->getMageEdition() !== 'Enterprise') {
             return $result;
         }
-        $result['components']['checkout']['children']['sidebar']['children']['klarna_sidebar']['children']['storeCredit'] = [
-            'component'   => 'Magento_CustomerBalance/js/view/payment/customer-balance',
-            'displayArea' => 'klarna-summary',
-            'sortOrder'   => '20',
-        ];
-        $result['components']['checkout']['children']['sidebar']['children']['klarna_sidebar']['children']['giftCardAccount'] = [
-            'component'   => 'Magento_GiftCardAccount/js/view/payment/gift-card-account',
-            'displayArea' => 'klarna-summary',
-            'sortOrder'   => '30',
-            'children'    => [
-                'errors' => [
-                    'sortOrder'   => '0',
-                    'component'   => 'Magento_GiftCardAccount/js/view/payment/gift-card-messages',
-                    'displayArea' => 'messages',
+
+        if ($this->config->isSetFlag('customer/magento_customerbalance/is_enabled', ScopeInterface::SCOPE_STORES,
+            $this->store)) {
+            $result['components']['checkout']['children']['sidebar']['children']['klarna_sidebar']['children']['storeCredit'] = [
+                'component'   => 'Magento_CustomerBalance/js/view/payment/customer-balance',
+                'displayArea' => 'klarna-summary',
+                'sortOrder'   => '20',
+            ];
+        }
+
+        if ($this->config->isSetFlag('giftcard/general/is_redeemable', ScopeInterface::SCOPE_STORES, $this->store)) {
+            $result['components']['checkout']['children']['sidebar']['children']['klarna_sidebar']['children']['giftCardAccount'] = [
+                'component'   => 'Magento_GiftCardAccount/js/view/payment/gift-card-account',
+                'displayArea' => 'klarna-summary',
+                'sortOrder'   => '30',
+                'children'    => [
+                    'errors' => [
+                        'sortOrder'   => '0',
+                        'component'   => 'Magento_GiftCardAccount/js/view/payment/gift-card-messages',
+                        'displayArea' => 'messages',
+                    ],
                 ],
-            ],
-        ];
-        $result['components']['checkout']['children']['sidebar']['children']['klarna_sidebar']['children']['reward'] = [
-            'component'   => 'Magento_Reward/js/view/payment/reward',
-            'displayArea' => 'klarna-summary',
-            'sortOrder'   => '40',
-        ];
+            ];
+        }
+
+        if ($this->config->isSetFlag('magento_reward/general/is_enabled_on_front', ScopeInterface::SCOPE_STORES,
+            $this->store)) {
+            $result['components']['checkout']['children']['sidebar']['children']['klarna_sidebar']['children']['reward'] = [
+                'component'   => 'Magento_Reward/js/view/payment/reward',
+                'displayArea' => 'klarna-summary',
+                'sortOrder'   => '40',
+            ];
+        }
         return $result;
     }
 }

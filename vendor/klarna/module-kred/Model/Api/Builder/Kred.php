@@ -26,6 +26,19 @@ use Magento\Quote\Model\Quote as MageQuote;
  */
 class Kred extends \Klarna\Core\Model\Api\Builder
 {
+    /**
+     * Kred constructor.
+     * @param EventManager $eventManager
+     * @param Collector $collector
+     * @param Url $url
+     * @param ConfigHelper $configHelper
+     * @param ScopeConfigInterface $config
+     * @param DirectoryHelper $directoryHelper
+     * @param \Magento\Framework\Stdlib\DateTime\DateTime $coreDate
+     * @param \Magento\Framework\Stdlib\DateTime $dateTime
+     * @param ObjectManager $objManager
+     * @param array $data
+     */
     public function __construct(
         EventManager $eventManager,
         Collector $collector,
@@ -128,6 +141,10 @@ class Kred extends \Klarna\Core\Model\Api\Builder
         $additional = $this->getMerchantCheckbox($store, $quote);
         if ($additional) {
             $create['options']['additional_checkbox'] = $additional;
+        }
+
+        if($this->configHelper->isB2bEnabled($store)){
+            $create['options']['allowed_customer_types'] = ['person','organization'];
         }
 
         /**
@@ -280,5 +297,33 @@ class Kred extends \Klarna\Core\Model\Api\Builder
         }
         unset($create['shipping_address']['region']); // Not used by Kred
         return $create;
+    }
+
+    /**
+     * Get customer details
+     *
+     * @param $quote
+     * @return array|null
+     */
+    public function getCustomerData($quote)
+    {
+        $store = $quote->getStore();
+        $customerData = [];
+        if (!$quote->getCustomerIsGuest()) {
+            $customer = $quote->getCustomer();
+            if ($this->configHelper->isB2bCustomer($customer->getId(),$store)) {
+                $customerData['type'] = 'organization';
+                $organizationId = $this->configHelper->getBusinessIdAttributeValue($customer->getId(),$store);
+                if(!empty($organizationId)){
+                    $customerData['organization_registration_id'] = $organizationId;
+                }
+            }
+            if ($quote->getCustomerDob()) {
+                $customerData = [
+                    'date_of_birth' => $this->coreDate->date('Y-m-d', $quote->getCustomerDob())
+                ];
+            }
+        }
+        return $customerData;
     }
 }

@@ -1,4 +1,16 @@
 
+3.0.1 / 2018-02-09
+==================
+
+  * Fix method signature
+
+3.0.0 / 2017-10-30
+==================
+
+  * Fix handling of location during captures
+  * Remove json wrapping as it is now handled in Service class
+  * Update to 3.0 of klarna/module-core
+
 2.3.3 / 2017-10-04
 ==================
 

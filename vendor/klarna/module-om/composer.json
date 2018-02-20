@@ -3,7 +3,7 @@
     "description": "Klarna Order Management Magento 2 Extension",
     "type": "magento2-module",
     "license": "Apache-2.0",
-    "version": "2.3.3",
+    "version": "3.0.1",
     "authors": [
         {
             "name": "Joe Constant",
@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "klarna/module-core": "^2.5",
+        "klarna/module-core": "^3.0",
         "klarna/payment-virtual": "1.0"
     },
     "suggest": {

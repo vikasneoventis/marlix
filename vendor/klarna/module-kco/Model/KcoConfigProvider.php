@@ -7,6 +7,7 @@
  * For the full copyright and license information, please view the NOTICE
  * and LICENSE files that were distributed with this source code.
  */
+
 namespace Klarna\Kco\Model;
 
 use Klarna\Core\Helper\ConfigHelper;
@@ -66,18 +67,19 @@ class KcoConfigProvider implements ConfigProviderInterface
         $store = $this->quote->getStore();
         return [
             'klarna' => [
-                'saveUrl'          => $this->getUrl('checkout/klarna/saveCustomer'),
-                'failureUrl'       => $this->helper->getFailureUrl($store),
-                'reloadUrl'        => $this->getUrl('checkout/klarna/reloadSummary'),
-                'messageId'        => 'klarna_msg',
-                'frontEndAddress'  => (bool)$this->helper->getShippingCallbackSupport($store),
-                'addressUrl'       => $this->getUrl('checkout/klarna/saveShippingAddress'),
-                'methodUrl'        => $this->getUrl('checkout/klarna/saveShippingMethod'),
-                'regionUrl'        => $this->getUrl('kco/api/retrieveAddress'),
-                'countryUrl'       => $this->getUrl('kco/api/countryLookup'),
-                'frontEndShipping' => (bool)$this->helper->getShippingInIframe($store),
-                'paymentMethod'    => Kco::METHOD_CODE,
-                'shippingMethod'   => $this->getShippingMethod(),
+                'saveUrl'           => $this->getUrl('checkout/klarna/saveCustomer'),
+                'failureUrl'        => $this->helper->getFailureUrl($store),
+                'reloadUrl'         => $this->getUrl('checkout/klarna/reloadSummary'),
+                'messageId'         => 'klarna_msg',
+                'frontEndAddress'   => (bool)$this->helper->getShippingCallbackSupport($store),
+                'addressUrl'        => $this->getUrl('checkout/klarna/saveShippingAddress'),
+                'methodUrl'         => $this->getUrl('checkout/klarna/saveShippingMethod'),
+                'regionUrl'         => $this->getUrl('kco/api/retrieveAddress'),
+                'countryUrl'        => $this->getUrl('kco/api/countryLookup'),
+                'refreshAddressUrl' => $this->getUrl('kco/api/refreshAddresses'),
+                'frontEndShipping'  => (bool)$this->helper->getShippingInIframe($store),
+                'paymentMethod'     => Kco::METHOD_CODE,
+                'shippingMethod'    => $this->getShippingMethod(),
             ]
         ];
     }
@@ -105,16 +107,16 @@ class KcoConfigProvider implements ConfigProviderInterface
                 return null;
             }
             return [
-                'method_code' => $shippingMethod->getMethodCode(),
-                'method_title' => $shippingMethod->getMethodTitle(),
-                'carrier_code' => $shippingMethod->getCarrierCode(),
-                'carrier_title' => $shippingMethod->getCarrierTitle(),
-                'amount' => $shippingMethod->getAmount(),
-                'available' => $shippingMethod->getAvailable(),
-                'base_amount' => $shippingMethod->getBaseAmount(),
+                'method_code'    => $shippingMethod->getMethodCode(),
+                'method_title'   => $shippingMethod->getMethodTitle(),
+                'carrier_code'   => $shippingMethod->getCarrierCode(),
+                'carrier_title'  => $shippingMethod->getCarrierTitle(),
+                'amount'         => $shippingMethod->getAmount(),
+                'available'      => $shippingMethod->getAvailable(),
+                'base_amount'    => $shippingMethod->getBaseAmount(),
                 'price_excl_tax' => $shippingMethod->getPriceExclTax(),
                 'price_incl_tax' => $shippingMethod->getPriceInclTax(),
-                'error_message' => $shippingMethod->getErrorMessage(),
+                'error_message'  => $shippingMethod->getErrorMessage(),
             ];
         } catch (\Magento\Framework\Exception\StateException $e) {
             // It's likely we got called on the cart page

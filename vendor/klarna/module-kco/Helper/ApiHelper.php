@@ -7,6 +7,7 @@
  * For the full copyright and license information, please view the NOTICE
  * and LICENSE files that were distributed with this source code.
  */
+
 namespace Klarna\Kco\Helper;
 
 use Klarna\Core\Exception as KlarnaException;
@@ -22,7 +23,7 @@ use Magento\Store\Model\Store;
 /**
  * Klarna KCO helper
  */
-class ApiHelper extends ConfigHelper
+class ApiHelper
 {
     /**
      * @var ApiFactory
@@ -30,8 +31,14 @@ class ApiHelper extends ConfigHelper
     protected $apiFactory;
 
     /**
+     * @var ConfigHelper
+     */
+    protected $configHelper;
+
+    /**
      * ApiHelper constructor.
      *
+     * @param ConfigHelper  $configHelper
      * @param Context       $context
      * @param DataInterface $config
      * @param Resolver      $resolver
@@ -41,16 +48,11 @@ class ApiHelper extends ConfigHelper
      * @param string        $eventPrefix
      */
     public function __construct(
-        Context $context,
-        DataInterface $config,
-        Resolver $resolver,
-        Placeholder $placeholder,
-        Factory $apiFactory,
-        $code = 'klarna_kco',
-        $eventPrefix = 'kco'
+        ConfigHelper $configHelper,
+        Factory $apiFactory
     ) {
-        parent::__construct($context, $config, $resolver, $placeholder, $code, $eventPrefix);
         $this->apiFactory = $apiFactory;
+        $this->configHelper = $configHelper;
     }
 
     /**
@@ -64,7 +66,7 @@ class ApiHelper extends ConfigHelper
      */
     public function getApiInstance(Store $store = null)
     {
-        $versionConfig = $this->getVersionConfig($store);
+        $versionConfig = $this->configHelper->getVersionConfig($store);
 
         /** @var ApiInterface $instance */
         $instance = $this->_getApiTypeInstance($versionConfig->getType());
@@ -86,7 +88,7 @@ class ApiHelper extends ConfigHelper
      */
     protected function _getApiTypeInstance($code)
     {
-        $typeConfig = $this->_getApiTypeConfig($code);
+        $typeConfig = $this->configHelper->getApiTypeConfig($code);
         return $this->apiFactory->create($typeConfig->getClass());
     }
 }

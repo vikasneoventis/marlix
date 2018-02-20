@@ -110,7 +110,7 @@ class Ordermanagement
     public function updateOrderItems($id, $data)
     {
         $url = "{$this->uri}/ordermanagement/" . self::API_VERSION . "/orders/{$id}/authorization";
-        return $this->service->makeRequest($url, json_encode($data), ServiceInterface::PATCH);
+        return $this->service->makeRequest($url, $data, ServiceInterface::PATCH);
     }
 
     /**
@@ -146,7 +146,7 @@ class Ordermanagement
         if ($merchantReference2 !== null) {
             $data['merchant_reference2'] = $merchantReference2;
         }
-        return $this->service->makeRequest($url, json_encode($data), ServiceInterface::PATCH);
+        return $this->service->makeRequest($url, $data, ServiceInterface::PATCH);
     }
 
     /**
@@ -163,7 +163,7 @@ class Ordermanagement
     public function updateAddresses($id, $data)
     {
         $url = "{$this->uri}/ordermanagement/" . self::API_VERSION . "/orders/{$id}/customer-details";
-        return $this->service->makeRequest($url, json_encode($data), ServiceInterface::PATCH);
+        return $this->service->makeRequest($url, $data, ServiceInterface::PATCH);
     }
 
     /**
@@ -197,7 +197,7 @@ class Ordermanagement
     public function captureOrder($id, $data)
     {
         $url = "{$this->uri}/ordermanagement/" . self::API_VERSION . "/orders/{$id}/captures";
-        return $this->service->makeRequest($url, json_encode($data), ServiceInterface::POST);
+        return $this->service->makeRequest($url, $data, ServiceInterface::POST);
     }
 
     /**
@@ -226,7 +226,7 @@ class Ordermanagement
     public function addShippingDetailsToCapture($id, $captureId, $data)
     {
         $url = "{$this->uri}/ordermanagement/" . self::API_VERSION . "/orders/{$id}/captures/{$captureId}/shipping-info";
-        return $this->service->makeRequest($url, json_encode($data), ServiceInterface::POST);
+        return $this->service->makeRequest($url, $data, ServiceInterface::POST);
     }
 
     /**
@@ -244,7 +244,7 @@ class Ordermanagement
     public function updateCaptureBillingAddress($id, $captureId, $data)
     {
         $url = "{$this->uri}/ordermanagement/" . self::API_VERSION . "/orders/{$id}/captures/{$captureId}/customer-details";
-        return $this->service->makeRequest($url, json_encode($data), ServiceInterface::PATCH);
+        return $this->service->makeRequest($url, $data, ServiceInterface::PATCH);
     }
 
     /**
@@ -274,7 +274,7 @@ class Ordermanagement
     public function refund($id, $data)
     {
         $url = "{$this->uri}/ordermanagement/" . self::API_VERSION . "/orders/{$id}/refunds";
-        return $this->service->makeRequest($url, json_encode($data), ServiceInterface::POST);
+        return $this->service->makeRequest($url, $data, ServiceInterface::POST);
     }
 
     /**
@@ -303,6 +303,9 @@ class Ordermanagement
     {
         if ($location instanceof DataObject) {
             $location = $location->getResponseObject()->getHeader('Location');
+        }
+        if (is_array($location)) {
+            $location = $location[0];
         }
 
         $location = rtrim($location, '/');

@@ -11,8 +11,10 @@ namespace Klarna\Core\Model\Api\Rest;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Message\ResponseInterface;
-use GuzzleHttp\Subscriber\Log\LogSubscriber;
+use GuzzleHttp\HandlerStack;
+use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\MessageFormatter;
+use GuzzleHttp\Middleware;
 use Klarna\Core\Api\ServiceInterface;
 use Klarna\Core\Model\Api\Exception as KlarnaApiException;
 use Psr\Log\LoggerInterface;
@@ -51,6 +53,11 @@ class Service implements ServiceInterface
     protected $log;
 
     /**
+     * @var Client
+     */
+    protected $client;
+
+    /**
      * Initialize class
      *
      * @param LoggerInterface $log
@@ -58,6 +65,19 @@ class Service implements ServiceInterface
     public function __construct(LoggerInterface $log)
     {
         $this->log = $log;
+        $stack = HandlerStack::create();
+        $stack->push(
+            Middleware::log(
+                $this->log,
+                new MessageFormatter(self::LOG_FORMAT)
+            )
+        );
+        $this->client = new Client(
+            [
+                'handler' => $stack,
+            ]
+        );
+
     }
 
     /**
@@ -95,31 +115,29 @@ class Service implements ServiceInterface
      */
     public function makeRequest($url, $body = '', $method = ServiceInterface::POST)
     {
-        $this->setHeader('Content-Type', 'application/json');
         $response = [
             'is_successful' => false
         ];
         try {
-            $client = $this->createClient();
             $data = [
                 'headers' => $this->headers,
-                'body'    => $body
+                'json'    => $body
             ];
             $data = $this->getAuth($data);
 
             /** @var ResponseInterface $response */
-            $response = $client->$method($url, $data);
+            $response = $this->client->$method($url, $data);
             $response = $this->processResponse($response);
             $response['is_successful'] = true;
         } catch (BadResponseException $e) {
             $this->log->error('Bad Response: ' . $e->getMessage());
-            $this->log->error($e->getRequest());
+            $this->log->error((string)$e->getRequest()->getBody());
             $response['response_status_code'] = $e->getCode();
             $response['response_status_message'] = $e->getMessage();
             $response = $this->processResponse($response);
             if ($e->hasResponse()) {
                 $errorResponse = $e->getResponse();
-                $this->log->error($errorResponse);
+                $this->log->error($errorResponse->getStatusCode() . ' ' . $errorResponse->getReasonPhrase());
                 $body = $this->processResponse($errorResponse);
                 $response = array_merge($response, $body);
             }
@@ -129,17 +147,6 @@ class Service implements ServiceInterface
             $response['exception_code'] = $e->getCode();
         }
         return $response;
-    }
-
-    /**
-     * @return Client
-     */
-    protected function createClient()
-    {
-        $client = new Client();
-        $subscriber = new LogSubscriber($this->log, self::LOG_FORMAT);
-        $client->getEmitter()->attach($subscriber);
-        return $client;
     }
 
     /**
@@ -169,7 +176,7 @@ class Service implements ServiceInterface
             return $response;
         }
         try {
-            $data = $response->json();
+            $data = json_decode((string)$response->getBody(), true);
         } catch (\Exception $e) {
             $data = [
                 'exception' => $e->getMessage()

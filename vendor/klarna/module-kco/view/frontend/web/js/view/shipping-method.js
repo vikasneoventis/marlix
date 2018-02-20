@@ -46,6 +46,12 @@ define([
             this._super();
         },
 
+        setupListener: function() {
+            $('#onepage-checkout-shipping-method-additional-load').on('change', 'input', function () {
+                setShippingInformationAction();
+            });
+        },
+
         /**
          * Set shipping information handler
          */

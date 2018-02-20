@@ -1,4 +1,10 @@
 
+2.1.0 / 2018-01-24
+==================
+
+  * Fix sort order of config settings to align them better
+  * Change API version labels to specify Klarna Checkout
+
 2.0.0 / 2017-10-04
 ==================
 

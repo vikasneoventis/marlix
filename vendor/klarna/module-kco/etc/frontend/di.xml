@@ -20,7 +20,7 @@
         </arguments>
     </type>
     <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
-        <plugin name="klarna_checkout" type="Klarna\Kco\Block\Checkout\LayoutProcessorPlugin" sortOrder="1" disabled="false"/>
+        <plugin name="klarna_checkout" type="Klarna\Kco\Block\Checkout\LayoutProcessorPlugin" sortOrder="99999" disabled="false"/>
     </type>
     <type name="Magento\Checkout\Model\CompositeConfigProvider">
         <arguments>

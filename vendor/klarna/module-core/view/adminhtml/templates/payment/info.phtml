@@ -18,12 +18,13 @@
 ?>
 <?php
 $specificInfo = $block->getSpecificInformation();
-$title = $block->escapeHtml($block->getMethod()->getTitle());
+$title = $block->getMethod()->getTitle();
 ?>
 <p>
-    <img width="150" src="https://cdn.klarna.com/1.0/shared/image/generic/logo/en_us/basic/blue-black.png?width=300"
+    <img width="150" src="https://cdn.klarna.com/1.0/shared/image/generic/logo/<?php echo strtolower($this->escapeHtml($this->getLocale())) ?>/basic/logo_black.png?width=300"
          alt="<?php /* @noEscape */
-         echo $title; ?>"/>
+         echo strip_tags($title); ?>"/>
+    <p><?php echo $title; ?></p>
 </p>
 <?php if ($specificInfo): ?>
     <table class="data-table admin__table-secondary">

@@ -13,7 +13,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="klarna_core" translate="label" sortOrder="200">
-            <label><![CDATA[<img src="https://cdn.klarna.com/1.0/shared/image/generic/logo/en_us/basic/blue-black.png?width=68">]]></label>
+            <label><![CDATA[<img src="https://cdn.klarna.com/1.0/shared/image/generic/logo/en_us/basic/logo_black.png?width=68">]]></label>
         </tab>
         <section id="klarna" translate="label" showInDefault="1" showInWebsite="1" showInStore="1"  type="text" sortOrder="10">
             <tab>klarna_core</tab>
@@ -21,7 +21,7 @@
             <resource>Klarna_Core::klarna</resource>
             <group id="api" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1"
                    translate="label">
-                <label><![CDATA[<img src="https://cdn.klarna.com/1.0/shared/image/generic/logo/en_us/basic/blue-black.png?width=68"> API]]></label>
+                <label><![CDATA[<img src="https://cdn.klarna.com/1.0/shared/image/generic/logo/en_us/basic/logo_black.png?width=68"> API]]></label>
                 <field id="api_version" sortOrder="10" translate="label" type="select" showInDefault="1" showInWebsite="1"
                        showInStore="1">
                     <label>API Version</label>
@@ -49,5 +49,17 @@
                 </field>
             </group>
         </section>
+        <section id="payment">
+            <group id="klarna_section" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
+                <group id="klarna" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1"
+                       translate="label">
+                    <attribute type="displayIn">recommended_solutions</attribute>
+                    <fieldset_css>complex klarna-section</fieldset_css>
+                    <frontend_model>Magento\Paypal\Block\Adminhtml\System\Config\Fieldset\Payment</frontend_model>
+                    <label>Smoooth Payments</label>
+                </group>
+            </group>
+        </section>
+
     </system>
 </config>

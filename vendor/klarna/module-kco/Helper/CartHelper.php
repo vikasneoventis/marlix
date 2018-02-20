@@ -7,15 +7,29 @@
  * For the full copyright and license information, please view the NOTICE
  * and LICENSE files that were distributed with this source code.
  */
+
 namespace Klarna\Kco\Helper;
 
-use Klarna\Core\Exception as KlarnaException;
+use Magento\Directory\Model\Country;
+use Magento\Directory\Model\ResourceModel\Country\Collection as CountryCollection;
 use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Framework\App\Helper\Context;
 use Magento\Framework\DataObject;
 use Magento\Store\Model\ScopeInterface;
 
 class CartHelper extends AbstractHelper
 {
+    /**
+     * @var CountryCollection
+     */
+    protected $countryCollection;
+
+    public function __construct(Context $context, CountryCollection $countryCollection)
+    {
+        parent::__construct($context);
+        $this->countryCollection = $countryCollection;
+    }
+
     /**
      * Get an object of default destination details
      *
@@ -54,5 +68,25 @@ class CartHelper extends AbstractHelper
     public function getStoreConfig($key, $store)
     {
         return $this->scopeConfig->getValue($key, ScopeInterface::SCOPE_STORE, $store);
+    }
+
+    /**
+     * Lookup country ID from iso2/iso3 name
+     *
+     * @param string $country
+     * @return string
+     */
+    public function getCountry($country)
+    {
+        $country = strtoupper($country);
+        $this->countryCollection->clear();
+        $this->countryCollection->addCountryCodeFilter($country);
+        /** @var Country $c */
+        foreach ($this->countryCollection as $c) {
+            if ($c->getIso2Code() === $country || $c->getIso3Code() === $country) {
+                return $c->getId();
+            }
+        }
+        return $country;
     }
 }

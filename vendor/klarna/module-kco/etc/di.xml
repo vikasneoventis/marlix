@@ -81,6 +81,11 @@
             <argument name="logger" xsi:type="object">Klarna\Core\Logger\Logger</argument>
         </arguments>
     </type>
+    <type name="Klarna\Kco\Controller\Api\RefreshAddresses">
+        <arguments>
+            <argument name="logger" xsi:type="object">Klarna\Core\Logger\Logger</argument>
+        </arguments>
+    </type>
     <type name="Klarna\Kco\Controller\Api\ShippingMethodUpdate">
         <arguments>
             <argument name="logger" xsi:type="object">Klarna\Core\Logger\Logger</argument>

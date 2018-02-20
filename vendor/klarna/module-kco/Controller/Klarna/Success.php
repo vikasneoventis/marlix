@@ -147,7 +147,6 @@ class Success extends Action
 
         $session->clearQuote();
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->set(__('Klarna Checkout'));
         $this->_eventManager->dispatch(
             'checkout_kco_controller_success_action',
             ['order_ids' => [$session->getLastOrderId()]]

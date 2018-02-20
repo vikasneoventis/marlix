@@ -20,7 +20,7 @@
         </options>
     </api_type>
     <api_version id="nortic" translate="label">
-        <label><![CDATA[v2 Nordics]]></label>
+        <label><![CDATA[Klarna Checkout v2 (Nordics)]]></label>
         <type>kred</type>
         <production_url><![CDATA[https://checkout.klarna.com]]></production_url>
         <testdrive_url><![CDATA[https://checkout.testdrive.klarna.com]]></testdrive_url>

@@ -7,6 +7,7 @@
  * For the full copyright and license information, please view the NOTICE
  * and LICENSE files that were distributed with this source code.
  */
+
 namespace Klarna\Core\Helper;
 
 use Klarna\Core\Exception as KlarnaException;
@@ -22,6 +23,8 @@ use Magento\Store\Api\Data\StoreInterface;
 use Magento\Store\Model\Config\Processor\Placeholder;
 use Magento\Store\Model\ScopeInterface;
 use Magento\Store\Model\Store;
+use Magento\Customer\Api\CustomerRepositoryInterface;
+use Magento\Customer\Api\AddressRepositoryInterface;
 
 class ConfigHelper extends AbstractHelper
 {
@@ -62,20 +65,33 @@ class ConfigHelper extends AbstractHelper
     protected $placeholder;
 
     /**
-     * Data helper constructor.
-     *
-     * @param Context       $context
+     * @var CustomerRepositoryInterface
+     */
+    protected $customerRepository;
+    /**
+     * @var AddressRepositoryInterface
+     */
+    protected $addressRepository;
+
+
+    /**
+     * ConfigHelper constructor.
+     * @param Context $context
      * @param DataInterface $config
-     * @param Resolver      $resolver
-     * @param Placeholder   $placeholder
-     * @param string        $code
-     * @param string        $eventPrefix
+     * @param Resolver $resolver
+     * @param Placeholder $placeholder
+     * @param CustomerRepositoryInterface $customerRepository
+     * @param AddressRepositoryInterface $addressRepository
+     * @param string $code
+     * @param string $eventPrefix
      */
     public function __construct(
         Context $context,
         DataInterface $config,
         Resolver $resolver,
         Placeholder $placeholder,
+        CustomerRepositoryInterface $customerRepository,
+        AddressRepositoryInterface $addressRepository,
         $code = 'klarna_kco',
         $eventPrefix = 'kco'
     ) {
@@ -90,12 +106,14 @@ class ConfigHelper extends AbstractHelper
         }
         $this->code = $code;
         $this->eventPrefix = $eventPrefix;
+        $this->customerRepository = $customerRepository;
+        $this->addressRepository = $addressRepository;
     }
 
     /**
      * Get external payment details
      *
-     * @param string         $code
+     * @param string $code
      * @param StoreInterface $store
      *
      * @return DataObject
@@ -122,7 +140,7 @@ class ConfigHelper extends AbstractHelper
     /**
      * Get url using url template variables
      *
-     * @param string         $value
+     * @param string $value
      * @param StoreInterface $store
      *
      * @return string
@@ -139,7 +157,7 @@ class ConfigHelper extends AbstractHelper
                         $store
                     )
                 ],
-                'secure'   => [
+                'secure' => [
                     'base_url' => $this->scopeConfig->getValue(
                         'web/secure/base_url',
                         ScopeInterface::SCOPE_STORE,
@@ -156,7 +174,7 @@ class ConfigHelper extends AbstractHelper
     /**
      * Get the order status that should be set on orders that have been processed by Klarna
      *
-     * @param Store  $store
+     * @param Store $store
      * @param string $paymentMethod
      *
      * @return string
@@ -170,7 +188,7 @@ class ConfigHelper extends AbstractHelper
      * Get payment config value
      *
      * @param string $config
-     * @param Store  $store
+     * @param Store $store
      * @param string $paymentMethod
      *
      * @return mixed
@@ -230,7 +248,7 @@ class ConfigHelper extends AbstractHelper
      * Get API config value
      *
      * @param string $config
-     * @param Store  $store
+     * @param Store $store
      *
      * @return mixed
      */
@@ -266,7 +284,7 @@ class ConfigHelper extends AbstractHelper
 
         // Start with api type global options
         $optionsObject = new DataObject($options);
-        $apiTypeConfig = $this->_getApiTypeConfig($optionsObject->getType());
+        $apiTypeConfig = $this->getApiTypeConfig($optionsObject->getType());
         $apiTypeOptions = $apiTypeConfig->getOptions();
         $apiTypeOptions['ordermanagement'] = $apiTypeConfig->getOrdermanagement();
         $options = array_merge($apiTypeOptions, $options);
@@ -303,11 +321,11 @@ class ConfigHelper extends AbstractHelper
      * @throws \RuntimeException
      * @throws KlarnaException
      */
-    protected function _getApiTypeConfig($code)
+    public function getApiTypeConfig($code)
     {
         $typeConfig = $this->getConfig(sprintf('api_types/%s', $code));
         if (!$typeConfig) {
-            throw new KlarnaException(__('API type "%1" does not exist!', $code));
+            throw new KlarnaException(__('Invalid API version selected!'));
         }
 
         $configObject = new DataObject($typeConfig);
@@ -348,7 +366,7 @@ class ConfigHelper extends AbstractHelper
     /**
      * Remove duplicate items from a multidimensional array based on a supplied key
      *
-     * @param array  $array
+     * @param array $array
      * @param string $key
      * @return array
      */
@@ -428,7 +446,7 @@ class ConfigHelper extends AbstractHelper
      * Determine if merchant checkbox should be enabled
      *
      * @param string $code
-     * @param array  $args
+     * @param array $args
      *
      * @return bool
      */
@@ -458,7 +476,8 @@ class ConfigHelper extends AbstractHelper
      */
     public function getShippingInIframe($store = null)
     {
-        return (bool)$this->getVersionConfig($store)->getShippingInIframe();
+        return (bool)$this->getVersionConfig($store)->getShippingInIframe() && $this->getCheckoutConfigFlag('shipping_in_iframe',
+                $store, 'klarna_kco');
     }
 
     /**
@@ -561,7 +580,7 @@ class ConfigHelper extends AbstractHelper
      * Get checkout config value
      *
      * @param string $config
-     * @param Store  $store
+     * @param Store $store
      *
      * @return mixed
      */
@@ -603,7 +622,7 @@ class ConfigHelper extends AbstractHelper
      * Check is allowed Guest Checkout
      * Use config settings and observer
      *
-     * @param CartInterface                  $quote
+     * @param CartInterface $quote
      * @param int|\Magento\Store\Model\Store $store
      * @return bool
      */
@@ -621,8 +640,8 @@ class ConfigHelper extends AbstractHelper
             $this->_eventManager->dispatch(
                 $this->eventPrefix . '_checkout_allow_guest',
                 [
-                    'quote'  => $quote,
-                    'scope'  => $store,
+                    'quote' => $quote,
+                    'scope' => $store,
                     'result' => $result
                 ]
             );
@@ -637,7 +656,7 @@ class ConfigHelper extends AbstractHelper
      * Get checkout config value
      *
      * @param string $config
-     * @param Store  $store
+     * @param Store $store
      * @param string $paymentMethod
      *
      * @return bool
@@ -655,7 +674,7 @@ class ConfigHelper extends AbstractHelper
      * Get payment config value
      *
      * @param string $config
-     * @param Store  $store
+     * @param Store $store
      * @param string $paymentMethod
      *
      * @return bool
@@ -685,7 +704,7 @@ class ConfigHelper extends AbstractHelper
      * Return Builder Type to use in OM requests
      *
      * @param DataObject $versionConfig
-     * @param string     $methodCode
+     * @param string $methodCode
      * @return null|string
      */
     public function getOmBuilderType(DataObject $versionConfig, $methodCode = 'klarna_kco')
@@ -706,7 +725,7 @@ class ConfigHelper extends AbstractHelper
      * Get API config value
      *
      * @param string $config
-     * @param Store  $store
+     * @param Store $store
      *
      * @return bool
      */
@@ -740,6 +759,10 @@ class ConfigHelper extends AbstractHelper
         return !$this->scopeConfig->isSetFlag('tax/calculation/apply_after_discount', $scope, $store);
     }
 
+    /**
+     * @param Store $store
+     * @return bool|string
+     */
     public function getFailureUrl($store = null)
     {
         $failureUrl = $this->getCheckoutConfigFlag('failure_url', $store, 'klarna_kco');
@@ -747,5 +770,84 @@ class ConfigHelper extends AbstractHelper
             $failureUrl = $this->_urlBuilder->getUrl('checkout/cart');
         }
         return $failureUrl;
+    }
+
+    /**
+     * check if b2b mode is enabled in setting
+     * @param Store $store
+     * @return bool
+     */
+    public function isB2bEnabled($store = null)
+    {
+        return $this->getCheckoutConfigFlag('enable_b2b', $store, 'klarna_kco');
+
+    }
+
+    /**
+     * get the code for custom attribute for recording organization id
+     * @param Store $store
+     * @return mixed
+     */
+    public function getBusinessIdAttribute($store = null)
+    {
+        return  $this->getCheckoutConfig('business_id_attribute', $store, 'klarna_kco');
+
+    }
+
+
+    /**
+     * check if this customer is a business customer
+     * @param int $customerId
+     * @param Store $store
+     * @return bool
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
+    public function isB2bCustomer($customerId, $store)
+    {
+        if ($customerId) {
+            $businessIdValue = $this->getBusinessIdAttributeValue($customerId, $store);
+            $businessNameValue = $this->getCompanyNameFromAddress($customerId);
+            if (!empty($businessIdValue) || !empty($businessNameValue)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * get organization id value
+     * @param int $customerId
+     * @param store $store
+     * @return bool|string
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
+    public function getBusinessIdAttributeValue($customerId, $store)
+    {
+        $customerObj = $this->customerRepository->getById($customerId);
+        $businessIdValue = $customerObj->getCustomAttribute($this->getBusinessIdAttribute($store));
+        if ($businessIdValue) {
+            return $businessIdValue->getValue();
+        }
+        return false;
+    }
+
+    /**
+     * check if customer's default billing address contain company name
+     * @param int $customerId
+     * @return bool|null|string
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
+    public function getCompanyNameFromAddress($customerId)
+    {
+        $customerObj = $this->customerRepository->getById($customerId);
+        $billingAddressId = $customerObj->getDefaultBilling();
+        if ($billingAddressId) {
+            $defaultBillingAddress = $this->addressRepository->getById($billingAddressId);
+            return $defaultBillingAddress->getCompany();
+        }
+        return false;
     }
 }

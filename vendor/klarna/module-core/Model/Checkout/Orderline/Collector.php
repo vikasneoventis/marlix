@@ -82,8 +82,13 @@ class Collector
         if (!$this->configHelper->getPaymentConfigFlag('active', $store, 'klarna_kco') && !$this->configHelper->getPaymentConfigFlag('active', $store, 'klarna_kp')) {
             return $this; // No Klarna methods enabled
         }
-        $checkoutType = $this->configHelper->getCheckoutType($store);
-        $totalsConfig = $this->configHelper->getOrderlines($checkoutType);
+
+        try {
+            $checkoutType = $this->configHelper->getCheckoutType($store);
+            $totalsConfig = $this->configHelper->getOrderlines($checkoutType);
+        } catch (KlarnaException $e) {
+            return $this;
+        }
 
         if (!$totalsConfig) {
             return $this;

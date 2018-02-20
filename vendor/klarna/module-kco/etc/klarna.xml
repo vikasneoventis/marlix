@@ -31,7 +31,7 @@
         </options>
     </api_type>
     <api_version id="na" translate="label">
-        <label>v3.1 North America</label>
+        <label><![CDATA[Klarna Checkout v3 (North America)]]></label>
         <type>kasper</type>
         <production_url><![CDATA[https://api-na.klarna.com]]></production_url>
         <testdrive_url><![CDATA[https://api-na.playground.klarna.com]]></testdrive_url>
@@ -41,7 +41,7 @@
         </options>
     </api_version>
     <api_version id="uk" translate="label">
-        <label>v3 UK</label>
+        <label><![CDATA[Klarna Checkout v3 (Europe)]]></label>
         <type>kasper</type>
         <production_url><![CDATA[https://api.klarna.com]]></production_url>
         <testdrive_url><![CDATA[https://api.playground.klarna.com]]></testdrive_url>
@@ -52,7 +52,7 @@
         </options>
     </api_version>
     <api_version id="nl" translate="label">
-        <label>v3 NL</label>
+        <label><![CDATA[Klarna Checkout v3 (Netherlands)]]></label>
         <type>kasper</type>
         <production_url><![CDATA[https://api.klarna.com]]></production_url>
         <testdrive_url><![CDATA[https://api.playground.klarna.com]]></testdrive_url>
