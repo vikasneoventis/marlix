@@ -133,7 +133,7 @@ class Topmenu extends \Magento\Framework\View\Element\Template
         if(!$max_level || ($max_level && $max_level == 0) || ($max_level && $max_level > 0 && $max_level-1 >= $level)) {
             $column_class = "";
             if($level == 1 && $columns && ($menu_type == 'fullwidth' || $menu_type == 'staticwidth')) {
-                $column_class = "col-sm-".$column_width." ";
+                $column_class = "col-md-".$column_width." ";
                 $column_class .= "mega-columns columns".$columns;
             }
             $html = '<ul class="subchildmenu '.$column_class.'">';
@@ -264,11 +264,11 @@ class Topmenu extends \Magento\Framework\View\Element\Template
                     if(count($children) > 0 || (($menu_type=="fullwidth" || $menu_type=="staticwidth") && ($menu_left_content || $menu_right_content))) {
                         $html .= '<div class="row">';
                         if(($menu_type=="fullwidth" || $menu_type=="staticwidth") && $menu_left_content && $menu_left_width > 0) {
-                            $html .= '<div class="menu-left-block col-sm-'.$menu_left_width.'">'.$this->getBlockContent($menu_left_content).'</div>';
+                            $html .= '<div class="menu-left-block col-md-'.$menu_left_width.'">'.$this->getBlockContent($menu_left_content).'</div>';
                         }
                         $html .= $this->getSubmenuItemsHtml($children, 1, $max_level, 12-$menu_left_width-$menu_right_width, $menu_type, $sw_menu_cat_columns);
                         if(($menu_type=="fullwidth" || $menu_type=="staticwidth") && $menu_right_content && $menu_right_width > 0) {
-                            $html .= '<div class="menu-right-block col-sm-'.$menu_right_width.'">'.$this->getBlockContent($menu_right_content).'</div>';
+                            $html .= '<div class="menu-right-block col-md-'.$menu_right_width.'">'.$this->getBlockContent($menu_right_content).'</div>';
                         }
                         $html .= '</div>';
                     }

@@ -70,4 +70,9 @@ class Cssconfig extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return $this->getBaseMediaUrl(). $this->generatedCssFolder . 'design_' . $this->_storeManager->getStore()->getCode() . '.css';
     }
+    
+    public function getPortoWebDir()
+    {
+        return $this->getBaseMediaUrl().'porto/web/';
+    }
 }

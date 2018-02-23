@@ -8,7 +8,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="smartwave_porto" translate="label" sortOrder="50">
-            <label>Porto 2.6.2</label>
+            <label>Porto 3.0.0</label>
         </tab>
         <section id="porto_settings" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Porto - Settings Panel</label>
@@ -74,6 +74,17 @@
                 </field>
                 <field id="smartlayers" translate="label comment" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Show Share Buttons at the Right Side</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="optimization" translate="label" sortOrder="105" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Speed Optimization Setting</label>
+                <field id="bootstrap" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Load Original Bootstrap</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="animate" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Load Original animate.css</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
@@ -144,6 +155,10 @@
                 </field>
                 <field id="language_flag" translate="label comment" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Show Flag Images in Language Switcher</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="compare_link" translate="label comment" type="select" sortOrder="115" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show Compare Link in TopLinks</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="login_popup" translate="label comment" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -910,6 +925,12 @@
                     <button_label>Demo 20</button_label>
                     <attribute type="action_url">porto_admin/system_config_demo/import</attribute>
                     <attribute type="demo_version">demo20</attribute>
+                    <frontend_model>Smartwave\Porto\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo21" translate="button_label" sortOrder="475" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Demo 21</button_label>
+                    <attribute type="action_url">porto_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo21</attribute>
                     <frontend_model>Smartwave\Porto\Block\System\Config\Form\Button\Import\Demo</frontend_model>
                 </field>
                 <field id="import_demo2_heading" translate="label comment" sortOrder="480" showInDefault="1" showInWebsite="1" showInStore="1">

@@ -216,12 +216,12 @@ button.action.primary:hover{
     }
     if(isset($d['colors']['addtocompare_color']) && $d['colors']['addtocompare_color']){
 ?>
-.product-addto-links .action.tocompare,.product-item-actions .action.tocompare,.action.tocompare{color:<?php if (strlen($d['colors']['addtocompare_color']) == 6): echo "#"; endif; ?><?php echo $d['colors']['addtocompare_color']; ?>;border-color:<?php if (strlen($d['colors']['addtocompare_color']) == 6): echo "#"; endif; ?><?php echo $d['colors']['addtocompare_color']; ?>}
+.product-addto-links .action.tocompare,.product-item-actions .action.tocompare,.action.tocompare,.product-addto-links .action.mailto.friend, .moved-add-to-links .action.mailto.friend, .product-social-links .action.mailto.friend{color:<?php if (strlen($d['colors']['addtocompare_color']) == 6): echo "#"; endif; ?><?php echo $d['colors']['addtocompare_color']; ?>;border-color:<?php if (strlen($d['colors']['addtocompare_color']) == 6): echo "#"; endif; ?><?php echo $d['colors']['addtocompare_color']; ?>}
 <?php
     }
     if(isset($d['colors']['addtocompare_hover_color']) && $d['colors']['addtocompare_hover_color']){
 ?>
-.product-addto-links .action.tocompare:hover,.product-item-actions .action.tocompare:hover,.action.tocompare:hover{color:<?php if (strlen($d['colors']['addtocompare_hover_color']) == 6): echo "#"; endif; ?><?php echo $d['colors']['addtocompare_hover_color']; ?>;border-color:<?php if (strlen($d['colors']['addtocompare_hover_color']) == 6): echo "#"; endif; ?><?php echo $d['colors']['addtocompare_hover_color']; ?>}
+.product-addto-links .action.tocompare:hover,.product-item-actions .action.tocompare:hover,.action.tocompare:hover,.product-addto-links .action.mailto.friend:hover, .moved-add-to-links .action.mailto.friend:hover, .product-social-links .action.mailto.friend:hover{color:<?php if (strlen($d['colors']['addtocompare_hover_color']) == 6): echo "#"; endif; ?><?php echo $d['colors']['addtocompare_hover_color']; ?>;border-color:<?php if (strlen($d['colors']['addtocompare_hover_color']) == 6): echo "#"; endif; ?><?php echo $d['colors']['addtocompare_hover_color']; ?>}
 <?php
     }
     if(isset($d['colors']['breadcrumbs_bg_color']) && $d['colors']['breadcrumbs_bg_color']){

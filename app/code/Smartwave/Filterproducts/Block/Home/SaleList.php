@@ -29,6 +29,10 @@ class SaleList extends \Magento\Catalog\Block\Product\ListProduct {
         parent::__construct($context, $postDataHelper, $layerResolver, $categoryRepository, $urlHelper, $data);
     }
 
+    protected function _getProductCollection() {
+        return $this->getProducts();
+    }
+    
     public function getProducts() {
         $count = $this->getProductCount();
         $category_id = $this->getData("category_id");

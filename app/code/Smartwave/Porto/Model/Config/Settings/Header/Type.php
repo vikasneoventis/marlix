@@ -31,7 +31,8 @@ class Type implements \Magento\Framework\Option\ArrayInterface
             ['value' => '23', 'label' => __('Type 23')],
             ['value' => '24', 'label' => __('Type 24')],
             ['value' => '25', 'label' => __('Type 25')],
-            ['value' => '26', 'label' => __('Type 26')]
+            ['value' => '26', 'label' => __('Type 26')],
+            ['value' => '27', 'label' => __('Type 27')]
         ];
     }
 
@@ -63,7 +64,8 @@ class Type implements \Magento\Framework\Option\ArrayInterface
             '23' => __('Type 23'),
             '24' => __('Type 24'),
             '25' => __('Type 25'),
-            '26' => __('Type 26')
+            '26' => __('Type 26'),
+            '26' => __('Type 27')
         ];
     }
 }
