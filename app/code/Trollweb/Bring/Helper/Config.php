@@ -11,7 +11,7 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper {
             return [];
         }
 
-        return unserialize($data);
+        return json_decode($data, true);
     }
 
     public function getActiveDeliveredMethods($store = null) {
@@ -20,7 +20,7 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper {
             return [];
         }
 
-        return unserialize($data);
+        return json_decode($data, true);
     }
 
     public function getBringPickupCarrierTitle($store = null) {
@@ -39,6 +39,42 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper {
         return (int)$this->getConfigValue('carriers/bringpickup/number_of_pickup_points', $store);
     }
 
+    public function mybringIsEnabled($store = null) {
+        return $this->getConfigValue('trollweb_bring/mybring/enable_mybring', $store) === "1";
+    }
+
+    public function getMybringApiUserId($store = null) {
+        return $this->getConfigValue('trollweb_bring/mybring/api_user_id', $store);
+    }
+
+    public function getMybringApiKey($store = null) {
+        return $this->getConfigValue('trollweb_bring/mybring/api_key', $store);
+    }
+
+    public function getMybringCustomerNumber($store = null) {
+        return $this->getConfigValue('trollweb_bring/mybring/customer_number', $store);
+    }
+
+    public function getMybringCredentials($store = null) {
+        if (!$this->mybringIsEnabled($store)) {
+            return null;
+        }
+
+        $userId = $this->getMybringApiUserId($store);
+        $apiKey = $this->getMybringApiKey($store);
+        $customerNumber = $this->getMybringCustomerNumber($store);
+
+        if (!$userId || !$apiKey || !$customerNumber) {
+            return null;
+        }
+
+        return [
+            "api_user_id" => $userId,
+            "api_key" => $apiKey,
+            "customer_number" => $customerNumber,
+        ];
+    }
+
     public function getPostingAtPostoffice($store = null) {
         return $this->getConfigValue('trollweb_bring/general/posting_at_postoffice', $store);
     }
@@ -49,6 +85,10 @@ class Config extends \Magento\Framework\App\Helper\AbstractHelper {
 
     public function getPriceRoundingStrategy($store = null) {
         return $this->getConfigValue('trollweb_bring/general/price_rounding_strategy', $store);
+    }
+
+    public function postcodeLookupEnabled($store = null) {
+        return $this->getConfigValue('trollweb_bring/general/enable_postcode_lookup', $store) === "1";
     }
 
     public function getDefaultProductWeight($store = null) {

@@ -101,6 +101,39 @@
             <label>Bring</label>
             <tab>trollweb</tab>
             <resource>Trollweb_Bring::config_bring</resource>
+
+            <group id="mybring" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Mybring</label>
+                <comment>Optional mybring credentials</comment>
+
+                <field id="enable_mybring" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable mybring</label>
+                    <comment></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_user_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                    <label>Api user id</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_mybring">1</field>
+                    </depends>
+                </field>
+                <field id="api_key" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                    <label>Api key</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_mybring">1</field>
+                    </depends>
+                </field>
+                <field id="customer_number" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="0">
+                    <label>Customer number</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_mybring">1</field>
+                    </depends>
+                </field>
+            </group>
+
             <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
                 <field id="posting_at_postoffice" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
@@ -117,6 +150,11 @@
                     <label>Price rounding</label>
                     <comment>Select a rounding strategy to use (only applies to prices from the api).</comment>
                     <source_model>Trollweb\Bring\Model\Config\Source\PriceRoundingStrategy</source_model>
+                </field>
+                <field id="enable_postcode_lookup" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable postcode lookup</label>
+                    <comment>Set to yes to show a warning message when an invalid postcode is entered in checkout.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
             <group id="measurements" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">

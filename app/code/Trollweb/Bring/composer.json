@@ -1,0 +1,27 @@
+{
+  "name": "trollweb/module-bring",
+  "description": "Bring module for Magento 2",
+  "type": "magento2-module",
+  "version": "1.7.1",
+  "license": [
+    "proprietary"
+  ],
+  "authors": [
+    {
+      "name": "Trollweb",
+      "email": "support@trollweb.no"
+    }
+  ],
+  "require": {
+      "magento/framework": ">=101.0.0",
+      "trollweb/bring-api": ">=1.2.0"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Trollweb\\Bring\\": ""
+    }
+  }
+}

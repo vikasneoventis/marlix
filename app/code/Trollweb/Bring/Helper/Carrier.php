@@ -10,6 +10,7 @@ class Carrier extends \Magento\Framework\App\Helper\AbstractHelper {
     private $priceHelper;
     private $shippingGuideApi;
     private $logger;
+    private $store;
 
     public function __construct(
         \Trollweb\Bring\Helper\Config $config,
@@ -17,6 +18,7 @@ class Carrier extends \Magento\Framework\App\Helper\AbstractHelper {
         \Trollweb\Bring\Helper\Price $priceHelper,
         \Trollweb\Bring\Helper\Api\ShippingGuide $shippingGuideApi,
         \Trollweb\Bring\Logger\Logger $logger,
+        \Magento\Store\Api\Data\StoreInterface $store,
         \Magento\Framework\App\Helper\Context $context
     ) {
         parent::__construct($context);
@@ -25,6 +27,7 @@ class Carrier extends \Magento\Framework\App\Helper\AbstractHelper {
         $this->priceHelper = $priceHelper;
         $this->shippingGuideApi = $shippingGuideApi;
         $this->logger = $logger;
+        $this->store = $store;
     }
 
     public function getAllowedMethods($allMethods, $activeMethods)
@@ -69,7 +72,7 @@ class Carrier extends \Magento\Framework\App\Helper\AbstractHelper {
             "to" => $requestData["destPostcode"],
             "weightInGrams" => $requestData["totalWeightInGrams"],
             "product" => $requestData["bringProductIds"],
-            "clientUrl" => $this->_getRequest()->getServer('HTTP_REFERER'),
+            "clientUrl" => $this->store->getBaseUrl(),
             "edi" => "true",
             "language" => $language,
             "postingAtPostOffice" => $this->config->getPostingAtPostoffice() ? "true" : "false",
@@ -155,9 +158,9 @@ class Carrier extends \Magento\Framework\App\Helper\AbstractHelper {
         $totalWeight = 0.0;
 
         foreach ($items as $item) {
-            $weight = $item->getWeight();
+            $weight = (float)$item->getWeight();
             if (!$weight) {
-                $weight = $this->config->getDefaultProductWeight();
+                $weight = (float)$this->config->getDefaultProductWeight();
             }
             $totalWeight += $item->getQty() * $weight;
         }

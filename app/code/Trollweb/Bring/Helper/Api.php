@@ -6,19 +6,20 @@ use \Trollweb\BringApi\Request;
 use \Trollweb\BringApi\Exception\ResponseException;
 
 class Api {
+    private $bringApi;
     private $logger;
 
     public function __construct(
+        \Trollweb\BringApi\Bring $bringApi,
         \Trollweb\Bring\Logger\Logger $logger
     ) {
+        $this->bringApi = $bringApi;
         $this->logger = $logger;
     }
 
     public function request(Request $req) {
-        $bring = new \Trollweb\BringApi\Bring();
-
         try {
-            $res = $bring->request($req);
+            $res = $this->bringApi->request($req);
             $this->logger->debug("bring api request", ["request" => $req->debug(), "response" => $res->debug()]);
         } catch (ResponseException $e) {
             $req = $e->getRequest();
